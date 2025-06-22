@@ -234,7 +234,7 @@ export default function Navigation({
           : ""
       } ${className} sticky top-0 z-[20]`}
     >
-      <nav className="relative z-[4] flex-shrink-0 items-center min-[287px]:hidden justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
+      <nav className="relative z-[4] flex-shrink-0 items-center max-[287px]:hidden justify-center max-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
           className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#292929] dark:bg-[#000000]`}
         >
