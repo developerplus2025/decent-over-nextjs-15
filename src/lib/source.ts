@@ -14,7 +14,10 @@ export const source = loader({
   },
   source: docs.toFumadocsSource(),
   pageTree: {
-    attachFile,
+    attachFile: attachFile as (
+      node: any,
+      file?: import("fumadocs-core/source").PageFile<any>,
+    ) => any,
   },
 });
 
