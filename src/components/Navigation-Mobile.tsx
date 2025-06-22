@@ -16,7 +16,7 @@ export default function NavigationMobile({
   const { height } = useDimensions(containerRef);
 
   return (
-    <div className={className}>
+    <div className={`${className} fixed z-50`}>
       <div style={container}>
         <motion.nav
           initial={false}
@@ -171,7 +171,7 @@ const nav: React.CSSProperties = {
 };
 
 const background: React.CSSProperties = {
-  backgroundColor: "#f5f5f5",
+  backgroundColor: "#000000",
   position: "absolute",
   top: 0,
   left: 0,
