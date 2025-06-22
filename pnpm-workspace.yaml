@@ -8,3 +8,6 @@ ignoredBuiltDependencies:
   - protobufjs
   - sharp
   - unrs-resolver
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
