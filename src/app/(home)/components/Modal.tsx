@@ -1,19 +1,19 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Video from 'next-video';
+import Video from "next-video";
 import awesomeVideo from "/videos/get-started.mp4";
 import {
-    MediaController,
-    MediaControlBar,
-    MediaTimeRange,
-    MediaTimeDisplay,
-    MediaVolumeRange,
-    MediaPlayButton,
-    MediaSeekBackwardButton,
-    MediaSeekForwardButton,
-    MediaMuteButton,
-  } from 'media-chrome/react';
+  MediaController,
+  MediaControlBar,
+  MediaTimeRange,
+  MediaTimeDisplay,
+  MediaVolumeRange,
+  MediaPlayButton,
+  MediaSeekBackwardButton,
+  MediaSeekForwardButton,
+  MediaMuteButton,
+} from "media-chrome/react";
 import { useEffect } from "react";
 interface ModalProps {
   isOpen: boolean;
@@ -44,42 +44,40 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className="bg-black w-[50rem] flex flex-col h-[35rem] border rounded-lg pt-4 z-10"
+            className="z-10 flex h-[35rem] w-[50rem] flex-col rounded-lg border bg-black pt-4"
             style={{
               // transformStyle: "preserve-3d",
               perspective: 500, // Tạo chiều sâu 3D
             }}
             initial={{
-             
-              perspective:500,
+              perspective: 500,
               // opacity: 0,
               rotateY: -80, // Nghiêng về sau bên trái
               rotateX: 5,
-              translateZ: -800, // Đẩy modal ra xa lúc mới xuất hiện
+
               // scale: 0.9,
             }}
             animate={{
-         
               opacity: 1,
               rotateY: 0, // Trở lại trạng thái bình thường
               rotateX: 0,
-              translateZ: 0, // Kéo modal về gần
+
               scale: 1,
             }}
             exit={{
               // opacity: 0,
               rotateY: 70, // Khi đóng modal, nghiêng về sau bên trái
               rotateX: -16,
-              translateZ: -800, // Đẩy modal ra xa dần khi đóng
-              // scale: 0.9,
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-           <div className="flex px-3 w-full pb-4 justify-end">
-              <div  onClick={onClose} className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
+            <div className="flex w-full justify-end px-3 pb-4">
+              <div
+                onClick={onClose}
+                className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black"
+              >
                 <svg
-                 
                   className=""
                   data-testid="geist-icon"
                   height={16}
@@ -97,11 +95,16 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                 </svg>
               </div>
             </div>
-          <div className="flex h-full w-full items-center justify-center">
-            <Video  aria-errormessage=""  aria-hidden="false" className="host  rounded-lg" src={awesomeVideo} />
-            {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
-          </div>
-         </motion.div>
+            <div className="flex h-full w-full items-center justify-center">
+              <Video
+                aria-errormessage=""
+                aria-hidden="false"
+                className="host rounded-lg"
+                src={awesomeVideo}
+              />
+              {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
