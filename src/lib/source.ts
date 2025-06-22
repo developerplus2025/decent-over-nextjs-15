@@ -1,6 +1,7 @@
 import { createMDXSource } from "fumadocs-mdx";
 import type { InferMetaType, InferPageType } from "fumadocs-core/source";
 import { loader } from "fumadocs-core/source";
+import type { PageFile } from "fumadocs-core/source";
 import { icons } from "lucide-react";
 import { attachFile, createOpenAPI } from "fumadocs-openapi/server";
 import { createElement } from "react";
@@ -14,10 +15,7 @@ export const source = loader({
   },
   source: docs.toFumadocsSource(),
   pageTree: {
-    attachFile: attachFile as (
-      node: any,
-      file?: import("fumadocs-core/source").PageFile<any>,
-    ) => any,
+    attachFile: attachFile as (node: any, file?: any) => any,
   },
 });
 
