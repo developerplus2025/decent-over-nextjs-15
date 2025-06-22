@@ -6,6 +6,9 @@ const nextConfig = {
   // experimental: {
   //   viewTransition: true,
   // },
+  sassOptions: {
+    implementation: "sass-embedded",
+  },
   images: {
     formats: ["image/avif"],
   },

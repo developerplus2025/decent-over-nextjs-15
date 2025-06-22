@@ -7,7 +7,7 @@ import AccordionFAQ from "./components/faq";
 import { PeopleSay } from "./components/people-say";
 import { NavigationEffect } from "@/components/NavigationEffect";
 import MainTextHome from "./components/main-text-home";
-
+// import variables from "./variables.module.scss";
 export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[6rem] dark:bg-black dark:[color-scheme:dark]">
@@ -29,7 +29,7 @@ export default function Home() {
       <PeopleSay />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
-        <p className="font-[BespokeStencil-BoldItalic] text-[55px]">Decent</p>
+        <p className={`font-[BespokeStencil-BoldItalic] text-[55px]`}>Decent</p>
       </div>
       <div>
         <NavigationEffect />
