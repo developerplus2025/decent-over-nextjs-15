@@ -9,7 +9,7 @@ export default function NavigationIcon() {
 
   return (
     <Button
-      className="group"
+      className="group border-none"
       variant="outline"
       size="icon"
       onClick={() => setOpen((prevState) => !prevState)}
