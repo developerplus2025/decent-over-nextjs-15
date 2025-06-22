@@ -17,21 +17,6 @@ export const contentType = "image/png";
 export default async function Image() {
   // Font
   const headersList = headers();
-  const host = headersList.get("host");
-  const protocol = headersList.get("x-forwarded-proto") || "http";
-  const path = headersList.get("x-invoke-path") || ""; // nếu bạn muốn đường dẫn, nếu không x-invoke-path có thể không có
-
-  const currentUrl = `${protocol}://${host}`;
-  let imagePreview = "";
-  if (currentUrl === "https://phamviettuan.vercel.app/") {
-    imagePreview = "Viết Tuấn";
-  } else if (currentUrl === "https://nguyendangbinh.vercel.app/") {
-    imagePreview = "Đăng Bình";
-  } else if (currentUrl === "https://localhost:3000/") {
-    imagePreview = "Đăng Bình";
-  } else {
-    imagePreview = " The next generation of audio collaboration.";
-  }
 
   const geistLight = fetch(
     new URL("./fonts/Geist-Bold.woff", import.meta.url),
