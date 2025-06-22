@@ -338,7 +338,7 @@ export const Navigation = (): JSX.Element => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
-                  <NavigationMenuLink
+                  <Link
                     href="/library"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/library"
@@ -355,7 +355,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       Library
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 {/* <NavigationMenuItem >
                   <NavigationMenuTrigger className="text-[#9b9b9b]">
@@ -372,9 +372,9 @@ export const Navigation = (): JSX.Element => {
                             <ListPlus className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
-                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                            <Link className="text-nowrap text-sm font-bold">
                               Create New
-                            </NavigationMenuLink>
+                            </Link>
                             <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                               Start personalized playlists here.
                             </p>
@@ -393,9 +393,9 @@ export const Navigation = (): JSX.Element => {
                             <Clock className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
-                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                            <Link className="text-nowrap text-sm font-bold">
                               Recent
-                            </NavigationMenuLink>
+                            </Link>
                             <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                               Review recently played songs and albums.
                             </p>
@@ -406,9 +406,9 @@ export const Navigation = (): JSX.Element => {
                             <Save className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
-                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                            <Link className="text-nowrap text-sm font-bold">
                               Saved
-                            </NavigationMenuLink>
+                            </Link>
                             <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                               Access saved songs and albums.
                             </p>
@@ -419,7 +419,7 @@ export const Navigation = (): JSX.Element => {
                   </NavigationMenuContent>
                 </NavigationMenuItem> */}
                 <NavigationMenuItem className="px-3">
-                  <NavigationMenuLink
+                  <Link
                     href="/creative"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/creative"
@@ -436,11 +436,11 @@ export const Navigation = (): JSX.Element => {
                     >
                       Creative
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="px-3">
-                  <NavigationMenuLink
+                  <Link
                     href="/pricing"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/pricing"
@@ -457,10 +457,10 @@ export const Navigation = (): JSX.Element => {
                     >
                       Pricing
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
-                  <NavigationMenuLink
+                  <Link
                     href="/blog"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/blog"
@@ -477,10 +477,10 @@ export const Navigation = (): JSX.Element => {
                     >
                       Blog
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
-                  <NavigationMenuLink
+                  <Link
                     href="/design"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/design"
@@ -497,10 +497,10 @@ export const Navigation = (): JSX.Element => {
                     >
                       Design
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink
+                  <Link
                     href="/docs"
                     className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                       pathname === "/docs"
@@ -528,11 +528,11 @@ export const Navigation = (): JSX.Element => {
                         </svg>
                       </sup>
                     )}
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink
+                  <Link
                     href="/radio"
                     className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                       pathname === "/radio"
@@ -558,12 +558,12 @@ export const Navigation = (): JSX.Element => {
                         />
                       </svg>
                     </sup>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
 
                 {/* <NavigationMenuItem>
                   <Link href="/aboutus" >
-                    <NavigationMenuLink
+                    <Link
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
                         pathname === "/aboutus"
                           ? "dark:text-white"
@@ -571,11 +571,11 @@ export const Navigation = (): JSX.Element => {
                       } cursor-pointer select-none transition-colors dark:hover:text-white`}
                     >
                       About Us
-                    </NavigationMenuLink>
+                    </Link>
                   </Link>
                 </NavigationMenuItem> */}
                 <NavigationMenuItem className="hidden">
-                  <NavigationMenuLink
+                  <Link
                     href="/generation"
                     className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                       pathname === "/generation"
@@ -598,7 +598,7 @@ export const Navigation = (): JSX.Element => {
                     >
                       Generation
                     </div>
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Support</NavigationMenuTrigger>
@@ -826,28 +826,3 @@ export const Navigation = (): JSX.Element => {
     </motion.div>
   );
 };
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
