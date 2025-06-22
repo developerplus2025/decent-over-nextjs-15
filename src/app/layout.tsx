@@ -11,7 +11,7 @@ import { GeistMono } from "geist/font/mono";
 // import { Toaster, toast } from "sonner";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
-import { Navigation } from "@/components/Navigation";
+import Navigation from "@/components/Navigation";
 import { DocsNavigation } from "@/components/DocsNavigation";
 import { CMDK } from "@/components/command-menu";
 // import { Toaster } from "@/components/ui/sonner";
@@ -22,6 +22,7 @@ import CookieAlert from "@/components/cookie-alert";
 import { RootProvider } from "fumadocs-ui/provider";
 import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
+import NavigationMobile from "@/components/Navigation-Mobile";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -58,7 +59,14 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="dark"
           >
-            <Navigation />
+            <Navigation className="max-[287px]:hidden xl:block">
+              {/* Navigation children content, or empty fragment if not needed */}
+              <></>
+            </Navigation>
+            <NavigationMobile className="max-[287px]:block xl:hidden">
+              {/* Add children here if needed */}
+              <></>
+            </NavigationMobile>
             <DocsNavigation />
 
             <Toaster

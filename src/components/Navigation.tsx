@@ -175,7 +175,14 @@ const components: { title: string; href: string; description: string }[] = [
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
 ];
-export const Navigation = (): JSX.Element => {
+type NavigationProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+export default function Navigation({
+  className,
+  children,
+}: NavigationProps): React.ReactElement {
   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
@@ -825,4 +832,4 @@ export const Navigation = (): JSX.Element => {
       </nav>
     </motion.div>
   );
-};
+}
