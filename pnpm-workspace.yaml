@@ -1,0 +1,10 @@
+ignoredBuiltDependencies:
+  - '@heroui/shared-utils'
+  - contentlayer
+  - contentlayer2
+  - core-js
+  - electron
+  - esbuild
+  - protobufjs
+  - sharp
+  - unrs-resolver
