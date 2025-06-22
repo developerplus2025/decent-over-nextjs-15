@@ -16,7 +16,7 @@ export default function NavigationMobile({
   const { height } = useDimensions(containerRef);
 
   return (
-    <div>
+    <div className={className}>
       <div style={container}>
         <motion.nav
           initial={false}

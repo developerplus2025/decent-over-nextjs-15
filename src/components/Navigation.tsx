@@ -232,7 +232,7 @@ export default function Navigation({
         pathname.startsWith("/docs")
           ? "webfilm-class"
           : ""
-      } sticky top-0 z-[20]`}
+      } ${className} sticky top-0 z-[20]`}
     >
       <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
