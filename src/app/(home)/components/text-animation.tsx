@@ -14,7 +14,7 @@ export default function AnimateTextHome() {
       transition: {
         duration: 0.5,
         delay: 0.1 * index,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
       },
     }),
   };
