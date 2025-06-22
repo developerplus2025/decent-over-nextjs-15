@@ -20,7 +20,7 @@ export default function AnimateTextHome() {
   };
 
   return (
-    <div className="flex w-[900px] flex-wrap justify-center gap-3">
+    <div className="title-text-home xl:flex xl:w-[900px] xl:flex-wrap xl:justify-center xl:gap-3">
       {words.map((word, index) => (
         <motion.p
           key={index}
@@ -28,7 +28,7 @@ export default function AnimateTextHome() {
           variants={wordVariants}
           initial="hidden"
           animate="visible"
-          className="animation-h1 mr-1.5 inline-block text-center font-mono text-[5rem] font-semibold leading-[5.2rem] -tracking-[3px]"
+          className="animation-h1 title-texct-home font-mono font-semibold -tracking-[3px] xl:mr-1.5 xl:inline-block xl:text-center xl:text-[5rem] xl:leading-[5.2rem]"
         >
           {word}
         </motion.p>

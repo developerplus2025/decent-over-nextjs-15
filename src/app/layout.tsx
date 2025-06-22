@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 // import { usePathname } from "next/navigation";
 // import { AnimatePresence, motion } from "framer-motion";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 // import 'fumadsocs-ui/dist/style.css';
@@ -101,7 +102,9 @@ export default function RootLayout({
               className={` ${GeistSans.className}`}
               position="top-center"
             />
-            <RootProvider>{children}</RootProvider>
+            <RootProvider>
+              <ViewTransition>{children}</ViewTransition>
+            </RootProvider>
             <Footer />
           </ThemeProvider>
         </body>

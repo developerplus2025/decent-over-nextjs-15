@@ -2,9 +2,9 @@ import { createMDX } from "fumadocs-mdx/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental: {
-  //   viewTransition: true,
-  // },
+  experimental: {
+    viewTransition: true,
+  },
   sassOptions: {
     implementation: "sass-embedded",
   },

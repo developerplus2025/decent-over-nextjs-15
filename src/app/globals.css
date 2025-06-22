@@ -1176,3 +1176,26 @@ number-flow-react::part(suffix) {
     mask-position 1s ease,
     -webkit-mask-position 1s ease;
 }
+@media (min-width: 287px) {
+  .navigation {
+    display: none;
+  }
+  .title-text-home {
+    display: none;
+  }
+  .main_container {
+    flex-direction: column;
+  }
+  .descript_text_home {
+    width: 100vw;
+    font-size: 12px;
+    text-wrap: balance;
+  }
+  .container_button_home {
+    display: flex;
+
+    gap: 1rem;
+    justify-items: center;
+    flex-direction: column;
+  }
+}

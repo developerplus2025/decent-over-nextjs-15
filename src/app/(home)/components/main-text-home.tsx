@@ -43,7 +43,7 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="relative mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
+      className="main_container relative mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
     >
       <svg
         className="absolute right-[12rem] hidden h-[40rem] lg:block"
@@ -145,13 +145,16 @@ export default function MainTextHome() {
         className="flex flex-col items-center justify-center gap-[2rem]"
       >
         <AnimateTextHome />
-        <h1 className="text-md w-[522px] text-center text-[#a1a1a1]">
+        <h1 className="mx-[1rem] w-screen text-center text-[2rem] font-bold xl:hidden">
+          The next generation of audio collaboration.
+        </h1>
+        <h1 className="xl:text-md descript_text_home text-center text-[#a1a1a1] xl:w-[522px]">
           Dive into a seamless music experience with our cutting edge software.
           Collaborate effortlessly, unleash your creativity, manage playlists
           and craft professional quality tracks all in one powerful platform.
         </h1>
       </div>
-      <div className="flex gap-[2rem]">
+      <div className="container_button_home xl:flex xl:gap-[2rem]">
         <DownloadButton />
         <Modal isOpen={open} onClose={() => setOpen(false)} />
         <Button onClick={() => setOpen(true)} variant={"default"} className="">
