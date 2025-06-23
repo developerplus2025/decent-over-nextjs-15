@@ -10,7 +10,7 @@ import MainTextHome from "./components/main-text-home";
 // import variables from "./variables.module.scss";
 export default function Home() {
   return (
-    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[6rem] dark:bg-black dark:[color-scheme:dark]">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden xl:pb-[1rem] xl:pt-[6rem] min-287:pt-[10rem] min-287:pb-[4rem]  dark:bg-black dark:[color-scheme:dark]">
       <CompAvatar />
       <MainTextHome />
       <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-[#262626]"></div>
