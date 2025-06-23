@@ -52,7 +52,17 @@ export default function NavigationMobile({
 }: NavigationMobileProps): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = "hidden"; // Tắt scroll
+    } else {
+      document.body.style.overflowY = "auto"; // Bật lại scroll
+    }
 
+    return () => {
+      document.body.style.overflowY = "auto"; // Đảm bảo luôn khôi phục scroll khi unmount
+    };
+  }, [isOpen]);
   return (
     <div
       className={`${className} fixed top-0 z-50 flex h-[50px] w-full items-center justify-between border-b bg-black px-[1rem]`}
