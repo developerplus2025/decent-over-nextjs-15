@@ -45,6 +45,11 @@ const LinkItem = [
     name: "Radio",
     src: "/radio",
   },
+  {
+    id: 6,
+    name: "Nhận thẻ cào",
+    src: "/free-card",
+  },
 ];
 export default function NavigationMobile({
   className,

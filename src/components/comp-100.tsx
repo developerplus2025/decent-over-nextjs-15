@@ -22,7 +22,7 @@ export default function NavigationIcon({ open, setOpen }: NavigationIconProps) {
         height="16"
       >
         <path
-          className="ease-[cubic-bezier(.5,.85,.25,1.1)] origin-center -translate-y-[7px] transition-all duration-300 group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
+          className="ease-[cubic-bezier(.5,.85,.25,1.1)] origin-center transition-all duration-300 group-aria-expanded:translate-x-[-3px] group-aria-expanded:translate-y-[3px] group-aria-expanded:rotate-[315deg]"
           d="M1.75 4H1V5.5H1.75H14.25H15V4H14.25H1.75Z"
           fill="currentColor"
         />
