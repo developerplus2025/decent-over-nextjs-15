@@ -20,6 +20,16 @@ export default function NavigationMobile({
     <div
       className={`${className} fixed top-0 z-50 flex h-[50px] w-full items-center justify-between border-b bg-black px-[1rem]`}
     >
+      {isOpen && (
+        <div className="absolute top-[50px] flex h-[calc(100vh-50px)] w-screen flex-col justify-start border-t bg-black p-[2rem]">
+          <Link
+            href="/"
+            className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+          >
+            Decent
+          </Link>
+        </div>
+      )}
       <div className="flex items-center gap-4">
         <Link
           href="/"
@@ -29,7 +39,7 @@ export default function NavigationMobile({
         </Link>
       </div>
       <div>
-        <NavigationIcon />
+        <NavigationIcon open={isOpen} setOpen={setIsOpen} />
       </div>
     </div>
   );

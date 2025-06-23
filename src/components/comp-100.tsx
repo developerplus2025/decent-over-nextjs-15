@@ -3,16 +3,17 @@
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-
-export default function NavigationIcon() {
-  const [open, setOpen] = useState<boolean>(false);
-
+type NavigationIconProps = {
+  open: boolean;
+  setOpen: (value: boolean) => void;
+};
+export default function NavigationIcon({ open, setOpen }: NavigationIconProps) {
   return (
     <Button
       className="group border-none hover:bg-none focus:bg-none"
       variant="outline"
       size="icon"
-      onClick={() => setOpen((prevState) => !prevState)}
+      onClick={() => setOpen(!open)}
       aria-expanded={open}
       aria-label={open ? "Close menu" : "Open menu"}
     >
