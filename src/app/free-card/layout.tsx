@@ -8,5 +8,9 @@ export default function FreeCardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return (
+    <section className="flex h-[calc(100vh-50px)] items-center justify-center pt-[50px]">
+      {children}
+    </section>
+  );
 }
