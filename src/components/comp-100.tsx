@@ -28,16 +28,12 @@ export default function NavigationIcon({ open, setOpen }: NavigationIconProps) {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M4 12L20 12"
+          d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8"
           className="ease-[cubic-bezier(.5,.85,.25,1.1)] origin-center -translate-y-[7px] transition-all duration-300 group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
         />
         <path
-          d="M4 12H20"
+          d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8"
           className="ease-[cubic-bezier(.5,.85,.25,1.8)] origin-center transition-all duration-300 group-aria-expanded:rotate-45"
-        />
-        <path
-          d="M4 12H20"
-          className="ease-[cubic-bezier(.5,.85,.25,1.1)] origin-center translate-y-[7px] transition-all duration-300 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
         />
       </svg>
     </div>
