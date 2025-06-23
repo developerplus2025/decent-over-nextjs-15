@@ -324,7 +324,7 @@
     fill: var(--fill-logo-svg);
   }
   .webfilm-class {
-    display: none;
+    display: none !important;
   }
   .embla {
     max-width: screen;

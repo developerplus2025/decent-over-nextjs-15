@@ -9,6 +9,43 @@ type NavigationMobileProps = {
   className?: string;
   children: React.ReactNode;
 };
+const LinkItem = [
+  {
+    id: 1,
+    name: "Home",
+    src: "/",
+  },
+  {
+    id: 2,
+    name: "Library",
+    src: "/library",
+  },
+  {
+    id: 3,
+    name: "Creative",
+    src: "/creative",
+  },
+  {
+    id: 4,
+    name: "Blog",
+    src: "/blog",
+  },
+  {
+    id: 5,
+    name: "Design",
+    src: "/design",
+  },
+  {
+    id: 5,
+    name: "Docs",
+    src: "/docs",
+  },
+  {
+    id: 5,
+    name: "Radio",
+    src: "/radio",
+  },
+];
 export default function NavigationMobile({
   className,
   children,
@@ -24,10 +61,22 @@ export default function NavigationMobile({
         <div className="absolute left-1/2 top-[40px] flex h-[calc(100vh-50px)] w-screen -translate-x-1/2 flex-col justify-start bg-black p-[2rem]">
           <Link
             href="/"
-            className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+            className="mask-logo-animation mb-6 font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
           >
             Decent
           </Link>
+          <nav className="flex flex-col gap-4">
+            {LinkItem.map((item) => (
+              <Link
+                key={item.id + item.name}
+                href={item.src}
+                className="text-lg font-medium text-white"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </div>
       )}
       <div className="flex items-center gap-4">
