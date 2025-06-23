@@ -1,5 +1,4 @@
 import { heroui } from "@heroui/theme";
-import { nextui } from "@nextui-org/theme";
 import tailwindcssAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
 
@@ -371,12 +370,7 @@ const config: Config = {
     },
   },
 
-  plugins: [
-    tailwindcssAnimate,
-    nextui(),
-    heroui(),
-    require("tailwindcss-mixins"),
-  ],
+  plugins: [tailwindcssAnimate, heroui(), require("tailwindcss-mixins")],
 };
 
 export default config;

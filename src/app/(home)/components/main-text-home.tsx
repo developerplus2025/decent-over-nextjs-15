@@ -148,7 +148,7 @@ export default function MainTextHome() {
         <h1 className="w-[299px] text-pretty text-center text-[3rem] font-[700] leading-[3rem] xl:hidden">
           The Next AI Music Editor
         </h1>
-        <h1 className="xl:text-md descript_text_home xl:text-md xl: text-[#a1a1a1] xl:w-[522px] xl:text-center">
+        <h1 className="descript_text_home xl: text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
           Dive into a seamless music experience with our cutting edge software.
           Collaborate effortlessly, unleash your creativity, manage playlists
           and craft professional quality tracks all in one powerful platform.
