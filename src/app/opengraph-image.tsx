@@ -55,7 +55,7 @@ export default async function Image() {
             width: "57rem",
           }}
         >
-          The next generation of audio collaboration.
+          Nhận thẻ cào nào Lăng Vũ Thương
         </div>
       </div>
     ),
