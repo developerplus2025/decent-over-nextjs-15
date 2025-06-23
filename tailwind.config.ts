@@ -19,6 +19,7 @@ const config: Config = {
   prefix: "",
   theme: {
     screens: {
+      "max-287": { raw: "(max-width: 287px)" },
       sm: "640px",
       md: "768px",
       lg: "1024px",

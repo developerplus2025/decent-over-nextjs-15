@@ -1184,12 +1184,14 @@ number-flow-react::part(suffix) {
     display: none;
   }
   .main_container {
+    padding: 2.5rem;
     flex-direction: column;
   }
   .descript_text_home {
     width: 100vw;
     font-size: 12px;
     text-wrap: balance;
+    text-align: start;
   }
   .container_button_home {
     display: flex;
