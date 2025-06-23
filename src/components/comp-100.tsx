@@ -9,10 +9,8 @@ type NavigationIconProps = {
 };
 export default function NavigationIcon({ open, setOpen }: NavigationIconProps) {
   return (
-    <Button
+    <div
       className="group border-none hover:bg-none focus:bg-none"
-      variant="outline"
-      size="icon"
       onClick={() => setOpen(!open)}
       aria-expanded={open}
       aria-label={open ? "Close menu" : "Open menu"}
@@ -42,6 +40,6 @@ export default function NavigationIcon({ open, setOpen }: NavigationIconProps) {
           className="ease-[cubic-bezier(.5,.85,.25,1.1)] origin-center translate-y-[7px] transition-all duration-300 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
         />
       </svg>
-    </Button>
+    </div>
   );
 }
