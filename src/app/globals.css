@@ -1184,18 +1184,19 @@ number-flow-react::part(suffix) {
     display: none;
   }
   .main_container {
-    padding: 2.5rem;
+    gap: 1rem;
+    padding: 0rem 2.5rem;
     flex-direction: column;
   }
   .descript_text_home {
     width: 100vw;
     font-size: 12px;
     text-wrap: balance;
-    text-align: start;
+    text-align: center;
   }
   .container_button_home {
     display: flex;
-
+    width: 100%;
     gap: 1rem;
     justify-items: center;
     flex-direction: column;

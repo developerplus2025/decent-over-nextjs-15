@@ -43,7 +43,7 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="main_container relative mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
+      className="main_container relative mx-[5rem] mt-[1rem] flex w-full items-center justify-center min-[375px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-[2rem]"
     >
       <svg
         className="absolute right-[12rem] hidden h-[40rem] lg:block"
@@ -142,10 +142,10 @@ export default function MainTextHome() {
       </svg>
       <div
         ref={containerRef}
-        className="flex flex-col items-center justify-center gap-[2rem]"
+        className="max-287:gap-[1rem] flex flex-col items-center justify-center xl:gap-[2rem]"
       >
         <AnimateTextHome />
-        <h1 className="w-[299px] text-pretty text-start text-[3rem] font-[700] leading-[3rem] xl:hidden">
+        <h1 className="w-[299px] text-pretty text-center text-[3rem] font-[700] leading-[3rem] xl:hidden">
           The Next AI Music Editor
         </h1>
         <h1 className="xl:text-md descript_text_home text-[#a1a1a1] xl:w-[522px] xl:text-center">
