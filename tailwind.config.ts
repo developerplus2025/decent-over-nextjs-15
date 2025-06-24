@@ -1,4 +1,4 @@
-import { heroui } from "@heroui/theme";
+// import { heroui } from "@heroui/theme";
 import tailwindcssAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
 
@@ -370,7 +370,7 @@ const config: Config = {
     },
   },
 
-  plugins: [tailwindcssAnimate, heroui(), require("tailwindcss-mixins")],
+  plugins: [tailwindcssAnimate, require("tailwindcss-mixins")],
 };
 
 export default config;
