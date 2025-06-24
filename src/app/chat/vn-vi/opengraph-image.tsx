@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import "../globals.css";
 // Route segment config
 export const runtime = "edge";
 
