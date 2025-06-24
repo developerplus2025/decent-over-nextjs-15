@@ -44,7 +44,7 @@ export default function AudioPage() {
             className="w-100 rounded-full pl-[42px]"
           />
           <svg
-            className="absolute left-[26px] top-1/2 -translate-x-1/2 -translate-y-1/2 border-[#a1a1a1]"
+            className="absolute top-1/2 left-[26px] -translate-x-1/2 -translate-y-1/2 border-[#a1a1a1]"
             data-testid="geist-icon"
             height={16}
             strokeLinejoin="round"
@@ -61,7 +61,7 @@ export default function AudioPage() {
           </svg>
         </div>
         <div>
-          <Button className="rounded-full" variant={"outline-solid"} size={"icon"}>
+          <Button className="rounded-full" variant={"outline"} size={"icon"}>
             <svg
               data-testid="geist-icon"
               height={16}
@@ -191,7 +191,7 @@ export default function AudioPage() {
               </div>
             </div>
             <div className="flex w-full items-center gap-4">
-              <Button variant={"outline-solid"} className="w-full rounded-full">
+              <Button variant={"outline"} className="w-full rounded-full">
                 Listen Now{" "}
                 <svg
                   data-testid="geist-icon"

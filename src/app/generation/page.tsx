@@ -231,7 +231,7 @@ export default function SupportPage() {
               </div>
             </div>
             <div className="flex gap-16">
-              <Button className="w-full" variant={"outline-solid"}>
+              <Button className="w-full" variant={"outline"}>
                 Download
               </Button>
               <Button className="w-full">View It</Button>

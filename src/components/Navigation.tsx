@@ -727,10 +727,7 @@ export default function Navigation({
                           Login
                         </AlertDialogTitle>
                         <AlertDialogDescription className="flex flex-col gap-4">
-                          <Button
-                            variant={"outline-solid"}
-                            className="rounded-full"
-                          >
+                          <Button variant={"outline"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -755,10 +752,7 @@ export default function Navigation({
                             </svg>
                             Login with Github
                           </Button>
-                          <Button
-                            variant={"outline-solid"}
-                            className="rounded-full"
-                          >
+                          <Button variant={"outline"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -786,10 +780,7 @@ export default function Navigation({
                             </svg>
                             Login with Google
                           </Button>
-                          <Button
-                            variant={"outline-solid"}
-                            className="rounded-full"
-                          >
+                          <Button variant={"outline"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}

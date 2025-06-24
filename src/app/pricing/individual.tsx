@@ -862,7 +862,7 @@ export default function Individual() {
       transition={{ duration: 0.25 }}
       className="px-64"
     >
-      <div className="mb-12 mt-4 flex items-center justify-center space-x-2">
+      <div className="mt-4 mb-12 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
@@ -877,7 +877,7 @@ export default function Individual() {
             className={`${tier.title === "Basic Plan" ? "hidden" : ""} relative`}
             key={tier.price}
           >
-            <div className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+            <div className="absolute top-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
             <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
             <Card
               key={tier.title}
@@ -929,7 +929,7 @@ export default function Individual() {
                   {tier.title === "Plus Plan" && (
                     <div className="flex items-center justify-between text-white">
                       <p>Plus Plan</p>
-                      <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
+                      <Badge className="h-fit px-3 py-1" variant={"outline"}>
                         Popular
                       </Badge>
                     </div>
@@ -937,7 +937,7 @@ export default function Individual() {
                   {tier.title === "Basic Plan" && (
                     <div className="flex justify-between">
                       <p>Basic Plan</p>
-                      <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
+                      <Badge className="h-fit px-3 py-1" variant={"outline"}>
                         Best Value
                       </Badge>
                     </div>
@@ -962,7 +962,7 @@ export default function Individual() {
                   />
                 </NumberFlowGroup>
 
-                <CardDescription className="text-balance text-center text-[0.86rem]">
+                <CardDescription className="text-center text-[0.86rem] text-balance">
                   {tier.description}
                 </CardDescription>
               </CardHeader>
@@ -1054,7 +1054,7 @@ export default function Individual() {
                                     {packages.map((pkg) => (
                                       <Card
                                         key={pkg.id}
-                                        className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow-sm outline-hidden ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
+                                        className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "ring-ring ring-offset-background shadow-sm ring-2 ring-offset-2 outline-hidden" : ""}`}
                                       >
                                         <CardHeader>
                                           <div className="flex items-center justify-between">
@@ -1084,7 +1084,7 @@ export default function Individual() {
                                           </div>
                                         </CardHeader>
                                         <CardContent>
-                                          <p className="mb-2 text-sm text-muted-foreground">
+                                          <p className="text-muted-foreground mb-2 text-sm">
                                             {pkg.description}
                                           </p>
                                           <ul className="list-inside list-disc text-sm">
@@ -1105,7 +1105,7 @@ export default function Individual() {
                               <Checkbox id="terms" required />
                               <label
                                 htmlFor="terms"
-                                className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                className="text-xs leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                               >
                                 By purchasing a package, you agree to our{" "}
                                 <a
@@ -1146,7 +1146,7 @@ export default function Individual() {
                           </AlertDialogHeader>
                           <AlertDialogFooter>
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction className="border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground">
+                            <AlertDialogAction className="border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-xs">
                               Subscribe
                             </AlertDialogAction>
                           </AlertDialogFooter>
@@ -1155,7 +1155,7 @@ export default function Individual() {
                     </div>
                   )}
                   {tier.title !== "Plus Plan" && tier.title !== "Pro Plan" && (
-                    <Button className="w-full" variant={"outline-solid"}>
+                    <Button className="w-full" variant={"outline"}>
                       Get Started
                       <svg
                         data-testid="geist-icon"
@@ -1176,7 +1176,7 @@ export default function Individual() {
                     </Button>
                   )}
                   {tier.title === "Plus Plan" && (
-                    <Button className="w-full" variant={"outline-solid"}>
+                    <Button className="w-full" variant={"outline"}>
                       Upgrade Now
                       <svg
                         data-testid="geist-icon"

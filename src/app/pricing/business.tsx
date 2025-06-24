@@ -854,7 +854,7 @@ export default function Business() {
       transition={{ duration: 0.25 }}
       className="px-24"
     >
-      <div className="mb-12 mt-4 flex items-center justify-center space-x-2">
+      <div className="mt-4 mb-12 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
@@ -900,7 +900,7 @@ export default function Business() {
                 {tier.title === "Plus Plan" && (
                   <div className="flex items-center justify-between">
                     <p>Plus Plan</p>
-                    <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
+                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
                       Popular
                     </Badge>
                   </div>
@@ -908,7 +908,7 @@ export default function Business() {
                 {tier.title === "Basic Plan" && (
                   <div className="flex justify-between">
                     <p>Basic Plan</p>
-                    <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
+                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
                       Best Value
                     </Badge>
                   </div>
@@ -992,7 +992,7 @@ export default function Business() {
                                   {packages.map((pkg) => (
                                     <Card
                                       key={pkg.id}
-                                      className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow-sm outline-hidden ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
+                                      className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "ring-ring ring-offset-background shadow-sm ring-2 ring-offset-2 outline-hidden" : ""}`}
                                     >
                                       <CardHeader>
                                         <div className="flex items-center justify-between">
@@ -1020,7 +1020,7 @@ export default function Business() {
                                         </div>
                                       </CardHeader>
                                       <CardContent>
-                                        <p className="mb-2 text-sm text-muted-foreground">
+                                        <p className="text-muted-foreground mb-2 text-sm">
                                           {pkg.description}
                                         </p>
                                         <ul className="list-inside list-disc text-sm">
@@ -1041,7 +1041,7 @@ export default function Business() {
                             <Checkbox id="terms" required />
                             <label
                               htmlFor="terms"
-                              className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                              className="text-xs leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                             >
                               By purchasing a package, you agree to our{" "}
                               <a
@@ -1086,7 +1086,7 @@ export default function Business() {
                   </div>
                 )}
                 {tier.title !== "Plus Plan" && tier.title !== "Pro Plan" && (
-                  <Button className="w-full" variant={"outline-solid"}>
+                  <Button className="w-full" variant={"outline"}>
                     Get Started
                     <svg
                       data-testid="geist-icon"
@@ -1107,7 +1107,7 @@ export default function Business() {
                   </Button>
                 )}
                 {tier.title === "Plus Plan" && (
-                  <Button className="w-full" variant={"outline-solid"}>
+                  <Button className="w-full" variant={"outline"}>
                     Upgrade Now
                     <svg
                       data-testid="geist-icon"
