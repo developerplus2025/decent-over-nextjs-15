@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 // "use client";
-
 // import { usePathname } from "next/navigation";
 // import { AnimatePresence, motion } from "framer-motion";
 import { Inter } from "next/font/google";
@@ -101,9 +100,7 @@ export default function RootLayout({
               className={` ${GeistSans.className}`}
               position="top-center"
             />
-            <RootProvider>
-             {children}
-            </RootProvider>
+            <RootProvider>{children}</RootProvider>
             <Footer />
           </ThemeProvider>
         </body>
