@@ -80,7 +80,7 @@ const CookieAlert = ({
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Alert className="fixed left-8 top-[calc(100vh-13rem)] z-2 flex w-[480px] flex-col gap-4">
+            <Alert className="fixed top-[calc(100vh-13rem)] left-8 z-2 flex w-[480px] flex-col gap-4">
               <AlertTitle className="flex items-center justify-between">
                 <p className="text-[1.1rem]">Cookies Settings</p>
 
@@ -114,7 +114,7 @@ const CookieAlert = ({
                 <Button
                   onClick={() => setIsAccepted(true)}
                   className="w-full"
-                  variant={"outline-solid"}
+                  variant={"outline"}
                 >
                   Decline
                 </Button>

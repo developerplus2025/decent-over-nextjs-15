@@ -91,19 +91,19 @@ export default function DesignPage() {
                 <div className="px-4 pt-8">
                   <div className="flex items-center gap-4 pb-8">
                     <Button
-                      variant={"outline-solid"}
+                      variant={"outline"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       All
                     </Button>
                     <Button
-                      variant={"outline-solid"}
+                      variant={"outline"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       Music
                     </Button>
                     <Button
-                      variant={"outline-solid"}
+                      variant={"outline"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       Podcasts

@@ -259,17 +259,17 @@ export default function Navigation({
                   <NavigationMenuTrigger className="pr-3 text-[#9b9b9b]">
                     Feature
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="flex w-120 gap-10 px-4 py-4 data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left">
+                  <NavigationMenuContent className="data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left flex w-120 gap-10 px-4 py-4">
                     <div className="flex flex-col gap-8">
                       <div className="group flex cursor-pointer items-center gap-2">
                         <div>
                           <Lightbulb className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             Smart Recommendations
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Discover music curated just for you.
                           </p>
                         </div>
@@ -279,10 +279,10 @@ export default function Navigation({
                           <WifiOff className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             Offline Mode
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Download songs and listen offline.
                           </p>
                         </div>
@@ -292,10 +292,10 @@ export default function Navigation({
                           <Podcast className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             Podcasts
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Access a wide range of podcasts.
                           </p>
                         </div>
@@ -307,10 +307,10 @@ export default function Navigation({
                           <NotebookText className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             Lyrics Display
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Sing along with on-screen lyrics.
                           </p>
                         </div>
@@ -320,10 +320,10 @@ export default function Navigation({
                           <Medal className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             High-Quality Audio
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Enjoy lossless audio streaming.
                           </p>
                         </div>
@@ -333,10 +333,10 @@ export default function Navigation({
                           <Share2 className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
-                          <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                          <NavigationMenuLink className="text-sm font-bold text-nowrap">
                             Social Sharing
                           </NavigationMenuLink>
-                          <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                          <p className="text-xs text-nowrap text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
                             Share your favorite tracks on social media.
                           </p>
                         </div>
@@ -351,7 +351,7 @@ export default function Navigation({
                       pathname === "/library"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white ${
@@ -432,7 +432,7 @@ export default function Navigation({
                       pathname === "/creative"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white${
@@ -453,7 +453,7 @@ export default function Navigation({
                       pathname === "/pricing"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white${
@@ -473,7 +473,7 @@ export default function Navigation({
                       pathname === "/blog"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white${
@@ -493,7 +493,7 @@ export default function Navigation({
                       pathname === "/design"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white${
@@ -513,7 +513,7 @@ export default function Navigation({
                       pathname === "/docs"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     Docs
                     {pathname != "/docs" && (
@@ -545,7 +545,7 @@ export default function Navigation({
                       pathname === "/radio"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     Radio
                     <sup>
@@ -594,7 +594,7 @@ export default function Navigation({
                       pathname === "/guides"
                         ? "hidden"
                         : ""
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     <div
                       className={`transition-colors duration-300 ease-out dark:hover:text-white${
@@ -655,10 +655,10 @@ export default function Navigation({
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex items-center justify-center gap-2"
             >
-              <div className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]">
+              <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
                 <GitHub />
               </div>
-              <div className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]">
+              <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
                 <X />
               </div>
 
@@ -679,8 +679,8 @@ export default function Navigation({
                 >
                   <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
                   <Button
-                    variant={"outline-solid"}
-                    className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                    variant={"outline"}
+                    className="hover:bg-accent flex h-fit items-center px-3 py-1 dark:hover:bg-[#1a1a1a]"
                   >
                     {/* <Image
                       src={"/windows11.svg"}
@@ -705,7 +705,7 @@ export default function Navigation({
                       <div className="relative">
                         <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
                         <Button
-                          variant={"outline-solid"}
+                          variant={"outline"}
                           className="h-fit gap-1 px-3 py-1 [&_svg]:size-[15px]"
                         >
                           Create Account
@@ -727,7 +727,10 @@ export default function Navigation({
                           Login
                         </AlertDialogTitle>
                         <AlertDialogDescription className="flex flex-col gap-4">
-                          <Button variant={"outline-solid"} className="rounded-full">
+                          <Button
+                            variant={"outline-solid"}
+                            className="rounded-full"
+                          >
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -752,7 +755,10 @@ export default function Navigation({
                             </svg>
                             Login with Github
                           </Button>
-                          <Button variant={"outline-solid"} className="rounded-full">
+                          <Button
+                            variant={"outline-solid"}
+                            className="rounded-full"
+                          >
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -780,7 +786,10 @@ export default function Navigation({
                             </svg>
                             Login with Google
                           </Button>
-                          <Button variant={"outline-solid"} className="rounded-full">
+                          <Button
+                            variant={"outline-solid"}
+                            className="rounded-full"
+                          >
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -827,7 +836,7 @@ export default function Navigation({
               </div>
             </div>
           </div>
-          <div className="absolute left-0 top-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
+          <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
     </motion.div>

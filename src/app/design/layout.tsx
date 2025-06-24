@@ -29,7 +29,7 @@ export default function DesignLayout({
           <div className="flex items-center gap-8">
             <div>
               <Button
-                variant={"outline-solid"}
+                variant={"outline"}
                 className="h-[27px] rounded-full text-[12px]"
               >
                 Explore Premium

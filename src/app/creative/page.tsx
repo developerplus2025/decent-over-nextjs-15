@@ -35,19 +35,19 @@ export default function SupportPage() {
 
   return (
     <section className="">
-      <div className="mb-12 mt-12 px-92">
+      <div className="mt-12 mb-12 px-92">
         <div className="relative">
           {" "}
           <Textarea className="h-32 resize-none px-4 py-[2.3rem]" />
-          <TextLoop className="absolute left-4 top-4 font-mono text-sm">
+          <TextLoop className="absolute top-4 left-4 font-mono text-sm">
             <span>Create a 3-minute instrumental track.</span>
             <span>Generate a relaxing piano piece.</span>
             <span>Create a rock song with electric guitar.</span>
             <span>Make an epic orchestral soundtrack.</span>
           </TextLoop>
           <Button
-            variant={"outline-solid"}
-            className="absolute bottom-4 right-4 flex h-[1.9rem] items-center gap-2"
+            variant={"outline"}
+            className="absolute right-4 bottom-4 flex h-[1.9rem] items-center gap-2"
           >
             <svg
               data-testid="geist-icon"
@@ -69,8 +69,8 @@ export default function SupportPage() {
             <h1 className="text-sm">Send</h1>
           </Button>
           <Button
-            variant={"outline-solid"}
-            className="absolute right-4 top-4 hidden h-[1.9rem]"
+            variant={"outline"}
+            className="absolute top-4 right-4 hidden h-[1.9rem]"
           >
             <svg
               data-testid="geist-icon"
@@ -90,7 +90,7 @@ export default function SupportPage() {
           </Button>
           <div className="absolute bottom-4 left-4 flex gap-4">
             <Button
-              variant={"outline-solid"}
+              variant={"outline"}
               className="flex h-[1.9rem] items-center gap-2"
             >
               <svg
@@ -111,7 +111,7 @@ export default function SupportPage() {
               <h1 className="text-sm">Image</h1>
             </Button>
             <Button
-              variant={"outline-solid"}
+              variant={"outline"}
               className="flex h-[1.9rem] items-center gap-2"
             >
               <svg

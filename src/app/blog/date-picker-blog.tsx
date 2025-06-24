@@ -20,11 +20,8 @@ export function DatePickerBlog() {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          className={cn(
-            "w-48 shrink-0 px-3",
-            !date && "text-muted-foreground",
-          )}
-          variant={"outline-solid"}
+          className={cn("w-48 shrink-0 px-3", !date && "text-muted-foreground")}
+          variant={"outline"}
           size={"icon"}
         >
           <svg

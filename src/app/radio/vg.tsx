@@ -145,7 +145,7 @@ export default function Component() {
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
         <ScrollArea className="w-[300px] shrink-0">
-          <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
+          <Card className="w-[300px] rounded-none border-y-0 border-r border-l-0 bg-[#000000]">
             <CardHeader>
               <CardTitle>Stations</CardTitle>
             </CardHeader>
@@ -158,7 +158,7 @@ export default function Component() {
                   >
                     <div>
                       <p className="font-medium">{station.name}</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-muted-foreground text-sm">
                         {station.genre}
                       </p>
                     </div>
@@ -206,14 +206,14 @@ export default function Component() {
           </div>
           <div className="flex gap-4 rounded-lg border bg-linear-to-tr from-black/50 to-[#121212] px-2 py-1">
             <Button
-              variant={"outline-solid"}
+              variant={"outline"}
               size={"icon"}
               className="h-[1.8rem] w-[1.8rem] border-none bg-transparent"
             >
               <Rewind className="h-4 w-4" />
             </Button>
             <Button
-              variant={"outline-solid"}
+              variant={"outline"}
               size={"icon"}
               className="h-[1.8rem] w-[1.8rem] border-none bg-transparent"
             >
@@ -260,7 +260,7 @@ export default function Component() {
           </div>
         </div>
         <ScrollArea className="w-[300px] shrink-0">
-          <Card className="w-[300px] rounded-none border-y-0 border-l border-r bg-[#000000]">
+          <Card className="w-[300px] rounded-none border-y-0 border-r border-l bg-[#000000]">
             <CardHeader>
               <CardTitle>Stations</CardTitle>
             </CardHeader>
@@ -273,7 +273,7 @@ export default function Component() {
                   >
                     <div>
                       <p className="font-medium">{station.name}</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-muted-foreground text-sm">
                         {station.genre}
                       </p>
                     </div>
@@ -321,16 +321,16 @@ export default function Component() {
                 value={[(currentTime / totalSeconds) * 100]}
                 max={100}
                 step={1}
-                className="relative flex w-[20rem] touch-none select-none items-center"
+                className="relative flex w-[20rem] touch-none items-center select-none"
               >
                 <Slider.Track
                   onMouseDown={handlemousedown}
                   onMouseUp={handlemouseup}
-                  className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
+                  className="bg-primary/20 relative h-1.5 w-full grow overflow-hidden rounded-full"
                 >
-                  <Slider.Range className="absolute h-full bg-primary" />
+                  <Slider.Range className="bg-primary absolute h-full" />
                 </Slider.Track>
-                <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+                <Slider.Thumb className="border-primary/50 bg-background focus-visible:ring-ring block h-4 w-4 rounded-full border shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
               </Slider.Root>
               {/* <Slider
                 // onValueCommit={handleValueCommit}
@@ -376,16 +376,16 @@ export default function Component() {
               value={[Number(soundValue)]}
               max={100}
               step={1}
-              className="relative flex w-24 touch-none select-none items-center"
+              className="relative flex w-24 touch-none items-center select-none"
             >
               <Slider.Track
                 onMouseDown={handlemousedown}
                 onMouseUp={handlemouseup}
-                className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
+                className="bg-primary/20 relative h-1.5 w-full grow overflow-hidden rounded-full"
               >
-                <Slider.Range className="absolute h-full bg-primary" />
+                <Slider.Range className="bg-primary absolute h-full" />
               </Slider.Track>
-              <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+              <Slider.Thumb className="border-primary/50 bg-background focus-visible:ring-ring block h-4 w-4 rounded-full border shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
             <svg
               onClick={increaseVolume}

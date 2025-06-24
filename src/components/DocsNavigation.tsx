@@ -240,7 +240,7 @@ export const DocsNavigation = (): JSX.Element => {
                       pathname === "/docs"
                         ? "dark:text-white"
                         : "dark:text-[#9b9b9b]"
-                    } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     Docs
                     {pathname != "/docs" && (
@@ -273,7 +273,7 @@ export const DocsNavigation = (): JSX.Element => {
                 >
                   <NavigationMenuLink
                     href="/help"
-                    className={`relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out dark:hover:text-white`}
+                    className={`relative flex h-7 cursor-pointer items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out select-none dark:hover:text-white`}
                   >
                     Help
                   </NavigationMenuLink>
@@ -287,7 +287,7 @@ export const DocsNavigation = (): JSX.Element => {
                 >
                   <NavigationMenuLink
                     href="/guides"
-                    className={`relative flex h-7 cursor-pointer select-none items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out dark:hover:text-white`}
+                    className={`relative flex h-7 cursor-pointer items-center rounded-full px-3 text-sm transition-colors duration-300 ease-out select-none dark:hover:text-white`}
                   >
                     Guides
                   </NavigationMenuLink>
@@ -351,7 +351,7 @@ export const DocsNavigation = (): JSX.Element => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="outline"
-                    className="flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out hover:bg-muted dark:hover:bg-[#101010]"
+                    className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]"
                   >
                     <svg
                       data-testid="geist-icon"
@@ -462,8 +462,8 @@ export const DocsNavigation = (): JSX.Element => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <Button
-                    variant={"outline-solid"}
-                    className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
+                    variant={"outline"}
+                    className="hover:bg-accent flex h-fit items-center px-3 py-1 dark:hover:bg-[#1a1a1a]"
                   >
                     {/* <Image
                       src={"/windows11.svg"}
@@ -492,7 +492,7 @@ export const DocsNavigation = (): JSX.Element => {
               </Link>
             </div>
           </div>
-          <div className="absolute left-0 top-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
+          <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
     </motion.div>
@@ -508,13 +508,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
         </a>
