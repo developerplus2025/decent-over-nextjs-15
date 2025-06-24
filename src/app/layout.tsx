@@ -58,7 +58,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="dark"
           >
-            <Navigation className="min-[264px]:hidden xl:block">
+            <Navigation className="max-[287px]:hidden xl:block">
               {/* Navigation children content, or empty fragment if not needed */}
               <></>
             </Navigation>

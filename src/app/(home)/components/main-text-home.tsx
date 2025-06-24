@@ -43,7 +43,7 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="main_container relative mx-20 mt-4 flex w-full items-center justify-center min-[375px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-8"
+      className="relative mx-20 mt-4 flex w-full items-center justify-center max-[287px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-8"
     >
       <svg
         className="absolute right-48 hidden h-160 lg:block"
@@ -142,13 +142,13 @@ export default function MainTextHome() {
       </svg>
       <div
         ref={containerRef}
-        className="min-287:gap-4 flex flex-col items-center justify-center xl:gap-8"
+        className="flex flex-col items-center justify-center max-[287px]:gap-4 xl:gap-8"
       >
         <AnimateTextHome />
-        <h1 className="w-[299px] text-pretty text-center text-[3rem] font-bold leading-12 xl:hidden">
+        <h1 className="w-[299px] text-center text-[3rem] leading-12 font-bold text-pretty xl:hidden">
           The Next AI Music Editor
         </h1>
-        <h1 className="descript_text_home xl: text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
+        <h1 className="descript_text_home text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
           Dive into a seamless music experience with our cutting edge software.
           Collaborate effortlessly, unleash your creativity, manage playlists
           and craft professional quality tracks all in one powerful platform.
