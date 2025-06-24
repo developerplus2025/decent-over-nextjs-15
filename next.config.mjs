@@ -5,9 +5,6 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
-  sassOptions: {
-    implementation: "sass-embedded",
-  },
   reactStrictMode: true,
   images: {
     domains: [
