@@ -85,37 +85,37 @@ export default function DesignPage() {
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <main className="flex h-[calc(100vh-138.8px)] w-full flex-col justify-between">
-            <SidebarTrigger className="fixed z-20 m-[0.5rem]" />
+            <SidebarTrigger className="fixed z-20 m-2" />
             <ScrollArea className="flex h-[calc(100vh-138.8px)] w-full justify-center">
               <div className="flex h-[calc(100vh-138.8px)] w-full justify-center">
-                <div className="px-4 pt-[2rem]">
-                  <div className="flex items-center gap-4 pb-[2rem]">
+                <div className="px-4 pt-8">
+                  <div className="flex items-center gap-4 pb-8">
                     <Button
-                      variant={"outline"}
+                      variant={"outline-solid"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       All
                     </Button>
                     <Button
-                      variant={"outline"}
+                      variant={"outline-solid"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       Music
                     </Button>
                     <Button
-                      variant={"outline"}
+                      variant={"outline-solid"}
                       className="h-[27px] rounded-full text-[12px]"
                     >
                       Podcasts
                     </Button>
                   </div>
-                  <ul className="grid w-[1355px] grid-cols-5 gap-x-[1rem] divide-y-1">
+                  <ul className="grid w-[1355px] grid-cols-5 gap-x-4 divide-y">
                     {songs.map((song) => (
                       <li
                         key={song.id}
-                        className="flex h-full w-[220px] items-center justify-between gap-[1rem] rounded-lg px-2 py-2 [&_Svg]:flex-shrink-0"
+                        className="flex h-full w-[220px] items-center justify-between gap-4 rounded-lg px-2 py-2 [&_Svg]:shrink-0"
                       >
-                        <div className="flex items-center gap-[1rem]">
+                        <div className="flex items-center gap-4">
                           <Image
                             className="rounded-md"
                             unoptimized

@@ -40,7 +40,7 @@ export default function SignInPage() {
   };
   return (
     <div className="flex h-screen w-full items-center justify-center px-4">
-      <Card className="mx-auto w-[29rem] max-w-[29rem] dark:bg-black">
+      <Card className="mx-auto w-116 max-w-116 dark:bg-black">
         <CardHeader>
           <CardTitle className="text-center text-2xl">Welcome Back</CardTitle>
           <CardDescription className="text-center">
@@ -55,7 +55,7 @@ export default function SignInPage() {
                 <Input id="email" type="email" placeholder="m@example.com" />
                 <div
                   onClick={refreshData}
-                  className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
                 >
                   <svg
                     data-testid="geist-icon"
@@ -92,7 +92,7 @@ export default function SignInPage() {
                   required
                 />
                 <div
-                  className="absolute right-[1rem] top-1/2 -translate-y-1/2 cursor-pointer"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
                   onClick={showpassword}
                 >
                   {show && (

@@ -54,7 +54,7 @@ export default function BeautifulFeaturesLayout() {
     <section className="py-12 md:py-20">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+          <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             The foundation for professional music creation
           </h1>
           <span className="md:text-md max-w-[450px] text-center text-zinc-500 dark:text-zinc-400">

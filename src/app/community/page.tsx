@@ -163,7 +163,7 @@ export default function CommunityPage() {
       </h1>
 
       <Tabs defaultValue="discussions" className="">
-        <TabsList className="mb-[5rem] grid h-0 w-full justify-items-center rounded-full p-0">
+        <TabsList className="mb-20 grid h-0 w-full justify-items-center rounded-full p-0">
           <div className="w-fit rounded-full border bg-black">
             <TabsTrigger
               className="rounded-full bg-black data-[state=active]:bg-white data-[state=active]:text-black"

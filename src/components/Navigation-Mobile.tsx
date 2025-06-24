@@ -70,10 +70,10 @@ export default function NavigationMobile({
   }, [isOpen]);
   return (
     <div
-      className={`${className} fixed top-0 z-50 flex h-[50px] w-full items-center justify-between border-b bg-black px-[1rem]`}
+      className={`${className} fixed top-0 z-50 flex h-[50px] w-full items-center justify-between border-b bg-black px-4`}
     >
       {isOpen && (
-        <div className="absolute left-1/2 top-[50px] flex h-[calc(100vh-50px)] w-screen -translate-x-1/2 flex-col justify-start bg-black p-[2rem]">
+        <div className="absolute left-1/2 top-[50px] flex h-[calc(100vh-50px)] w-screen -translate-x-1/2 flex-col justify-start bg-black p-8">
           <nav className="flex flex-col gap-4">
             {LinkItem.map((item) => (
               <Link

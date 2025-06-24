@@ -87,7 +87,7 @@ const data = {
 
 export function SidebarApp({ ...props }: ComponentProps<typeof Sidebar>) {
 	return (
-		<Sidebar className="border-r-0 pt-[0rem]" {...props}>
+		<Sidebar className="border-r-0 pt-0" {...props}>
 			<SidebarHeader>
 				<div className="flex items-center justify-between p-2">
 					<div className="flex items-center gap-3">

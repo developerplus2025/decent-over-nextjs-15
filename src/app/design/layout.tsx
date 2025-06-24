@@ -17,25 +17,25 @@ export default function DesignLayout({
   return (
     <SearchProvider>
       <div className="flex flex-col">
-        <div className="z-20 flex h-[58.8px] items-center justify-between border-b bg-black px-[2rem]">
+        <div className="z-20 flex h-[58.8px] items-center justify-between border-b bg-black px-8">
           <div>
             <p className="font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white">
               Decent
             </p>
           </div>
-          <div className="flex items-center gap-[1rem] [&_svg]:h-[20px] [&_svg]:w-[20px]">
+          <div className="flex items-center gap-4 [&_svg]:h-[20px] [&_svg]:w-[20px]">
             <SearchUi />
           </div>
-          <div className="flex items-center gap-[2rem]">
+          <div className="flex items-center gap-8">
             <div>
               <Button
-                variant={"outline"}
+                variant={"outline-solid"}
                 className="h-[27px] rounded-full text-[12px]"
               >
                 Explore Premium
               </Button>
             </div>
-            <div className="flex items-center gap-[2rem] [&_svg]:h-[20px] [&_svg]:w-[20px]">
+            <div className="flex items-center gap-8 [&_svg]:h-[20px] [&_svg]:w-[20px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

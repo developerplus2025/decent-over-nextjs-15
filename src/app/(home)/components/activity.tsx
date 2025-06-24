@@ -61,7 +61,7 @@ export default function Activity({
           )}
           onClick={onRepost}
         >
-          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] before:group-hover:bg-emerald-500/10">
+          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] group-hover:before:bg-emerald-500/10">
             <Repeat
               absoluteStrokeWidth
               className="~size-4/5 group-active:spring-duration-[25] spring-bounce-50 spring-duration-300 h-[20px] w-[20px] transition-transform group-active:scale-[85%]"
@@ -84,7 +84,7 @@ export default function Activity({
           )}
           onClick={onLike}
         >
-          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] before:group-hover:bg-pink-500/10">
+          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] group-hover:before:bg-pink-500/10">
             <Heart
               absoluteStrokeWidth
               className={clsx(
@@ -110,7 +110,7 @@ export default function Activity({
           )}
           onClick={onBookmark}
         >
-          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] before:group-hover:bg-blue-500/10">
+          <div className="relative before:absolute before:-inset-2.5 before:rounded-full before:transition-[background-color] group-hover:before:bg-blue-500/10">
             <Bookmark
               absoluteStrokeWidth
               className={clsx(

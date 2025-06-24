@@ -232,13 +232,13 @@ export default function Navigation({
         pathname.startsWith("/docs")
           ? "webfilm-class"
           : ""
-      } ${className} sticky top-0 z-[20]`}
+      } ${className} sticky top-0 z-20`}
     >
-      <nav className="navigation relative z-[4] flex-shrink-0 items-center justify-center min-[287px]:hidden sm:hidden md:hidden lg:flex xl:flex">
+      <nav className="navigation relative z-4 shrink-0 items-center justify-center min-[287px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#292929] dark:bg-[#000000]`}
+          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
         >
-          <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
+          <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
             <div className="flex items-center gap-4">
               <Link
                 href="/"
@@ -259,11 +259,11 @@ export default function Navigation({
                   <NavigationMenuTrigger className="pr-3 text-[#9b9b9b]">
                     Feature
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="flex w-[30rem] gap-[2.5rem] px-[1rem] py-[1rem] data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft">
-                    <div className="flex flex-col gap-[2rem]">
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                  <NavigationMenuContent className="flex w-120 gap-10 px-4 py-4 data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left">
+                    <div className="flex flex-col gap-8">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <Lightbulb className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <Lightbulb className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -274,9 +274,9 @@ export default function Navigation({
                           </p>
                         </div>
                       </div>
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <WifiOff className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <WifiOff className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -287,9 +287,9 @@ export default function Navigation({
                           </p>
                         </div>
                       </div>
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <Podcast className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <Podcast className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -302,9 +302,9 @@ export default function Navigation({
                       </div>
                     </div>
                     <div className="flex flex-col items-start justify-between">
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <NotebookText className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <NotebookText className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -315,9 +315,9 @@ export default function Navigation({
                           </p>
                         </div>
                       </div>
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <Medal className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <Medal className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -328,9 +328,9 @@ export default function Navigation({
                           </p>
                         </div>
                       </div>
-                      <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                      <div className="group flex cursor-pointer items-center gap-2">
                         <div>
-                          <Share2 className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          <Share2 className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                         </div>
                         <div className="flex flex-col items-start justify-start">
                           <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -368,15 +368,15 @@ export default function Navigation({
                   <NavigationMenuTrigger className="text-[#9b9b9b]">
                     Library
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="flex w-[37rem] justify-between gap-[2.5rem] px-[1rem] py-[1rem]">
-                    <div className="grid w-[37rem] grid-cols-2 place-content-between gap-[2rem]">
+                  <NavigationMenuContent className="flex w-148 justify-between gap-10 px-4 py-4">
+                    <div className="grid w-148 grid-cols-2 place-content-between gap-8">
                       <div>
                         <h1 className="text-[1rem] text-[#a1a1a1]">Playlist</h1>
                       </div>
                       <div className="flex flex-col gap-[1.8rem]">
-                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                        <div className="group flex cursor-pointer items-center gap-2">
                           <div>
-                            <ListPlus className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                            <ListPlus className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
                             <Link className="text-nowrap text-sm font-bold">
@@ -395,9 +395,9 @@ export default function Navigation({
                         </h1>
                       </div>
                       <div className="flex flex-col gap-[1.8rem]">
-                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                        <div className="group flex cursor-pointer items-center gap-2">
                           <div>
-                            <Clock className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                            <Clock className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
                             <Link className="text-nowrap text-sm font-bold">
@@ -408,9 +408,9 @@ export default function Navigation({
                             </p>
                           </div>
                         </div>
-                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                        <div className="group flex cursor-pointer items-center gap-2">
                           <div>
-                            <Save className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                            <Save className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
                           <div className="flex flex-col items-start justify-start">
                             <Link className="text-nowrap text-sm font-bold">
@@ -627,8 +627,8 @@ export default function Navigation({
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex items-center gap-[1rem]">
-            {/* <div className="flex items-center justify-center gap-[1rem]">
+          <div className="flex items-center gap-4">
+            {/* <div className="flex items-center justify-center gap-4">
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 url="https://github.com/devplus2024"
@@ -666,7 +666,7 @@ export default function Navigation({
               {/* <CommandMenu /> */}
               <FeedBack />
             </motion.div>
-            <div className="flex items-center gap-[1rem]">
+            <div className="flex items-center gap-4">
               <Link
                 className="flex items-center justify-center gap-3"
                 href="/signin"
@@ -677,9 +677,9 @@ export default function Navigation({
                   animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+                  <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
                   <Button
-                    variant={"outline"}
+                    variant={"outline-solid"}
                     className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
                   >
                     {/* <Image
@@ -703,9 +703,9 @@ export default function Navigation({
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
                       <div className="relative">
-                        <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+                        <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
                         <Button
-                          variant={"outline"}
+                          variant={"outline-solid"}
                           className="h-fit gap-1 px-3 py-1 [&_svg]:size-[15px]"
                         >
                           Create Account
@@ -726,8 +726,8 @@ export default function Navigation({
                         <AlertDialogTitle className="text-center">
                           Login
                         </AlertDialogTitle>
-                        <AlertDialogDescription className="flex flex-col gap-[1rem]">
-                          <Button variant={"outline"} className="rounded-full">
+                        <AlertDialogDescription className="flex flex-col gap-4">
+                          <Button variant={"outline-solid"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -752,7 +752,7 @@ export default function Navigation({
                             </svg>
                             Login with Github
                           </Button>
-                          <Button variant={"outline"} className="rounded-full">
+                          <Button variant={"outline-solid"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -780,7 +780,7 @@ export default function Navigation({
                             </svg>
                             Login with Google
                           </Button>
-                          <Button variant={"outline"} className="rounded-full">
+                          <Button variant={"outline-solid"} className="rounded-full">
                             <svg
                               data-testid="geist-icon"
                               height={16}
@@ -827,7 +827,7 @@ export default function Navigation({
               </div>
             </div>
           </div>
-          <div className="absolute left-0 top-0 z-[3] rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
+          <div className="absolute left-0 top-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
     </motion.div>

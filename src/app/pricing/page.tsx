@@ -37,20 +37,20 @@ function PricingPage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
 
   return (
-    <main className="pb-[6rem]">
+    <main className="pb-24">
   
-      {/* <motion.div initial={{top:"100%"}} animate={{top:"0",translateY:"-100%"}} transition={{duration:3,delay:1}} className="top-[100%] flex items-center justify-center h-[100vh]  z-[50] bg-[black] fixed  w-screen ">
+      {/* <motion.div initial={{top:"100%"}} animate={{top:"0",translateY:"-100%"}} transition={{duration:3,delay:1}} className="top-full flex items-center justify-center h-screen  z-50 bg-[black] fixed  w-screen ">
       <div className="text-xl font-bold">Pricing Page</div>
       </motion.div> */}
       {/* <AnimatedBar /> */}
-      <div className="relative flex h-[100px] flex-col items-center justify-center gap-[1rem] text-center">
+      <div className="relative flex h-[100px] flex-col items-center justify-center gap-4 text-center">
         {/* <Button variant="outline" className="h-[30px]">
           Pricing and Buy
         </Button>
-        <h1 className="w-[57rem] text-center text-[3.5rem] font-bold leading-[53px]">
+        <h1 className="w-228 text-center text-[3.5rem] font-bold leading-[53px]">
           Choose the Ideal Plan to Elevate Your Music Creation Journey
         </h1>
-        <p className="text-md w-[30rem] text-[1.3rem] text-center text-muted-foreground">
+        <p className="text-md w-120 text-[1.3rem] text-center text-muted-foreground">
           Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
           and Cutting-Edge Music Software Suite Designed for Every Artist
         </p> */}
@@ -64,7 +64,7 @@ function PricingPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`${
                   activeTab === tab.id ? "" : "hover:text-white/60"
-                } relative -top-[1px] h-[32px] max-w-fit rounded-md px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-[1px] last:-mr-[1px] focus-visible:outline-2`}
+                } relative -top-px h-[32px] max-w-fit rounded-md px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition first:-ml-px last:-mr-px focus-visible:outline-2`}
                 style={{
                   WebkitTapHighlightColor: "transparent",
                 }}
@@ -83,8 +83,8 @@ function PricingPage() {
         </div>
       </div>
 
-      <motion.div className="mt-[1rem]" animate={{opacity:1}} initial={{opacity:0}} exit={{opacity:0}} transition={{duration:0.25}}>{contents[activeTab]}</motion.div>
-      <div className="mx-[2rem] mt-16 hidden flex-col items-center">
+      <motion.div className="mt-4" animate={{opacity:1}} initial={{opacity:0}} exit={{opacity:0}} transition={{duration:0.25}}>{contents[activeTab]}</motion.div>
+      <div className="mx-8 mt-16 hidden flex-col items-center">
         <h2 className="mb-8 text-center text-3xl font-bold">
           Frequently Asked Questions
         </h2>

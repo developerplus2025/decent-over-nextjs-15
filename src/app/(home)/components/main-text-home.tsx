@@ -43,10 +43,10 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="main_container relative mx-[5rem] mt-[1rem] flex w-full items-center justify-center min-[375px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-[2rem]"
+      className="main_container relative mx-20 mt-4 flex w-full items-center justify-center min-[375px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-8"
     >
       <svg
-        className="absolute right-[12rem] hidden h-[40rem] lg:block"
+        className="absolute right-48 hidden h-160 lg:block"
         xmlns="http://www.w3.org/2000/svg"
         width={89}
         height={568}
@@ -94,7 +94,7 @@ export default function MainTextHome() {
       </svg>
 
       <svg
-        className="absolute left-[12rem] hidden h-[40rem] lg:block"
+        className="absolute left-48 hidden h-160 lg:block"
         xmlns="http://www.w3.org/2000/svg"
         width={89}
         height={568}
@@ -142,10 +142,10 @@ export default function MainTextHome() {
       </svg>
       <div
         ref={containerRef}
-        className="min-287:gap-[1rem] flex flex-col items-center justify-center xl:gap-[2rem]"
+        className="min-287:gap-4 flex flex-col items-center justify-center xl:gap-8"
       >
         <AnimateTextHome />
-        <h1 className="w-[299px] text-pretty text-center text-[3rem] font-[700] leading-[3rem] xl:hidden">
+        <h1 className="w-[299px] text-pretty text-center text-[3rem] font-bold leading-12 xl:hidden">
           The Next AI Music Editor
         </h1>
         <h1 className="descript_text_home xl: text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
@@ -154,7 +154,7 @@ export default function MainTextHome() {
           and craft professional quality tracks all in one powerful platform.
         </h1>
       </div>
-      <div className="container_button_home xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-[2rem]">
+      <div className="container_button_home xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
         <DownloadButton />
         <Modal isOpen={open} onClose={() => setOpen(false)} />
         <Button onClick={() => setOpen(true)} variant={"default"} className="">

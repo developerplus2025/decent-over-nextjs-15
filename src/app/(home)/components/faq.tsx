@@ -88,8 +88,8 @@ const items = [
 
 export default function AccordionFAQ() {
   return (
-    <div className="flex w-full justify-center px-[3rem]">
-      <div className="flex w-full flex-col-reverse items-center gap-[1rem] rounded-lg">
+    <div className="flex w-full justify-center px-12">
+      <div className="flex w-full flex-col-reverse items-center gap-4 rounded-lg">
         <div className="flex w-[800px] flex-col gap-3">
           {items.map((item) => (
             <div
@@ -101,8 +101,8 @@ export default function AccordionFAQ() {
             </div>
           ))}
         </div>
-        <div className="flex h-full w-[700px] flex-col items-center justify-center gap-[2rem]">
-          <h1 className="text-center text-[2rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-[2rem] xl:text-[2rem]">
+        <div className="flex h-full w-[700px] flex-col items-center justify-center gap-8">
+          <h1 className="text-center text-[2rem] font-bold leading-18 tracking-tighter text-white sm:text-[2rem] xl:text-[2rem]">
             Frequently asked questions
           </h1>
         </div>

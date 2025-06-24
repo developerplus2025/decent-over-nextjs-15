@@ -11,16 +11,16 @@ export default function LibraryLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center gap-[8.3rem] px-[3rem] pb-[5rem] pt-[9rem]">
-      <div className="flex flex-col items-center gap-[2rem]">
+    <section className="flex flex-col items-center gap-[8.3rem] px-12 pb-20 pt-36">
+      <div className="flex flex-col items-center gap-8">
         <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_85%)_inset] transition-colors duration-200 dark:shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset]">
           <span>
             <span
               className={cn(
-                "spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full",
-                "[mask:linear-gradient(black,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] dark:[mask:linear-gradient(white,_transparent_50%)]",
-                "before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,black_360deg)] dark:before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
-                "before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]",
+                "spark mask-gradient absolute inset-0 h-full w-full animate-flip overflow-hidden rounded-full",
+                "[mask:linear-gradient(black,transparent_50%)] before:absolute before:aspect-square before:w-[200%] dark:[mask:linear-gradient(white,transparent_50%)]",
+                "before:-rotate-90 before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,black_360deg)] dark:before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
+                "before:content-[''] before:inset-[0_auto_auto_50%] before:[translate:-50%_-15%]",
               )}
             />
           </span>
@@ -29,7 +29,7 @@ export default function LibraryLayout({
             Introducing Decent AI v1.5.2
           </span>
         </div>
-        <div className="flex flex-col items-center gap-[2rem]">
+        <div className="flex flex-col items-center gap-8">
           <p className="w-[794px] text-balance text-center text-[66px] font-semibold leading-[3.6rem] -tracking-[3px]">
             {" "}
             Fuel Your Music with Sounds that Spark Ideas
@@ -41,9 +41,9 @@ export default function LibraryLayout({
             creativity to new heights.
           </span>
         </div>
-        <div className="flex gap-[2rem]">
+        <div className="flex gap-8">
           <Button
-            variant={"outline"}
+            variant={"outline-solid"}
             className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
           >
             <svg
@@ -64,7 +64,7 @@ export default function LibraryLayout({
             Start Listening
           </Button>
           <Button
-            variant={"outline"}
+            variant={"outline-solid"}
             className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
           >
             <svg

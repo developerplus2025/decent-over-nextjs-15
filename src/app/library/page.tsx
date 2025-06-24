@@ -94,18 +94,18 @@ export default function LibraryPage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-[2rem] border-t pt-[2rem]">
+    <div className="flex flex-col gap-8 border-t pt-8">
       <p className="font-bold text-[#a1a1a1]">Top Audio</p>
-      <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
+      <div className="justify-items-between grid grid-cols-3 gap-12">
         {songs.map((song) => (
           <div
             key={song.name}
             className="relative flex h-[200px] w-[320px] flex-col justify-between border"
           >
-            <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
-            <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
-            <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
-            <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+            <div className="absolute -left-px -top-px h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+            <div className="absolute -right-px -top-px h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+            <div className="absolute -bottom-px -left-px h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+            <div className="absolute -bottom-px -right-px h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
             <div className="flex h-[155px] w-full flex-col gap-4 p-4">
               <div className="flex h-[60px] w-full flex-row-reverse justify-between">
                 <div>
@@ -151,7 +151,7 @@ export default function LibraryPage() {
                 <p className="text-xs">Rock</p>
               </div>
             </div>
-            <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
+            <div className="flex h-[60px] w-full items-center justify-between gap-8 border-t px-8">
               <svg
                 data-testid="geist-icon"
                 height={16}
@@ -236,16 +236,16 @@ export default function LibraryPage() {
         ))}
       </div>
       <p className="font-bold text-[#a1a1a1]">Top Audio</p>
-      <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
+      <div className="justify-items-between grid grid-cols-3 gap-12">
         {songs.map((song) => (
           <div
             key={song.name}
             className="relative flex h-[200px] w-[320px] flex-col justify-between border"
           >
-            <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
-            <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
-            <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
-            <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+            <div className="absolute -left-px -top-px h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+            <div className="absolute -right-px -top-px h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+            <div className="absolute -bottom-px -left-px h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+            <div className="absolute -bottom-px -right-px h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
             <div className="flex h-[155px] w-full flex-col gap-4 p-4">
               <div className="flex h-[60px] w-full flex-row-reverse justify-between">
                 <div>
@@ -291,7 +291,7 @@ export default function LibraryPage() {
                 <p className="text-xs">Rock</p>
               </div>
             </div>
-            <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
+            <div className="flex h-[60px] w-full items-center justify-between gap-8 border-t px-8">
               <svg
                 data-testid="geist-icon"
                 height={16}

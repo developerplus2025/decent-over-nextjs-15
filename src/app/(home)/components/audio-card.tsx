@@ -180,7 +180,7 @@ const AudioCard = () => {
     <div className="flex flex-col items-center gap-4">
       <div
         ref={lyricsContainerRef}
-        className="custom_scroll h-[316px] w-full space-y-2 overflow-y-auto rounded-lg border bg-[#131313] py-[1rem] text-center [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2.5"
+        className="custom_scroll h-[316px] w-full space-y-2 overflow-y-auto rounded-lg border bg-[#131313] py-4 text-center [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2.5"
       >
         {lyricsData.map((line, index) => (
           <p
@@ -197,7 +197,7 @@ const AudioCard = () => {
         ))}
       </div>
 
-      <div className="mt-[2rem] flex w-[820px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
+      <div className="mt-8 flex w-[820px] items-center justify-between gap-4 rounded-lg border bg-[#131313] px-4 py-2">
         <audio
           id="audio"
           ref={audioRef}
@@ -267,7 +267,7 @@ const AudioCard = () => {
             />
           </svg>
         </div>
-        <div className="flex w-full items-center justify-between gap-[1rem]">
+        <div className="flex w-full items-center justify-between gap-4">
           <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
           <Slider.Root
             onValueChange={(newTempValue) => setTempValue(newTempValue)}
@@ -286,13 +286,13 @@ const AudioCard = () => {
               {" "}
               <Slider.Range className="absolute h-full bg-primary" />
             </Slider.Track>
-            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
           </Slider.Root>
           <p className="text-xs tabular-nums">{currentTimeMusic}</p>
         </div>
-        <div className="flex w-[170px] items-center gap-[1rem]">
+        <div className="flex w-[170px] items-center gap-4">
           <svg
-            className="flex-shrink-0"
+            className="shrink-0"
             data-testid="geist-icon"
             height={16}
             strokeLinejoin="round"
@@ -314,7 +314,7 @@ const AudioCard = () => {
             value={[Number(soundValue)]}
             max={100}
             step={1}
-            className="relative flex w-[6rem] touch-none select-none items-center"
+            className="relative flex w-24 touch-none select-none items-center"
           >
             <Slider.Track
               onMouseDown={handlemousedown}
@@ -323,7 +323,7 @@ const AudioCard = () => {
             >
               <Slider.Range className="absolute h-full bg-primary" />
             </Slider.Track>
-            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
           </Slider.Root>
         </div>
         <div>

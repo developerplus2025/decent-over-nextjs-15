@@ -158,8 +158,8 @@ export function PeopleSay() {
   const likes = useStore($likes);
   const views = useStore($views);
   return (
-    <div className="flex flex-col gap-[4rem]">
-      <div className="flex flex-col items-center gap-[2rem]">
+    <div className="flex flex-col gap-16">
+      <div className="flex flex-col items-center gap-8">
         <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
           <p>What People Say ?</p>
         </div>
@@ -169,11 +169,11 @@ export function PeopleSay() {
           how it&apos;s transforming the way they create, mix, and enjoy music.
         </span>
       </div>
-      <div className="grid grid-cols-3 justify-items-center gap-[2rem]">
+      <div className="grid grid-cols-3 justify-items-center gap-8">
         {items.map((item) => (
           <div
             key={item.name}
-            className="flex-cols gap relative flex w-[400px] flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-sm"
+            className="flex-cols gap relative flex w-[400px] flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-xs"
           >
             {/* <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>

@@ -178,12 +178,12 @@ export default function DecentWebApp() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
-    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[3rem] py-0 dark:bg-black dark:[color-scheme:dark]">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-12 py-0 dark:bg-black dark:scheme-dark">
       <div className="contentsP active w-full" id="musicContent">
         <div className="flex w-full justify-center">
           <div className="flex h-screen w-full min-w-[656px] flex-col rounded-lg border dark:border-[#202020]">
-            <div className="title_bar flex h-[37px] gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
-              <Menubar className="title_bar_no rounded-t-lg border-none px-[1rem] dark:bg-black">
+            <div className="title_bar flex h-[37px] gap-8 rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
+              <Menubar className="title_bar_no rounded-t-lg border-none px-4 dark:bg-black">
                 <MenubarMenu>
                   {/* <MenubarTrigger>Decent</MenubarTrigger> */}
                   <MenubarContent>
@@ -363,8 +363,8 @@ export default function DecentWebApp() {
               </Menubar>
             </div>
             <div className="flex h-[calc(100vh-57px)] flex-col gap-4 overflow-y-auto">
-              <div className="fixed top-[3rem] h-[2rem] w-full">
-                <div className="flex items-center justify-between px-[2rem]">
+              <div className="fixed top-12 h-8 w-full">
+                <div className="flex items-center justify-between px-8">
                   <div>
                     <svg
                       data-testid="geist-icon"
@@ -466,19 +466,19 @@ export default function DecentWebApp() {
                   </div>
                 </div>
               </div>
-              <div className="mt-[5rem] flex w-full flex-col items-center justify-center gap-4">
+              <div className="mt-20 flex w-full flex-col items-center justify-center gap-4">
                 <div className="flex flex-col gap-4">
                   <div>Your favorites</div>
-                  <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
+                  <div className="justify-items-between grid grid-cols-3 gap-12">
                     {songs.map((song) => (
                       <div
                         key={song.name}
                         className="relative flex h-[200px] w-[320px] flex-col justify-between border"
                       >
-                        <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
-                        <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
-                        <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
-                        <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+                        <div className="absolute -left-px -top-px h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+                        <div className="absolute -right-px -top-px h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+                        <div className="absolute -bottom-px -left-px h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+                        <div className="absolute -bottom-px -right-px h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
                         <div className="flex h-[155px] w-full flex-col gap-4 p-4">
                           <div className="flex h-[60px] w-full flex-row-reverse justify-between">
                             <div>
@@ -526,7 +526,7 @@ export default function DecentWebApp() {
                             <p className="text-xs">Rock</p>
                           </div>
                         </div>
-                        <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
+                        <div className="flex h-[60px] w-full items-center justify-between gap-8 border-t px-8">
                           <svg
                             data-testid="geist-icon"
                             height={16}
@@ -613,16 +613,16 @@ export default function DecentWebApp() {
                 </div>
                 <div className="flex flex-col gap-4">
                   <div>Your favorites</div>
-                  <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
+                  <div className="justify-items-between grid grid-cols-3 gap-12">
                     {songs.map((song) => (
                       <div
                         key={song.name}
                         className="relative flex h-[200px] w-[320px] flex-col justify-between border"
                       >
-                        <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
-                        <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
-                        <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
-                        <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+                        <div className="absolute -left-px -top-px h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+                        <div className="absolute -right-px -top-px h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+                        <div className="absolute -bottom-px -left-px h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+                        <div className="absolute -bottom-px -right-px h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
                         <div className="flex h-[155px] w-full flex-col gap-4 p-4">
                           <div className="flex h-[60px] w-full flex-row-reverse justify-between">
                             <div>
@@ -670,7 +670,7 @@ export default function DecentWebApp() {
                             <p className="text-xs">Rock</p>
                           </div>
                         </div>
-                        <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
+                        <div className="flex h-[60px] w-full items-center justify-between gap-8 border-t px-8">
                           <svg
                             data-testid="geist-icon"
                             height={16}

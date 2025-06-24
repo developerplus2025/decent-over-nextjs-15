@@ -3,7 +3,7 @@ const { createMDX } = require("fumadocs-mdx/next");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ["http://192.168.1.61:3000"],
+  allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   turbopack: {
     // Example: adding an alias and custom file extension
     resolveAlias: {

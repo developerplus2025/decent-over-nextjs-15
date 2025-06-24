@@ -144,7 +144,7 @@ export default function Component() {
   return (
     <div className="mx-auto flex h-[calc(100vh-59px)] w-full flex-col">
       <div className="flex h-[calc(100vh-129px)] w-full justify-between">
-        <ScrollArea className="w-[300px] flex-shrink-0">
+        <ScrollArea className="w-[300px] shrink-0">
           <Card className="w-[300px] rounded-none border-y-0 border-l-0 border-r bg-[#000000]">
             <CardHeader>
               <CardTitle>Stations</CardTitle>
@@ -180,10 +180,10 @@ export default function Component() {
             </CardContent>
           </Card>
         </ScrollArea>
-        <div className="flex flex-col items-center justify-center gap-[4rem]">
-          <div className="flex flex-col items-center justify-center gap-[2rem]">
+        <div className="flex flex-col items-center justify-center gap-16">
+          <div className="flex flex-col items-center justify-center gap-8">
             <div
-              className="h-[14rem] w-[14rem] rounded-lg bg-[#0c0c0c]"
+              className="h-56 w-56 rounded-lg bg-[#0c0c0c]"
               style={{
                 background:
                   'url("https://avatar-ex-swe.nixcdn.com/song/2024/08/15/n/m/F/k/1723689056060_500.jpg") left center / contain no-repeat',
@@ -204,16 +204,16 @@ export default function Component() {
               <p className="text-md text-[#a1a1a1]">{currentGenre}</p>
             </div>
           </div>
-          <div className="flex gap-[1rem] rounded-lg border bg-gradient-to-tr from-black/50 to-[#121212] px-2 py-1">
+          <div className="flex gap-4 rounded-lg border bg-linear-to-tr from-black/50 to-[#121212] px-2 py-1">
             <Button
-              variant={"outline"}
+              variant={"outline-solid"}
               size={"icon"}
               className="h-[1.8rem] w-[1.8rem] border-none bg-transparent"
             >
               <Rewind className="h-4 w-4" />
             </Button>
             <Button
-              variant={"outline"}
+              variant={"outline-solid"}
               size={"icon"}
               className="h-[1.8rem] w-[1.8rem] border-none bg-transparent"
             >
@@ -259,7 +259,7 @@ export default function Component() {
             </Button>
           </div>
         </div>
-        <ScrollArea className="w-[300px] flex-shrink-0">
+        <ScrollArea className="w-[300px] shrink-0">
           <Card className="w-[300px] rounded-none border-y-0 border-l border-r bg-[#000000]">
             <CardHeader>
               <CardTitle>Stations</CardTitle>
@@ -298,9 +298,9 @@ export default function Component() {
       </div>
       <div>
         <div className="flex h-[70px] w-full items-center justify-between border-t dark:border-t-[#202020]">
-          <div className="flex w-[299px] items-center gap-3 pl-[1rem]">
+          <div className="flex w-[299px] items-center gap-3 pl-4">
             <div
-              className="h-[2rem] w-[2rem] rounded-md bg-[#0c0c0c]"
+              className="h-8 w-8 rounded-md bg-[#0c0c0c]"
               style={{
                 background:
                   'url("https://avatar-ex-swe.nixcdn.com/song/2024/08/15/n/m/F/k/1723689056060_500.jpg") left center / contain no-repeat',
@@ -311,7 +311,7 @@ export default function Component() {
               <p className="text-xs text-[#a1a1a1]">{currentGenre}</p>
             </div>
           </div>
-          <div className="flex w-[20rem] flex-col items-center justify-center gap-[1rem]">
+          <div className="flex w-[20rem] flex-col items-center justify-center gap-4">
             <div className="flex gap-4">
               <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
               <Slider.Root
@@ -330,7 +330,7 @@ export default function Component() {
                 >
                   <Slider.Range className="absolute h-full bg-primary" />
                 </Slider.Track>
-                <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+                <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
               </Slider.Root>
               {/* <Slider
                 // onValueCommit={handleValueCommit}
@@ -352,7 +352,7 @@ export default function Component() {
               <p className="text-xs tabular-nums">{currentTimeMusic}</p>
             </div>
           </div>
-          <div className="flex w-[299px] items-center justify-center gap-[1.25rem] pr-[1rem]">
+          <div className="flex w-[299px] items-center justify-center gap-5 pr-4">
             <svg
               onClick={decreaseVolume}
               data-testid="geist-icon"
@@ -376,7 +376,7 @@ export default function Component() {
               value={[Number(soundValue)]}
               max={100}
               step={1}
-              className="relative flex w-[6rem] touch-none select-none items-center"
+              className="relative flex w-24 touch-none select-none items-center"
             >
               <Slider.Track
                 onMouseDown={handlemousedown}
@@ -385,7 +385,7 @@ export default function Component() {
               >
                 <Slider.Range className="absolute h-full bg-primary" />
               </Slider.Track>
-              <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+              <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
             <svg
               onClick={increaseVolume}

@@ -120,7 +120,7 @@ export default function Home() {
       >
         <TabsList className="flex h-full w-[310px] flex-col justify-start rounded-br-none rounded-tr-none border-r bg-white dark:border-r-[#202020] dark:bg-black">
           <div className="flex w-full flex-col">
-            <div className="flex w-full justify-between px-[1rem] pt-[1rem]">
+            <div className="flex w-full justify-between px-4 pt-4">
               <p className="dark:text-white">Chats</p>
               <div>
                 <DropdownMenu>
@@ -141,17 +141,17 @@ export default function Home() {
                 </DropdownMenu>
               </div>
             </div>
-            <div className="mt-[1rem] w-full px-[1rem]">
+            <div className="mt-4 w-full px-4">
               <Input placeholder="Search" />
             </div>
           </div>
-          <ScrollArea className="my-[18px] h-full w-full pr-[0.5rem]">
-            <div className="flex w-full flex-col items-start gap-[0.7rem] px-[1rem]">
+          <ScrollArea className="my-[18px] h-full w-full pr-2">
+            <div className="flex w-full flex-col items-start gap-[0.7rem] px-4">
               <TabsTrigger
                 value="sofia_davis"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -162,9 +162,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="alex_johnson"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -175,9 +175,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="maria_gonzalez"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -188,9 +188,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="kevin_brown"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -203,9 +203,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="lily_white"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -216,9 +216,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="john_paul"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -229,9 +229,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="mary_jane"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -242,9 +242,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="anna_belle"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="border-dark:[#202020] flex h-[3rem] w-[3rem] items-center justify-center rounded-full border">
+                <div className="border-dark:[#202020] flex h-12 w-12 items-center justify-center rounded-full border">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -255,9 +255,9 @@ export default function Home() {
               </TabsTrigger>
               <TabsTrigger
                 value="mark_allen"
-                className="flex w-full justify-start gap-[1rem] data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
+                className="flex w-full justify-start gap-4 data-[state=active]:bg-muted dark:data-[state=active]:bg-[#101010]"
               >
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div className="flex flex-col items-start">
@@ -271,9 +271,9 @@ export default function Home() {
         </TabsList>
         <TabsContent value="sofia_davis" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -281,13 +281,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -298,7 +298,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -311,7 +311,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -323,7 +323,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -336,7 +336,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -344,13 +344,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -375,7 +375,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -402,7 +402,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -432,9 +432,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="alex_johnson" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -442,13 +442,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -459,7 +459,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -472,7 +472,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -484,7 +484,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -497,7 +497,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -505,13 +505,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -536,7 +536,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -563,7 +563,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -593,9 +593,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="maria_gonzalez" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -603,13 +603,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -620,7 +620,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -633,7 +633,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -645,7 +645,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -658,7 +658,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -666,13 +666,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -697,7 +697,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -724,7 +724,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -754,9 +754,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="kevin_brown" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -764,13 +764,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -781,7 +781,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -794,7 +794,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -806,7 +806,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -819,7 +819,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -827,13 +827,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -858,7 +858,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -885,7 +885,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -915,9 +915,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="lily_white" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -925,13 +925,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -942,7 +942,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -955,7 +955,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -967,7 +967,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -980,7 +980,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -988,13 +988,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -1019,7 +1019,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -1046,7 +1046,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -1076,9 +1076,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="john_paul" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1086,13 +1086,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -1103,7 +1103,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1116,7 +1116,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1128,7 +1128,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1141,7 +1141,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1149,13 +1149,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -1180,7 +1180,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -1207,7 +1207,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -1237,9 +1237,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="mary_jane" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1247,13 +1247,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -1264,7 +1264,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1277,7 +1277,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1289,7 +1289,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1302,7 +1302,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1310,13 +1310,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -1341,7 +1341,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -1368,7 +1368,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -1398,9 +1398,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="anna_belle" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1408,13 +1408,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -1425,7 +1425,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1438,7 +1438,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1450,7 +1450,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1463,7 +1463,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1471,13 +1471,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -1502,7 +1502,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -1529,7 +1529,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg
@@ -1559,9 +1559,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="mark_allen" className="mt-0 w-full">
           <div className="flex h-full w-full flex-col justify-between">
-            <div className="flex h-[80px] w-full items-center justify-between border-b px-[2rem] dark:border-b-[#202020]">
-              <div className="flex items-center gap-[1rem]">
-                <div className="flex h-[3rem] w-[3rem] items-center justify-center rounded-full border dark:border-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-between border-b px-8 dark:border-b-[#202020]">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border dark:border-[#202020]">
                   <User2 />
                 </div>
                 <div>
@@ -1569,13 +1569,13 @@ export default function Home() {
                   <p className="text-xs text-[#a1a1a1]">Active 2h ago</p>
                 </div>
               </div>
-              <div className="flex items-center gap-[2rem]">
+              <div className="flex items-center gap-8">
                 <Phone className="h-[1.2rem] w-[1.2rem]" />
                 <VideoIcon className="h-[1.2rem] w-[1.2rem]" />
                 <Plus className="h-[1.2rem] w-[1.2rem]" />
               </div>
             </div>
-            <ScrollArea className="my-[1rem] h-full w-full px-[0.5rem]">
+            <ScrollArea className="my-4 h-full w-full px-2">
               <div className="h-full w-full">
                 <div className="grid gap-4 p-3" data-id={66}>
                   <div
@@ -1586,7 +1586,7 @@ export default function Home() {
                     🙏
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     I&apos;m doing great! I&apos;m free this weekend if you want
@@ -1599,7 +1599,7 @@ export default function Home() {
                     Sounds good! Let&apos;s meet at the Starbucks on 5th Ave.
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     I&apos;ll message you on Saturday.
@@ -1611,7 +1611,7 @@ export default function Home() {
                     Looking forward to it! It&apos;s been a while. 😊
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={68}
                   >
                     Absolutely! Saturday morning works well. What time suits you
@@ -1624,7 +1624,7 @@ export default function Home() {
                     How about 10 AM?
                   </div>
                   <div
-                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-[--chat]"
+                    className="flex w-max max-w-[65%] flex-col gap-2 rounded-full bg-muted px-4 py-2 text-sm dark:bg-(--chat)"
                     data-id={72}
                   >
                     Perfect! See you then! 👍
@@ -1632,13 +1632,13 @@ export default function Home() {
                 </div>
               </div>
             </ScrollArea>
-            <div className="flex h-[80px] w-full items-center justify-center gap-[2rem] border-t dark:border-t-[#202020]">
+            <div className="flex h-[80px] w-full items-center justify-center gap-8 border-t dark:border-t-[#202020]">
               <div>
-                <Input className="w-[25rem]" />
+                <Input className="w-100" />
               </div>
-              <div className="flex gap-[1rem]">
+              <div className="flex gap-4">
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md bg-primary text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   type="submit"
                   data-id={76}
                 >
@@ -1663,7 +1663,7 @@ export default function Home() {
                   </span>
                 </button>
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={79}
                 >
                   <svg
@@ -1690,7 +1690,7 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   data-id={82}
                 >
                   <svg

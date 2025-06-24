@@ -14,14 +14,14 @@ import {
 } from "@/components/logos";
 export default function PowerBy() {
   return (
-    <div className="flex flex-col items-center gap-[2rem]">
+    <div className="flex flex-col items-center gap-8">
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="w-[860px] text-center text-[2.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-[2.5rem] xl:text-[2.5rem]">
+        <h1 className="w-[860px] text-center text-[2.5rem] font-bold leading-18 tracking-tighter text-white sm:text-[2.5rem] xl:text-[2.5rem]">
           Technologies Behind the Software
         </h1>
       </div>
 
-      <div className="grid gap-4 px-[11rem] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 px-44 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((items) => (
           <Card key={items.id} className="p-4">
             <div className="relative">
@@ -71,7 +71,7 @@ export default function PowerBy() {
                 >
                   <Link href={items.link}>
                     Learn More
-                    <ChevronRight className="ml-0 !size-3.5 opacity-50" />
+                    <ChevronRight className="ml-0 size-3.5! opacity-50" />
                   </Link>
                 </Button>
               </div>

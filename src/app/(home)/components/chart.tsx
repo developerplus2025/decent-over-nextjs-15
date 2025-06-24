@@ -169,7 +169,7 @@ export function ChartBar() {
           })}
         </div>
       </CardHeader>
-      <CardContent className="px-6 pt-[2rem]">
+      <CardContent className="px-6 pt-8">
         <ChartContainer
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"

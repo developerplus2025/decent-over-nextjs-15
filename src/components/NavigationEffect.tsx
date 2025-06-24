@@ -130,11 +130,11 @@ const SlideTabs: React.FC = () => {
             <Tab setPosition={setPosition}>
               <NavigationMenuTrigger>Feature</NavigationMenuTrigger>
             </Tab>
-            <NavigationMenuContent className="flex w-[30rem] gap-[2.5rem] px-[1rem] py-[1rem] data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft">
-              <div className="flex flex-col gap-[2rem]">
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+            <NavigationMenuContent className="flex w-120 gap-10 px-4 py-4 data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left">
+              <div className="flex flex-col gap-8">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <Lightbulb className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <Lightbulb className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -145,9 +145,9 @@ const SlideTabs: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <WifiOff className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <WifiOff className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -158,9 +158,9 @@ const SlideTabs: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <Podcast className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <Podcast className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -173,9 +173,9 @@ const SlideTabs: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col items-start justify-between">
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <NotebookText className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <NotebookText className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -186,9 +186,9 @@ const SlideTabs: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <Medal className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <Medal className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -199,9 +199,9 @@ const SlideTabs: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                <div className="group flex cursor-pointer items-center gap-2">
                   <div>
-                    <Share2 className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                    <Share2 className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                   </div>
                   <div className="flex flex-col items-start justify-start">
                     <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -219,16 +219,16 @@ const SlideTabs: React.FC = () => {
             <Tab setPosition={setPosition}>
               <NavigationMenuTrigger>Library</NavigationMenuTrigger>
             </Tab>
-            <NavigationMenuContent className="flex w-[37rem] justify-between gap-[2.5rem] px-[1rem] py-[1rem]">
-              <div className="grid w-[37rem] grid-cols-2 place-content-between gap-[2rem]">
-                <div className="flex flex-col gap-[1.5rem]">
+            <NavigationMenuContent className="flex w-148 justify-between gap-10 px-4 py-4">
+              <div className="grid w-148 grid-cols-2 place-content-between gap-8">
+                <div className="flex flex-col gap-6">
                   <div>
                     <h1 className="text-[1rem] text-[#a1a1a1]">Playlist</h1>
                   </div>
                   <div className="flex flex-col gap-[1.8rem]">
-                    <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                    <div className="group flex cursor-pointer items-center gap-2">
                       <div>
-                        <ListPlus className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                        <ListPlus className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                       </div>
                       <div className="flex flex-col items-start justify-start">
                         <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -239,9 +239,9 @@ const SlideTabs: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                    <div className="group flex cursor-pointer items-center gap-2">
                       <div>
-                        <Heart className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                        <Heart className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                       </div>
                       <div className="flex flex-col items-start justify-start">
                         <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -252,9 +252,9 @@ const SlideTabs: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                    <div className="group flex cursor-pointer items-center gap-2">
                       <div>
-                        <Play className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                        <Play className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                       </div>
                       <div className="flex flex-col items-start justify-start">
                         <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -267,16 +267,16 @@ const SlideTabs: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col gap-[1.5rem]">
+                <div className="flex flex-col gap-6">
                   <div>
                     <h1 className="text-[1rem] text-[#a1a1a1]">
                       Listening History
                     </h1>
                   </div>
                   <div className="flex flex-col gap-[1.8rem]">
-                    <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                    <div className="group flex cursor-pointer items-center gap-2">
                       <div>
-                        <Clock className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                        <Clock className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                       </div>
                       <div className="flex flex-col items-start justify-start">
                         <NavigationMenuLink className="text-nowrap text-sm font-bold">
@@ -287,9 +287,9 @@ const SlideTabs: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                    <div className="group flex cursor-pointer items-center gap-2">
                       <div>
-                        <Save className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                        <Save className="h-8 w-8 rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                       </div>
                       <div className="flex flex-col items-start justify-start">
                         <NavigationMenuLink className="text-nowrap text-sm font-bold">

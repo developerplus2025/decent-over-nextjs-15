@@ -58,7 +58,7 @@ export function NavUser({
 						</SidebarMenuButton>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent
-						className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+						className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
 						side={isMobile ? "bottom" : "right"}
 						align="start"
 						sideOffset={4}
@@ -77,7 +77,7 @@ export function NavUser({
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup >
-							<DropdownMenuItem className="flex gap-[1rem] items-center">
+							<DropdownMenuItem className="flex gap-4 items-center">
 							<svg
   data-testid="geist-icon"
   height={16}
@@ -105,7 +105,7 @@ export function NavUser({
 						</DropdownMenuGroup>
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup>
-							<DropdownMenuItem className="flex gap-[1rem] items-center">
+							<DropdownMenuItem className="flex gap-4 items-center">
 							<svg
   data-testid="geist-icon"
   height={16}
@@ -124,7 +124,7 @@ export function NavUser({
 
 								Account
 							</DropdownMenuItem>
-							<DropdownMenuItem className="flex gap-[1rem] items-center">
+							<DropdownMenuItem className="flex gap-4 items-center">
 							<svg
   data-testid="geist-icon"
   height={16}
@@ -143,7 +143,7 @@ export function NavUser({
 
 								Billing
 							</DropdownMenuItem>
-							<DropdownMenuItem className="flex gap-[1rem] items-center">
+							<DropdownMenuItem className="flex gap-4 items-center">
 							<svg
   data-testid="geist-icon"
   height={16}
@@ -164,7 +164,7 @@ export function NavUser({
 							</DropdownMenuItem>
 						</DropdownMenuGroup>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem className="flex gap-[1rem] items-center">
+						<DropdownMenuItem className="flex gap-4 items-center">
 						<svg
   data-testid="geist-icon"
   height={16}

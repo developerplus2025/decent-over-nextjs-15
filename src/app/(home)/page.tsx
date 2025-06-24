@@ -10,31 +10,31 @@ import MainTextHome from "./components/main-text-home";
 // import variables from "./variables.module.scss";
 export default function Home() {
   return (
-    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden xl:pb-[1rem] xl:pt-[6rem] min-287:pt-[10rem] min-287:pb-[4rem]  dark:bg-black dark:[color-scheme:dark]">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden xl:pb-4 xl:pt-24 min-287:pt-40 min-287:pb-16  dark:bg-black dark:scheme-dark">
       <CompAvatar />
       <MainTextHome />
-      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-[#262626]"></div>
+      <div className="mx-auto mb-16 mt-40 h-px w-full bg-[#262626]"></div>
       <div className="w-full">
         <BeautifulFeaturesLayout />
       </div>
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <SocialProof />
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <Metric />
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <PowerBy />
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <AccordionFAQ />
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <PeopleSay />
-      <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
         <p className={`font-[BespokeStencil-BoldItalic] text-[55px]`}>Decent</p>
       </div>
       <div>
         <NavigationEffect />
       </div>
-      <div className="mb-[5rem]"> </div>
+      <div className="mb-20"> </div>
     </main>
   );
 }

@@ -99,7 +99,7 @@ export default function YouTubeTextEditor() {
 
   return (
     <div className="mx-auto max-w-4xl p-4">
-      <Card className="rounded-lg border shadow-sm dark:bg-black">
+      <Card className="rounded-lg border shadow-xs dark:bg-black">
         <div className="flex flex-wrap items-center gap-1 border-b bg-muted/50 p-2 dark:border dark:bg-black">
           <Button
             variant="ghost"

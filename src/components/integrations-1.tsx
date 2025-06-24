@@ -77,7 +77,7 @@ const IntegrationCard = ({ title, description, children, link = 'https://github.
                         className="gap-1 pr-2 shadow-none">
                         <Link href={link}>
                             Learn More
-                            <ChevronRight className="ml-0 !size-3.5 opacity-50" />
+                            <ChevronRight className="ml-0 size-3.5! opacity-50" />
                         </Link>
                     </Button>
                 </div>

@@ -423,7 +423,7 @@ export function CoinChart() {
             <RadioGroup
               value={selectedValue}
               onValueChange={setSelectedValue}
-              className="dark:after:bg-card/64 has-focus-visible:after:border-ring has-focus-visible:after:ring-ring/50 after:shadow-xs dark:after:inset-shadow-[0_1px_rgb(255_255_255/0.15)] has-focus-visible:after:ring-[3px] group relative inline-grid grid-cols-[repeat(5,1fr)] items-center gap-0 text-xs font-medium after:absolute after:inset-y-0 after:w-1/5 after:rounded-full after:bg-background after:transition-[translate,box-shadow] after:duration-300 after:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] [&:after]:translate-x-[calc(var(--selected-index)*100%)]"
+              className="dark:after:bg-card/64 has-focus-visible:after:border-ring has-focus-visible:after:ring-ring/50 after:shadow-2xs dark:after:inset-shadow-[0_1px_rgb(255_255_255/0.15)] has-focus-visible:after:ring-[3px] group relative inline-grid grid-cols-[repeat(5,1fr)] items-center gap-0 text-xs font-medium after:absolute after:inset-y-0 after:w-1/5 after:rounded-full after:bg-background after:transition-[translate,box-shadow] after:duration-300 after:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] [&:after]:translate-x-[calc(var(--selected-index)*100%)]"
               data-state={selectedValue}
               style={
                 {

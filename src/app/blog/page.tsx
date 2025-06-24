@@ -20,9 +20,9 @@ import { DatePickerBlog } from "./date-picker-blog";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
-    <main className="mb-[4rem] flex w-full flex-col items-center justify-center px-[10rem]">
-      <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
-        <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
+    <main className="mb-16 flex w-full flex-col items-center justify-center px-40">
+      <div className="flex w-full items-center justify-between gap-16 pt-16">
+        <h2 className="shrink-0 text-nowrap text-2xl font-bold tracking-tight">
           Recent Articles
         </h2>
         <AnimatedTabs />
@@ -30,7 +30,7 @@ export default function BlogPage() {
           <Input
             type="search"
             placeholder="Search for favorite songs"
-            className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
+            className="w-full rounded-full pl-12 placeholder:text-[#7c7c7c]"
           />
           <MagnifyingGlassIcon
             width="21"
@@ -41,19 +41,19 @@ export default function BlogPage() {
         <DatePickerBlog />
       </div>
       <div className="mt-12 space-y-8">
-        <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-r first:!rounded first:!rounded-tr-lg sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center divide-x divide-y border-b border-r first:rounded! first:rounded-tr-lg! sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
                 key={index}
-                className={`flex flex-col justify-between overflow-hidden rounded-none ${index === 2 ? "rounded-tr-lg" : ""} ${index === 0 ? "rounded-tl-lg border-[0px] border-l border-t" : "border-[0px]"}`}
+                className={`flex flex-col justify-between overflow-hidden rounded-none ${index === 2 ? "rounded-tr-lg" : ""} ${index === 0 ? "rounded-tl-lg border-0 border-l border-t" : "border-0"}`}
               >
                 <CardHeader className="hidden p-2">
-                  <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
+                  <div className="aspect-2/1 w-full border-0 bg-black object-cover"></div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between gap-4 border-[0px] text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between gap-4 border-0 text-sm text-muted-foreground">
                     <Badge
                       className="border-0 p-0 font-medium"
                       variant="outline"
@@ -86,11 +86,11 @@ export default function BlogPage() {
                       {post.data.title}
                     </Link>
                   </h3>
-                  <p className="mt-4 line-clamp-[9] text-sm text-muted-foreground">
+                  <p className="mt-4 line-clamp-9 text-sm text-muted-foreground">
                     {post.data.description}
                   </p>
                 </CardContent>
-                <CardFooter className="flex flex-col items-start gap-4 border-[0px] px-6 pb-6 pt-0">
+                <CardFooter className="flex flex-col items-start gap-4 border-0 px-6 pb-6 pt-0">
                   <div className="flex w-full items-center justify-between">
                     <Button variant="link" className="p-0" asChild>
                       <Link

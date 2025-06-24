@@ -6,10 +6,10 @@ export function BadgeAnimatedBorder() {
       <span>
         <span
           className={cn(
-            "spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full",
-            "[mask:linear-gradient(black,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] dark:[mask:linear-gradient(white,_transparent_50%)]",
-            "before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,black_360deg)] dark:before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
-            "before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]",
+            "spark mask-gradient absolute inset-0 h-full w-full animate-flip overflow-hidden rounded-full",
+            "[mask:linear-gradient(black,transparent_50%)] before:absolute before:aspect-square before:w-[200%] dark:[mask:linear-gradient(white,transparent_50%)]",
+            "before:-rotate-90 before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,black_360deg)] dark:before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)]",
+            "before:content-[''] before:inset-[0_auto_auto_50%] before:[translate:-50%_-15%]",
           )}
         />
       </span>

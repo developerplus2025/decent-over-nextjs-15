@@ -48,7 +48,7 @@ const CodeBlock: React.FC<{ block: ContentBlock }> = ({ block }) => {
   const language = block.getData().get("language") || "tsx"; // Mặc định JSON
   return (
     <SyntaxHighlighter
-      className="rounded-lg !bg-black"
+      className="rounded-lg bg-black!"
       language={language}
       style={dracula}
     >
@@ -203,7 +203,7 @@ export default function RichTextEditor() {
 
   return (
     <div className="mx-auto max-w-4xl p-4">
-      <Card className="rounded-lg border shadow-sm dark:bg-black">
+      <Card className="rounded-lg border shadow-xs dark:bg-black">
         <div className="flex flex-wrap items-center gap-1 rounded-t-lg border-b bg-muted/50 p-2 dark:border dark:bg-black">
           <Button
             variant="ghost"

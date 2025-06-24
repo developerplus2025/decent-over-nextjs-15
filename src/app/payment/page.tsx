@@ -251,7 +251,7 @@ export default function PayMentPage() {
   // }
   // const { toast } = useToast();
   return (
-    <div className="mx-auto w-full max-w-[70rem] space-y-8 p-4">
+    <div className="mx-auto w-full max-w-280 space-y-8 p-4">
       <Card className="bg-black">
         <CardHeader>
           <CardTitle>Select a Software Package</CardTitle>

@@ -852,9 +852,9 @@ export default function Business() {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="px-[6rem]"
+      className="px-24"
     >
-      <div className="mb-[3rem] mt-4 flex items-center justify-center space-x-2">
+      <div className="mb-12 mt-4 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
@@ -863,14 +863,14 @@ export default function Business() {
         />
         <span className="text-sm">Yearly (10% off)</span>
       </div>
-      <div className="grid gap-[2rem] md:grid-cols-4">
+      <div className="grid gap-8 md:grid-cols-4">
         {pricingData.individual.map((tier) => (
           <Card
             key={tier.title}
-            className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
+            className="flex flex-col rounded-lg border dark:bg-[#000000]"
           >
             <CardHeader
-              className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
+              className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-6`}
             >
               <CardTitle className="text-[1.04rem] font-medium text-[#a1a1a1]">
                 <div className="flex items-center justify-between">
@@ -900,7 +900,7 @@ export default function Business() {
                 {tier.title === "Plus Plan" && (
                   <div className="flex items-center justify-between">
                     <p>Plus Plan</p>
-                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
+                    <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
                       Popular
                     </Badge>
                   </div>
@@ -908,7 +908,7 @@ export default function Business() {
                 {tier.title === "Basic Plan" && (
                   <div className="flex justify-between">
                     <p>Basic Plan</p>
-                    <Badge className="h-fit px-3 py-1" variant={"outline"}>
+                    <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
                       Best Value
                     </Badge>
                   </div>
@@ -932,7 +932,7 @@ export default function Business() {
               />
 
               <CardDescription>{tier.description}</CardDescription>
-              <div className="pt-[1rem]">
+              <div className="pt-4">
                 {tier.title === "Pro Plan" && (
                   <div className="flex items-center justify-center gap-4">
                     {" "}
@@ -962,7 +962,7 @@ export default function Business() {
                           </svg>
                         </Button>
                       </AlertDialogTrigger>
-                      <AlertDialogContent className="max-w-[62rem]">
+                      <AlertDialogContent className="max-w-248">
                         <AlertDialogHeader>
                           <AlertDialogTitle>
                             <Card className="bg-black">
@@ -992,7 +992,7 @@ export default function Business() {
                                   {packages.map((pkg) => (
                                     <Card
                                       key={pkg.id}
-                                      className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow outline-none ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
+                                      className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow-sm outline-hidden ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
                                     >
                                       <CardHeader>
                                         <div className="flex items-center justify-between">
@@ -1069,7 +1069,7 @@ export default function Business() {
                       </AlertDialogTrigger>
                       <AlertDialogContent>
                         <AlertDialogHeader>
-                          <AlertDialogTitle className="flex items-center gap-[1rem]">
+                          <AlertDialogTitle className="flex items-center gap-4">
                             <Input type="email" placeholder="Email" />
                             <Button variant="outline">Subscribe</Button>
                           </AlertDialogTitle>
@@ -1086,7 +1086,7 @@ export default function Business() {
                   </div>
                 )}
                 {tier.title !== "Plus Plan" && tier.title !== "Pro Plan" && (
-                  <Button className="w-full" variant={"outline"}>
+                  <Button className="w-full" variant={"outline-solid"}>
                     Get Started
                     <svg
                       data-testid="geist-icon"
@@ -1107,7 +1107,7 @@ export default function Business() {
                   </Button>
                 )}
                 {tier.title === "Plus Plan" && (
-                  <Button className="w-full" variant={"outline"}>
+                  <Button className="w-full" variant={"outline-solid"}>
                     Upgrade Now
                     <svg
                       data-testid="geist-icon"
@@ -1129,8 +1129,8 @@ export default function Business() {
                 )}
               </div>
             </CardHeader>
-            <CardContent className="flex-grow pt-[8px]">
-              <ul className="space-y-2 rounded-lg border-t first:pt-[1rem]">
+            <CardContent className="grow pt-[8px]">
+              <ul className="space-y-2 rounded-lg border-t first:pt-4">
                 {tier.features.map((feature) => (
                   <li
                     key={feature.name}
@@ -1154,18 +1154,18 @@ export default function Business() {
                         />
                       </svg>
 
-                      {/* <CheckIcon className="h-[15px] w-[15px] flex-shrink-0 text-[#ffffff]" /> */}
+                      {/* <CheckIcon className="h-[15px] w-[15px] shrink-0 text-[#ffffff]" /> */}
                     </div>
                     <p className="text-sm text-[white]">{feature.name}</p>
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="justify-center rounded-none px-6 py-[1rem]"></CardFooter>
+            <CardFooter className="justify-center rounded-none px-6 py-4"></CardFooter>
           </Card>
         ))}
       </div>
     </motion.div>
   );
 }
-// bg-gradient-to-tr from-black/50 to-[#121212]
+// bg-linear-to-tr from-black/50 to-[#121212]

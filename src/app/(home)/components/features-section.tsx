@@ -196,12 +196,12 @@
 //   const isInView = useInView(ref, { once: true }); // Quan sát phần tử với tùy chọn
 
 //   return (
-//     <section className="w-full bg-background py-[2rem] md:py-24 lg:py-[2rem]">
+//     <section className="w-full bg-background py-8 md:py-24 lg:py-8">
 //       <div className="container px-4 md:px-6">
 //         <div className="flex flex-col items-center justify-center gap-8 md:flex-row-reverse lg:gap-12">
 //           {/* Left side - Photo */}
 //           {/* <div className="w-full md:w-1/2">
-//             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+//             <div className="relative aspect-4/3 overflow-hidden rounded-xl">
 //               <Image
 //                 src="/Opera Snapshot_2024-12-25_203610_Decenttech.vercel.app.png"
 //                 alt="Feature illustration"
@@ -240,14 +240,14 @@
 //               initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu
 //               animate={isInView ? { opacity: 1, y: 0 } : {}} // Hiệu ứng khi trong viewport
 //               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-//               className="relative mt-[3.5rem] grid border md:grid-cols-2"
+//               className="relative mt-14 grid border md:grid-cols-2"
 //             >
 //               <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
 //               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>
 //               <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-r border-t"></div>
 //               <div className="absolute -bottom-[10px] -right-[10px] h-[10px] w-[10px] border-l border-t"></div>
 //               {items.map((item) => (
-//  <div key={item.id} className={`${item.id == 8 || item.id == 7 ? "border-b-[0px]" : "border-b" } flex items-center gap-4 border-r border-primary/10 h-[70px] px-3 py-2 transition-colors hover:border-primary/30`}>
+//  <div key={item.id} className={`${item.id == 8 || item.id == 7 ? "border-b-0" : "border-b" } flex items-center gap-4 border-r border-primary/10 h-[70px] px-3 py-2 transition-colors hover:border-primary/30`}>
 //  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-lg">
 //   {item.icon}
 //  </div>
@@ -264,7 +264,7 @@
 
 //             </motion.div>
 
-//             <div className="mt-[3rem] flex flex-col items-center justify-center gap-4 sm:flex-row">
+//             <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
 //               {/* <Button size="lg" className="w-full text-black sm:w-auto">
 //                 Start Free Trial
 //               </Button> */}
@@ -562,7 +562,7 @@ export default function FeaturesSection() {
                 <div className="before:bg-(--color-border) relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px sm:-my-6 sm:-mr-6">
                   <div className="relative flex h-full flex-col justify-center space-y-6 py-6">
                     <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
-                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
+                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-xs">
                         Likeur
                       </span>
                       <div className="size-7 ring-4 ring-background">
@@ -581,12 +581,12 @@ export default function FeaturesSection() {
                           alt=""
                         />
                       </div>
-                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
+                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-xs">
                         M. Irung
                       </span>
                     </div>
                     <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
-                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
+                      <span className="block h-fit rounded border px-2 py-1 text-xs shadow-xs">
                         B. Ng
                       </span>
                       <div className="size-7 ring-4 ring-background">

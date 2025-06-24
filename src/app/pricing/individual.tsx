@@ -860,9 +860,9 @@ export default function Individual() {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="px-[16rem]"
+      className="px-64"
     >
-      <div className="mb-[3rem] mt-4 flex items-center justify-center space-x-2">
+      <div className="mb-12 mt-4 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
         <Switch
           checked={isYearly}
@@ -871,20 +871,20 @@ export default function Individual() {
         />
         <span className="text-sm">Yearly (10% off)</span>
       </div>
-      <div className="grid gap-[1rem] md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3">
         {pricingData.individual.map((tier) => (
           <div
             className={`${tier.title === "Basic Plan" ? "hidden" : ""} relative`}
             key={tier.price}
           >
-            <div className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 rounded-lg bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+            <div className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
             <Card
               key={tier.title}
-              className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-[1px] dark:bg-[#000000]`}
+              className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border dark:bg-[#000000]`}
             >
               <CardHeader
-                className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
+                className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-6`}
               >
                 <CardTitle className="text-base font-medium text-[#ffffff]">
                   <div className="flex items-center justify-between">
@@ -929,7 +929,7 @@ export default function Individual() {
                   {tier.title === "Plus Plan" && (
                     <div className="flex items-center justify-between text-white">
                       <p>Plus Plan</p>
-                      <Badge className="h-fit px-3 py-1" variant={"outline"}>
+                      <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
                         Popular
                       </Badge>
                     </div>
@@ -937,7 +937,7 @@ export default function Individual() {
                   {tier.title === "Basic Plan" && (
                     <div className="flex justify-between">
                       <p>Basic Plan</p>
-                      <Badge className="h-fit px-3 py-1" variant={"outline"}>
+                      <Badge className="h-fit px-3 py-1" variant={"outline-solid"}>
                         Best Value
                       </Badge>
                     </div>
@@ -966,8 +966,8 @@ export default function Individual() {
                   {tier.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow pt-[8px]">
-                <ul className="flex flex-col gap-1 rounded-lg border-t first:pt-[1rem]">
+              <CardContent className="grow pt-[8px]">
+                <ul className="flex flex-col gap-1 rounded-lg border-t first:pt-4">
                   {tier.features.map((feature) => (
                     <li
                       key={feature.name}
@@ -991,8 +991,8 @@ export default function Individual() {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="items-center justify-center px-[2rem] pb-[2rem]">
-                <div className="w-full pt-[1rem]">
+              <CardFooter className="items-center justify-center px-8 pb-8">
+                <div className="w-full pt-4">
                   {tier.title === "Pro Plan" && (
                     <div className="flex w-full items-center justify-center gap-4">
                       {" "}
@@ -1022,7 +1022,7 @@ export default function Individual() {
                             </svg>
                           </Button>
                         </AlertDialogTrigger>
-                        <AlertDialogContent className="max-w-[62rem]">
+                        <AlertDialogContent className="max-w-248">
                           <AlertDialogHeader>
                             <AlertDialogTitle>
                               <Card className="bg-black">
@@ -1054,7 +1054,7 @@ export default function Individual() {
                                     {packages.map((pkg) => (
                                       <Card
                                         key={pkg.id}
-                                        className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow outline-none ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
+                                        className={`mb-4 bg-black ${selectedPackage.id === pkg.id ? "shadow-sm outline-hidden ring-2 ring-ring ring-offset-2 ring-offset-background" : ""}`}
                                       >
                                         <CardHeader>
                                           <div className="flex items-center justify-between">
@@ -1136,7 +1136,7 @@ export default function Individual() {
                             <AlertDialogDescription className="text-center">
                               Please Enter Your Email To We Send Sale Code
                             </AlertDialogDescription>
-                            <AlertDialogTitle className="flex flex-col items-center gap-[1rem]">
+                            <AlertDialogTitle className="flex flex-col items-center gap-4">
                               <Input type="text" placeholder="First Name" />
 
                               <Input type="text" placeholder="Last Name" />
@@ -1146,7 +1146,7 @@ export default function Individual() {
                           </AlertDialogHeader>
                           <AlertDialogFooter>
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction className="border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground">
+                            <AlertDialogAction className="border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground">
                               Subscribe
                             </AlertDialogAction>
                           </AlertDialogFooter>
@@ -1155,7 +1155,7 @@ export default function Individual() {
                     </div>
                   )}
                   {tier.title !== "Plus Plan" && tier.title !== "Pro Plan" && (
-                    <Button className="w-full" variant={"outline"}>
+                    <Button className="w-full" variant={"outline-solid"}>
                       Get Started
                       <svg
                         data-testid="geist-icon"
@@ -1176,7 +1176,7 @@ export default function Individual() {
                     </Button>
                   )}
                   {tier.title === "Plus Plan" && (
-                    <Button className="w-full" variant={"outline"}>
+                    <Button className="w-full" variant={"outline-solid"}>
                       Upgrade Now
                       <svg
                         data-testid="geist-icon"
@@ -1205,4 +1205,4 @@ export default function Individual() {
     </motion.div>
   );
 }
-// bg-gradient-to-tr from-black/50 to-[#121212]
+// bg-linear-to-tr from-black/50 to-[#121212]

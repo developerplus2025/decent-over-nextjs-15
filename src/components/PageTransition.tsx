@@ -24,7 +24,7 @@ const transitionVariants = {
 export default function PageTransition() {
   return (
     <motion.div
-      className="fixed left-0 top-0 z-[9999] h-full w-full bg-black"
+      className="fixed left-0 top-0 z-9999 h-full w-full bg-black"
       variants={transitionVariants}
       initial="initial"
       animate="animate"

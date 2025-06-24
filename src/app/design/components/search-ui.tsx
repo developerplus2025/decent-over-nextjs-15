@@ -24,7 +24,7 @@ export default function SearchUi() {
             placeholder="Enter keyword..."
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
-            className="w-[25rem] rounded-full pl-[42px]"
+            className="w-100 rounded-full pl-[42px]"
           />
           <svg
             className="absolute left-[26px] top-1/2 -translate-x-1/2 -translate-y-1/2"

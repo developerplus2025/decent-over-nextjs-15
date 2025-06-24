@@ -163,7 +163,7 @@ export default function Metric() {
     return () => controls.stop();
   }, []);
   return (
-    <div className="flex w-[960px] flex-col items-center gap-[2rem]">
+    <div className="flex w-[960px] flex-col items-center gap-8">
       {/* <LoopAnimation /> */}
       <div className="rounded-lg border p-3">
         <svg
@@ -183,7 +183,7 @@ export default function Metric() {
         </svg>
       </div>
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+        <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
           Decent by the Numbers
         </h1>
         <span className="md:text-md max-w-[550px] text-center text-zinc-500 dark:text-zinc-400">
@@ -194,12 +194,12 @@ export default function Metric() {
           software.
         </span>
       </div>
-      <div className="flex w-full items-center justify-between gap-[4rem]">
+      <div className="flex w-full items-center justify-between gap-16">
         <div className="relative grid w-full grid-cols-2 border md:grid-cols-4">
-          <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
-          <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
-          <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
-          <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+          <div className="absolute -left-px -top-px h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+          <div className="absolute -right-px -top-px h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+          <div className="absolute -bottom-px -left-px h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+          <div className="absolute -bottom-px -right-px h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}

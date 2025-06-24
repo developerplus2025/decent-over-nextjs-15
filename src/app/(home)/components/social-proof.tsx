@@ -1101,7 +1101,7 @@ const items = [
 ];
 export default function SocialProof() {
   return (
-    <div className="flex flex-col items-center gap-[2rem]">
+    <div className="flex flex-col items-center gap-8">
       <div className="rounded-lg border p-3">
         <svg
           data-testid="geist-icon"
@@ -1120,7 +1120,7 @@ export default function SocialProof() {
         </svg>
       </div>
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+        <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
           Trusted by Musicians and Producers Worldwide
         </h1>
         <span className="md:text-md max-w-[500px] text-center text-zinc-500 dark:text-zinc-400">
@@ -1132,7 +1132,7 @@ export default function SocialProof() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="grid w-[1000px] grid-cols-3 divide-x-1 divide-y-1 border-b border-r text-[#ffffffb3]">
+        <div className="grid w-[1000px] grid-cols-3 divide-x divide-y border-b border-r text-[#ffffffb3]">
           {items.map((item) => (
             <div
               className={`${item.id === 1 ? "border-l border-t" : ""} flex items-center justify-center p-[48px]`}
@@ -1149,7 +1149,7 @@ export default function SocialProof() {
           ))}
         </div>
       </div>
-      <div className="mt-[3rem] flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
         {/* <Button size="lg" className="w-full text-black sm:w-auto">
                 Start Free Trial
               </Button> */}

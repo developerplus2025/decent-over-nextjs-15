@@ -43,7 +43,7 @@ export default function CookieAlert() {
       initial={{ visibility: "hidden" }}
     >
       <Alert
-        className={`${isAccepted ? "hidden" : "flex"} absolute left-[2rem] top-[29rem] z-[2] w-[480px] flex-col gap-4`}
+        className={`${isAccepted ? "hidden" : "flex"} absolute left-8 top-116 z-2 w-[480px] flex-col gap-4`}
       >
         <AlertTitle className="flex items-center justify-between">
           <p className="text-[1.1.rem]">Cookies Settings</p>
@@ -69,15 +69,15 @@ export default function CookieAlert() {
           tailor and measure ads, and provide a better expe- rience. By clicking
           accept, you agree to this, as outlined in our Cookie Policy.
         </AlertDescription>
-        <div className="flex justify-between gap-[3rem]">
+        <div className="flex justify-between gap-12">
           <Button className="w-full" onClick={handleAccept}>
             Accept
           </Button>
-          <Button className="w-full" variant={"outline"}>
+          <Button className="w-full" variant={"outline-solid"}>
             Decline
           </Button>
         </div>
-        <div className="relative right-[1rem] top-[2rem]"></div>
+        <div className="relative right-4 top-8"></div>
       </Alert>
     </motion.div>
   );

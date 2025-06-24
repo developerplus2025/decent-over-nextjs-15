@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function FeedBack() {
   return (
-    <div className="mt-[3rem] flex flex-col gap-4">
+    <div className="mt-12 flex flex-col gap-4">
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline">Feedback</Button>

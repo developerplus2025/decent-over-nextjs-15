@@ -162,12 +162,12 @@ export default function BrowsePage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center gap-8 md:flex-row">
         <div className="md:w-3/4 xl:w-full">
-          <div className="mb-6 flex items-center justify-between gap-[3rem]">
+          <div className="mb-6 flex items-center justify-between gap-12">
             <div className="relative w-full">
               <Input
                 type="text"
                 placeholder="Search for favorite songs"
-                className="w-full pl-[3rem] placeholder:text-[#7c7c7c]"
+                className="w-full pl-12 placeholder:text-[#7c7c7c]"
               />
               <MagnifyingGlassIcon
                 width="21"
@@ -229,7 +229,7 @@ export default function BrowsePage() {
                       unoptimized
                       width={"200"}
                       height={"300"}
-                      className="mb-4 h-[12rem] w-full rounded object-cover"
+                      className="mb-4 h-48 w-full rounded object-cover"
                     />
                     <p className="mb-2 text-sm text-muted-foreground">
                       Artist:{" "}

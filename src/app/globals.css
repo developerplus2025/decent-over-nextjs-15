@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config '../../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {
@@ -476,169 +494,171 @@
   }
 }
 
-.bg-df {
-  color: #159deb;
-}
-.radix-themes {
-  --spinner-animation-duration: 800ms;
-  --spinner-opacity: 0.65;
-}
-li::marker {
-  content: "";
-}
-.rt-Spinner {
-  position: relative;
-  opacity: var(--spinner-opacity);
-}
-
-.rt-SpinnerLeaf {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 12.5% / 2);
-  width: 12.5%;
-  height: 100%;
-  animation: rt-spinner-leaf-fade var(--spinner-animation-duration) linear
-    infinite;
-}
-.rt-SpinnerLeaf:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 30%;
-  border-radius: var(--radius-1);
-  background-color: currentColor;
-}
-
-.rt-SpinnerLeaf:where(:nth-child(1)) {
-  transform: rotate(0deg);
-  animation-delay: calc(-8 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(2)) {
-  transform: rotate(45deg);
-  animation-delay: calc(-7 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(3)) {
-  transform: rotate(90deg);
-  animation-delay: calc(-6 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(4)) {
-  transform: rotate(135deg);
-  animation-delay: calc(-5 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(5)) {
-  transform: rotate(180deg);
-  animation-delay: calc(-4 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(6)) {
-  transform: rotate(225deg);
-  animation-delay: calc(-3 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(7)) {
-  transform: rotate(270deg);
-  animation-delay: calc(-2 / 8 * var(--spinner-animation-duration));
-}
-.rt-SpinnerLeaf:where(:nth-child(8)) {
-  transform: rotate(315deg);
-  animation-delay: calc(-1 / 8 * var(--spinner-animation-duration));
-}
-
-@keyframes rt-spinner-leaf-fade {
-  from {
-    opacity: 1;
+@layer utilities {
+  .bg-df {
+    color: #159deb;
   }
-  to {
-    opacity: 0.25;
+  .radix-themes {
+    --spinner-animation-duration: 800ms;
+    --spinner-opacity: 0.65;
   }
-}
+  li::marker {
+    content: "";
+  }
+  .rt-Spinner {
+    position: relative;
+    opacity: var(--spinner-opacity);
+  }
 
-.rt-Spinner:where(.rt-r-size-1) {
-  width: var(--space-3);
-  height: var(--space-3);
-}
+  .rt-SpinnerLeaf {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 12.5% / 2);
+    width: 12.5%;
+    height: 100%;
+    animation: rt-spinner-leaf-fade var(--spinner-animation-duration) linear
+      infinite;
+  }
+  .rt-SpinnerLeaf:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30%;
+    border-radius: var(--radius-1);
+    background-color: currentColor;
+  }
 
-.rt-Spinner:where(.rt-r-size-2) {
-  width: var(--space-4);
-  height: var(--space-4);
-}
-.rt-Spinner:where(.rt-r-size-3) {
-  width: calc(1.25 * var(--space-4));
-  height: calc(1.25 * var(--space-4));
-}
-.tabs_indicator__lFbpm {
-  --ds-gray-alpha-400: hsla(0, 0%, 100%, 0.14);
-  --ds-background-100: hsl(0, 0%, 5%);
-  border: 1px solid var(--ds-gray-alpha-400);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  background: var(--ds-background-100);
-  background-clip: padding-box !important;
-}
+  .rt-SpinnerLeaf:where(:nth-child(1)) {
+    transform: rotate(0deg);
+    animation-delay: calc(-8 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(2)) {
+    transform: rotate(45deg);
+    animation-delay: calc(-7 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(3)) {
+    transform: rotate(90deg);
+    animation-delay: calc(-6 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(4)) {
+    transform: rotate(135deg);
+    animation-delay: calc(-5 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(5)) {
+    transform: rotate(180deg);
+    animation-delay: calc(-4 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(6)) {
+    transform: rotate(225deg);
+    animation-delay: calc(-3 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(7)) {
+    transform: rotate(270deg);
+    animation-delay: calc(-2 / 8 * var(--spinner-animation-duration));
+  }
+  .rt-SpinnerLeaf:where(:nth-child(8)) {
+    transform: rotate(315deg);
+    animation-delay: calc(-1 / 8 * var(--spinner-animation-duration));
+  }
 
-.video {
-  border-radius: 6px;
-}
-.overlay {
-  --color--transparent: #fff0;
-  --color--background-main: #000000;
-  background-image: linear-gradient(
-    90deg,
-    var(--color--background-main) 23%,
-    var(--color--transparent)
-  );
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  inset: 0% auto 0% 0%;
-}
-.overlay.right {
-  --color--transparent: #fff0;
-  --color--background-main: #000000;
-  background-image: linear-gradient(
-    90deg,
-    var(--color--transparent),
-    var(--color--background-main) 77%
-  );
-  inset: 0% 0% 0% auto;
-}
-:host {
-  background-color: #000000;
-}
-media-error-dialog {
-  background-color: #000000;
-}
-number-flow-react::part(suffix) {
-  padding-left: 8px;
-  font-weight: normal;
-  font-size: 1rem;
-  color: var(--muted);
-}
-#nd-docs-layout {
-  background-color: #000000;
-}
-#nd-sidebar {
-  background-color: #000000;
-}
-.bg-fd-card {
-  background-color: #000000;
-}
-.slide-in {
-  z-index: 50;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000;
-  transform-origin: bottom;
-}
-.slide-out {
-  z-index: 50;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000;
-  transform-origin: top;
+  @keyframes rt-spinner-leaf-fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.25;
+    }
+  }
+
+  .rt-Spinner:where(.rt-r-size-1) {
+    width: var(--space-3);
+    height: var(--space-3);
+  }
+
+  .rt-Spinner:where(.rt-r-size-2) {
+    width: var(--space-4);
+    height: var(--space-4);
+  }
+  .rt-Spinner:where(.rt-r-size-3) {
+    width: calc(1.25 * var(--space-4));
+    height: calc(1.25 * var(--space-4));
+  }
+  .tabs_indicator__lFbpm {
+    --ds-gray-alpha-400: hsla(0, 0%, 100%, 0.14);
+    --ds-background-100: hsl(0, 0%, 5%);
+    border: 1px solid var(--ds-gray-alpha-400);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    background: var(--ds-background-100);
+    background-clip: padding-box !important;
+  }
+
+  .video {
+    border-radius: 6px;
+  }
+  .overlay {
+    --color--transparent: #fff0;
+    --color--background-main: #000000;
+    background-image: linear-gradient(
+      90deg,
+      var(--color--background-main) 23%,
+      var(--color--transparent)
+    );
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    inset: 0% auto 0% 0%;
+  }
+  .overlay.right {
+    --color--transparent: #fff0;
+    --color--background-main: #000000;
+    background-image: linear-gradient(
+      90deg,
+      var(--color--transparent),
+      var(--color--background-main) 77%
+    );
+    inset: 0% 0% 0% auto;
+  }
+  :host {
+    background-color: #000000;
+  }
+  media-error-dialog {
+    background-color: #000000;
+  }
+  number-flow-react::part(suffix) {
+    padding-left: 8px;
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  #nd-docs-layout {
+    background-color: #000000;
+  }
+  #nd-sidebar {
+    background-color: #000000;
+  }
+  .bg-fd-card {
+    background-color: #000000;
+  }
+  .slide-in {
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    transform-origin: bottom;
+  }
+  .slide-out {
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    transform-origin: top;
+  }
 }
 
 @layer base {
@@ -1172,7 +1192,7 @@ number-flow-react::part(suffix) {
     mask-position 1s ease,
     -webkit-mask-position 1s ease;
 }
-@media (min-width: 287px) {
+/* @media (min-width: 287px) {
   .navigation {
     display: none;
   }
@@ -1197,4 +1217,4 @@ number-flow-react::part(suffix) {
     justify-items: center;
     flex-direction: column;
   }
-}
+} */

@@ -92,7 +92,7 @@ export default function PlayerBar() {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   return (
-    <div className="z-20 flex h-[80px] w-full select-none items-center justify-between border-t bg-black px-[2rem]">
+    <div className="z-20 flex h-[80px] w-full select-none items-center justify-between border-t bg-black px-8">
       <audio
         id="audio"
         ref={audioRef}
@@ -117,7 +117,7 @@ export default function PlayerBar() {
           </p>
           <p className="text-xs text-[#a1a1a1]">by lan Walker</p>
         </div>
-        <div className="flex gap-2 [&_svg]:flex-shrink-0 [&_svg]:cursor-pointer">
+        <div className="flex gap-2 [&_svg]:shrink-0 [&_svg]:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -139,7 +139,7 @@ export default function PlayerBar() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center gap-[2rem] [&_svg]:cursor-pointer">
+        <div className="flex items-center gap-8 [&_svg]:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -206,7 +206,7 @@ export default function PlayerBar() {
             <path d="M24,128A72.08,72.08,0,0,1,96,56H204.69L194.34,45.66a8,8,0,0,1,11.32-11.32l24,24a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L204.69,72H96a56.06,56.06,0,0,0-56,56,8,8,0,0,1-16,0Zm200-8a8,8,0,0,0-8,8,56.06,56.06,0,0,1-56,56H51.31l10.35-10.34a8,8,0,0,0-11.32-11.32l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.32-11.32L51.31,200H160a72.08,72.08,0,0,0,72-72A8,8,0,0,0,224,120Z"></path>
           </svg>
         </div>
-        <div className="flex w-[25rem] items-center gap-[1rem]">
+        <div className="flex w-100 items-center gap-4">
           <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
           <Slider.Root
             onValueChange={(newTempValue) => setTempValue(newTempValue)}
@@ -225,12 +225,12 @@ export default function PlayerBar() {
               {" "}
               <Slider.Range className="absolute h-full bg-primary" />
             </Slider.Track>
-            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+            <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
           </Slider.Root>
           <p className="text-xs tabular-nums">{currentTimeMusic}</p>
         </div>
       </div>
-      <div className="sh flex w-[22rem] items-center gap-4 [&_svg]:shrink-0 [&_svg]:cursor-pointer">
+      <div className="sh flex w-88 items-center gap-4 [&_svg]:shrink-0 [&_svg]:cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -286,7 +286,7 @@ export default function PlayerBar() {
           value={[Number(soundValue)]}
           max={100}
           step={1}
-          className="relative flex w-[6rem] touch-none select-none items-center"
+          className="relative flex w-24 touch-none select-none items-center"
         >
           <Slider.Track
             onMouseDown={handlemousedown}
@@ -295,7 +295,7 @@ export default function PlayerBar() {
           >
             <Slider.Range className="absolute h-full bg-primary" />
           </Slider.Track>
-          <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+          <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
         </Slider.Root>
         <svg
           onClick={() => increaseVolume()}

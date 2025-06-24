@@ -317,7 +317,7 @@
 //           <CommandGroup heading="Link">
 //             {docsTitle.map((items_cm) => (
 //               <CommandItem
-//                 className="[&_svg]:mr-2 [&_svg]:flex-shrink-0"
+//                 className="[&_svg]:mr-2 [&_svg]:shrink-0"
 //                 key={items_cm.id}
 //                 onSelect={() => {
 //                   router.push(`${items_cm.src}`);

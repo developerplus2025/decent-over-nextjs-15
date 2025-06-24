@@ -179,7 +179,7 @@ export default function EnhancedAudioPlayer() {
   }, [currentTrack.src, isPlaying]);
 
   return (
-    <Card className="w-[900px] bg-gradient-to-br from-zinc-900 to-black text-white">
+    <Card className="w-[900px] bg-linear-to-br from-zinc-900 to-black text-white">
       <CardContent className="p-6">
         <div className="mb-4 aspect-square w-[100px] overflow-hidden rounded-md bg-zinc-800 shadow-lg">
           <Image

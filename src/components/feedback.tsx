@@ -12,7 +12,7 @@ export default function FeedBack() {
       <Popover>
         <PopoverTrigger asChild>
           <div className="relative">
-            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
             <Button variant="outline" className="h-fit px-3 py-1">
               Feed Back
             </Button>

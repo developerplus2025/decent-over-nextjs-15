@@ -60,10 +60,10 @@ const [mounted, setMounted] = useState(false);
               }
               exit={{width: 0, height: 0, opacity: 0 }}
               transition={{ damping: 10, duration: 0.5 }}
-              className="absolute z-[60] left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
+              className="absolute z-60 left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 flex flex-col items-center justify-between rounded-lg border bg-[#0c0c0c] p-4 opacity-0"
             >
               <div className="flex h-[20px] w-full justify-end">
-                <div className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
+                <div className="ease-outs group flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black">
                   <svg
                     onClick={closeModal}
                     className=""
@@ -84,7 +84,7 @@ const [mounted, setMounted] = useState(false);
                 </div>
               </div>
               <div className="flex h-full w-full items-center justify-center">
-                <div className="flex h-[6rem] w-[6rem] items-center justify-center rounded-full">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full">
                   <svg
                     data-testid="geist-icon"
                     height={50}

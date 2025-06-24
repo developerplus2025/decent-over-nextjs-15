@@ -210,13 +210,13 @@ export const DocsNavigation = (): JSX.Element => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${
         isGuides || isDocs || isHelp ? "webfilm-class" : "webfilm-class"
-      } sticky top-0 z-[20]`}
+      } sticky top-0 z-20`}
     >
-      <nav className="relative z-[4] flex-shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
+      <nav className="relative z-4 shrink-0 items-center justify-center min-[375px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : ""} ${isDocsPath ? "border-b bg-[#0c0c0c]" : ""} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#202020] dark:bg-[#000000]`}
+          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : ""} ${isDocsPath ? "border-b bg-[#0c0c0c]" : ""} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#202020] dark:bg-[#000000]`}
         >
-          <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
+          <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
             <div className="flex items-center gap-4">
               <Link
                 href="/"
@@ -312,8 +312,8 @@ export const DocsNavigation = (): JSX.Element => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex items-center gap-[1rem]">
-            {/* <div className="flex items-center justify-center gap-[1rem]">
+          <div className="flex items-center gap-4">
+            {/* <div className="flex items-center justify-center gap-4">
               <LinkPreview
                 className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
                 url="https://github.com/devplus2024"
@@ -370,7 +370,7 @@ export const DocsNavigation = (): JSX.Element => {
                     </svg>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[9rem]">
+                <DropdownMenuContent className="w-36">
                   <DropdownMenuLabel className="text-center">
                     Social Media
                   </DropdownMenuLabel>
@@ -451,7 +451,7 @@ export const DocsNavigation = (): JSX.Element => {
               <ThemeToggle />
               <CMDK />
             </motion.div>
-            <div className="flex items-center gap-[1rem]">
+            <div className="flex items-center gap-4">
               <Link
                 className="flex items-center justify-center gap-3"
                 href="/signin"
@@ -462,7 +462,7 @@ export const DocsNavigation = (): JSX.Element => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <Button
-                    variant={"outline"}
+                    variant={"outline-solid"}
                     className="flex h-fit items-center px-3 py-1 hover:bg-accent dark:hover:bg-[#1a1a1a]"
                   >
                     {/* <Image
@@ -492,7 +492,7 @@ export const DocsNavigation = (): JSX.Element => {
               </Link>
             </div>
           </div>
-          <div className="absolute left-0 top-0 z-[3] rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
+          <div className="absolute left-0 top-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
       </nav>
     </motion.div>
@@ -508,7 +508,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
           {...props}

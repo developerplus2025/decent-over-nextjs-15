@@ -44,7 +44,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
           onClick={onClose}
         >
           <motion.div
-            className="z-10 flex h-[35rem] w-[50rem] flex-col rounded-lg border bg-black pt-4"
+            className="z-10 flex h-140 w-200 flex-col rounded-lg border bg-black pt-4"
             style={{
               // transformStyle: "preserve-3d",
               perspective: 500, // Tạo chiều sâu 3D
@@ -75,7 +75,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
             <div className="flex w-full justify-end px-3 pb-4">
               <div
                 onClick={onClose}
-                className="ease-outs group flex h-[2rem] w-[2rem] cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black"
+                className="ease-outs group flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition duration-300 hover:bg-white hover:text-black"
               >
                 <svg
                   className=""

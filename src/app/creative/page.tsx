@@ -35,19 +35,19 @@ export default function SupportPage() {
 
   return (
     <section className="">
-      <div className="mb-[3rem] mt-[3rem] px-[23rem]">
+      <div className="mb-12 mt-12 px-92">
         <div className="relative">
           {" "}
-          <Textarea className="h-[8rem] resize-none px-[1rem] py-[2.3rem]" />
-          <TextLoop className="absolute left-[1rem] top-[1rem] font-mono text-sm">
+          <Textarea className="h-32 resize-none px-4 py-[2.3rem]" />
+          <TextLoop className="absolute left-4 top-4 font-mono text-sm">
             <span>Create a 3-minute instrumental track.</span>
             <span>Generate a relaxing piano piece.</span>
             <span>Create a rock song with electric guitar.</span>
             <span>Make an epic orchestral soundtrack.</span>
           </TextLoop>
           <Button
-            variant={"outline"}
-            className="absolute bottom-[1rem] right-[1rem] flex h-[1.9rem] items-center gap-[0.5rem]"
+            variant={"outline-solid"}
+            className="absolute bottom-4 right-4 flex h-[1.9rem] items-center gap-2"
           >
             <svg
               data-testid="geist-icon"
@@ -69,8 +69,8 @@ export default function SupportPage() {
             <h1 className="text-sm">Send</h1>
           </Button>
           <Button
-            variant={"outline"}
-            className="absolute right-[1rem] top-[1rem] hidden h-[1.9rem]"
+            variant={"outline-solid"}
+            className="absolute right-4 top-4 hidden h-[1.9rem]"
           >
             <svg
               data-testid="geist-icon"
@@ -88,10 +88,10 @@ export default function SupportPage() {
               />
             </svg>
           </Button>
-          <div className="absolute bottom-[1rem] left-[1rem] flex gap-[1rem]">
+          <div className="absolute bottom-4 left-4 flex gap-4">
             <Button
-              variant={"outline"}
-              className="flex h-[1.9rem] items-center gap-[0.5rem]"
+              variant={"outline-solid"}
+              className="flex h-[1.9rem] items-center gap-2"
             >
               <svg
                 data-testid="geist-icon"
@@ -111,8 +111,8 @@ export default function SupportPage() {
               <h1 className="text-sm">Image</h1>
             </Button>
             <Button
-              variant={"outline"}
-              className="flex h-[1.9rem] items-center gap-[0.5rem]"
+              variant={"outline-solid"}
+              className="flex h-[1.9rem] items-center gap-2"
             >
               <svg
                 data-testid="geist-icon"
@@ -134,7 +134,7 @@ export default function SupportPage() {
           </div>
         </div>
       </div>
-      <div className="mb-[4rem] grid w-full grid-cols-5 justify-items-center px-[8rem]">
+      <div className="mb-16 grid w-full grid-cols-5 justify-items-center px-32">
         {promp_list.map((prompt) => (
           <div
             className="flex h-[30px] w-[200px] items-center justify-center gap-3 rounded-full border text-xs"
@@ -159,9 +159,9 @@ export default function SupportPage() {
           </div>
         ))}
       </div>
-      <Tabs defaultValue="project" className="my-[3rem] flex w-full flex-col">
-        <TabsList className="flex items-center justify-center gap-[1rem] bg-black">
-          <TabsTrigger value="project" className="flex items-center gap-[1rem]">
+      <Tabs defaultValue="project" className="my-12 flex w-full flex-col">
+        <TabsList className="flex items-center justify-center gap-4 bg-black">
+          <TabsTrigger value="project" className="flex items-center gap-4">
             <div>
               <svg
                 data-testid="geist-icon"
@@ -181,7 +181,7 @@ export default function SupportPage() {
             </div>
             <h1 className="text-sm">Project</h1>
           </TabsTrigger>
-          <TabsTrigger value="lasted" className="flex items-center gap-[1rem]">
+          <TabsTrigger value="lasted" className="flex items-center gap-4">
             <div>
               <svg
                 data-testid="geist-icon"
@@ -201,7 +201,7 @@ export default function SupportPage() {
             </div>
             <h1 className="text-sm">Lasted</h1>
           </TabsTrigger>
-          <TabsTrigger value="feature" className="flex items-center gap-[1rem]">
+          <TabsTrigger value="feature" className="flex items-center gap-4">
             <div>
               <svg
                 data-testid="geist-icon"
@@ -222,15 +222,15 @@ export default function SupportPage() {
             <h1 className="text-sm">Feature</h1>
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="project" className="mt-[2rem]">
-          <div className="grid grid-cols-4 justify-items-center gap-[2rem] px-[8rem]">
+        <TabsContent value="project" className="mt-8">
+          <div className="grid grid-cols-4 justify-items-center gap-8 px-32">
             {[...Array(12)].map((_, index) => (
               <div
                 key={index}
-                className="flex h-[50px] w-[290px] items-center gap-[1rem] rounded-md border px-4"
+                className="flex h-[50px] w-[290px] items-center gap-4 rounded-md border px-4"
               >
                 <svg
-                  className="flex-shrink-0"
+                  className="shrink-0"
                   data-testid="geist-icon"
                   height={16}
                   strokeLinejoin="round"
@@ -249,7 +249,7 @@ export default function SupportPage() {
                 <div className="text-xs">0:00/3:34</div>
                 <Slider defaultValue={[50]}></Slider>
                 <svg
-                  className="flex-shrink-0"
+                  className="shrink-0"
                   data-testid="geist-icon"
                   height={16}
                   strokeLinejoin="round"

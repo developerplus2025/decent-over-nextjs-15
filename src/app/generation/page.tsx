@@ -156,10 +156,10 @@ export default function SupportPage() {
   ];
   return (
     <div>
-      <div className="mt-[3rem] text-center text-xl font-bold">
+      <div className="mt-12 text-center text-xl font-bold">
         <p>The latest DecentVF news </p>
       </div>
-      <div className="my-[4rem] grid grid-cols-1 justify-items-center gap-[3rem] px-[2rem]">
+      <div className="my-16 grid grid-cols-1 justify-items-center gap-12 px-8">
         {list_version.map((list) => (
           <div
             key={list.id}
@@ -180,11 +180,11 @@ export default function SupportPage() {
               </div>
               <div>
                 <p className="font-semibold">Change:</p>
-                <div className="mt-2 pl-[1rem]">
+                <div className="mt-2 pl-4">
                   <div className="flex items-center gap-2">
                     <p className="text-sm">New Features:</p>
                   </div>
-                  <ul className="mt-2 flex flex-col gap-2 pl-[1rem]">
+                  <ul className="mt-2 flex flex-col gap-2 pl-4">
                     {list.features.map((gh) => (
                       <li
                         key={gh.id}
@@ -196,11 +196,11 @@ export default function SupportPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-2 pl-[1rem]">
+                <div className="mt-2 pl-4">
                   <div className="flex items-center gap-2">
                     <p className="text-sm">Improvements:</p>
                   </div>
-                  <ul className="mt-2 flex flex-col gap-2 pl-[1rem]">
+                  <ul className="mt-2 flex flex-col gap-2 pl-4">
                     {list.improvements.map((gh) => (
                       <li
                         key={gh.id}
@@ -212,11 +212,11 @@ export default function SupportPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-2 pl-[1rem]">
+                <div className="mt-2 pl-4">
                   <div className="flex items-center gap-2">
                     <p className="text-sm">Fixed:</p>
                   </div>
-                  <ul className="mt-2 flex flex-col gap-2 pl-[1rem]">
+                  <ul className="mt-2 flex flex-col gap-2 pl-4">
                     {list.fixes.map((gh) => (
                       <li
                         key={gh.id}
@@ -230,8 +230,8 @@ export default function SupportPage() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-[4rem]">
-              <Button className="w-full" variant={"outline"}>
+            <div className="flex gap-16">
+              <Button className="w-full" variant={"outline-solid"}>
                 Download
               </Button>
               <Button className="w-full">View It</Button>

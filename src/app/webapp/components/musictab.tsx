@@ -38,14 +38,14 @@ export default function MusicTab() {
           <TabsContent value="music">
             <div>
               <div>
-                <h1 className="text-md mt-[1rem]">Listen Now</h1>
+                <h1 className="text-md mt-4">Listen Now</h1>
                 <p className="text-sm text-[#a1a1a1]">
                   Top picks for you. Updated daily.
                 </p>
               </div>
               <div className="">
-                <ScrollArea className="mt-[1.5rem] h-[450px] w-full border-t pt-[1.5rem] dark:border-t-[#202020]">
-                  <div className="flex gap-[3rem]">
+                <ScrollArea className="mt-6 h-[450px] w-full border-t pt-6 dark:border-t-[#202020]">
+                  <div className="flex gap-12">
                     {list.slice(0, 4).map((list: List) => (
                       <div key={list.id}>
                         <ContextMenu>
@@ -58,7 +58,7 @@ export default function MusicTab() {
                               className="h-[350px] max-w-[255px] rounded-lg"
                             />
                           </ContextMenuTrigger>
-                          <ContextMenuContent className="w-[11rem]">
+                          <ContextMenuContent className="w-44">
                             <ContextMenuItem inset className="pl-[8px]">
                               Add to Library
                             </ContextMenuItem>
@@ -100,7 +100,7 @@ export default function MusicTab() {
                           </ContextMenuContent>
                         </ContextMenu>
                         <div key={list.id}>
-                          <p className="mt-[0.5rem] text-sm">{list.title}</p>
+                          <p className="mt-2 text-sm">{list.title}</p>
                           <p className="text-xs text-[#a1a1a1]">
                             {list.artist}
                           </p>

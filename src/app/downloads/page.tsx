@@ -13,20 +13,20 @@ export default function DownloadsPage() {
     await router.push("/docs/user-win-download");
   };
   return (
-    <main className="mt-[3rem] w-full">
-      <div className="flex w-full flex-col items-center justify-center gap-[1rem]">
+    <main className="mt-12 w-full">
+      <div className="flex w-full flex-col items-center justify-center gap-4">
         <p className="text-center text-4xl font-bold">Download Decent </p>
-        <p className="w-[45rem] text-center text-xl text-[#a1a1a1]">
+        <p className="w-180 text-center text-xl text-[#a1a1a1]">
           Experience the best music streaming service on your favorite device.
           Download our app now and enjoy unlimited access to millions of songs.
         </p>
       </div>
-      <div className="mt-[5rem] grid grid-cols-1 justify-items-center gap-[2rem]">
+      <div className="mt-20 grid grid-cols-1 justify-items-center gap-8">
         <div
-          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-8 rounded-lg border px-8"
           style={{ background: "black" }}
         >
-          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+          <div className="flex w-full items-center gap-8 px-4">
             <Image
               src={"/windows11.svg"}
               width={"100"}
@@ -34,7 +34,7 @@ export default function DownloadsPage() {
               alt="windows-11-logo"
               className="dark:invert-[1]"
             ></Image>
-            <div className="flex h-[6rem] flex-col items-center justify-center border-r pr-[2rem]">
+            <div className="flex h-24 flex-col items-center justify-center border-r pr-8">
               <p className="text-xl">Windows</p>
               <p className="text-sm">Windows 11 , 10</p>
             </div>
@@ -56,17 +56,17 @@ export default function DownloadsPage() {
             </div>
           </div>
           <a className="w-full" href="/downloads">
-            <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+            <div className="flex w-full items-center justify-center gap-2 rounded-md border bg-white px-3 py-2 dark:bg-black">
               <CircleArrowDown className="text-black dark:text-white" />
               <p className="text-black dark:text-white">Download for Windows</p>
             </div>
           </a>
         </div>
         <div
-          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-8 rounded-lg border px-8"
           style={{ background: "black" }}
         >
-          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+          <div className="flex w-full items-center gap-8 px-4">
             <Image
               alt="windows-11-logo"
               loading="lazy"
@@ -83,16 +83,16 @@ export default function DownloadsPage() {
               <p>Debian, Ubuntu</p>
             </div>
           </div>
-          <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+          <div className="flex w-full items-center justify-center gap-2 rounded-md border bg-white px-3 py-2 dark:bg-black">
             <CircleArrowDown className="text-black dark:text-white" />
             <p className="text-black dark:text-white">Download for Linux</p>
           </div>
         </div>
         <div
-          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-[2rem] rounded-lg border px-[2rem]"
+          className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-8 rounded-lg border px-8"
           style={{ background: "black" }}
         >
-          <div className="flex w-full items-center gap-[2rem] px-[1rem]">
+          <div className="flex w-full items-center gap-8 px-4">
             <Image
               src={"/apple.svg"}
               width={"100"}
@@ -105,7 +105,7 @@ export default function DownloadsPage() {
               <p>MacOs 10.15+</p>
             </div>
           </div>
-          <div className="flex w-full items-center justify-center gap-[0.5rem] rounded-md border bg-white px-3 py-2 dark:bg-black">
+          <div className="flex w-full items-center justify-center gap-2 rounded-md border bg-white px-3 py-2 dark:bg-black">
             <CircleArrowDown className="text-black dark:text-white" />
             <p className="text-black dark:text-white">Download for MacOs</p>
           </div>
@@ -115,11 +115,11 @@ export default function DownloadsPage() {
       <section className="w-full md:py-24 lg:py-32 xl:py-[5.4rem]">
         <div className="container space-y-12 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="mt-[3rem]">
+            <div className="mt-12">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
                 Key Features
               </div>
-              <h2 className="mt-[2rem] text-3xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="mt-8 text-3xl font-bold tracking-tighter sm:text-5xl">
                 Why Choose the Music App?
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -177,7 +177,7 @@ export default function DownloadsPage() {
           <div className="flex flex-col items-start justify-center gap-4 sm:flex-row">
             <Link
               href="#"
-              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
               Download

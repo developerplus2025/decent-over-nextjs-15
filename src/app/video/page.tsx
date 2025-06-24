@@ -4,9 +4,9 @@ import React from "react";
 
 export default function VideoPage() {
   return (
-    <div className="mx-[3rem] my-[4rem] grid w-full grid-cols-3 place-content-center justify-items-center">
+    <div className="mx-12 my-16 grid w-full grid-cols-3 place-content-center justify-items-center">
       <div className="flex h-[300px] w-[500px] flex-col justify-between rounded-lg border">
-        <div className="flex h-full flex-col items-center justify-between py-[1rem]">
+        <div className="flex h-full flex-col items-center justify-between py-4">
           <div className="flex">
             <div className="h-[200px] w-[380px] rounded-lg bg-[#0c0c0c]">
               <iframe
@@ -26,7 +26,7 @@ export default function VideoPage() {
             />
           </div>
         </div>
-        <div className="flex h-[40px] items-center justify-between rounded-b-lg border-t bg-[#0c0c0c] px-[3rem]">
+        <div className="flex h-[40px] items-center justify-between rounded-b-lg border-t bg-[#0c0c0c] px-12">
           <svg
             data-testid="geist-icon"
             height={16}
