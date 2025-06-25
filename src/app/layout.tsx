@@ -22,6 +22,7 @@ import { RootProvider } from "fumadocs-ui/provider";
 import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
 import NavigationMobile from "@/components/Navigation-Mobile";
+import { MobileNav } from "@/components/mobile-nav";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -62,10 +63,7 @@ export default function RootLayout({
               {/* Navigation children content, or empty fragment if not needed */}
               <></>
             </Navigation>
-            <NavigationMobile className=" xl:hidden">
-              {/* Add children here if needed */}
-              <></>
-            </NavigationMobile>
+            <MobileNav className="min-[300px]:block xl:hidden" />
             <DocsNavigation />
 
             <Toaster
