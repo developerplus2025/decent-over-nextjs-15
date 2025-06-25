@@ -43,7 +43,7 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="relative mx-20 mt-4 flex w-full items-center justify-center min-[300px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-8"
+      className="relative mx-20 mt-4 flex w-full items-center min-[300px]:gap-[1rem] justify-center min-[300px]:flex-col min-[645px]:flex-col xl:flex-col xl:gap-8"
     >
       <svg
         className="absolute right-48 hidden h-160 lg:block"
@@ -154,7 +154,7 @@ export default function MainTextHome() {
           and craft professional quality tracks all in one powerful platform.
         </h1>
       </div>
-      <div className="min-[300px]:flex min-[300px]:flex-col min-[300px]:w-full min-[300px]:gap-[1rem] min-[300px]:items-center  xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
+      <div className="min-[300px]:flex min-[300px]:w-[200px] min-[300px]:flex-col  min-[300px]:gap-[1rem] min-[300px]:items-center  xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
         <DownloadButton />
         <Modal isOpen={open} onClose={() => setOpen(false)} />
         <Button onClick={() => setOpen(true)} variant={"default"} className="">

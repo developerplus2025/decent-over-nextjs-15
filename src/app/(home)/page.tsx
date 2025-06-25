@@ -13,7 +13,7 @@ export default function Home() {
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-24 xl:pb-4 dark:bg-black dark:scheme-dark">
       <CompAvatar />
       <MainTextHome />
-      <h1 className="text-sm" style={{ color: variables.mutedColor }}>By using VS Code, you agree to its license and privacy statement.</h1>
+      <h1 className="xl:text-sm min-[300px]:text-xs text-center min-[300px]:w-[200px] xl:w-full" style={{ color: variables.mutedColor }}>By using VS Code, you agree to its license and privacy statement.</h1>
       <div className="mx-auto mt-40 mb-16 h-px w-full bg-[#262626]"></div>
       <div className="w-full">
         <BeautifulFeaturesLayout />
