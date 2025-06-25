@@ -29,6 +29,9 @@ importers:
       '@heroui/react':
         specifier: ^2.6.14
         version: 2.7.11(@types/react@18.3.23)(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwindcss@4.1.10)
+      '@heroui/skeleton':
+        specifier: ^2.2.14
+        version: 2.2.14(@heroui/system@2.4.18(@heroui/theme@2.4.17(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@heroui/theme@2.4.17(tailwindcss@4.1.10))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@heroui/system':
         specifier: ^2.4.7
         version: 2.4.18(@heroui/theme@2.4.17(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -44,9 +47,6 @@ importers:
       '@nanostores/react':
         specifier: github:nanostores/react
         version: https://codeload.github.com/nanostores/react/tar.gz/a6ad745cc307881916944ee4d6ba04bdda978dc6(nanostores@0.11.4)(react@19.1.0)
-      '@nextui-org/skeleton':
-        specifier: ^2.0.32
-        version: 2.2.5(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@nextui-org/system':
         specifier: ^2.2.6
         version: 2.4.6(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -436,7 +436,7 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       eslint:
-        specifier: ^8.57.0
+        specifier: ^8.57.1
         version: 8.57.1
       eslint-config-next:
         specifier: 14.2.4
@@ -2833,15 +2833,6 @@ packages:
 
   '@nextui-org/shared-utils@2.1.2':
     resolution: {integrity: sha512-5n0D+AGB4P9lMD1TxwtdRSuSY0cWgyXKO9mMU11Xl3zoHNiAz/SbCSTc4VBJdQJ7Y3qgNXvZICzf08+bnjjqqA==}
-
-  '@nextui-org/skeleton@2.2.5':
-    resolution: {integrity: sha512-CK1O9dqS0xPW3o1SIekEEOjSosJkXNzU0Zd538Nn1XhY1RjNuIPchpY9Pv5YZr2QSKy0zkwPQt/NalwErke0Jg==}
-    deprecated: This package has been deprecated. Please use @heroui/skeleton instead.
-    peerDependencies:
-      '@nextui-org/system': '>=2.4.0'
-      '@nextui-org/theme': '>=2.4.0'
-      react: '>=18 || >=19.0.0-rc.0'
-      react-dom: '>=18 || >=19.0.0-rc.0'
 
   '@nextui-org/system-rsc@2.3.5':
     resolution: {integrity: sha512-DpVLNV9LkeP1yDULFCXm2mxA9m4ygS7XYy3lwgcF9M1A8QAWB+ut+FcP+8a6va50oSHOqwvUwPDUslgXTPMBfQ==}
@@ -14155,15 +14146,6 @@ snapshots:
       react: 19.1.0
 
   '@nextui-org/shared-utils@2.1.2': {}
-
-  '@nextui-org/skeleton@2.2.5(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
-    dependencies:
-      '@nextui-org/react-utils': 2.1.3(react@19.1.0)
-      '@nextui-org/shared-utils': 2.1.2
-      '@nextui-org/system': 2.4.6(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@nextui-org/theme': 2.4.5(tailwindcss@4.1.10)
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
 
   '@nextui-org/system-rsc@2.3.5(@nextui-org/theme@2.4.5(tailwindcss@4.1.10))(react@19.1.0)':
     dependencies:
