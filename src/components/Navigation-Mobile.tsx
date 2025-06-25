@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import NavigationIcon from "./comp-100";
+import { MobileNav } from "./mobile-nav";
 type NavigationMobileProps = {
   className?: string;
   children: React.ReactNode;
@@ -72,22 +73,6 @@ export default function NavigationMobile({
     <div
       className={`${className} fixed top-0 z-50 flex h-[50px] w-full items-center justify-between border-b bg-black px-4`}
     >
-      {isOpen && (
-        <div className="absolute left-1/2 top-[50px] flex h-[calc(100vh-50px)] w-screen -translate-x-1/2 flex-col justify-start bg-black p-8">
-          <nav className="flex flex-col gap-4">
-            {LinkItem.map((item) => (
-              <Link
-                key={item.id + item.name}
-                href={item.src}
-                className="text-lg font-medium text-white"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
       <div className="flex items-center gap-4">
         <Link
           href="/"
@@ -114,7 +99,7 @@ export default function NavigationMobile({
             fill="currentColor"
           />
         </svg>
-        <NavigationIcon open={isOpen} setOpen={setIsOpen} />
+        <MobileNav />
       </div>
     </div>
   );
