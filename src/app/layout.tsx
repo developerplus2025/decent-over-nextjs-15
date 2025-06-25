@@ -62,7 +62,7 @@ export default function RootLayout({
               {/* Navigation children content, or empty fragment if not needed */}
               <></>
             </Navigation>
-            <NavigationMobile className="min-[264px]:block xl:hidden">
+            <NavigationMobile className=" xl:hidden">
               {/* Add children here if needed */}
               <></>
             </NavigationMobile>
