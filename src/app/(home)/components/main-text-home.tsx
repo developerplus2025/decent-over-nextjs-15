@@ -148,13 +148,13 @@ export default function MainTextHome() {
         <h1 className="w-[299px] text-center text-[3rem] leading-12 font-bold text-pretty min-[300px]:block xl:hidden">
           The Next AI Music Editor
         </h1>
-        <h1 className="max-[300px]:w-screen  max-[300px]:text-[12px] max-[300px]:text-balance max-[300px]:text-center text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
+        <h1 className="min-[300px]:w-screen  min-[300px]:text-[12px] min-[300px]:text-balance min-[300px]:text-center text-[#a1a1a1] xl:w-[522px] xl:text-center xl:text-[1rem]">
           Dive into a seamless music experience with our cutting edge software.
           Collaborate effortlessly, unleash your creativity, manage playlists
           and craft professional quality tracks all in one powerful platform.
         </h1>
       </div>
-      <div className="max-[300px]:flex max-[300px]:flex-col max-[300px]:w-full max-[300px]:gap-[1rem] max-[300px]:items-center  xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
+      <div className="min-[300px]:flex min-[300px]:flex-col min-[300px]:w-full min-[300px]:gap-[1rem] min-[300px]:items-center  xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
         <DownloadButton />
         <Modal isOpen={open} onClose={() => setOpen(false)} />
         <Button onClick={() => setOpen(true)} variant={"default"} className="">
