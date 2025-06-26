@@ -3,7 +3,8 @@
   ---break---
 */
 @custom-variant dark (&:is(.dark *));
-
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 @config '../../tailwind.config.ts';
 
 /*
@@ -364,7 +365,7 @@
     padding-left: 8px;
     font-weight: normal;
     font-size: 1rem;
-    color: var(--muted);
+    color: #828182;
   }
   #nd-docs-layout {
     background-color: #000000;
