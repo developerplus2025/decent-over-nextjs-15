@@ -63,7 +63,7 @@ export function MobileNav({ className }: { className?: string }) {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <div className="w-screen">
+    <div>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -96,7 +96,7 @@ export function MobileNav({ className }: { className?: string }) {
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="bg-background/90 no-scrollbar h-(--radix-popper-available-height) w-screen overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
+          className="bg-background/90 no-scrollbar -top-[4px] z-[49] h-(--radix-popper-available-height) w-screen overflow-y-auto rounded-none border-none p-0 shadow-none backdrop-blur duration-100"
           align="start"
           side="bottom"
           alignOffset={-16}
