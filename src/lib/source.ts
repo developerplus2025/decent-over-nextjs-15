@@ -1,38 +1,8 @@
-import { createMDXSource } from "fumadocs-mdx";
-import type { InferMetaType, InferPageType } from "fumadocs-core/source";
-import { loader } from "fumadocs-core/source";
-import type { PageFile } from "fumadocs-core/source";
-import { icons } from "lucide-react";
-import { attachFile, createOpenAPI } from "fumadocs-openapi/server";
-import { createElement } from "react";
+// .source folder will be generated when you run `next dev`
 import { docs } from "../../.source";
-import { blogPosts } from "../../.source";
+import { loader } from "fumadocs-core/source";
+
 export const source = loader({
   baseUrl: "/docs",
-  icon(icon) {
-    if (icon && icon in icons)
-      return createElement(icons[icon as keyof typeof icons]);
-  },
   source: docs.toFumadocsSource(),
-  pageTree: {
-    attachFile: attachFile as (node: any, file?: any) => any,
-  },
 });
-
-export const blog = loader({
-  baseUrl: "/blog",
-  source: createMDXSource(blogPosts),
-});
-
-export const openapi = createOpenAPI({
-  proxyUrl: "/api/proxy",
-  shikiOptions: {
-    themes: {
-      dark: "vesper",
-      light: "vitesse-light",
-    },
-  },
-});
-
-export type Page = InferPageType<typeof source>;
-export type Meta = InferMetaType<typeof source>;
