@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { blog } from "../../lib/source";
+import { blog } from "@/lib/source";
 import CompAvatarListBlog from "@/components/comp-410";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";

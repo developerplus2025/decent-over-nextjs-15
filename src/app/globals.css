@@ -1002,6 +1002,8 @@
   ---break---
 */
 :root {
+  --theme-toggle-sun-icon-display:block;
+  --theme-toggle-moon-icon-display:hidden;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -1039,6 +1041,8 @@
   ---break---
 */
 .dark {
+  --theme-toggle-sun-icon-display:hidden;
+  --theme-toggle-moon-icon-display:block;
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
