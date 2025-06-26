@@ -1000,7 +1000,7 @@ export default function Individual() {
                         <AlertDialogTrigger asChild>
                           <Button
                             variant="outline"
-                            className="w-full"
+                            className="w-fit"
                             onClick={() => handlePackageSelect("ultimate")}
                           >
                             Get Started
@@ -1129,7 +1129,7 @@ export default function Individual() {
                       </AlertDialog>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button className="w-full">Contact Sale</Button>
+                          <Button className="w-fit">Contact Sale</Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
                           <AlertDialogHeader>
