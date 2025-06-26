@@ -11,7 +11,7 @@ export default function AnimateTextHome() {
       filter: "blur(0px)",
       opacity: 1,
       y: 0,
-      transition: {
+      transition: { 
         duration: 0.5,
         delay: 0.1 * index,
         ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],

@@ -360,7 +360,7 @@ export default function Navigation({
                           : "dark:text-[#9b9b9b]"
                       }`}
                     >
-                      Library
+                      <Text variant="glitch"> Library </Text>
                     </div>
                   </Link>
                 </NavigationMenuItem>
@@ -441,7 +441,7 @@ export default function Navigation({
                           : "dark:text-[#9b9b9b]"
                       }`}
                     >
-                      Creative
+                     <Text variant="glitch"> Creative </Text>
                     </div>
                   </Link>
                 </NavigationMenuItem>
@@ -462,7 +462,7 @@ export default function Navigation({
                           : "dark:text-[#9b9b9b]"
                       }`}
                     >
-                      Pricing
+                    <Text variant="glitch">  Pricing </Text>
                     </div>
                   </Link>
                 </NavigationMenuItem>
@@ -482,7 +482,7 @@ export default function Navigation({
                           : "dark:text-[#9b9b9b]"
                       }`}
                     >
-                      Blog
+                     <Text variant="glitch"> Blog </Text>
                     </div>
                   </Link>
                 </NavigationMenuItem>
@@ -502,7 +502,7 @@ export default function Navigation({
                           : "dark:text-[#9b9b9b]"
                       }`}
                     >
-                      Design
+                      <Text variant="glitch">Design </Text>
                     </div>
                   </Link>
                 </NavigationMenuItem>
