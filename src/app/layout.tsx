@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 // import { AnimatePresence, motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "fumadocs-ui/style.css";
 // import 'fumadsocs-ui/dist/style.css';
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
