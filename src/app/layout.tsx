@@ -47,7 +47,6 @@ export default function RootLayout({
         </head>
 
         <body
-          dir="rtl"
           style={{ colorScheme: "dark" }}
           className="theme-default relative overflow-x-hidden antialiased"
         >
@@ -60,7 +59,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="dark"
           >
-            <RootProvider dir="rtl">
+            <RootProvider>
               {" "}
               <Navigation className="min-[300px]:hidden xl:block">
                 {/* Navigation children content, or empty fragment if not needed */}
