@@ -47,7 +47,6 @@ export default function RootLayout({
         </head>
 
         <body
-          dir="rtl"
           style={{ colorScheme: "dark" }}
           className="theme-default relative overflow-x-hidden antialiased"
         >
@@ -102,7 +101,7 @@ export default function RootLayout({
               className={` ${GeistSans.className}`}
               position="top-center"
             />
-            <RootProvider dir="rtl"> {children}</RootProvider>
+            <RootProvider> {children}</RootProvider>
             <Footer />
           </ThemeProvider>
         </body>
