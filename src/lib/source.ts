@@ -1,7 +1,7 @@
 // .source folder will be generated when you run `next dev`
-import { docs } from "../../.source";
+import { docs } from "@/.source";
 import { loader } from "fumadocs-core/source";
-import { blogPosts } from "../../.source";
+import { blogPosts } from "@/.source";
 import { createMDXSource } from "fumadocs-mdx";
 export const source = loader({
   baseUrl: "/docs",

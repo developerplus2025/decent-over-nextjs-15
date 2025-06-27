@@ -24,6 +24,7 @@
       }
     ],
     "paths": {
+      "@/.source": ["./.source/index.ts"],
       "@/*": ["./src/*", "mdx-components.tsx", "source.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "#site/content": ["./.velite"]
