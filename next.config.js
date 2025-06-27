@@ -29,6 +29,5 @@ const nextConfig = {
     return config;
   },
 };
-export default withMDX(config);
 // Gộp với next-video & MDX
-module.exports = withNextVideo(createMDX()(nextConfig));
+module.exports = withNextVideo(withMDX(config));
