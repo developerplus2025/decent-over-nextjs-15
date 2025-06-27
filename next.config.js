@@ -29,5 +29,7 @@ const nextConfig = {
     return config;
   },
 };
+
 // Gộp với next-video & MDX
-module.exports = withNextVideo(withMDX(config));
+module.exports = withNextVideo();
+module.exports = withMDX();
