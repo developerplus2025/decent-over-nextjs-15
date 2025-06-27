@@ -29,6 +29,12 @@ const nextConfig = {
     return config;
   },
 };
+const withMDX = createMDX();
+/** @type {import('next').NextConfig} */
+const config = {
+  reactStrictMode: true,
+};
+export default withMDX(config);
 
 // Gộp với next-video & MDX
 module.exports = withNextVideo(createMDX()(nextConfig));
