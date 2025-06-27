@@ -1,11 +1,11 @@
 const { withNextVideo } = require("next-video/process");
 const { createMDX } = require("fumadocs-mdx/next");
 const withMDX = createMDX();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   turbopack: {
-    // Example: adding an alias and custom file extension
     resolveAlias: {
       underscore: "lodash",
     },
@@ -30,6 +30,5 @@ const nextConfig = {
   },
 };
 
-// Gộp với next-video & MDX
-module.exports = withNextVideo();
-module.exports = withMDX();
+// Gộp 2 middleware lại
+module.exports = withMDX(withNextVideo(nextConfig));
