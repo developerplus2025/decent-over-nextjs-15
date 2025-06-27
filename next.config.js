@@ -1,6 +1,6 @@
 const { withNextVideo } = require("next-video/process");
 const { createMDX } = require("fumadocs-mdx/next");
-
+const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
@@ -29,6 +29,6 @@ const nextConfig = {
     return config;
   },
 };
-
+export default withMDX(config);
 // Gộp với next-video & MDX
 module.exports = withNextVideo(createMDX()(nextConfig));
