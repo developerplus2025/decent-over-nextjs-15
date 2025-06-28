@@ -18,7 +18,12 @@ export function SignInButton({ large }: { large?: boolean }) {
   if (user) {
     return (
       <Flex gap="3">
-        <form action={handleSignOutAction}>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            await handleSignOutAction();
+          }}
+        >
           <Button type="submit" size={large ? "3" : "2"}>
             Sign Out
           </Button>

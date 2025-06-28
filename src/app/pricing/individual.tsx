@@ -881,7 +881,7 @@ export default function Individual() {
             <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
             <Card
               key={tier.title}
-              className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border dark:bg-[#000000]`}
+              className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-(--input) dark:bg-[#000000]`}
             >
               <CardHeader
                 className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-6`}
@@ -967,7 +967,7 @@ export default function Individual() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="grow pt-[8px]">
-                <ul className="flex flex-col gap-1 rounded-lg border-t first:pt-4">
+                <ul className="border-(--input)-t flex flex-col gap-1 rounded-lg first:pt-4">
                   {tier.features.map((feature) => (
                     <li
                       key={feature.name}
@@ -1146,7 +1146,7 @@ export default function Individual() {
                           </AlertDialogHeader>
                           <AlertDialogFooter>
                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction className="border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-xs">
+                            <AlertDialogAction className="border-(--input)-input bg-background hover:bg-accent hover:text-accent-foreground border-(--input) shadow-xs">
                               Subscribe
                             </AlertDialogAction>
                           </AlertDialogFooter>
