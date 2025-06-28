@@ -669,7 +669,7 @@ export default function Navigation({
             <div className="flex items-center gap-4">
               <Link
                 className="flex items-center justify-center gap-3"
-                href="/signin"
+                href="/login"
               >
                 <motion.div
                   className="relative"
