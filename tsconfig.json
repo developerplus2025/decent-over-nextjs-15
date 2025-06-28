@@ -25,7 +25,6 @@
     ],
     "paths": {
       "@/.source": ["./.source/index.ts"],
-      "@/tailwind.config.ts": ["./tailwind.config.ts"],
       "@/*": ["./src/*", "mdx-components.tsx", "source.ts"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "#site/content": ["./.velite"]

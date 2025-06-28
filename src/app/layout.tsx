@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 // import { AnimatePresence, motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { fontVariables } from "@/lib/fonts";
 // import 'fumadsocs-ui/dist/style.css';
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
@@ -24,6 +24,7 @@ import { RootProvider } from "fumadocs-ui/provider";
 import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
 import NavigationMobile from "@/components/Navigation-Mobile";
+import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -40,7 +41,7 @@ export default function RootLayout({
       <html
         suppressHydrationWarning
         lang="en"
-        className={`${GeistSans.className} custom_command_scroll dark`}
+        className={cn("custom_command_scroll dark font-sans", fontVariables)}
         style={{ colorScheme: "dark" }}
       >
         <head>

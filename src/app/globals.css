@@ -960,6 +960,8 @@
   ---break---
 */
 @theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -1039,6 +1041,7 @@
   ---break---
 */
 .dark {
+  
   --theme-toggle-sun-icon-display:none;
   --theme-toggle-moon-icon-display:block;
   --background: oklch(0.141 0.005 285.823);

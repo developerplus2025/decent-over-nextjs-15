@@ -1,7 +1,7 @@
 // import { heroui } from "@heroui/theme";
 import tailwindcssAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
-
+const { fontFamily } = require("tailwindcss/defaultTheme");
 const config: Config = {
   darkMode: "class",
   content: [
@@ -12,8 +12,6 @@ const config: Config = {
     "./public/**/*.{ts,tsx,svg}",
     "./chat/vn-vi/**/*.{ts,tsx}",
     "./home/**/*.{ts,tsx}",
-    "./node_modules/fumadocs-ui/dist/**/*.js",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -31,8 +29,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
       colors: {
         border: "hsl(var(--border))",
