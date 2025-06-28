@@ -1,6 +1,7 @@
-import { authkitMiddleware } from "@workos-inc/authkit-nextjs";
+import { authMiddleware } from "@workos-inc/authkit-nextjs";
 
-export default authkitMiddleware();
+export default authMiddleware();
 
-// Match against the pages
-export const config = { matcher: ["/", "/account/:path*", "/api/:path*"] };
+export const config = {
+  matcher: ["/((?!api|_next|.*\\..*).*)"], // ✅ áp dụng cho tất cả route (trừ API, static)
+};
