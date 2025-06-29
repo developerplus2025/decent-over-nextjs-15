@@ -11,18 +11,18 @@ export default function UserButtonClient() {
       .then((res) => res.json())
       .then((data) => setUser(data.user));
   }, []);
-  console.log(user.profilePictureUrl);
+  console.log(user?.profilePictureUrl);
   return (
     <div className="flex items-center gap-4">
       {user ? (
         <div className="flex items-center gap-4">
           <Image
-            height={40}
-            width={40}
-            alt="User Avatar"
-            src={user.profilePictureUrl}
+            height={"40"}
+            width={"40"}
+            alt={user?.profilePictureUrl}
+            src={`${user?.profilePictureUrl}`}
             className="h-[2.5rem] w-[2.5rem] rounded-xl"
-          />
+          ></Image>
         </div>
       ) : (
         <motion.div
