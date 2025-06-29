@@ -10,6 +10,7 @@ const nextConfig = {
     domains: [
       "api.microlink.io", // Microlink Image Preview
       "i.scdn.co",
+      ["workoscdn.com"],
     ],
   },
 };
