@@ -3,7 +3,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import { VisuallyHidden } from "@radix-ui/themes";
 export default function UserButtonClient() {
+  const variants = {
+    visible: { opacity: 1, display: "flex" },
+    hidden: { opacity: 0, transitionEnd: { display: "none" } },
+  };
   const [user, setUser] = useState<any>(null);
   useEffect(() => {
     fetch("/api/user")
@@ -20,13 +25,13 @@ export default function UserButtonClient() {
             width={"40"}
             alt={user?.profilePictureUrl}
             src={`${user?.profilePictureUrl}`}
-            className="h-[2.5rem] w-[2.5rem] rounded-md"
+            className="h-[2.1rem] w-[2.1rem] rounded-full"
           ></img>
         </div>
       ) : (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={user ? { opacity: 0 } : { opacity: 1 }}
+          initial={user ? "hidden" : "visible"}
+          animate={user ? "hidden" : "visible"}
           transition={{ duration: 0.5, ease: "easeOut", delay: 4 }}
           className="flex items-center gap-4"
         >
