@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 
@@ -39,7 +39,6 @@ import X from "./x";
 import { ThemeToggle } from "./ThemeToggle";
 
 import FeedBack from "./feedback";
-"use client";
 import UserButtonServer from "./UserButtonServer";
 
 const components: { title: string; href: string; description: string }[] = [
