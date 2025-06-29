@@ -34,20 +34,18 @@ export default function UserButtonClient() {
     <div className="flex items-center gap-4">
       {user ? (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <div className="flex items-center gap-4">
-                <img
-                  height={"40"}
-                  width={"40"}
-                  alt={user?.profilePictureUrl}
-                  src={`${user?.profilePictureUrl}`}
-                  className="h-[2.1rem] w-[2.1rem] rounded-full"
-                ></img>
-              </div>
-            </Button>
+          <DropdownMenuTrigger asChild className="bg-black">
+            <div className="flex cursor-pointer items-center gap-4">
+              <img
+                height={"40"}
+                width={"40"}
+                alt={user?.profilePictureUrl}
+                src={`${user?.profilePictureUrl}`}
+                className="h-[2.1rem] w-[2.1rem] rounded-full"
+              ></img>
+            </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end">
+          <DropdownMenuContent className="w-56 bg-black" align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuGroup>
               <DropdownMenuItem>
