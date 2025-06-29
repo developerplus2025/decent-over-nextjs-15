@@ -11,7 +11,7 @@ import { GeistMono } from "geist/font/mono";
 // import { Toaster, toast } from "sonner";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
-import Navigation from "@/components/Navigation";
+// import Navigation from "@/components/Navigation";
 import { DocsNavigation } from "@/components/DocsNavigation";
 import { CMDK } from "@/components/command-menu";
 // import { Toaster } from "@/components/ui/sonner";
@@ -25,6 +25,7 @@ import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
 import NavigationMobile from "@/components/Navigation-Mobile";
 import { cn } from "@/lib/utils";
+import NavigationClient from "@/components/NavigationClient";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -63,10 +64,11 @@ export default function RootLayout({
           >
             {" "}
             <AuthKitProvider>
-              <Navigation className="min-[300px]:hidden xl:block">
-                {/* Navigation children content, or empty fragment if not needed */}
-                <></>
-              </Navigation>
+              <NavigationClient className="min-[300px]:hidden xl:block" />
+              {/* <Navigation className="min-[300px]:hidden xl:block"> */}
+              {/* Navigation children content, or empty fragment if not needed */}
+              {/* <></> */}
+              {/* </Navigation> */}
               <NavigationMobile className="xl:hidden">
                 {/* Add children here if needed */}
                 <></>
