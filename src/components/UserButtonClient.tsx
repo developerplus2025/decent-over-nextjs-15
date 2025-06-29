@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 export default function UserButtonClient() {
   const [user, setUser] = useState<any>(null);
   useEffect(() => {
@@ -16,20 +15,19 @@ export default function UserButtonClient() {
     <div className="flex items-center gap-4">
       {user ? (
         <div className="flex items-center gap-4">
-          <Image
+          <img
             height={"40"}
             width={"40"}
             alt={user?.profilePictureUrl}
-            overrideSrc={`${user?.profilePictureUrl}`}
             src={`${user?.profilePictureUrl}`}
-            className="h-[2.5rem] w-[2.5rem] rounded-xl"
-          ></Image>
+            className="h-[2.5rem] w-[2.5rem] rounded-md"
+          ></img>
         </div>
       ) : (
         <motion.div
           initial={{ opacity: 0 }}
           animate={user ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 2 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 4 }}
           className="flex items-center gap-4"
         >
           <Link
