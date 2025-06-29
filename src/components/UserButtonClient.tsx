@@ -19,7 +19,7 @@ export default function UserButtonClient() {
             height={"40"}
             width={"40"}
             alt={user?.profilePictureUrl}
-            src={user?.profilePictureUrl}
+            src={`"${user?.profilePictureUrl}"`}
             className="h-[2.5rem] w-[2.5rem] rounded-xl"
           ></Image>
         </div>
