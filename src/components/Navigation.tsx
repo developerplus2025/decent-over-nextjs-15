@@ -140,6 +140,7 @@ import FeedBack from "./feedback";
 import { Text } from "./ui/text";
 import UserButton from "./user-button";
 import { withAuth } from "@workos-inc/authkit-nextjs";
+import UserButtonServer from "./UserButtonServer";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -182,7 +183,7 @@ type NavigationProps = {
   className?: string;
   children: React.ReactNode;
 };
-const { user } = await withAuth();
+
 export default function Navigation({
   className,
   children,
@@ -670,7 +671,7 @@ export default function Navigation({
               {/* <CommandMenu /> */}
               <FeedBack />
             </motion.div>
-            <UserButton user={user} />
+            <UserButtonServer />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
