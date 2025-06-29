@@ -3,6 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
 import { Button } from "@/components/ui/button";
+import { handleSignOutAction } from "../app/actions/signOut";
+import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,6 +23,7 @@ import { useEffect, useState } from "react";
 import { VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
 export default function UserButtonClient() {
+  const router = useRouter();
   const variants = {
     visible: { opacity: 1, display: "flex" },
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
@@ -98,10 +101,13 @@ export default function UserButtonClient() {
             )}
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56 bg-black" align="end">
+        <DropdownMenuContent
+          className="w-56 border-[#3b3a3a] bg-black"
+          align="end"
+        >
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={() => router.push("/account")}>
               Profile
               <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
             </DropdownMenuItem>
@@ -142,7 +148,7 @@ export default function UserButtonClient() {
           <DropdownMenuItem>Support</DropdownMenuItem>
           <DropdownMenuItem disabled>API</DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={handleSignOutAction}>
             Log out
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
