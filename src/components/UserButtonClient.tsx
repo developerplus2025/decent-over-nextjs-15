@@ -45,6 +45,16 @@ export default function UserButtonClient() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-2"
         >
+          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+            <GitHub />
+          </div>
+          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+            <X />
+          </div>
+
+          <ThemeToggle />
+          {/* <CommandMenu /> */}
+          <FeedBack />
           <DropdownMenu>
             <DropdownMenuTrigger asChild className="bg-black">
               <div>
