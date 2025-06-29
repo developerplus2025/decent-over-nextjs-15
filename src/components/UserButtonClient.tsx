@@ -1,10 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-
-export default function UserButtonClient({ user }: { user: any }) {
+import { withAuth } from "@workos-inc/authkit-nextjs";
+export default async function UserButtonClient() {
+  const { user } = await withAuth();
   return (
     <div className="flex items-center gap-4">
       {user ? (
