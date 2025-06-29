@@ -39,7 +39,7 @@ import X from "./x";
 import { ThemeToggle } from "./ThemeToggle";
 
 import FeedBack from "./feedback";
-
+"use client";
 import UserButtonServer from "./UserButtonServer";
 
 const components: { title: string; href: string; description: string }[] = [
