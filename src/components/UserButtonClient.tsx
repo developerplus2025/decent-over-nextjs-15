@@ -11,20 +11,26 @@ export default function UserButtonClient() {
       .then((res) => res.json())
       .then((data) => setUser(data.user));
   }, []);
+  console.log(user.profilePictureUrl);
   return (
     <div className="flex items-center gap-4">
       {user ? (
         <div className="flex items-center gap-4">
           <Image
-            height={"40"}
-            width={"40"}
-            alt={user?.profilePictureUrl}
-            src={`${user?.profilePictureUrl}`}
+            height={40}
+            width={40}
+            alt="User Avatar"
+            src={user.profilePictureUrl}
             className="h-[2.5rem] w-[2.5rem] rounded-xl"
-          ></Image>
+          />
         </div>
       ) : (
-        <div className="flex items-center gap-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={user ? { opacity: 0 } : { opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+          className="flex items-center gap-4"
+        >
           <Link
             href="/login"
             className="flex items-center justify-center gap-3"
@@ -70,7 +76,7 @@ export default function UserButtonClient() {
               </Button>
             </motion.div>
           </Link>
-        </div>
+        </motion.div>
       )}
     </div>
   );
