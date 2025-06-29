@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 export default function UserButtonClient() {
   const [user, setUser] = useState<any>(null);
   useEffect(() => {
@@ -14,7 +15,13 @@ export default function UserButtonClient() {
     <div className="flex items-center gap-4">
       {user ? (
         <div className="flex items-center gap-4">
-          <div className="h-4 w-4 rounded-xl">{user?.profilePictureUrl}</div>
+          <Image
+            height={"40"}
+            width={"40"}
+            alt={user?.profilePictureUrl}
+            src={user?.profilePictureUrl}
+            className="h-[2.5rem] w-[2.5rem] rounded-xl"
+          ></Image>
         </div>
       ) : (
         <div className="flex items-center gap-4">
