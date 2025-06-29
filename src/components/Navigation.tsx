@@ -139,6 +139,8 @@ import PopoverNotifications from "./popover-notifications";
 import FeedBack from "./feedback";
 import { Text } from "./ui/text";
 import UserButton from "./user-button";
+import { withAuth } from "@workos-inc/authkit-nextjs";
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -180,6 +182,7 @@ type NavigationProps = {
   className?: string;
   children: React.ReactNode;
 };
+const { user } = await withAuth();
 export default function Navigation({
   className,
   children,
@@ -667,7 +670,7 @@ export default function Navigation({
               {/* <CommandMenu /> */}
               <FeedBack />
             </motion.div>
-            <UserButton />
+            <UserButton user={user} />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>

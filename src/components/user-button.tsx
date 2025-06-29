@@ -1,10 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-import { withAuth } from "@workos-inc/authkit-nextjs";
 import { Button } from "./ui/button";
-export default async function UserButton() {
-  const { user } = await withAuth();
+
+export default function UserButton({ user }: { user: any }) {
   return (
     <div className="flex items-center gap-4">
       {user ? (
@@ -13,36 +13,36 @@ export default async function UserButton() {
         </div>
       ) : (
         <div className="flex items-center gap-4">
-          {" "}
           <Link
-            className="flex items-center justify-center gap-3"
             href="/login"
+            className="flex items-center justify-center gap-3"
           >
             <motion.div
               className="relative"
-              initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-              animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+              <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
               <Button
-                variant={"outline"}
+                variant="outline"
                 className="hover:bg-accent flex h-fit items-center px-3 py-1 dark:hover:bg-[#1a1a1a]"
               >
                 Sign In
               </Button>
             </motion.div>
           </Link>
-          <Link href={"/signup"}>
+
+          <Link href="/signup">
             <motion.div
               className="relative"
-              initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-              animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+              <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
               <Button
-                variant={"outline"}
+                variant="outline"
                 className="h-fit gap-1 px-3 py-1 [&_svg]:size-[15px]"
               >
                 Create Account
