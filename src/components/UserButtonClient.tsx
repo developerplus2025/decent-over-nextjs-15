@@ -29,7 +29,7 @@ export default function UserButtonClient() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={user ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 2 }}
           className="flex items-center gap-4"
         >
           <Link
