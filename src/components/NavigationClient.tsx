@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 
@@ -41,7 +41,6 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 
 import UserButtonServer from "./UserButtonServer";
-import UserButton from "./user-button";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -91,7 +90,7 @@ export default function NavigationClient({
   children,
   user,
 }: NavigationProps) {
-  const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  //   const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isWebAppPath = pathname === "/webapp";
@@ -105,22 +104,22 @@ export default function NavigationClient({
   const isCreative = pathname === "/creative";
   const isGeneration = pathname === "/generation";
   const isDesign = pathname === "/design";
-  const theme = useTheme();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isBottom, setIsBottom] = useState(false);
+  //   const theme = useTheme();
+  //   const [isScrolled, setIsScrolled] = useState(false);
+  //   const [isBottom, setIsBottom] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(
-        window.scrollY > 60 ||
-          window.scrollY + window.innerHeight >=
-            document.documentElement.scrollHeight,
-      );
-    };
+  //   useEffect(() => {
+  //     const handleScroll = () => {
+  //       setIsScrolled(
+  //         window.scrollY > 60 ||
+  //           window.scrollY + window.innerHeight >=
+  //             document.documentElement.scrollHeight,
+  //       );
+  //     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //     window.addEventListener("scroll", handleScroll);
+  //     return () => window.removeEventListener("scroll", handleScroll);
+  //   }, []);
 
   return (
     <motion.div
@@ -144,7 +143,7 @@ export default function NavigationClient({
     >
       <nav className="relative z-4 shrink-0 items-center justify-center min-[300px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
+          className={`${"border-b bg-[#0c0c0c]"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
         >
           <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
             <div className="flex items-center gap-4">
@@ -350,7 +349,7 @@ export default function NavigationClient({
 
               <FeedBack />
             </motion.div>
-            <UserButton />
+            <UserButtonServer />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
