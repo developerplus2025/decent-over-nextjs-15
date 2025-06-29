@@ -25,7 +25,7 @@ import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
 import NavigationMobile from "@/components/Navigation-Mobile";
 import { cn } from "@/lib/utils";
-import NavigationClient from "@/components/NavigationClient";
+import Navigation from "@/components/Navigation";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -64,11 +64,10 @@ export default function RootLayout({
           >
             {" "}
             <AuthKitProvider>
-              <NavigationClient className="min-[300px]:hidden xl:block" />
-              {/* <Navigation className="min-[300px]:hidden xl:block"> */}
-              {/* Navigation children content, or empty fragment if not needed */}
-              {/* <></> */}
-              {/* </Navigation> */}
+              <Navigation className="min-[300px]:hidden xl:block">
+                Navigation children content, or empty fragment if not needed
+                <></>
+              </Navigation>
               <NavigationMobile className="xl:hidden">
                 {/* Add children here if needed */}
                 <></>
