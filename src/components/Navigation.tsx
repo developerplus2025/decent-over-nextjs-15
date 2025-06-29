@@ -656,24 +656,6 @@ export default function Navigation({
               </LinkPreview>
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
-            <motion.div
-              initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-              animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="flex items-center justify-center gap-2"
-            >
-              <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-                <GitHub />
-              </div>
-              <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-                <X />
-              </div>
-
-              <ThemeToggle />
-              {/* <CommandMenu /> */}
-              <FeedBack />
-            </motion.div>
-            <UserButtonClient />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
