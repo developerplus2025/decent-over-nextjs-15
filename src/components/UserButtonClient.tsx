@@ -32,6 +32,7 @@ export default function UserButtonClient() {
     visible: { opacity: 1, display: "flex" },
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
   };
+  const [open, setOpen] = useState(false);
   const { user, loading } = useAuth();
   const [active, setActive] = useState(false);
   useEffect(() => {
@@ -59,77 +60,33 @@ export default function UserButtonClient() {
           </div>
 
           <ThemeToggle />
-          {/* <CommandMenu /> */}
+
           <FeedBack />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild className="bg-black">
-              <div>
-                {user && user.profilePictureUrl ? (
-                  <img
-                    height={40}
-                    width={40}
-                    alt={user.profilePictureUrl}
-                    src={user.profilePictureUrl}
-                    className="h-[2.1rem] w-[2.1rem] rounded-full"
-                  />
-                ) : (
-                  <div className="h-[2.1rem] w-[2.1rem] rounded-full bg-gray-300" />
-                )}
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="w-56 border-[#3b3a3a] bg-black"
-              align="end"
+          <div>
+            <div className="relative" onClick={() => setOpen(!open)}>
+              {user && user.profilePictureUrl ? (
+                <img
+                  height={40}
+                  width={40}
+                  alt={user.profilePictureUrl}
+                  src={user.profilePictureUrl}
+                  className="h-[2.1rem] w-[2.1rem] rounded-full"
+                />
+              ) : (
+                <div className="h-[2.1rem] w-[2.1rem] rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
+              )}
+            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={open ? { opacity: 1 } : { opacity: 0 }}
+              className="absolute top-[2.5rem] right-0 flex h-[27rem] w-[16rem] translate-0 justify-between border-[#2c2c2c] bg-black p-2"
             >
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push("/account")}>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Settings
-                  <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Keyboard shortcuts
-                  <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent>
-                      <DropdownMenuItem>Email</DropdownMenuItem>
-                      <DropdownMenuItem>Message</DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>More...</DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-                <DropdownMenuItem>
-                  New Team
-                  <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuItem disabled>API</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleSignOutAction}>
-                Log out
-                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              <div className="flex flex-col gap-2">
+                <h1 className="text-sm">{user.firstName}</h1>
+                <span className="text-sm text-[#a1a1a1]">{user.email}</span>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       ) : (
         <motion.div
