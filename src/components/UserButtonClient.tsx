@@ -63,7 +63,10 @@ export default function UserButtonClient() {
 
           <FeedBack />
           <div>
-            <div className="relative" onClick={() => setOpen(!open)}>
+            <div
+              className="relative cursor-pointer"
+              onClick={() => setOpen(!open)}
+            >
               {user && user.profilePictureUrl ? (
                 <img
                   height={40}
@@ -73,16 +76,19 @@ export default function UserButtonClient() {
                   className="h-[2.1rem] w-[2.1rem] rounded-full"
                 />
               ) : (
-                <div className="h-[2.1rem] w-[2.1rem] rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
+                <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               )}
             </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={open ? { opacity: 1 } : { opacity: 0 }}
-              className="absolute top-[2.5rem] right-0 flex h-[27rem] w-[16rem] translate-0 justify-between border-[#2c2c2c] bg-black p-2"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
             >
               <div className="flex flex-col gap-2">
-                <h1 className="text-sm">{user.firstName}</h1>
+                <h1 className="text-sm">
+                  {user.lastName} {user.firstName}
+                </h1>
                 <span className="text-sm text-[#a1a1a1]">{user.email}</span>
               </div>
             </motion.div>
