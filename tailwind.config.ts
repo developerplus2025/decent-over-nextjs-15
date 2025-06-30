@@ -368,7 +368,7 @@ const config: Config = {
     },
   },
 
-  plugins: [tailwindcssAnimate, require("tailwindcss-mixins")],
+  plugins: [require("tailwindcss-animate"), , require("tailwindcss-mixins")],
 };
 
 export default config;
