@@ -65,7 +65,13 @@ export default function UserButtonClient() {
           <div>
             <div
               className="relative cursor-pointer"
-              onClick={() => setOpen("open")}
+              onClick={() => {
+                if (open == "open ") {
+                  setOpen("false");
+                } else {
+                  setOpen("true");
+                }
+              }}
             >
               {user && user.profilePictureUrl ? (
                 <img
