@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import { motion } from "framer-motion";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { useEffect, useState } from "react";
 import { VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
@@ -85,7 +87,7 @@ export default function UserButtonClient() {
                 <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               )}
             </div>
-            <motion.div
+            <PopoverPrimitive.Content
               data-state={open}
               data-side="right"
               // initial={{ opacity: 0 }}
@@ -99,7 +101,7 @@ export default function UserButtonClient() {
                 </h1>
                 <span className="text-sm text-[#a1a1a1]">{user.email}</span>
               </div>
-            </motion.div>
+            </PopoverPrimitive.Content>
           </div>
         </motion.div>
       ) : (
