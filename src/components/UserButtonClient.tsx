@@ -87,21 +87,25 @@ export default function UserButtonClient() {
                 <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               )}
             </div>
-            <div
-              data-state={open}
-              data-side="right"
-              // initial={{ opacity: 0 }}
-              // animate={open ? { opacity: 1 } : { opacity: 0 }}
-              // transition={{ duration: 0.5, ease: "easeOut" }}
-              className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
-            >
-              <div className="flex flex-col gap-2">
-                <h1 className="text-sm">
-                  {user.lastName} {user.firstName}
-                </h1>
-                <span className="text-sm text-[#a1a1a1]">{user.email}</span>
+            {open ? (
+              <div
+                data-state={open}
+                data-side="right"
+                // initial={{ opacity: 0 }}
+                // animate={open ? { opacity: 1 } : { opacity: 0 }}
+                // transition={{ duration: 0.5, ease: "easeOut" }}
+                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
+              >
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-sm">
+                    {user.lastName} {user.firstName}
+                  </h1>
+                  <span className="text-sm text-[#a1a1a1]">{user.email}</span>
+                </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
           </div>
         </motion.div>
       ) : (
