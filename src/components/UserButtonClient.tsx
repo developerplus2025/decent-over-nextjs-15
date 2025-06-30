@@ -32,7 +32,7 @@ export default function UserButtonClient() {
     visible: { opacity: 1, display: "flex" },
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
   };
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState("close");
   const { user, loading } = useAuth();
   const [active, setActive] = useState(false);
   useEffect(() => {
@@ -44,13 +44,13 @@ export default function UserButtonClient() {
     return <div></div>;
   }
   return (
-    <div className="flex items-center gap-4">
+    <div className={`flex items-center gap-4`}>
       {user ? (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-center gap-2"
+          className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
         >
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
             <GitHub />
@@ -65,7 +65,7 @@ export default function UserButtonClient() {
           <div>
             <div
               className="relative cursor-pointer"
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen("open")}
             >
               {user && user.profilePictureUrl ? (
                 <img
@@ -80,10 +80,12 @@ export default function UserButtonClient() {
               )}
             </div>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={open ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
+              data-state={open}
+              data-side="right"
+              // initial={{ opacity: 0 }}
+              // animate={open ? { opacity: 1 } : { opacity: 0 }}
+              // transition={{ duration: 0.5, ease: "easeOut" }}
+              className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
             >
               <div className="flex flex-col gap-2">
                 <h1 className="text-sm">
@@ -99,7 +101,7 @@ export default function UserButtonClient() {
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-center justify-center gap-2"
+          className={`flex ${active ? "" : "pointer-events-none"} items-center justify-center gap-2`}
         >
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
             <GitHub />
