@@ -87,7 +87,7 @@ export default function UserButtonClient() {
                 <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               )}
             </div>
-            {open ? (
+            {open === "open" ? (
               <div
                 data-state={open}
                 data-side="right"
