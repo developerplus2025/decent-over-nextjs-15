@@ -33,6 +33,12 @@ export default function UserButtonClient() {
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
   };
   const { user, loading } = useAuth();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActive(true);
+    }, 3000);
+  }, [active, setActive]);
   if (loading) {
     return <div></div>;
   }
@@ -41,7 +47,7 @@ export default function UserButtonClient() {
       {user ? (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-2"
         >
@@ -128,7 +134,7 @@ export default function UserButtonClient() {
       ) : (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          animate={{ opacity: 1 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center justify-center gap-2"
         >
