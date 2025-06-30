@@ -87,7 +87,7 @@ export default function UserButtonClient() {
                 <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
               )}
             </div>
-            <PopoverPrimitive.Content
+            <div
               data-state={open}
               data-side="right"
               // initial={{ opacity: 0 }}
@@ -101,7 +101,7 @@ export default function UserButtonClient() {
                 </h1>
                 <span className="text-sm text-[#a1a1a1]">{user.email}</span>
               </div>
-            </PopoverPrimitive.Content>
+            </div>
           </div>
         </motion.div>
       ) : (
