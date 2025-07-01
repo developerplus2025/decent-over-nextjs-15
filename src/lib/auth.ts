@@ -1,38 +1,41 @@
-import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { getDb } from "./db";
 import type { BetterAuthPlugin } from "better-auth";
+import { betterAuth, type Middleware } from "better-auth";
+
 const db = await getDb();
+type SignInContext = {
+  type: "auth:signin";
+  provider: string;
+  account: {
+    profile?: {
+      avatar_url?: string;
+    };
+  };
+  user: {
+    id: string;
+  };
+  database: {
+    user: {
+      update: (input: {
+        where: { id: string };
+        data: { image?: string };
+      }) => Promise<void>;
+    };
+  };
+};
 
-const updateAvatarPlugin = (): BetterAuthPlugin => ({
-  id: "update-avatar",
-  hooks: {
-    after: [
-      {
-        matcher: (ctx) => ctx.path.startsWith("/api/auth/callback/github"),
-        handler: async (ctx) => {
-          const result = (ctx as any).result;
-          const account = result?.account;
-          const session = result?.session;
-
-          if (account?.provider === "github" && account.profile?.image) {
-            await db
-              .collection("user")
-              .updateOne(
-                { id: session.user.id },
-                { $set: { image: account.profile.image } },
-              );
-
-            // Optional: cập nhật lại trong session trả về
-            result.session.user.image = account.profile.image;
-          }
-
-          return ctx;
-        },
-      },
-    ],
-  },
-});
+const githubAvatarMiddleware: Middleware = async (ctx: SignInContext) => {
+  if (ctx.provider === "github") {
+    const avatar = ctx.account?.profile?.avatar_url;
+    if (avatar) {
+      await ctx.database.user.update({
+        where: { id: ctx.user.id },
+        data: { image: avatar },
+      });
+    }
+  }
+};
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),
@@ -47,5 +50,5 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
-  plugins: [updateAvatarPlugin()],
+  middleware: [githubAvatarMiddleware],
 });
