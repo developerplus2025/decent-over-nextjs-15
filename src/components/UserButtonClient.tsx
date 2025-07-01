@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-
+import { authClient } from "@/lib/auth-client";
 import { motion } from "framer-motion";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
 import { Button } from "@/components/ui/button";
@@ -28,6 +28,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
+const { data: session, error } = await authClient.getSession();
 export default function UserButtonClient() {
   const router = useRouter();
   const variants = {
@@ -37,17 +38,18 @@ export default function UserButtonClient() {
   const [open, setOpen] = useState("close");
   const { user, loading } = useAuth();
   const [active, setActive] = useState(false);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setActive(true);
     }, 3000);
   }, [active, setActive]);
-  if (loading) {
+  if (error) {
     return <div></div>;
   }
   return (
     <div className={`flex items-center gap-4`}>
-      {user ? (
+      {session ? (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -75,12 +77,12 @@ export default function UserButtonClient() {
                 }
               }}
             >
-              {user && user.profilePictureUrl ? (
+              {session.user.image ? (
                 <img
                   height={40}
                   width={40}
-                  alt={user.profilePictureUrl}
-                  src={user.profilePictureUrl}
+                  alt={session.user.image}
+                  src={session.user.image}
                   className="h-[2.1rem] w-[2.1rem] rounded-full"
                 />
               ) : (
@@ -97,10 +99,10 @@ export default function UserButtonClient() {
                 className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
               >
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-sm">
-                    {user.lastName} {user.firstName}
-                  </h1>
-                  <span className="text-sm text-[#a1a1a1]">{user.email}</span>
+                  <h1 className="text-sm">{session.user.name}</h1>
+                  <span className="text-sm text-[#a1a1a1]">
+                    {session.user.email}
+                  </span>
                 </div>
               </div>
             ) : (
