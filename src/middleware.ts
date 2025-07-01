@@ -10,5 +10,6 @@ export const config = {
     "/api/:path*",
     "/signin/:path*",
     "/actions/:path*",
+    "/chat/:path*",
   ],
 };
