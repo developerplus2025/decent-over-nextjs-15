@@ -44,11 +44,24 @@ export const auth = betterAuth({
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      mapProfileToUser: (profile) => {
+        return {
+          firstName: profile.given_name,
+          lastName: profile.family_name,
+        };
+      },
     },
     github: {
+      mapProfileToUser: (profile) => {
+        return {
+          firstName: profile.name,
+          image: profile.avatar_url,
+        };
+      },
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
+
   middleware: [githubAvatarMiddleware],
 });
