@@ -53,6 +53,75 @@ export default function UserButtonClient() {
   if (error) {
     return <div></div>;
   }
+  if (!session) {
+    <motion.div
+      initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+      animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`flex ${active ? "" : "pointer-events-none"} items-center justify-center gap-2`}
+    >
+      <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+        <GitHub />
+      </div>
+      <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+        <X />
+      </div>
+
+      <ThemeToggle />
+      {/* <CommandMenu /> */}
+      <FeedBack />
+      <motion.div
+        variants={variants}
+        initial={user ? "hidden" : "visible"}
+        animate={user ? "hidden" : "visible"}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 4 }}
+        className="flex items-center gap-4"
+      >
+        <Link href="/login" className="flex items-center justify-center gap-3">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
+            <Button
+              variant="outline"
+              className="hover:bg-accent flex h-fit items-center px-3 py-1 dark:hover:bg-[#1a1a1a]"
+            >
+              Sign In
+            </Button>
+          </motion.div>
+        </Link>
+
+        <Link href="/signup">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
+            <Button
+              variant="outline"
+              className="h-fit gap-1 px-3 py-1 [&_svg]:size-[15px]"
+            >
+              Create Account
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm29.66-93.66a8,8,0,0,1,0,11.32l-40,40a8,8,0,0,1-11.32-11.32L140.69,128,106.34,93.66a8,8,0,0,1,11.32-11.32Z"></path>
+              </svg>
+            </Button>
+          </motion.div>
+        </Link>
+      </motion.div>
+    </motion.div>;
+  }
   return (
     <div className={`flex items-center gap-4`}>
       {session ? (
@@ -120,76 +189,7 @@ export default function UserButtonClient() {
           </div>
         </motion.div>
       ) : (
-        <motion.div
-          initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`flex ${active ? "" : "pointer-events-none"} items-center justify-center gap-2`}
-        >
-          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-            <GitHub />
-          </div>
-          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-            <X />
-          </div>
-
-          <ThemeToggle />
-          {/* <CommandMenu /> */}
-          <FeedBack />
-          <motion.div
-            variants={variants}
-            initial={user ? "hidden" : "visible"}
-            animate={user ? "hidden" : "visible"}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 4 }}
-            className="flex items-center gap-4"
-          >
-            <Link
-              href="/login"
-              className="flex items-center justify-center gap-3"
-            >
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
-                <Button
-                  variant="outline"
-                  className="hover:bg-accent flex h-fit items-center px-3 py-1 dark:hover:bg-[#1a1a1a]"
-                >
-                  Sign In
-                </Button>
-              </motion.div>
-            </Link>
-
-            <Link href="/signup">
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300" />
-                <Button
-                  variant="outline"
-                  className="h-fit gap-1 px-3 py-1 [&_svg]:size-[15px]"
-                >
-                  Create Account
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="#ffffff"
-                    viewBox="0 0 256 256"
-                  >
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm29.66-93.66a8,8,0,0,1,0,11.32l-40,40a8,8,0,0,1-11.32-11.32L140.69,128,106.34,93.66a8,8,0,0,1,11.32-11.32Z"></path>
-                  </svg>
-                </Button>
-              </motion.div>
-            </Link>
-          </motion.div>
-        </motion.div>
+        ""
       )}
     </div>
   );
