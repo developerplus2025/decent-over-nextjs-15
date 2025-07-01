@@ -127,6 +127,7 @@
     "markdown-to-jsx": "^7.5.0",
     "marked": "^15.0.6",
     "media-chrome": "^4.4.0",
+    "mongodb": "^6.17.0",
     "mongoose": "^8.16.1",
     "motion": "^11.18.2",
     "motion-plus": "^0.1.6",
