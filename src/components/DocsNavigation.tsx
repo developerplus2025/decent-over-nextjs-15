@@ -123,7 +123,6 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
-import { CMDK } from "./command-menu";
 import LogoImage from "./LogoImage";
 import { useTheme } from "next-themes";
 import ShinyButton from "@/components/magicui/shiny-button";
@@ -449,7 +448,6 @@ export const DocsNavigation = (): JSX.Element => {
               </DropdownMenu>
               <PopoverNotifications />
               <ThemeToggle />
-              <CMDK />
             </motion.div>
             <div className="flex items-center gap-4">
               <Link
