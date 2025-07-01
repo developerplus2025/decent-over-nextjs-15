@@ -41,6 +41,7 @@ export default function UserButtonClient() {
   const handleLogout = async () => {
     await authClient.signOut();
     authClient.refreshToken;
+    refetch();
     router.push("/");
   };
   const variants = {
