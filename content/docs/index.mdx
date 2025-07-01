@@ -1,63 +1,74 @@
 ---
-title: Vercel Documentation
+title: Comparisons
+description: How is Fumadocs different from other existing frameworks?
+icon: GitCompareArrows
 ---
 
+## Nextra
 
-# Fumadocs Framework: What is Fumadocs
-URL: /docs/ui/what-is-fumadocs
-Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/what-is-fumadocs.mdx
+Fumadocs is highly inspired by Nextra. For example, the Routing Conventions. That is why
+`meta.json` also exists in Fumadocs.
 
-Introducing Fumadocs, a docs framework that you can break.
-        
-Fumadocs was created because I wanted a more customisable experience for building docs, to be a docs framework that is not opinionated, **a "framework" that you can break**.
+Nextra is more opinionated than Fumadocs. Fumadocs is accelerated by App Router. As a result, It provides many server-side functions, and you have to
+configure things manually compared to simply editing a configuration file.
 
-## Philosophy
+Fumadocs works great if you want more control over everything, such as
+adding it to an existing codebase or implementing advanced routing.
 
-**Less Abstraction:** Fumadocs expects you to write code and cooperate with the rest of your software.
-While most frameworks are configured with a configuration file, they usually lack flexibility when you hope to tune its details.
-You can’t control how they render the page nor the internal logic. Fumadocs shows you how the app works, instead of a single configuration file.
+### Feature Table
 
-**Next.js Fundamentals:** It gives you the utilities and a good-looking UI.
-You are still using features of Next.js App Router, like **Static Site Generation**. There is nothing new for Next.js developers, so you can use it with confidence.
+| Feature             | Fumadocs     | Nextra                    |
+| ------------------- | ------------ | ------------------------- |
+| Static Generation   | Yes          | Yes                       |
+| Cached              | Yes          | Yes                       |
+| Light/Dark Mode     | Yes          | Yes                       |
+| Syntax Highlighting | Yes          | Yes                       |
+| Table of Contents   | Yes          | Yes                       |
+| Full-text Search    | Yes          | Yes                       |
+| i18n                | Yes          | Yes                       |
+| Last Git Edit Time  | Yes          | Yes                       |
+| Page Icons          | Yes          | Yes, via `_meta.js` files |
+| RSC                 | Yes          | Yes                       |
+| Remote Source       | Yes          | Yes                       |
+| SEO                 | Via Metadata | Yes                       |
+| Built-in Components | Yes          | Yes                       |
+| RTL Layout          | Yes          | Yes                       |
 
-**Opinionated on UI:** The only thing Fumadocs UI (the default theme) offers is **User Interface**. The UI is opinionated for bringing better mobile responsiveness and user experience.
-Instead, we use a much more flexible approach inspired by Shadcn UI — [Fumadocs CLI](/docs/cli), so we can iterate our design quick, and welcome for more feedback about the UI.
+### Additional Features
 
-## Why Fumadocs
+Features supported via 3rd party libraries like [TypeDoc](https://typedoc.org) will not be listed here.
 
-Fumadocs is designed with flexibility in mind.
+| Feature                    | Fumadocs | Nextra |
+| -------------------------- | -------- | ------ |
+| OpenAPI Integration        | Yes      | No     |
+| TypeScript Docs Generation | Yes      | No     |
+| TypeScript Twoslash        | Yes      | Yes    |
 
-You can use `fumadocs-core` as a headless UI library and bring your own styles.
-Fumadocs MDX is also a useful library to handle MDX content in Next.js. It also includes:
+## Mintlify
 
-* Many built-in components.
-* Typescript Twoslash, OpenAPI, and Math (KaTeX) integrations.
-* Fast and optimized by default, natively built on App Router.
-* Tight integration with Next.js, you can add it to an existing Next.js project easily.
+Mintlify is a documentation service, as compared to Fumadocs, it offers a free tier but isn't completely free and open source.
 
-You can read [Comparisons](/docs/ui/comparisons) if you're interested.
+Fumadocs is not as powerful as Mintlify, for example, the OpenAPI integration of Mintlify.
+As the creator of Fumadocs, I wouldn't recommend switching to Fumadocs from Mintlify if you're satisfied with the current way you build docs.
+However, I believe Fumadocs is a suitable tool for all Next.js developers who want to have elegant docs.
 
-### Documentation
+## Docusaurus
 
-Fumadocs focuses on **authoring experience**, it provides a beautiful theme and many docs automation tools.
+Docusaurus is a powerful framework based on React.js. It offers many cool
+features with plugins and custom themes.
 
-It helps you to iterate your codebase faster while never leaving your docs behind.
-You can take this site as an example of docs site built with Fumadocs.
+### Better DX
 
-### Blog sites
+Since Fumadocs is built on the top of Next.js, you'll have to start the Next.js dev
+server every time to review changes, and initial boilerplate code is relatively more
+compared to Docusaurus.
 
-Since Next.js is already a powerful framework, most features can be implemented with **just Next.js**.
+For a simple docs, Docusaurus might be a better choice if you don't need any Next.js specific functionality.
 
-Fumadocs provides additional tooling for Next.js, including syntax highlighting, document search, and a default theme (Fumadocs UI).
-It helps you to avoid reinventing the wheels.
+However, when you want to use Next.js, or seek extra customizability like tuning default UI components, Fumadocs could be a better choice.
 
-## When to use Fumadocs
+### Plugins
 
-For most of the web applications, vanilla React.js is no longer enough.
-Nowadays, we also wish to have a blog, a showcase page, a FAQ page, etc. With a
-fancy UI that's breathtaking, in these cases, Fumadocs can help you build the
-docs easier, with less boilerplate.
+You can easily achieve many things with plugins, their ecosystem is indeed larger and maintained by many contributors.
 
-Fumadocs is maintained by Fuma and many contributors, with care on the maintainability of codebase.
-While we don't aim to offer every functionality people wanted, we're more focused on making basic features perfect and well-maintained.
-You can also help Fumadocs to be more useful by contributing!
+In comparison, the flexibility of Fumadocs allows you to implement them on your own, it may take longer to tune it to your satisfaction.
