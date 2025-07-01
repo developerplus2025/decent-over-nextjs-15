@@ -61,7 +61,7 @@ export default function UserButtonClient() {
 
   return (
     <div className={`flex items-center gap-4`}>
-      {session && (
+      {!session?.user && (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
