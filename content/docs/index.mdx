@@ -1,231 +1,117 @@
 ---
-title: Hello World
+title: Vercel Documentation
 ---
 
-# Fumadocs Framework: Quick Start
-URL: /docs/ui
-Source: https://raw.githubusercontent.com/fuma-nama/fumadocs/refs/heads/main/apps/docs/content/docs/ui/index.mdx
 
-Getting Started with Fumadocs
-        
-## Introduction
+## [Start with an idea](#start-with-an-idea)
 
-Fumadocs <span className="text-fd-muted-foreground text-sm">(Foo-ma docs)</span> is a **documentation framework** based on Next.js, designed to be fast, flexible,
-and composes seamlessly into Next.js App Router.
+Vercel builds tools to help you create products faster.
 
-Fumadocs has different parts:
+Like , which is your web development assistant. Paste a screenshot or write a few sentences and v0 will generate a starting point for your next app, including the code for how it looks _and_ how it works. v0 then connects to Vercel, takes your code, and creates a URL you can share.
 
-<Cards>
-  <Card icon={<CpuIcon className="text-purple-300" />} title="Fumadocs Core">
-    Handles most of the logic, including document search, content source adapters, and Markdown extensions.
-  </Card>
+## [Iterate quickly while building your product](#iterate-quickly-while-building-your-product)
 
-  <Card icon={<PanelsTopLeft className="text-blue-300" />} title="Fumadocs UI">
-    The default theme of Fumadocs offers a beautiful look for documentation sites and interactive components.
-  </Card>
+The first version of your product isn't perfect, so you need to iterate and try things.
 
-  <Card icon={<Database />} title="Content Source">
-    The source of your content, can be a CMS or local data layers like [Fumadocs MDX](/docs/mdx) (the official content source).
-  </Card>
+You can ask v0 to make updates for you, or if you prefer, export the code to your editor and start building locally. When you've finished adding your new feature, you want to test and make sure it works correctly on different browsers and devices _before_ you update your live application.
 
-  <Card icon={<Terminal />} title="Fumadocs CLI">
-    A command line tool to install UI components and automate things, useful for customizing layouts.
-  </Card>
-</Cards>
+Vercel integrates with tools like GitHub where you can save snapshots of your codebase for every change. For example, let's say you send your latest code changes to GitHub in a pull request. Vercel automatically creates a new URL from your changes and sends you a link to review before merging.
 
-<Callout title="Want to learn more?">
-  Read our in-depth [What is Fumadocs](/docs/ui/what-is-fumadocs) introduction.
-</Callout>
+### [Infrastructure from your code](#infrastructure-from-your-code)
 
-### Terminology
+How did that URL get created? Vercel took care of all the infrastructure automation for you:
 
-**Markdown/MDX:** Markdown is a markup language for creating formatted text. Fumadocs supports Markdown and MDX (superset of Markdown) out-of-the-box.
+*   It examined your code to understand what tools you're working with
+*   It installed the necessary dependencies into a temporary, secure sandbox
+*   It ran compute to build your application from these dependencies
+*   It took the build output and generated the cloud infrastructure needed to run your app
+*   It assigned and secured a domain so you can access your app through a URL
 
-Although not required, some basic knowledge of Next.js App Router would be useful for further customisations.
+This is all happening inside of an automatically generated _preview_ environment on Vercel — a place where you can safely iterate and make changes without affecting your application. For example, you might want to connect to a different database to prevent changing your live data.
 
-## Automatic Installation
+If your application works correctly and you're happy with the changes, you can merge this new feature into your main codebase. Once again, Vercel will automatically create and build a new URL for you, in a separate _production_ environment.
 
-A minimum version of Node.js 18 required, note that Node.js 23.1 might have problems with Next.js production build.
+Just like that, your application is now live and updated around the world. Make a mistake? Don't sweat it — you can instantly go back to your previous version in a few clicks.
 
-```bash tab="npm"
-npm create fumadocs-app
-```
+## [Use your favorite developer tools](#use-your-favorite-developer-tools)
 
-```bash tab="pnpm"
-pnpm create fumadocs-app
-```
+Vercel helps you build any way your prefer, whether that is a handful of HTML files or a powerful JavaScript framework. While you don't _need_ to use a framework, these abstractions can help you build better products.
 
-```bash tab="yarn"
-yarn create fumadocs-app
-```
+Frameworks include components and optimizations to help improve your [Core Web Vitals](https://vercel.com/blog/how-core-web-vitals-affect-seo), which is how search engines determine the speed and quality of your application. Your vitals affect your page ranking in search results, so it's important to pay attention and optimize them.
 
-```bash tab="bun"
-bun create fumadocs-app
-```
+Frameworks also simplify how you build common patterns, like routing between pages or fetching and displaying data from a database. Vercel supports [over 30 different frameworks](/docs/frameworks/more-frameworks) with zero-configuration.
 
-It will ask you:
+We are the creators and maintainers of [Next.js](https://nextjs.org), a framework for building React applications. We also help fund the full-time development of [Svelte](https://svelte.dev), as well as support other open-source frameworks.
 
-* the React.js framework to use (the docs is only written for Next.js).
-* the content source to use.
+[
 
-A new fumadocs app should be initialized. Now you can start hacking!
+Next.js
 
-<Callout title="From Existing Codebase?">
-  You can follow the [Manual Installation](/docs/ui/manual-installation) guide to get started.
-</Callout>
+A React framework that gives you building blocks to create web applications.
 
-### Enjoy!
+](https://nextjs.org/)[
 
-Create your first MDX file in the docs folder.
+AI SDK
 
-```mdx title="content/docs/index.mdx"
----
-title: Hello World
----
+An open source library for building AI-powered user interfaces.
 
-## Yo what's up
-```
+](https://sdk.vercel.ai/docs)[
 
-Run the app in development mode and see [http://localhost:3000/docs](http://localhost:3000/docs).
+Turborepo
 
-```npm
-npm run dev
-```
+A high-performance build system for JavaScript and TypeScript codebases.
 
-## FAQ
+](https://turborepo.com)[
 
-Some common questions you may encounter.
+Chat SDK
 
-<Accordions>
-  <Accordion id="change-base-url" title="How to change the base route of docs?">
-    Since Fumadocs uses Next.js App Router, you can change the base route of docs (e.g. from `/docs/page` to `/info/page`) by renaming the route:
+A free, open-source template that helps you dive into building powerful chatbot applications.
 
-    <Files>
-      <Folder name="app/docs" defaultOpen className="opacity-50" disabled>
-        <File name="layout.tsx" />
-      </Folder>
+](https://chat-sdk.dev/)[
 
-      <Folder name="app/info" defaultOpen>
-        <File name="layout.tsx" />
-      </Folder>
-    </Files>
+Flags SDK
 
-    And update the base URL of pages in `source.ts`:
+A free, open-source library for using feature flags in Next.js and SvelteKit.
 
-    ```ts title="lib/source.ts"
-    import { loader } from 'fumadocs-core/source';
+](https://flags-sdk.dev/)
 
-    export const source = loader({
-      baseUrl: '/info', // [!code highlight]
-    });
-    ```
+## [Stay fast and secure](#stay-fast-and-secure)
 
-    If you want to remove the entire base route (docs start at `/` instead of `/docs`), it's the same logic.
+Vercel's developer platform understands the tools and frameworks you're using. This enables us to optimize and secure your application automatically in ways that are normally difficult and time consuming.
 
-    Make your docs folder a route group.
+Instead of manually writing code to define your application infrastructure, Vercel can automatically convert the output from your framework into infrastructure. For example, we manage:
 
-    <Files>
-      <Folder name="app/(docs)" defaultOpen>
-        <File name="layout.tsx" />
-      </Folder>
-    </Files>
+*   [Networking](/docs/edge-network): We help make your application fast globally
+*   [Domains](/docs/domains): We can manage your domains, including DNS, SSL certificates, and nameservers
+*   [Storage](/docs/storage): We offer cache and object storage, as well as first-party database integrations
+*   [Compute](/docs/functions): We provide an autoscaling, distributed, and secure compute platform
+*   [CI/CD](/docs/deployments/builds): We automatically deploy your application as you push to your git repository
 
-    And update `baseUrl`:
+### [Observability](#observability)
 
-    ```ts title="lib/source.ts"
-    import { loader } from 'fumadocs-core/source';
+After shipping your application, you need to understand how it's performing in production. Vercel includes tools to help you view logs and traces, measure performance, and analyze traffic.
 
-    export const source = loader({
-      baseUrl: '/', // [!code highlight]
-    });
-    ```
-  </Accordion>
+*   [Logging](/docs/runtime-logs): We allow you to view, search, and filter build/runtime logs to investigate issues and monitor your application.
+*   [Tracing](/docs/otel): We support integrations with tracing tools like OpenTelemetry for deeper performance analysis.
+*   [Analytics](/docs/analytics): We support first-party, privacy-friendly analytics for understanding how users interact with your application.
+*   [Metrics](/docs/observability): We display and support querying of performance metrics like request counts, error rates, and API latencies.
 
-  <Accordion id="dynamic-route" title="It uses Dynamic Route, will it be poor in performance?">
-    Next.js turns dynamic route into static routes when `generateStaticParams` is configured.
-    Hence, it is as fast as static pages.
+We also integrate with other observability tools and support draining logs to any service.
 
-    You can enable Static Exports on Next.js to get a static build output. (Notice that Route Handler doesn't work with static export, you have to configure static search)
-  </Accordion>
+### [Security](#security)
 
-  <Accordion id="custom-layout-docs-page" title="How to create a page in /docs without docs layout?">
-    Same as managing layouts in Next.js App Router, remove the original MDX file from content directory (`/content/docs`).
-    This ensures duplicated pages will not cause errors.
+Vercel helps protect your web application and prevent unwanted traffic.
 
-    Now, You can add the page to another route group, which isn't a descendant of docs layout.
+*   [Platform Firewall](/docs/vercel-firewall): We automatically block malicious requests and unwanted bots before they reach your application.
+*   [DDoS Protection](/docs/security/ddos-mitigation): We protect your application from traffic spikes caused by Distributed Denial of Service (DDoS) attacks.
+*   [Web Application Firewall](/docs/security/vercel-waf): We allow you to define custom rules to protect from common attacks, web scrapers, and other unwanted traffic.
 
-    For example, to replace `/docs/test`:
+We are compliant with SOC 2 Type 2, ISO 27001:2022, GDPR, PCI DSS, HIPAA, and other acronyms your security team asks about.
 
-    <Files>
-      <File name="(home)/docs/test/page.tsx" />
+### [Start building today](#start-building-today)
 
-      <Folder name="docs">
-        <File name="layout.tsx" />
+Vercel provides tools to build your ideas. We integrate with dozens of [popular databases](https://vercel.com/marketplace), cloud infrastructure providers like [AWS](/docs/oidc/aws), and more.
 
-        <File name="[[...slug]]/page.tsx" />
-      </Folder>
-    </Files>
+[What will you ship?](/new)
 
-    For `/docs`, you need to change the catch-all route to be non-optional:
-
-    <Files>
-      <File name="(home)/docs/page.tsx" />
-
-      <Folder name="docs" defaultOpen>
-        <File name="layout.tsx" />
-
-        <File name="[...slug]/page.tsx" />
-      </Folder>
-    </Files>
-  </Accordion>
-
-  <Accordion id="multi-docs" title="How to implement multi-docs?">
-    We recommend to use [Sidebar Tabs](/docs/ui/navigation/sidebar#sidebar-tabs).
-  </Accordion>
-</Accordions>
-
-### Upgrade Fumadocs
-
-Make sure to upgrade Fumadocs when you've encountered any problems or trying out new features:
-
-```bash title="pnpm"
-pnpm update -i -r --latest
-```
-
-## Learn More
-
-New to here? Don't worry, we are welcome for your questions.
-
-If you find anything confusing, please give your feedback on [Github Discussion](https://github.com/fuma-nama/fumadocs/discussions)!
-
-### Writing Content
-
-For authoring docs, make sure to read:
-
-<Cards>
-  <Card href="/docs/ui/markdown" title="Markdown">
-    Fumadocs has some additional features for authoring content.
-  </Card>
-
-  <Card href="/docs/ui/navigation" title="Navigation">
-    Learn how to customise navigation links and sidebar items.
-  </Card>
-
-  <Card href="/docs/ui/page-conventions" title="Routing">
-    Learn how to organise content.
-  </Card>
-
-  <Card href="/docs/ui/components" title="Components" description="See all available components to enhance your docs" />
-</Cards>
-
-### Special Needs
-
-<Cards>
-  <Card href="/docs/ui/static-export" title="Configure Static Export" description="Learn how to enable static export on your docs" />
-
-  <Card href="/docs/ui/internationalization" title="Internationalization" description="Learn how to enable i18n" />
-
-  <Card href="/docs/ui/theme" title="Color Themes" description="Add themes to Fumadocs UI" />
-
-  <Card href="/docs/ui/customisation" title="Customise UI" description="A detailed guide on how to customise UI" />
-</Cards>
+Last updated on July 1, 2025

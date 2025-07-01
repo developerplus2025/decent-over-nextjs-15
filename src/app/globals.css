@@ -367,16 +367,8 @@
     font-size: 1rem;
     color: #828182;
   }
-  #nd-docs-layout {
-    background-color: #000000;
-  }
-  #nd-sidebar {
-    background-color: #000000;
-  }
-  .bg-fd-card {
-    background-color: #000000;
-  }
-  .slide-in {
+
+  /* .slide-in {
     z-index: 50;
     position: absolute;
     top: 0;
@@ -395,7 +387,7 @@
     height: 100vh;
     background-color: #000000;
     transform-origin: top;
-  }
+  } */
 }
 
 @layer base {

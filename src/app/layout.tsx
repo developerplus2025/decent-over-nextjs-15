@@ -13,7 +13,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 // import Navigation from "@/components/Navigation";
 import { DocsNavigation } from "@/components/DocsNavigation";
-import { CMDK } from "@/components/command-menu";
+// import { CMDK } from "@/components/command-menu";
 // import { Toaster } from "@/components/ui/sonner";
 import { AuthKitProvider } from "@workos-inc/authkit-nextjs/components";
 import Providers from "@/components/ProgressBarProvider";
