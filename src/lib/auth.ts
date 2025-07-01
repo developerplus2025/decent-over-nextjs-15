@@ -55,7 +55,7 @@ export const auth = betterAuth({
       mapProfileToUser: (profile) => {
         return {
           firstName: profile.name,
-          image: profile.avatar_url,
+          imag: profile.avatar_url,
         };
       },
       clientId: process.env.GITHUB_CLIENT_ID as string,
