@@ -28,9 +28,15 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
+import { LogOut } from "lucide-react";
 const { data: session, error } = await authClient.getSession();
 export default function UserButtonClient() {
   const router = useRouter();
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+    router.push("/");
+  };
   const variants = {
     visible: { opacity: 1, display: "flex" },
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
@@ -103,6 +109,9 @@ export default function UserButtonClient() {
                   <span className="text-sm text-[#a1a1a1]">
                     {session.user.email}
                   </span>
+                  <Button variant="outline" onClick={handleLogout}>
+                    Logout <LogOut className="size-4" />
+                  </Button>
                 </div>
               </div>
             ) : (
