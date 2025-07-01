@@ -51,7 +51,7 @@ export default function UserButtonClient() {
     }, 3000);
   }, [active, setActive]);
 
-  if (!session) {
+  if (session === undefined) {
     <motion.div
       initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
       animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
