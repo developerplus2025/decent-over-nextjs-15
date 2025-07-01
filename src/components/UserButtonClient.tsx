@@ -29,10 +29,10 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { LogOut } from "lucide-react";
-const { data: session, error } = await authClient.getSession();
+
 export default function UserButtonClient() {
   const router = useRouter();
-
+  const { data: session, error } = authClient.useSession();
   const handleLogout = async () => {
     await authClient.signOut();
     router.push("/");
@@ -51,7 +51,7 @@ export default function UserButtonClient() {
     }, 3000);
   }, [active, setActive]);
 
-  if (error) {
+  if (!session) {
     <motion.div
       initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
       animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -122,73 +122,69 @@ export default function UserButtonClient() {
   }
   return (
     <div className={`flex items-center gap-4`}>
-      {session ? (
-        <motion.div
-          initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
-        >
-          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-            <GitHub />
-          </div>
-          <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-            <X />
-          </div>
+      <motion.div
+        initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+        animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
+      >
+        <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+          <GitHub />
+        </div>
+        <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
+          <X />
+        </div>
 
-          <ThemeToggle />
+        <ThemeToggle />
 
-          <FeedBack />
-          <div>
-            <div
-              className="relative cursor-pointer"
-              onClick={() => {
-                if (open == "open") {
-                  setOpen("closed");
-                } else {
-                  setOpen("open");
-                }
-              }}
-            >
-              {session.user.image ? (
-                <img
-                  height={40}
-                  width={40}
-                  alt={session.user.image}
-                  src={session.user.image}
-                  className="h-[2.1rem] w-[2.1rem] rounded-full"
-                />
-              ) : (
-                <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
-              )}
-            </div>
-            {open === "open" ? (
-              <div
-                data-state={open}
-                data-side="right"
-                // initial={{ opacity: 0 }}
-                // animate={open ? { opacity: 1 } : { opacity: 0 }}
-                // transition={{ duration: 0.5, ease: "easeOut" }}
-                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
-              >
-                <div className="flex flex-col gap-2">
-                  <h1 className="text-sm">{session.user.name}</h1>
-                  <span className="text-sm text-[#a1a1a1]">
-                    {session.user.email}
-                  </span>
-                  <Button variant="outline" onClick={handleLogout}>
-                    Logout <LogOut className="size-4" />
-                  </Button>
-                </div>
-              </div>
+        <FeedBack />
+        <div>
+          <div
+            className="relative cursor-pointer"
+            onClick={() => {
+              if (open == "open") {
+                setOpen("closed");
+              } else {
+                setOpen("open");
+              }
+            }}
+          >
+            {session && session.user && session.user.image ? (
+              <img
+                height={40}
+                width={40}
+                alt={session.user.image}
+                src={session.user.image}
+                className="h-[2.1rem] w-[2.1rem] rounded-full"
+              />
             ) : (
-              ""
+              <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
             )}
           </div>
-        </motion.div>
-      ) : (
-        ""
-      )}
+          {open === "open" ? (
+            <div
+              data-state={open}
+              data-side="right"
+              // initial={{ opacity: 0 }}
+              // animate={open ? { opacity: 1 } : { opacity: 0 }}
+              // transition={{ duration: 0.5, ease: "easeOut" }}
+              className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
+            >
+              <div className="flex flex-col gap-2">
+                <h1 className="text-sm">{session?.user?.name ?? ""}</h1>
+                <span className="text-sm text-[#a1a1a1]">
+                  {session?.user?.email ?? ""}
+                </span>
+                <Button variant="outline" onClick={handleLogout}>
+                  Logout <LogOut className="size-4" />
+                </Button>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      </motion.div>
     </div>
   );
 }
