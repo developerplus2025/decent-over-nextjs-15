@@ -32,9 +32,15 @@ import { LogOut } from "lucide-react";
 
 export default function UserButtonClient() {
   const router = useRouter();
-  const { data: session, error } = authClient.useSession();
+  const {
+    data: session,
+    isPending, //loading state
+    error, //error object
+    refetch, //refetch the session
+  } = authClient.useSession(); 
   const handleLogout = async () => {
     await authClient.signOut();
+    authClient.refreshToken;
     router.push("/");
   };
   const variants = {
