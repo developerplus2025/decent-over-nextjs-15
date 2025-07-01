@@ -34,6 +34,7 @@ export default function UserButtonClient() {
   const router = useRouter();
   const {
     data: session,
+
     isPending, //loading state
     error, //error object
     refetch, //refetch the session
@@ -60,7 +61,7 @@ export default function UserButtonClient() {
 
   return (
     <div className={`flex items-center gap-4`}>
-      {session?.session.token != "" ? (
+      {session && (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -124,7 +125,8 @@ export default function UserButtonClient() {
             )}
           </div>
         </motion.div>
-      ) : (
+      )}
+      {!session && (
         <motion.div
           initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
           animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
