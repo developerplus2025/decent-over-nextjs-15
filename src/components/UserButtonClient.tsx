@@ -68,10 +68,10 @@ export default function UserButtonClient() {
     }, 3000);
   }, [active, setActive]);
   const popoverRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
+        open &&
         popoverRef.current &&
         !popoverRef.current.contains(event.target as Node)
       ) {
@@ -83,7 +83,7 @@ export default function UserButtonClient() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [open]); 
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
