@@ -71,7 +71,6 @@ export default function UserButtonClient() {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        open === "open" &&
         popoverRef.current &&
         !popoverRef.current.contains(event.target as Node)
       ) {
@@ -83,7 +82,7 @@ export default function UserButtonClient() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open]);
+  }, []);
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
