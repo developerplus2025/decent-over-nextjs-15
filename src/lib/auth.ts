@@ -48,6 +48,7 @@ export const auth = betterAuth({
         return {
           firstName: profile.given_name,
           lastName: profile.family_name,
+          image: profile.picture,
         };
       },
     },
@@ -55,7 +56,7 @@ export const auth = betterAuth({
       mapProfileToUser: (profile) => {
         return {
           firstName: profile.name,
-          imag: profile.avatar_url,
+          image: profile.avatar_url,
         };
       },
       clientId: process.env.GITHUB_CLIENT_ID as string,
