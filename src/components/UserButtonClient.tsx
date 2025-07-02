@@ -117,14 +117,16 @@ export default function UserButtonClient() {
                 // initial={{ opacity: 0 }}
                 // animate={open ? { opacity: 1 } : { opacity: 0 }}
                 // transition={{ duration: 0.5, ease: "easeOut" }}
-                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
+                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-fit w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
               >
                 <div className="flex w-full flex-col gap-2">
-                  <h1 className="text-sm">{cleanName}</h1>
-                  <span className="text-sm text-[#a1a1a1]">
-                    {session?.user?.email ?? ""}
-                  </span>
-                  <div className="flex w-full flex-col gap-2 p-4 [&_svg]:size-4">
+                  <div className="flex flex-col gap-2 px-4 py-2">
+                    <h1 className="text-sm">{cleanName}</h1>
+                    <span className="text-sm text-[#a1a1a1]">
+                      {session?.user?.email ?? ""}
+                    </span>
+                  </div>
+                  <div className="flex w-full flex-col gap-2 px-4 py-2 [&_svg]:size-4">
                     <Button
                       className="w-full justify-between"
                       variant="outline"
@@ -174,7 +176,7 @@ export default function UserButtonClient() {
                     </Button>
                   </div>
                   <div className="border-b border-b-[#302f2f]"></div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col gap-2 px-4 py-2">
                     <Button
                       className="w-full justify-between"
                       variant="outline"
@@ -209,7 +211,7 @@ export default function UserButtonClient() {
                     </Button>
                   </div>
                   <div className="border-b border-b-[#302f2f]"></div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col px-4 py-2">
                     <Button>Upgrade to Pro</Button>
                   </div>
                 </div>
