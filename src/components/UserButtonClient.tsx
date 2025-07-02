@@ -107,6 +107,7 @@ export default function UserButtonClient() {
           <FeedBack />
           <div>
             <div
+              ref={popoverRef}
               className="relative cursor-pointer"
               onClick={(e) => {
                 setOpen(open === "open" ? "closed" : "open");
