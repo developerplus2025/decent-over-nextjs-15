@@ -41,6 +41,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.1.9",
     "@diceui/checkbox-group": "^0.5.0",
+    "@floating-ui/core": "^1.7.2",
     "@floating-ui/react": "^0.27.13",
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/react": "^2.2.5",
