@@ -656,7 +656,7 @@ export default function Navigation({
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
 
-            <UserButtonClient />
+            <UserButtonClient open={false} onOpenChange={() => {}} />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
         </nav>
