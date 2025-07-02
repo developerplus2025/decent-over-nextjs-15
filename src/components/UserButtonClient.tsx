@@ -117,15 +117,18 @@ export default function UserButtonClient() {
                 // initial={{ opacity: 0 }}
                 // animate={open ? { opacity: 1 } : { opacity: 0 }}
                 // transition={{ duration: 0.5, ease: "easeOut" }}
-                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
+                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
               >
                 <div className="flex w-full flex-col gap-2">
                   <h1 className="text-sm">{cleanName}</h1>
                   <span className="text-sm text-[#a1a1a1]">
                     {session?.user?.email ?? ""}
                   </span>
-                  <div className="flex w-full flex-col gap-2 [&_svg]:size-4">
-                    <Button className="w-full" variant="outline">
+                  <div className="flex w-full flex-col gap-2 p-4 [&_svg]:size-4">
+                    <Button
+                      className="w-full justify-between"
+                      variant="outline"
+                    >
                       Account Settings
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +141,7 @@ export default function UserButtonClient() {
                       </svg>
                     </Button>
                     <Button
-                      className="w-full"
+                      className="w-full justify-between"
                       onClick={() => router.push("/dashboard")}
                       variant="outline"
                     >
@@ -154,7 +157,7 @@ export default function UserButtonClient() {
                       </svg>
                     </Button>
                     <Button
-                      className="w-full"
+                      className="w-full justify-between"
                       onClick={() => router.push("/dashboard")}
                       variant="outline"
                     >
@@ -169,9 +172,27 @@ export default function UserButtonClient() {
                         <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"></path>
                       </svg>
                     </Button>
-                    <div className="border-b border-b-[#302f2f]"></div>
+                  </div>
+                  <div className="border-b border-b-[#302f2f]"></div>
+                  <div className="flex flex-col">
                     <Button
-                      className="w-full"
+                      className="w-full justify-between"
+                      variant="outline"
+                      onClick={handleLogout}
+                    >
+                      Home Page
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#ffffff"
+                        viewBox="0 0 256 256"
+                      >
+                        <path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path>
+                      </svg>
+                    </Button>
+                    <Button
+                      className="w-full justify-between"
                       variant="outline"
                       onClick={handleLogout}
                     >
@@ -186,6 +207,10 @@ export default function UserButtonClient() {
                         <path d="M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z"></path>
                       </svg>
                     </Button>
+                  </div>
+                  <div className="border-b border-b-[#302f2f]"></div>
+                  <div className="flex flex-col">
+                    <Button>Upgrade to Pro</Button>
                   </div>
                 </div>
               </div>
