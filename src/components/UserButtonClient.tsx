@@ -108,9 +108,9 @@ export default function UserButtonClient() {
           <FeedBack />
           <div>
             <div
+              ref={popoverRef}
               className="relative cursor-pointer"
               onClick={(e) => {
-                e.stopPropagation();
                 setOpen(open === "open" ? "closed" : "open");
               }}
             >
