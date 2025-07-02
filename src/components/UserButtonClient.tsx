@@ -9,6 +9,8 @@ import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
+import { useFloating, offset, flip, shift, size } from "@floating-ui/react-dom";
+
 import X from "./x";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
@@ -20,7 +22,7 @@ function removeVietnameseTones(str?: string): string {
 }
 export default function UserButtonClient() {
   const router = useRouter();
-
+  
   const {
     data: session,
 
@@ -66,6 +68,11 @@ export default function UserButtonClient() {
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
+  const { refs, floatingStyles } = useFloating({
+    placement: "bottom-end",
+    strategy: "absolute",
+    middleware: [offset(8)],
+  });
   return (
     <div className={`flex items-center gap-4`}>
       {session?.user && (
@@ -87,6 +94,7 @@ export default function UserButtonClient() {
           <FeedBack />
           <div ref={popoverRef}>
             <div
+              ref={refs.setReference}
               className="relative cursor-pointer"
               onClick={(e) => {
                 setOpen(open === "open" ? "closed" : "open");
@@ -107,6 +115,8 @@ export default function UserButtonClient() {
 
             {open === "open" && (
               <div
+                ref={refs.setFloating}
+                style={floatingStyles}
                 data-state={open}
                 data-side="right"
                 className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-fit w-[16rem] origin-[50%,0px] translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
