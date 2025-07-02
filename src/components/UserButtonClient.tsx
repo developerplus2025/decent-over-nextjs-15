@@ -29,7 +29,14 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { LogOut } from "lucide-react";
-
+function removeVietnameseTones(str?: string): string {
+  if (!str) return "";
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D");
+}
 export default function UserButtonClient() {
   const router = useRouter();
   const {
@@ -38,7 +45,7 @@ export default function UserButtonClient() {
     isPending, //loading state
     error, //error object
     refetch, //refetch the session
-  } = authClient.useSession(); 
+  } = authClient.useSession();
   const handleLogout = async () => {
     await authClient.signOut();
     authClient.refreshToken;
@@ -58,7 +65,8 @@ export default function UserButtonClient() {
       setActive(true);
     }, 3000);
   }, [active, setActive]);
-
+  const name = session?.user.name;
+  const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
   return (
     <div className={`flex items-center gap-4`}>
       {session?.user && (
@@ -111,7 +119,7 @@ export default function UserButtonClient() {
                 className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-[27rem] w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 justify-between rounded-xl border border-[#2c2c2c] bg-black p-4"
               >
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-sm">{session?.user?.name ?? ""}</h1>
+                  <h1 className="text-sm">{cleanName}</h1>
                   <span className="text-sm text-[#a1a1a1]">
                     {session?.user?.email ?? ""}
                   </span>
