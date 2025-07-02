@@ -126,6 +126,7 @@ export default function UserButtonClient() {
                       {session?.user?.email ?? ""}
                     </span>
                   </div>
+                  <div className="border-b border-b-[#302f2f]"></div>
                   <div className="flex w-full flex-col gap-2 px-4 py-2 [&_svg]:size-4">
                     <Button
                       className="w-full justify-between"
