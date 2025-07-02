@@ -10,6 +10,7 @@ type SignInContext = {
   account: {
     profile?: {
       avatar_url?: string;
+      picture?: string;
     };
   };
   user: {
@@ -28,6 +29,17 @@ type SignInContext = {
 const githubAvatarMiddleware: Middleware = async (ctx: SignInContext) => {
   if (ctx.provider === "github") {
     const avatar = ctx.account?.profile?.avatar_url;
+    if (avatar) {
+      await ctx.database.user.update({
+        where: { id: ctx.user.id },
+        data: { image: avatar },
+      });
+    }
+  }
+};
+const googleAvatarMiddleware: Middleware = async (ctx: SignInContext) => {
+  if (ctx.provider === "google") {
+    const avatar = ctx.account?.profile?.picture;
     if (avatar) {
       await ctx.database.user.update({
         where: { id: ctx.user.id },
@@ -63,4 +75,5 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
+  middleware: [githubAvatarMiddleware, googleAvatarMiddleware],
 });
