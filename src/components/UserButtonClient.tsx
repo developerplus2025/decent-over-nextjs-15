@@ -21,7 +21,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { VisuallyHidden } from "@radix-ui/themes";
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
@@ -67,6 +67,23 @@ export default function UserButtonClient() {
       setActive(true);
     }, 3000);
   }, [active, setActive]);
+  const popoverRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target as Node)
+      ) {
+        setOpen(open === "open" ? "closed" : "open");
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
@@ -94,11 +111,7 @@ export default function UserButtonClient() {
               className="relative cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
-                if (open == "open") {
-                  setOpen("closed");
-                } else {
-                  setOpen("open");
-                }
+                setOpen(open === "open" ? "closed" : "open");
               }}
             >
               {session && session.user && session.user.image ? (
@@ -115,6 +128,7 @@ export default function UserButtonClient() {
             </div>
             {open === "open" ? (
               <div
+                ref={popoverRef}
                 data-state={open}
                 data-side="right"
                 // initial={{ opacity: 0 }}
