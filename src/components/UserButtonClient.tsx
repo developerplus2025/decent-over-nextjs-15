@@ -10,7 +10,6 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
-import CustomDialog from "./search";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -76,12 +75,6 @@ export default function UserButtonClient() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
         >
-          <CustomDialog
-            open={open === "open"}
-            onOpenChange={(value: boolean) =>
-              setOpen(value ? "open" : "closed")
-            }
-          />
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
             <GitHub />
           </div>
@@ -116,7 +109,7 @@ export default function UserButtonClient() {
               <div
                 data-state={open}
                 data-side="right"
-                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-fit w-[16rem] origin-(--radix-popover-content-transform-origin) translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
+                className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 absolute top-[3.5rem] right-[2rem] flex h-fit w-[16rem] origin-[50%,0px] translate-0 flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
               >
                 <div className="flex w-full flex-col gap-2">
                   <div className="flex flex-col gap-2 px-4 py-2">
