@@ -40,7 +40,7 @@ function removeVietnameseTones(str?: string): string {
 }
 export default function UserButtonClient() {
   const router = useRouter();
-  
+
   const {
     data: session,
 
@@ -67,19 +67,7 @@ export default function UserButtonClient() {
       setActive(true);
     }, 3000);
   }, [active, setActive]);
-  useEffect(() => {
-    if (open) {
-      document.body.addEventListener("click", function (event) {
-        event.stopPropagation();
-      });
-    } else {
-      document.body.addEventListener("click", function (event) {}); // Bật lại scroll
-    }
 
-    return () => {
-      document.body.addEventListener("click", function (event) {}); // Đảm bảo luôn khôi phục scroll khi unmount
-    };
-  }, [open]);
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
   return (
@@ -104,7 +92,8 @@ export default function UserButtonClient() {
           <div>
             <div
               className="relative cursor-pointer"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 if (open == "open") {
                   setOpen("closed");
                 } else {
