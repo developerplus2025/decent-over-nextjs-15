@@ -884,7 +884,7 @@ export default function Individual() {
               className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-[#302f2f] dark:bg-[#000000]`}
             >
               <CardHeader
-                className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg border-b-[#302f2f] bg-[#00000099] p-6`}
+                className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg border-b border-b-[#302f2f] bg-[#00000099] p-6`}
               >
                 <CardTitle className="text-base font-medium text-[#ffffff]">
                   <div className="flex items-center justify-between">
