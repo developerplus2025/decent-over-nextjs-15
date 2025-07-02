@@ -1,36 +1,19 @@
-import NextLink from "next/link";
-import { withAuth } from "@workos-inc/authkit-nextjs";
-import { Button, Flex, Heading, Text } from "@radix-ui/themes";
-import { SignInButton } from "@/components/auth-ui/sign-in-button";
+import { GalleryVerticalEnd } from "lucide-react"
 
-export default async function SignInPage() {
-  const { user } = await withAuth();
+import { LoginForm } from "@/components/login-form"
+
+export default function LoginPage() {
   return (
-    <Flex direction="column" align="center" gap="2">
-      {user ? (
-        <>
-          <Heading size="8">
-            Welcome back{user?.firstName && `, ${user?.firstName}`}
-          </Heading>
-          <Text size="5" color="gray">
-            You are now authenticated into the application
-          </Text>
-          <Flex align="center" gap="3" mt="4">
-            <Button asChild size="3" variant="soft">
-              <NextLink href="/account">View account</NextLink>
-            </Button>
-            <SignInButton large />
-          </Flex>
-        </>
-      ) : (
-        <>
-          <Heading size="8">AuthKit authentication example</Heading>
-          <Text size="5" color="gray" mb="4">
-            Sign in to view your account details
-          </Text>
-          <SignInButton large />
-        </>
-      )}
-    </Flex>
-  );
+    <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+      <div className="flex w-full max-w-sm flex-col gap-6">
+        <a href="#" className="flex items-center gap-2 self-center font-medium">
+          <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
+            <GalleryVerticalEnd className="size-4" />
+          </div>
+          Acme Inc.
+        </a>
+        <LoginForm />
+      </div>
+    </div>
+  )
 }
