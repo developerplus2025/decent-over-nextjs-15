@@ -58,7 +58,7 @@ export default function UserButtonClient() {
     visible: { opacity: 1, display: "flex" },
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
   };
-  const [open, setOpen] = useState("close");
+  const [open, setOpen] = useState("closed");
   const { user, loading } = useAuth();
   const [active, setActive] = useState(false);
 
