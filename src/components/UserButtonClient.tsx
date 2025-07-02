@@ -75,7 +75,7 @@ export default function UserButtonClient() {
         popoverRef.current &&
         !popoverRef.current.contains(event.target as Node)
       ) {
-        setOpen("closed");
+        setOpen(open === "open" ? "closed" : "open");
       }
     }
 
@@ -83,7 +83,7 @@ export default function UserButtonClient() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open]); 
+  }, [open]);
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
@@ -108,7 +108,6 @@ export default function UserButtonClient() {
           <FeedBack />
           <div>
             <div
-              ref={popoverRef}
               className="relative cursor-pointer"
               onClick={(e) => {
                 setOpen(open === "open" ? "closed" : "open");
