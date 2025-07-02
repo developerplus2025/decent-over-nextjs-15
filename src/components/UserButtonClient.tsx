@@ -10,7 +10,8 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
-
+import SearchDialog from "fumadocs-ui/components/dialog/search-default";
+import type { SharedProps } from "fumadocs-ui/components/dialog/search";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -19,7 +20,7 @@ function removeVietnameseTones(str?: string): string {
     .replace(/đ/g, "d")
     .replace(/Đ/g, "D");
 }
-export default function UserButtonClient() {
+export default function UserButtonClient(props: SharedProps) {
   const router = useRouter();
 
   const {
@@ -76,6 +77,7 @@ export default function UserButtonClient() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
         >
+          <SearchDialog {...props} />
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
             <GitHub />
           </div>
