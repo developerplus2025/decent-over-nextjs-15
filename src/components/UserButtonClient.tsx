@@ -63,9 +63,9 @@ export default function UserButtonClient() {
     <div className={`flex items-center gap-4`}>
       {session?.user && (
         <motion.div
-          // initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          // animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-          // transition={{ duration: 0.5, ease: "easeOut" }}
+          initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
         >
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
@@ -128,9 +128,9 @@ export default function UserButtonClient() {
       )}
       {!session?.user && (
         <motion.div
-          // initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-          // animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
-          // transition={{ duration: 0.5, ease: "easeOut" }}
+          initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
+          animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className={`flex ${active ? "" : "pointer-events-none"} items-center justify-center gap-2`}
         >
           <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
