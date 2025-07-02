@@ -145,8 +145,8 @@ export default function UserButtonClient() {
           <FeedBack />
           <motion.div
             variants={variants}
-            initial={user ? "hidden" : "visible"}
-            animate={user ? "hidden" : "visible"}
+            // initial={session?.user ? "hidden" : "visible"}
+            // animate={session?.user ? "hidden" : "visible"}
             transition={{ duration: 0.5, ease: "easeOut", delay: 4 }}
             className="flex items-center gap-4"
           >
