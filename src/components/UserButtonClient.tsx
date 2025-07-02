@@ -71,7 +71,7 @@ export default function UserButtonClient() {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        open === "closed" &&
+        open === "open" &&
         popoverRef.current &&
         !popoverRef.current.contains(event.target as Node)
       ) {
