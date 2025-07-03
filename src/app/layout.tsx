@@ -31,7 +31,7 @@ import {
   CookieBanner,
   ConsentManagerDialog,
 } from "@c15t/nextjs";
-
+import SearchDialog from "@/components/search";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -133,7 +133,14 @@ export default function RootLayout({
                   className={` ${GeistSans.className}`}
                   position="top-center"
                 />
-                <RootProvider> {children}</RootProvider>
+                <RootProvider
+                  search={{
+                    SearchDialog,
+                  }}
+                >
+                  {" "}
+                  {children}
+                </RootProvider>
                 <Footer />
               </AuthKitProvider>
             </ThemeProvider>
