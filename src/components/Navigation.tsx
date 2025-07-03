@@ -140,6 +140,7 @@ import { Text } from "./ui/text";
 import dynamic from "next/dynamic";
 import UserButtonClient from "./UserButtonClient";
 import PopoverRws from "./popover-rws";
+import { AISearchTrigger } from "./ai";
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
@@ -656,6 +657,7 @@ export default function Navigation({
               </LinkPreview>
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
+            <AISearchTrigger />
             <UserButtonClient />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
