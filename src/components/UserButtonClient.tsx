@@ -81,8 +81,8 @@ export default function UserButtonClient() {
     open: isOpen,
     onOpenChange: setIsOpen,
     placement: "bottom-end",
-    strategy: "fixed",
-    middleware: [offset(8)],
+    strategy: "absolute",
+    middleware: [],
   });
   const click = useClick(context);
 
