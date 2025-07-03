@@ -17,8 +17,14 @@ import {
   flip,
   shift,
   size,
+  autoUpdate,
+  limitShift,
+  hide,
+  arrow as floatingUIarrow,
 } from "@floating-ui/react";
 import X from "./x";
+import { Primitive } from "@radix-ui/react-primitive";
+import type { Measurable } from "@radix-ui/rect";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -27,8 +33,26 @@ function removeVietnameseTones(str?: string): string {
     .replace(/đ/g, "d")
     .replace(/Đ/g, "D");
 }
+type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
+interface PopperAnchorProps extends PrimitiveDivProps {
+  virtualRef?: React.RefObject<Measurable>;
+}
+
+interface PopperContentProps extends PrimitiveDivProps {
+  sideOffset?: number;
+
+  alignOffset?: number;
+  arrowPadding?: number;
+  avoidCollisions?: boolean;
+
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+  updatePositionStrategy?: "optimized" | "always";
+  onPlaced?: () => void;
+}
 
 export default function UserButtonClient() {
+  
   const router = useRouter();
 
   const {
@@ -82,7 +106,31 @@ export default function UserButtonClient() {
     onOpenChange: setIsOpen,
     placement: "bottom-end",
     strategy: "absolute",
-    middleware: [],
+    middleware: [
+      offset(8),
+      size({
+        apply: ({ elements, rects, availableWidth, availableHeight }) => {
+          const { width: anchorWidth, height: anchorHeight } = rects.reference;
+          const contentStyle = elements.floating.style;
+          contentStyle.setProperty(
+            "--radix-popper-available-width",
+            `${availableWidth}px`,
+          );
+          contentStyle.setProperty(
+            "--radix-popper-available-height",
+            `${availableHeight}px`,
+          );
+          contentStyle.setProperty(
+            "--radix-popper-anchor-width",
+            `${anchorWidth}px`,
+          );
+          contentStyle.setProperty(
+            "--radix-popper-anchor-height",
+            `${anchorHeight}px`,
+          );
+        },
+      }),
+    ],
   });
   const click = useClick(context);
 
