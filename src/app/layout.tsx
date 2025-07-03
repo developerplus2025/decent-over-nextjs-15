@@ -69,15 +69,15 @@ export default function RootLayout({
           >
             <CookieBanner
               theme={{
-                "banner.card": "dark:bg-black bg-white",
-                "banner.header.root": "dark:bg-black bg-white",
-                "banner.footer": "!dark:bg-black bg-white",
+                "banner.card": "dark:!bg-black bg-white",
+                "banner.header.root": "dark:!bg-black bg-white",
+                "banner.footer": "dark:!bg-black bg-white",
                 "banner.footer.accept-button":
-                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
+                  "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
                 "banner.footer.reject-button":
-                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
+                  "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
                 "banner.footer.customize-button":
-                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
+                  "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
               }}
             />
             <ConsentManagerDialog />
