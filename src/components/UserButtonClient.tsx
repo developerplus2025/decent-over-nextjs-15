@@ -110,7 +110,7 @@ export default function UserButtonClient() {
             <div
               ref={refs.setReference}
               {...getReferenceProps()}
-              className="relative cursor-pointer"
+              className="cursor-pointer"
             >
               {session && session.user && session.user.image ? (
                 <img
