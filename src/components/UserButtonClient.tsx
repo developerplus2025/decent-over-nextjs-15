@@ -23,7 +23,6 @@ import {
   arrow as floatingUIarrow,
 } from "@floating-ui/react";
 import X from "./x";
-import { Primitive } from "@radix-ui/react-primitive";
 import type { Measurable } from "@radix-ui/rect";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
@@ -33,23 +32,7 @@ function removeVietnameseTones(str?: string): string {
     .replace(/đ/g, "d")
     .replace(/Đ/g, "D");
 }
-type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
-interface PopperAnchorProps extends PrimitiveDivProps {
-  virtualRef?: React.RefObject<Measurable>;
-}
 
-interface PopperContentProps extends PrimitiveDivProps {
-  sideOffset?: number;
-
-  alignOffset?: number;
-  arrowPadding?: number;
-  avoidCollisions?: boolean;
-
-  sticky?: "partial" | "always";
-  hideWhenDetached?: boolean;
-  updatePositionStrategy?: "optimized" | "always";
-  onPlaced?: () => void;
-}
 
 export default function UserButtonClient() {
   
