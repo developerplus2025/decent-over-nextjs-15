@@ -71,17 +71,19 @@ export default function RootLayout({
               theme={{
                 "banner.card": "dark:bg-black bg-white",
                 "banner.header.root": "dark:bg-black bg-white",
-                "banner.footer": "dark:bg-black bg-white",
-                "banner.footer.accept-button": "btn btn-primary",
-                "banner.footer.reject-button": "btn btn-primary",
-                "banner.footer.customize-button": "btn btn-primary",
+                "banner.footer": "!dark:bg-black bg-white",
+                "banner.footer.accept-button":
+                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
+                "banner.footer.reject-button":
+                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
+                "banner.footer.customize-button":
+                  "!border !bg-background !shadow-xs !hover:bg-accent !hover:text-accent-foreground !dark:bg-input/30 !dark:border-input !dark:hover:bg-input/50",
               }}
             />
             <ConsentManagerDialog />
 
             <Analytics />
 
-            <CookieAlert />
             <ThemeProvider
               disableTransitionOnChange
               enableSystem
