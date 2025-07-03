@@ -64,7 +64,7 @@ export default function UserButtonClient() {
         popoverRef.current &&
         !popoverRef.current.contains(event.target as Node)
       ) {
-        setIsOpen(!isOpen);
+        setIsOpen(false);
       }
     }
 
