@@ -9,6 +9,7 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import MainTextHome from "./components/main-text-home";
 import variables from "../variables.module.scss";
 import { Badge } from "@/components/luxe/badge";
+import PopoverRws from "@/components/popover-rws";
 export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-24 xl:pb-4 dark:bg-black dark:scheme-dark">
@@ -42,6 +43,7 @@ export default function Home() {
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
         <p className={`font-[BespokeStencil-BoldItalic] text-[55px]`}>Decent</p>
+        <PopoverRws />
       </div>
       <div>
         <NavigationEffect />
