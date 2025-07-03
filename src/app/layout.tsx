@@ -57,7 +57,7 @@ export default function RootLayout({
 
         <body
           style={{ colorScheme: "dark" }}
-          className="theme-default relative overflow-x-hidden antialiased"
+          className="theme-default relative overflow-x-hidden font-sans antialiased"
         >
           <ConsentManagerProvider
             options={{
