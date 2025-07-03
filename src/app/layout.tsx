@@ -69,8 +69,9 @@ export default function RootLayout({
           >
             <CookieBanner
               theme={{
+                "banner.card": "dark:bg-black bg-white",
                 "banner.header.root": "dark:bg-black bg-white",
-                "banner.footer.sub-group": "dark:bg-black bg-white",
+                "banner.footer": "dark:bg-black bg-white",
                 "banner.footer.accept-button": "btn btn-primary",
                 "banner.footer.reject-button": "btn btn-primary",
                 "banner.footer.customize-button": "btn btn-primary",
