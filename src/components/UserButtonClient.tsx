@@ -23,7 +23,6 @@ import {
   arrow as floatingUIarrow,
 } from "@floating-ui/react";
 import X from "./x";
-import type { Measurable } from "@radix-ui/rect";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str

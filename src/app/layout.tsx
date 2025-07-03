@@ -67,7 +67,15 @@ export default function RootLayout({
               ignoreGeoLocation: true, // Useful for development to always view the banner.
             }}
           >
-            <CookieBanner />
+            <CookieBanner
+              theme={{
+                "banner.root": "dark:bg-black bg-white",
+                "banner.footer": "dark:bg-black bg-white",
+                "banner.footer.accept-button": "btn btn-primary",
+                "banner.footer.reject-button": "btn btn-primary",
+                "banner.footer.customize-button": "btn btn-primary",
+              }}
+            />
             <ConsentManagerDialog />
 
             <Analytics />
