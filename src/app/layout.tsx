@@ -33,7 +33,6 @@ import {
 } from "@c15t/nextjs";
 import SearchDialog from "@/components/search";
 import { Button } from "@/components/ui/button";
-import CustomHeaderCookie from "@/components/CustomHeaderCookie";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -70,19 +69,9 @@ export default function RootLayout({
 							}}
 						>
 							<CookieBanner
-								theme={{
-									"banner.card": "dark:!bg-black bg-white",
-									"banner.header.root": "dark:!bg-black bg-white",
-									"banner.footer": "dark:!bg-black bg-white",
-									"banner.footer.accept-button":
-										"!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
-									"banner.footer.reject-button":
-										"!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
-									"banner.footer.customize-button":
-										"!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
-								}}
+								
 							/>
-					  <CustomHeaderCookie></CustomHeaderCookie>
+					 
 							<ConsentManagerDialog />
 
 							<Analytics />
