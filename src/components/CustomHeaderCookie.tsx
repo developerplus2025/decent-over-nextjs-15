@@ -5,10 +5,16 @@ import { Button } from "./ui/button";
  
 export default function CustomAcceptButton()  {
   return (
-    <CookieBanner.Root theme={{
+    <CookieBanner.Root   theme={{
       "banner.card": "dark:!bg-black bg-white",
       "banner.header.root": "dark:!bg-black bg-white",
       "banner.footer": "dark:!bg-black bg-white",
+      "banner.footer.accept-button":
+        "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
+      "banner.footer.reject-button":
+        "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
+      "banner.footer.customize-button":
+        "!border dark:!text-white !bg-background !shadow-xs hover:!bg-accent hover:!text-accent-foreground dark:!bg-input/30 dark:!border-input dark:hover:!bg-input/50",
     }}>
 			<CookieBanner.Card>
       <CookieBanner.Header >
@@ -20,10 +26,10 @@ export default function CustomAcceptButton()  {
     </CookieBanner.Header>
 				<CookieBanner.Footer>
 					<CookieBanner.FooterSubGroup>
-						<CookieBanner.RejectButton themeKey="banner.footer.reject-button"><Button>Decline All</Button></CookieBanner.RejectButton>
-						<CookieBanner.CustomizeButton themeKey="banner.footer.customize-button"><Button>Preferences</Button></CookieBanner.CustomizeButton>
+						<CookieBanner.RejectButton themeKey="banner.footer.reject-button"><Button variant={'outline'}>Decline All</Button></CookieBanner.RejectButton>
+						<CookieBanner.CustomizeButton themeKey="banner.footer.customize-button"><Button variant={'outline'}>Preferences</Button></CookieBanner.CustomizeButton>
 					</CookieBanner.FooterSubGroup>
-					<CookieBanner.AcceptButton themeKey="banner.footer.accept-button"><Button>Accept All</Button></CookieBanner.AcceptButton>
+					<CookieBanner.AcceptButton themeKey="banner.footer.accept-button"><Button variant={'outline'}>Accept All</Button></CookieBanner.AcceptButton>
 				</CookieBanner.Footer>
 			</CookieBanner.Card>
 		</CookieBanner.Root>
