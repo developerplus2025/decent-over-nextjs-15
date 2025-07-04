@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SearchDialog } from "fumadocs-ui/components/dialog/search";
 import { useSearch } from "fumadocs-ui/components/dialog/search";
 import {
 	Lightbulb,
