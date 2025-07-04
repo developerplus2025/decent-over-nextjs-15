@@ -124,11 +124,27 @@ export default function UserButtonClient() {
 					transition={{ duration: 0.5, ease: "easeOut" }}
 					className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
 				>
-					<div className="w-[200px] flex items-center justify-center h-[32px] border border-(--input) ">
+					<div className="w-[230px] rounded-md gap-2 flex items-center justify-center h-[32px] border border-(--input) ">
+						<svg
+							className="size-4.5"
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="#ffffff"
+							viewBox="0 0 256 256"
+						>
+							<title>Search Icon</title>
+							<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+						</svg>
 						<p className="text-xs"> Search for documention</p>
-						<kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
-							<span className="text-xs">⌘</span>K
-						</kbd>
+						<div className="flex gap-1">
+							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
+								<span className="text-xs">Ctrl</span>
+							</kbd>
+							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
+								<span className="text-xs">K</span>
+							</kbd>
+						</div>
 					</div>
 					<div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
 						<GitHub />
