@@ -20,10 +20,10 @@ export default function CustomAcceptButton()  {
     </CookieBanner.Header>
 				<CookieBanner.Footer>
 					<CookieBanner.FooterSubGroup>
-						<CookieBanner.RejectButton themeKey="banner.footer.reject-button">Decline All</CookieBanner.RejectButton>
-						<CookieBanner.CustomizeButton themeKey="banner.footer.customize-button">Preferences</CookieBanner.CustomizeButton>
+						<CookieBanner.RejectButton themeKey="banner.footer.reject-button"><Button>Decline All</Button></CookieBanner.RejectButton>
+						<CookieBanner.CustomizeButton themeKey="banner.footer.customize-button"><Button>Preferences</Button></CookieBanner.CustomizeButton>
 					</CookieBanner.FooterSubGroup>
-					<CookieBanner.AcceptButton themeKey="banner.footer.accept-button">Accept All</CookieBanner.AcceptButton>
+					<CookieBanner.AcceptButton themeKey="banner.footer.accept-button"><Button>Accept All</Button></CookieBanner.AcceptButton>
 				</CookieBanner.Footer>
 			</CookieBanner.Card>
 		</CookieBanner.Root>
