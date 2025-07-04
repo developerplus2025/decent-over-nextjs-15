@@ -75,11 +75,12 @@ export function Tabs({
   ...props
 }: TabsProps) {
   const tabsRef = useRef<HTMLDivElement>(null);
-  const [value, setValue] =
-    _value === undefined
-      ? // eslint-disable-next-line react-hooks/rules-of-hooks -- not supposed to change controlled/uncontrolled
-        useState(defaultValue)
-      : [_value, _onValueChange ?? (() => undefined)];
+  const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
+  const isControlled = _value !== undefined;
+  const value = isControlled ? _value : uncontrolledValue;
+  const setValue = isControlled
+    ? (_onValueChange ?? (() => undefined))
+    : setUncontrolledValue;
 
   const onChange = useEffectEvent((v: string) => setValue(v));
   const valueToIdMap = useMemo(() => new Map<string, string>(), []);
@@ -112,14 +113,14 @@ export function Tabs({
 
   return (
     <Primitive.Tabs
-      ref={mergeRefs(ref, tabsRef)}
+      ref={mergeRefs(ref as React.Ref<HTMLDivElement>, tabsRef)}
       value={value}
       onValueChange={(v: string) => {
         if (updateAnchor) {
           const id = valueToIdMap.get(v);
 
           if (id) {
-            window.history.replaceState(null, '', `#${id}`);
+            window.history.replaceState(null, "", `#${id}`);
           }
         }
 

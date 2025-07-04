@@ -101,25 +101,23 @@ export function CodeBlock({
       dir="ltr"
       {...props}
       className={cn(
-        isTab ? [bg, 'rounded-lg shadow-sm'] : 'my-4 rounded-xl bg-fd-card p-1',
-        'shiki relative border outline-none not-prose overflow-hidden text-sm',
+        isTab ? [bg, "rounded-lg shadow-sm"] : "bg-fd-card my-4 rounded-xl p-1",
+        "shiki not-prose relative overflow-hidden border text-sm outline-none",
         props.className,
       )}
     >
       {title ? (
         <div
           className={cn(
-            'flex text-fd-muted-foreground items-center gap-2 ps-3 h-9.5',
-            isTab && 'border-b',
+            "text-fd-muted-foreground flex h-9.5 items-center gap-2 ps-3",
+            isTab && "border-b",
           )}
         >
-          {typeof icon === 'string' ? (
-            <div
-              className="[&_svg]:size-3.5"
-              dangerouslySetInnerHTML={{
-                __html: icon,
-              }}
-            />
+          {typeof icon === "string" ? (
+            // If icon is a string, render nothing or provide a fallback, or use a safe SVG parser if needed
+            <div className="[&_svg]:size-3.5">
+              {/* icon string rendering not supported for security */}
+            </div>
           ) : (
             icon
           )}
@@ -131,7 +129,7 @@ export function CodeBlock({
       ) : (
         Actions({
           className:
-            'absolute top-1 right-1 z-2 bg-fd-card rounded-bl-lg border-l border-b text-fd-muted-foreground',
+            "absolute top-1 right-1 z-2 bg-fd-card rounded-bl-lg border-l border-b text-fd-muted-foreground",
           children: allowCopy && <CopyButton containerRef={areaRef} />,
         })
       )}
@@ -139,19 +137,19 @@ export function CodeBlock({
         ref={areaRef}
         {...viewportProps}
         className={cn(
-          !isTab && [bg, 'rounded-lg border'],
-          'text-[13px] py-3.5 overflow-auto max-h-[600px] fd-scroll-container',
+          !isTab && [bg, "rounded-lg border"],
+          "fd-scroll-container max-h-[600px] overflow-auto py-3.5 text-[13px]",
           viewportProps.className,
         )}
         style={
           {
             // space for toolbar
-            '--padding-right': !title ? 'calc(var(--spacing) * 8)' : undefined,
-            counterSet: props['data-line-numbers']
-              ? `line ${Number(props['data-line-numbers-start'] ?? 1) - 1}`
+            "--padding-right": !title ? "calc(var(--spacing) * 8)" : undefined,
+            counterSet: props["data-line-numbers"]
+              ? `line ${Number(props["data-line-numbers-start"] ?? 1) - 1}`
               : undefined,
             ...viewportProps.style,
-          } as object
+          } as React.CSSProperties
         }
       >
         {children}
@@ -184,12 +182,12 @@ function CopyButton({
       type="button"
       className={cn(
         buttonVariants({
-          color: 'ghost',
-          className: '[&_svg]:size-3.5',
+          variant: "ghost",
+          className: "[&_svg]:size-3.5",
         }),
         className,
       )}
-      aria-label={checked ? 'Copied Text' : 'Copy Text'}
+      aria-label={checked ? "Copied Text" : "Copy Text"}
       onClick={onClick}
       {...props}
     >
@@ -204,11 +202,11 @@ export function CodeBlockTabs({ ref, ...props }: ComponentProps<typeof Tabs>) {
 
   return (
     <Tabs
-      ref={mergeRefs(containerRef, ref)}
+      ref={mergeRefs(containerRef, ref as React.Ref<HTMLDivElement>)}
       {...props}
       className={cn(
-        'bg-fd-card p-1 rounded-xl border overflow-hidden',
-        !nested && 'my-4',
+        "bg-fd-card overflow-hidden rounded-xl border p-1",
+        !nested && "my-4",
         props.className,
       )}
     >
