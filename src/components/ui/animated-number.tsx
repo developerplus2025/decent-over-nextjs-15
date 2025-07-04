@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { JSX } from "react";
 import { motion, SpringOptions, useSpring, useTransform } from 'motion/react';
 import { useEffect } from 'react';
 

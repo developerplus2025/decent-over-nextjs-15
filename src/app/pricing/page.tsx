@@ -19,7 +19,7 @@ import { MarqueeUI } from "./marquee-ui";
 import FeedBack from "./feedback";
 import { Button } from "@/components/ui/button";
 import AnimatedBar from "@/components/animation-bar";
-
+import { JSX } from "react";
 // Define the possible keys as a union of string literals
 type TabKey = "individual" | "business";
 

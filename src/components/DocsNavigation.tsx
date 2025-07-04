@@ -1,5 +1,6 @@
 "use client";
 import classNames from "classnames";
+import { JSX } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   DropdownMenu,
