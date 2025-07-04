@@ -124,9 +124,9 @@ export default function UserButtonClient() {
 					transition={{ duration: 0.5, ease: "easeOut" }}
 					className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
 				>
-					<div className="w-[230px] rounded-md gap-2 flex items-center justify-center h-[32px] border border-(--input) ">
+					<div className="w-[260px] rounded-md gap-2 flex items-center justify-center h-[32px] border border-(--input) ">
 						<svg
-							className="size-4.5"
+							className="size-4.5 shrink-0"
 							xmlns="http://www.w3.org/2000/svg"
 							width="16"
 							height="16"
@@ -138,10 +138,10 @@ export default function UserButtonClient() {
 						</svg>
 						<p className="text-xs"> Search for documention</p>
 						<div className="flex gap-1">
-							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
+							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-(--input) px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
 								<span className="text-xs">Ctrl</span>
 							</kbd>
-							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
+							<kbd className=" text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-(--input) px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
 								<span className="text-xs">K</span>
 							</kbd>
 						</div>

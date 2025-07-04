@@ -17,6 +17,9 @@ importers:
       '@c15t/nextjs':
         specifier: ^1.4.2
         version: 1.4.2(@babel/core@7.27.4)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(next@15.3.4(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.2)(use-sync-external-store@1.5.0(react@19.1.0))
+      '@c15t/react':
+        specifier: ^1.4.2
+        version: 1.4.2(@babel/core@7.27.4)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.89.2)(use-sync-external-store@1.5.0(react@19.1.0))
       '@diceui/checkbox-group':
         specifier: ^0.5.0
         version: 0.5.0(@floating-ui/react@0.27.13(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
