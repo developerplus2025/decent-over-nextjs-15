@@ -1,14 +1,4 @@
 "use client";
-import Link from "next/link";
-import { authClient } from "@/lib/auth-client";
-import { motion } from "framer-motion";
-import { useAuth } from "@workos-inc/authkit-nextjs/components";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
-import FeedBack from "./feedback";
-import GitHub from "./GitHub";
 import {
   useClick,
   useInteractions,
@@ -22,6 +12,17 @@ import {
   hide,
   arrow as floatingUIarrow,
 } from "@floating-ui/react";
+import { authClient } from "@/lib/auth-client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { useAuth } from "@workos-inc/authkit-nextjs/components";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+
+import { ThemeToggle } from "./ThemeToggle";
+import FeedBack from "./feedback";
+import GitHub from "./GitHub";
 import X from "./x";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
@@ -32,9 +33,7 @@ function removeVietnameseTones(str?: string): string {
     .replace(/Đ/g, "D");
 }
 
-
 export default function UserButtonClient() {
-  
   const router = useRouter();
 
   const {
@@ -83,7 +82,7 @@ export default function UserButtonClient() {
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
 
-  const { refs, floatingStyles, isPositioned, context } = useFloating({
+  const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
     placement: "bottom-end",
