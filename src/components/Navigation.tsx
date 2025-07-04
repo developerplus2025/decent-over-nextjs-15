@@ -141,7 +141,7 @@ import dynamic from "next/dynamic";
 import UserButtonClient from "./UserButtonClient";
 import PopoverRws from "./popover-rws";
 import { AISearchTrigger } from ".";
-
+import { SearchDialog } from "fumadocs-ui/components/dialog/search";
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
@@ -209,7 +209,7 @@ export default function Navigation({
   const theme = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isBottom, setIsBottom] = useState(false);
-
+  const [open, setOpen] = useState<boolean>();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(
@@ -658,7 +658,18 @@ export default function Navigation({
               </LinkPreview>
             </div> */}
             <div className="h-[1.2rem] border-r"></div>
-            <AISearchTrigger />
+            {open !== undefined ? (
+              <SearchDialog
+                open={open}
+                onOpenChange={setOpen}
+                search=""
+                onSearchChange={() => {}}
+              >
+                {/* Placeholder content for SearchDialog */}
+                <div />
+              </SearchDialog>
+            ) : null}
+            <Button onClick={() => setOpen(true)} />
             <UserButtonClient />
           </div>
           <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
