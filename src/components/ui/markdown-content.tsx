@@ -4,23 +4,26 @@ import type * as React from "react";
 import { Suspense, isValidElement, memo, useMemo } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
-
+import type { ReactElement } from "react";
 const DEFAULT_PRE_BLOCK_CLASS =
 	"my-4 overflow-x-auto w-fit rounded-xl bg-zinc-950 text-zinc-50 dark:bg-zinc-900 border border-border p-4";
 
 const extractTextContent = (node: React.ReactNode): string => {
-	if (typeof node === "string") {
-		return node;
+	if (typeof node === "string" || typeof node === "number") {
+		return node.toString();
 	}
+
 	if (Array.isArray(node)) {
 		return node.map(extractTextContent).join("");
 	}
+
 	if (isValidElement(node)) {
-		return extractTextContent(node.props.children);
+		const element = node as ReactElement<any>;
+		return extractTextContent(element.props.children);
 	}
+
 	return "";
 };
-
 interface HighlightedPreProps extends React.HTMLAttributes<HTMLPreElement> {
 	language: string;
 }
@@ -254,7 +257,7 @@ const components: Partial<Components> = {
 		return (
 			<code
 				className={cn(
-					"rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm",
+					"bg-muted rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
 					className,
 				)}
 				{...props}
@@ -267,8 +270,8 @@ const components: Partial<Components> = {
 };
 
 function parseMarkdownIntoBlocks(markdown: string): string[] {
-	const tokens = marked.lexer(markdown);
-	return tokens.map((token) => token.raw);
+  const tokens = marked.lexer(markdown);
+		return tokens.map((token) => token.raw);
 }
 
 interface MarkdownBlockProps {
