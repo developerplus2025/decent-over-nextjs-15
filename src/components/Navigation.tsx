@@ -458,18 +458,7 @@ export default function Navigation({
 					</div>
 					<div className="flex items-center gap-4">
 						<div className="h-[1.2rem] border-r"></div>
-						{open !== undefined ? (
-							<SearchDialog
-								open={open}
-								onOpenChange={setOpen}
-								search=""
-								onSearchChange={() => {}}
-							>
-								{/* Placeholder content for SearchDialog */}
-								<div />
-							</SearchDialog>
-						) : null}
-						<Button onClick={() => setOpen(true)} />
+
 						<UserButtonClient />
 					</div>
 					<div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
