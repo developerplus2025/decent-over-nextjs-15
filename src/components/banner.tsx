@@ -46,7 +46,17 @@ export function Banner({
   const globalKey = id ? `nd-banner-${id}` : null;
 
   useEffect(() => {
-    if (globalKey) setOpen(localStorage.getItem(globalKey) !== 'true');
+    if (globalKey) setOpen(localStorage.getItem(globalKey) !== "true");
+  }, [globalKey]);
+
+  // Add or remove the class on the documentElement based on localStorage
+  useEffect(() => {
+    if (!globalKey) return;
+    if (localStorage.getItem(globalKey) === "true") {
+      document.documentElement.classList.add(globalKey);
+    } else {
+      document.documentElement.classList.remove(globalKey);
+    }
   }, [globalKey]);
 
   if (!open) return null;
@@ -56,35 +66,25 @@ export function Banner({
       id={id}
       {...props}
       className={cn(
-        'sticky top-0 z-40 flex flex-row items-center justify-center px-4 text-center text-sm font-medium',
-        variant === 'normal' && 'bg-fd-secondary',
-        variant === 'rainbow' && 'bg-fd-background',
-        !open && 'hidden',
+        "sticky top-0 z-40 flex flex-row items-center justify-center px-4 text-center text-sm font-medium",
+        variant === "normal" && "bg-fd-secondary",
+        variant === "rainbow" && "bg-fd-background",
+        !open && "hidden",
         props.className,
       )}
       style={{
         height,
       }}
     >
-      {changeLayout && open ? (
-        <style>
-          {globalKey
-            ? `:root:not(.${globalKey}) { --fd-banner-height: ${height}; }`
-            : `:root { --fd-banner-height: ${height}; }`}
-        </style>
-      ) : null}
+      {/*
+        Instead of injecting a script, use useEffect to update the classList
+      */}
       {globalKey ? (
         <style>{`.${globalKey} #${id} { display: none; }`}</style>
       ) : null}
-      {globalKey ? (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `if (localStorage.getItem('${globalKey}') === 'true') document.documentElement.classList.add('${globalKey}');`,
-          }}
-        />
-      ) : null}
+      {/* The script tag is not needed since useEffect handles the class addition */}
 
-      {variant === 'rainbow'
+      {variant === "rainbow"
         ? flow({
             colors: rainbowColors,
           })
@@ -96,14 +96,14 @@ export function Banner({
           aria-label="Close Banner"
           onClick={() => {
             setOpen(false);
-            if (globalKey) localStorage.setItem(globalKey, 'true');
+            if (globalKey) localStorage.setItem(globalKey, "true");
           }}
           className={cn(
             buttonVariants({
-              color: 'ghost',
+              variant: "ghost",
               className:
-                'absolute end-2 top-1/2 -translate-y-1/2 text-fd-muted-foreground/50',
-              size: 'icon-sm',
+                "text-fd-muted-foreground/50 absolute end-2 top-1/2 -translate-y-1/2",
+              size: "icon",
             }),
           )}
         >
@@ -122,16 +122,14 @@ function flow({ colors }: { colors: string[] }) {
     <>
       <div
         className="absolute inset-0 z-[-1]"
-        style={
-          {
-            maskImage,
-            maskComposite: 'intersect',
-            animation: 'fd-moving-banner 20s linear infinite',
-            backgroundImage: `repeating-linear-gradient(70deg, ${[...colors, colors[0]].map((color, i) => `${color} ${(i * 50) / colors.length}%`).join(', ')})`,
-            backgroundSize: '200% 100%',
-            filter: 'saturate(2)',
-          } as object
-        }
+        style={{
+          maskImage,
+          maskComposite: "intersect",
+          animation: "fd-moving-banner 20s linear infinite",
+          backgroundImage: `repeating-linear-gradient(70deg, ${[...colors, colors[0]].map((color, i) => `${color} ${(i * 50) / colors.length}%`).join(", ")})`,
+          backgroundSize: "200% 100%",
+          filter: "saturate(2)",
+        }}
       />
       <style>
         {`@keyframes fd-moving-banner {

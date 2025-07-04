@@ -188,6 +188,7 @@
     "zod": "^3.25.67"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.0.6",
     "@fumadocs/cli": "^0.0.3",
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.1.6",
