@@ -124,9 +124,7 @@ export default function RootLayout({
 										position="top-center"
 									/>
 									<RootProvider
-										search={{
-											SearchDialog,
-										}}
+										
 									>
 										{" "}
 										{children}
