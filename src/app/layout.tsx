@@ -33,6 +33,7 @@ import {
 } from "@c15t/nextjs";
 import SearchDialog from "@/components/search";
 import { Button } from "@/components/ui/button";
+import CustomAcceptButton from "@/components/CustomHeaderCookie";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -68,10 +69,7 @@ export default function RootLayout({
 								ignoreGeoLocation: true, // Useful for development to always view the banner.
 							}}
 						>
-							<CookieBanner
-								
-							/>
-					 
+							<CustomAcceptButton/>
 							<ConsentManagerDialog />
 
 							<Analytics />
