@@ -32,23 +32,23 @@ export const Callout = forwardRef<HTMLDivElement, CalloutProps>(
       <div
         ref={ref}
         className={cn(
-          'flex gap-2 my-4 rounded-xl border bg-fd-card p-3 ps-1 text-sm text-fd-card-foreground shadow-md',
+          "bg-fd-card text-fd-card-foreground my-4 flex gap-2 rounded-xl border p-3 ps-1 text-sm shadow-md",
           className,
         )}
         {...props}
         style={
           {
-            '--callout-color': `var(--color-fd-${type})`,
-            ...props.style,
-          } as object
+            ...(props.style as React.CSSProperties),
+            ["--callout-color" as any]: `var(--color-fd-${type})`,
+          } as React.CSSProperties
         }
       >
-        <div role="none" className="w-0.5 bg-(--callout-color)/50 rounded-sm" />
+        <div role="none" className="w-0.5 rounded-sm bg-(--callout-color)/50" />
         {icon ?? (
-          <DefaultIcon className="size-5 -me-0.5 fill-(--callout-color) text-fd-card" />
+          <DefaultIcon className="text-fd-card -me-0.5 size-5 fill-(--callout-color)" />
         )}
-        <div className="flex flex-col gap-2 min-w-0 flex-1">
-          {title ? <p className="font-medium !my-0">{title}</p> : null}
+        <div className="flex min-w-0 flex-1 flex-col gap-2">
+          {title ? <p className="!my-0 font-medium">{title}</p> : null}
           <div className="text-fd-muted-foreground prose-no-margin empty:hidden">
             {children}
           </div>
