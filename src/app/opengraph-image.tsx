@@ -1,7 +1,9 @@
 import { ImageResponse } from "next/og";
 import { headers } from "next/headers";
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+
+// Route segment config
+export const runtime = "edge";
+
 // Image metadata
 export const alt = "The next generation of audio collaboration.";
 export const size = {
@@ -10,7 +12,7 @@ export const size = {
 };
 
 export const contentType = "image/png";
- 
+
 // Image generation
 export default async function Image() {
   // Font
@@ -53,7 +55,7 @@ export default async function Image() {
             width: "57rem",
           }}
         >
-          {alt}
+         {alt}
         </div>
       </div>
     ),
