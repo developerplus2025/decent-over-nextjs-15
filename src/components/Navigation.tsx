@@ -140,7 +140,8 @@ import { Text } from "./ui/text";
 import dynamic from "next/dynamic";
 import UserButtonClient from "./UserButtonClient";
 import PopoverRws from "./popover-rws";
-import { AISearchTrigger } from "./ai";
+import { AISearchTrigger } from ".";
+
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
