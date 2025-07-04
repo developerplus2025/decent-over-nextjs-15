@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
