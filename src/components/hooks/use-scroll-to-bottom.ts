@@ -13,7 +13,8 @@ export function useScrollToBottom<T extends HTMLElement>(): [
 	boolean,
 	() => void,
 ] {
-	const containerRef = useRef<T>(null);
+	const containerRef = useRef<T>(null!) as RefObject<T>;
+
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
 	const isUserScrolling = useRef(false);
