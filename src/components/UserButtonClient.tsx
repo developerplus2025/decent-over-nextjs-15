@@ -24,7 +24,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
-import { useSearch } from "fumadocs-ui/components/dialog/search";
+import { SearchDialog, useSearch } from "fumadocs-ui/components/dialog/search";
 function removeVietnameseTones(str?: string): string {
 	if (!str) return "";
 	return str
@@ -114,6 +114,8 @@ const search = useSearch();
       }),
     ],
   });
+  const [searchcv, setOpenSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const click = useClick(context);
   	const openSearch = () => {
 				search.onOpenChange(true);
@@ -121,6 +123,14 @@ const search = useSearch();
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
   return (
 			<div className={`flex items-center gap-4`}>
+				 <SearchDialog
+      open={searchcv}
+      onOpenChange={setOpenSearch}
+      search={searchTerm}
+      onSearchChange={setSearchTerm}
+      isLoading={false} // hoặc true nếu bạn có xử lý tải dữ liệu
+    ><></></SearchDialog>
+
 				<motion.div
 					initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
 					animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
