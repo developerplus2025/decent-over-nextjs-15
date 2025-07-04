@@ -1,93 +1,22 @@
 "use client";
-import classNames from "classnames";
-import { motion, useInView } from "framer-motion";
+
+import { motion } from "framer-motion";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import React, {
-  PointerEvent,
-  FocusEvent,
-  useEffect,
-  useRef,
-  useState,
-  CSSProperties,
-} from "react";
-import Image from "next/image";
-import { LinkPreview } from "@/components/ui/link-preview";
-import { Toaster, toast } from "sonner";
-import { usePathname } from "next/navigation";
-import NextLink from "next/link";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import {
-  EllipsisVertical,
-  Heart,
-  House,
-  ListPlus,
-  Play,
-  PlayCircle,
+  Lightbulb,
+  Medal,
+  NotebookText,
   Podcast,
-  Save,
-  SkipBack,
-  SkipForward,
-  UserRound,
+  Share2,
+  WifiOff,
 } from "lucide-react";
-import { Library } from "lucide-react";
-import { CirclePlus } from "lucide-react";
-import { Search } from "lucide-react";
-import { CalendarPlus } from "lucide-react";
-import { Mic } from "lucide-react";
-import { CirclePlay } from "lucide-react";
-import { LayoutGrid } from "lucide-react";
-import { Radio } from "lucide-react";
-import { ListMusic } from "lucide-react";
-import { Clock } from "lucide-react";
-import { Guitar } from "lucide-react";
-import { PanelGroup, Panel } from "react-resizable-panels";
-import { Music2 } from "lucide-react";
-import { ThumbsUp } from "lucide-react";
-import { Pizza } from "lucide-react";
-import { Apple } from "lucide-react";
-import { CupSoda } from "lucide-react";
-import { Fish } from "lucide-react";
-import { Ham } from "lucide-react";
-import { Cake } from "lucide-react";
-import { MessageCircle } from "lucide-react";
-import { Share2 } from "lucide-react";
-import { User } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import type React from "react";
+
+import { SearchDialog } from "fumadocs-ui/components/dialog/search";
+
 import { Button } from "@/components/ui/button";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Mail } from "lucide-react";
-import { Lightbulb } from "lucide-react";
-import { Headphones } from "lucide-react";
-import { WifiOff } from "lucide-react";
-import { NotebookText } from "lucide-react";
-import { Medal } from "lucide-react";
-import { Eye } from "lucide-react";
-import { Skeleton } from "@/components/ui/skeleton";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -96,103 +25,20 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-import { Input } from "@/components/ui/input";
-import {
-  Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
-import { ScrollAreaCorner } from "@radix-ui/react-scroll-area";
-import LogoImage from "./LogoImage";
-import { useTheme } from "next-themes";
-import ShinyButton from "@/components/magicui/shiny-button";
-import ShineBorder from "@/components/magicui/shine-border";
-import Sparkles from "./Sparkles";
-import GitHub from "./GitHub";
-import Discord from "./Discord";
-import X from "./x";
-import Linkedin from "./Linkedin";
-import { ThemeToggle } from "./ThemeToggle";
-import { cn } from "@/lib/utils";
-import PopoverNotifications from "./popover-notifications";
-import FeedBack from "./feedback";
-import { Text } from "./ui/text";
-import dynamic from "next/dynamic";
+
 import UserButtonClient from "./UserButtonClient";
-import PopoverRws from "./popover-rws";
-import { AISearchTrigger } from ".";
-import { SearchDialog } from "fumadocs-ui/components/dialog/search";
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
 //   loading: () => <p>Loading...</p>,
 // });
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+
 type NavigationProps = {
   className?: string;
   children: React.ReactNode;
 };
-export default function Navigation({
-  className,
-  children,
-}: NavigationProps): React.ReactElement {
-  const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+export default function Navigation({ className }: NavigationProps): React.ReactElement {
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isWebAppPath = pathname === "/webapp";
@@ -206,9 +52,9 @@ export default function Navigation({
   const isCreative = pathname === "/creative";
   const isGeneration = pathname === "/generation";
   const isDesign = pathname === "/design";
-  const theme = useTheme();
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isBottom, setIsBottom] = useState(false);
+
   const [open, setOpen] = useState<boolean>();
   useEffect(() => {
     const handleScroll = () => {
@@ -245,7 +91,7 @@ export default function Navigation({
     >
       <nav className="relative z-4 shrink-0 items-center justify-center min-[300px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
+          className={`${isScrolled ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
         >
           <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
             <div className="flex items-center gap-4">
@@ -525,7 +371,7 @@ export default function Navigation({
                     } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
                     Docs
-                    {pathname != "/docs" && (
+                    {pathname !== "/docs" && (
                       <sup>
                         <svg
                           data-testid="geist-icon"
@@ -535,6 +381,7 @@ export default function Navigation({
                           width={12}
                           style={{ color: "currentcolor" }}
                         >
+                          <title>Arrow Up Right</title>
                           <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -566,6 +413,7 @@ export default function Navigation({
                         width={12}
                         style={{ color: "currentcolor" }}
                       >
+                        <title>Arrow Up Right</title>
                         <path
                           fillRule="evenodd"
                           clipRule="evenodd"
@@ -577,19 +425,6 @@ export default function Navigation({
                   </Link>
                 </NavigationMenuItem>
 
-                {/* <NavigationMenuItem>
-                  <Link href="/aboutus" >
-                    <Link
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/aboutus"
-                          ? "dark:text-white"
-                          : "dark:text-[#9b9b9b]"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
-                    >
-                      About Us
-                    </Link>
-                  </Link>
-                </NavigationMenuItem> */}
                 <NavigationMenuItem className="hidden">
                   <Link
                     href="/generation"
@@ -616,47 +451,11 @@ export default function Navigation({
                     </div>
                   </Link>
                 </NavigationMenuItem>
-                {/* <NavigationMenuItem>
-                  <NavigationMenuTrigger>Support</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1320px]">
-                      {components.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem> */}
                 <NavigationMenuIndicator />
               </NavigationMenuList>
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-4">
-            {/* <div className="flex items-center justify-center gap-4">
-              <LinkPreview
-                className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
-                url="https://github.com/devplus2024"
-                isStatic
-                imageSrc="/Opera Snapshot_2024-10-31_172630_github.com.png"
-              >
-                <GitHub />
-                <span className="text-sm">Github</span>
-              </LinkPreview>
-              <LinkPreview
-                imageSrc="/Opera Snapshot_2024-10-31_172414_x.com.png"
-                isStatic
-                className="flex cursor-pointer items-center gap-4 rounded-lg border px-3 py-1"
-                url="https://x.com/DeveloperPlus24"
-              >
-                <X />
-                <span className="text-sm">Twitter</span>
-              </LinkPreview>
-            </div> */}
             <div className="h-[1.2rem] border-r"></div>
             {open !== undefined ? (
               <SearchDialog
