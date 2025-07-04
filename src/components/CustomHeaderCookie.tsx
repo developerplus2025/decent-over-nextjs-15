@@ -1,3 +1,4 @@
+"use client";
 import * as CookieBanner from "@c15t/react/cookie-banner";
 import { Button } from "./ui/button";
 
