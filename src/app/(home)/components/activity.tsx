@@ -1,6 +1,7 @@
 import NumberFlow, { continuous, type Format } from "@number-flow/react";
 import clsx from "clsx/lite";
 import { Bookmark, BarChart, Heart, Repeat, Share } from "lucide-react";
+import { JSX } from "react";
 
 const format: Format = {
   notation: "compact",
