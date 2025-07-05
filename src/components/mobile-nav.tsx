@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
-import DownloadButton from "@/app/(home)/components/DownloadButton";
-import Modal from "@/app/(home)/components/Modal";
-import ButtonAction from "@/app/(home)/components/button-action";
+import DownloadButton from "@/app/[locale]/(home)/components/DownloadButton";
+import Modal from "@/app/[locale]/(home)/components/Modal";
+import ButtonAction from "@/app/[locale]/(home)/components/button-action";
 const LinkItem = [
   {
     id: 1,
