@@ -179,7 +179,7 @@ export default function MainTextHome() {
               style={{ fill: "currentColor" }}
             />
           </svg>
-          Wacth Demo Now
+          Watch Demo Now
         </Button>
       </div>
     </motion.div>
