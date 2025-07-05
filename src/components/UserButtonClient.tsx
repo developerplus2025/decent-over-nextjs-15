@@ -130,7 +130,7 @@ export default function UserButtonClient() {
 
 				<motion.div
 					initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
-					animate={active ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
+					animate={session?.user  ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
 					transition={{ duration: 0.5, ease: "easeOut" }}
 					className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
 				>
