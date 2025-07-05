@@ -46,9 +46,7 @@ const search = useSearch();
 		error, //error object
 		refetch, //refetch the session
 	} = authClient.useSession(); 
-	if (isPending){
-		return <Loader variant={"circular"} size={"sm"} />
-	}
+	
   const handleLogout = async () => {
     await authClient.signOut();
     authClient.refreshToken;
@@ -119,6 +117,7 @@ const search = useSearch();
       }),
     ],
   });
+  
   const [searchcv, setOpenSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const click = useClick(context);
@@ -126,6 +125,9 @@ const search = useSearch();
 				search.onOpenChange(true);
 			};
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
+	if (isPending){
+		return <Loader variant={"circular"} size={"sm"} />
+	}
   return (
 			<div className={`flex items-center gap-4`}>
 				
