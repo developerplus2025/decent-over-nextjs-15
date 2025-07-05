@@ -37,7 +37,7 @@ function removeVietnameseTones(str?: string): string {
 export default function UserButtonClient() {
 	
 	const router = useRouter();
-const search = useSearch();
+
 	const {
 		data: session,
 
