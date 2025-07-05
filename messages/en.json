@@ -7,5 +7,9 @@
     "DesignLink": "Design",
     "DocsLink": "Docs",
     "RadioLink": "Radio"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
   }
 }

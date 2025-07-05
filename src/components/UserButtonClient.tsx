@@ -24,7 +24,7 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { Loader } from "./ui/loader";
-import LocaleSwitcher from "./LocaleSwitcher";
+import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -130,7 +130,7 @@ export default function UserButtonClient() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        <LocaleSwitcher />
+        <LocaleSwitcherSelect />
         <div className="flex h-[32px] w-[260px] items-center justify-center gap-2 rounded-md border border-(--input)">
           <svg
             className="size-4.5 shrink-0"
