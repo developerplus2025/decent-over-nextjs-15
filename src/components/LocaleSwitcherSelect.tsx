@@ -30,19 +30,18 @@ export default function LocaleSwitcherSelect()  {
   const locale = useLocale();
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(locale);
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value as Locale;
+  function onSelectChange(nextLocale: Locale) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
-        {pathname, params},
-        {locale: nextLocale}
+        { pathname, params },
+        { locale: nextLocale }
       );
     });
   }
-
+  
   return (
     <label
       className={clsx(
@@ -58,7 +57,7 @@ export default function LocaleSwitcherSelect()  {
           aria-expanded={open}
           className="w-[200px] justify-between"
         >
-          
+          {t('label')}
           <ChevronsUpDown className="ml-2 h-4 w-4 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -69,23 +68,24 @@ export default function LocaleSwitcherSelect()  {
             <CommandEmpty>{t('notFound')}</CommandEmpty>
             <CommandGroup heading={t('label')}>
               {routing.locales.map((cur) => (
-                <CommandItem
-                  key={cur}
-                  value={cur}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue);
-                    setOpen(false);
-                    // Optional: redirect to the new locale here
-                  }}
-                >
-                 {t('locale', {locale: cur})}
-                  <Check
-                    className={cn(
-                      'ml-auto h-4 w-4',
-                      value === cur ? 'opacity-100' : 'opacity-0'
-                    )}
-                  />
-                </CommandItem>
+              <CommandItem
+              key={cur}
+              value={cur}
+              onSelect={() => {
+                onSelectChange(cur); // ✅ truyền đúng giá trị locale
+                setValue(cur);
+                setOpen(false);
+              }}
+            >
+              {t('locale', { locale: cur })}
+              <Check
+                className={cn(
+                  'ml-auto h-4 w-4',
+                  value === cur ? 'opacity-100' : 'opacity-0'
+                )}
+              />
+            </CommandItem>
+            
               ))}
             </CommandGroup>
           </CommandList>
