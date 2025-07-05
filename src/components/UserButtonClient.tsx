@@ -24,7 +24,6 @@ import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
-import { SearchDialog, useSearch } from "fumadocs-ui/components/dialog/search";
 import { Loader } from "./ui/loader";
 function removeVietnameseTones(str?: string): string {
 	if (!str) return "";
@@ -118,12 +117,9 @@ const search = useSearch();
     ],
   });
   
-  const [searchcv, setOpenSearch] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+ 
   const click = useClick(context);
-  	const openSearch = () => {
-				search.onOpenChange(true);
-			};
+  
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
 	if (isPending){
 		return <Loader variant={"circular"} size={"sm"} />
@@ -139,7 +135,7 @@ const search = useSearch();
 					className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
 				>
 					<div
-						onClick={() => openSearch}
+						
 						className="w-[260px] rounded-md gap-2 flex items-center justify-center h-[32px] border border-(--input) "
 					>
 						<svg
