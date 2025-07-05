@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-// "use client";
-// import { usePathname } from "next/navigation";
-// import { AnimatePresence, motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { fontVariables } from "@/lib/fonts";
-// import 'fumadsocs-ui/dist/style.css';
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 // import { Toaster, toast } from "sonner";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
-// import Navigation from "@/components/Navigation";
 import { DocsNavigation } from "@/components/DocsNavigation";
-// import { CMDK } from "@/components/command-menu";
-// import { Toaster } from "@/components/ui/sonner";
 import { AuthKitProvider } from "@workos-inc/authkit-nextjs/components";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
@@ -31,25 +24,32 @@ import {
   ConsentManagerProvider,
   ConsentManagerDialog,
 } from "@c15t/nextjs";
-import SearchDialog from "@/components/search";
-import { Button } from "@/components/ui/button";
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
   description: "Decent App ",
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }>) {
-  // const pathname = usePathname();
+	const {locale} = await params;
+	if (!hasLocale(routing.locales, locale)) {
+	  notFound();
+	}
+  
 		return (
 			<>
 				<html
 					suppressHydrationWarning
-					lang="en"
+					lang={locale}
 					className={cn("custom_command_scroll dark font-sans", fontVariables)}
 					style={{ colorScheme: "dark" }}
 				>
@@ -61,7 +61,7 @@ export default function RootLayout({
 						style={{ colorScheme: "dark" }}
 						className="theme-default relative overflow-x-hidden font-sans antialiased"
 					>
-						<ConsentManagerProvider
+					<NextIntlClientProvider>	<ConsentManagerProvider
 							options={{
 								mode: "c15t",
 								backendURL: "/api/c15t",
@@ -133,6 +133,7 @@ export default function RootLayout({
 								</AuthKitProvider>
 							</ThemeProvider>
 						</ConsentManagerProvider>
+						</NextIntlClientProvider>
 					</body>
 				</html>
 			</>
