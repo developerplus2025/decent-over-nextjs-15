@@ -19,7 +19,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-
+import {  useSearch } from "fumadocs-ui/components/dialog/search";
 import { ThemeToggle } from "./ThemeToggle";
 import FeedBack from "./feedback";
 import GitHub from "./GitHub";
@@ -119,7 +119,12 @@ export default function UserButtonClient() {
   
  
   const click = useClick(context);
-  
+  const [searchcv, setOpenSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  	const openSearch = () => {
+				search.onOpenChange(true);
+			};
+  const search = useSearch();
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
 	if (isPending){
 		return <Loader variant={"circular"} size={"sm"} />
@@ -129,6 +134,7 @@ export default function UserButtonClient() {
 				
 
 				<motion.div
+				onClick={() => openSearch}
 					initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
 					animate={ !isPending ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
 					transition={{ duration: 0.5, ease: "easeOut" }}
