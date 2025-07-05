@@ -55,12 +55,12 @@ export default function DownloadsPage() {
               <p className="text-sm hover:underline">x64 Arm64</p>
             </div>
           </div>
-          <a className="w-full" href="/downloads">
+          <Link className="w-full" href="/downloads">
             <div className="flex w-full items-center justify-center gap-2 rounded-md border bg-white px-3 py-2 dark:bg-black">
               <CircleArrowDown className="text-black dark:text-white" />
               <p className="text-black dark:text-white">Download for Windows</p>
             </div>
-          </a>
+          </Link>
         </div>
         <div
           className="flex h-[250px] w-[880px] flex-col items-center justify-center gap-8 rounded-lg border px-8"
