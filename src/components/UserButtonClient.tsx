@@ -25,6 +25,7 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { SearchDialog, useSearch } from "fumadocs-ui/components/dialog/search";
+import { Loader } from "./ui/loader";
 function removeVietnameseTones(str?: string): string {
 	if (!str) return "";
 	return str
@@ -35,6 +36,7 @@ function removeVietnameseTones(str?: string): string {
 }
 
 export default function UserButtonClient() {
+	
 	const router = useRouter();
 const search = useSearch();
 	const {
@@ -43,7 +45,10 @@ const search = useSearch();
 		isPending, //loading state
 		error, //error object
 		refetch, //refetch the session
-	} = authClient.useSession();
+	} = authClient.useSession(); 
+	if (isPending){
+		return <Loader variant={"circular"} size={"sm"} />
+	}
   const handleLogout = async () => {
     await authClient.signOut();
     authClient.refreshToken;
@@ -123,13 +128,7 @@ const search = useSearch();
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
   return (
 			<div className={`flex items-center gap-4`}>
-				 <SearchDialog
-      open={searchcv}
-      onOpenChange={setOpenSearch}
-      search={searchTerm}
-      onSearchChange={setSearchTerm}
-      isLoading={false} // hoặc true nếu bạn có xử lý tải dữ liệu
-    ><></></SearchDialog>
+				
 
 				<motion.div
 					initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
