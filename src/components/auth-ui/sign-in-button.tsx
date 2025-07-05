@@ -6,7 +6,8 @@
 
 import { Button, Flex } from "@radix-ui/themes";
 import { useAuth } from "@workos-inc/authkit-nextjs/components";
-import { handleSignOutAction } from "../../app/actions/signOut";
+import { handleSignOutAction } from "../../app/[locale]/actions/signOut";
+import Link from "next/link";
 
 export function SignInButton({ large }: { large?: boolean }) {
   const { user, loading } = useAuth();
@@ -29,7 +30,7 @@ export function SignInButton({ large }: { large?: boolean }) {
 
   return (
     <Button asChild size={large ? "3" : "2"}>
-      <a href="/login">Sign In {large && "with AuthKit"}</a>
+      <Link href="/login">Sign In {large && "with AuthKit"}</Link>
     </Button>
   );
 }
