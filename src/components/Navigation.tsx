@@ -10,7 +10,7 @@ import {
 	Share2,
 	WifiOff,
 } from "lucide-react";
-import Link from "next/link";
+import {Link} from '@/i18n/navigation'
 import { usePathname } from "next/navigation";
 import type React from "react";
 import { useEffect, useState } from "react";
@@ -273,32 +273,7 @@ export default function Navigation({
 									</Link>
 								</NavigationMenuItem>
 
-								<NavigationMenuItem className="hidden">
-									<Link
-										href="/generation"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/generation"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} ${
-											pathname === "/docs" ||
-											pathname === "/help" ||
-											pathname === "/guides"
-												? "hidden"
-												: ""
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
-									>
-										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white${
-												pathname === "/generation"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
-										>
-											Generation
-										</div>
-									</Link>
-								</NavigationMenuItem>
+								
 								<NavigationMenuIndicator />
 							</NavigationMenuList>
 						</NavigationMenu>
