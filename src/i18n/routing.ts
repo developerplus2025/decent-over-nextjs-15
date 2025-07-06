@@ -1,16 +1,5 @@
 export const routing = {
-  locales: [
-    "en", // English
-    "vi", // Vietnamese
-    "de", // German
-    "fr", // French
-    "es", // Spanish
-    "it", // Italian
-    "ja", // Japanese
-    "zh", // Chinese
-    "ko", // Korean
-    "ru", // Russian
-  ],
+  locales: ["en", "vi", "de", "fr", "it", "ja", "zh", "ko", "ru"],
   defaultLocale: "en",
   pathnames: {
     "/": "/",
