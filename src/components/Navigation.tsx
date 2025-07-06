@@ -111,7 +111,7 @@ export default function Navigation({
 								<NavigationMenuItem className="px-3">
 									<NavigationLink
 										href="/library"
-										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
+										
 									>
 										<div
 											
@@ -124,7 +124,7 @@ export default function Navigation({
 								<NavigationMenuItem className="px-3">
 									<NavigationLink
 										href="/creative"
-										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
+										
 									>
 										<div
 											
@@ -137,7 +137,7 @@ export default function Navigation({
 								<NavigationMenuItem className="px-3">
 									<NavigationLink
 										href="/pricing"
-										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
+										
 									>
 										<div
 											
@@ -149,7 +149,7 @@ export default function Navigation({
 								<NavigationMenuItem className="px-3">
 									<NavigationLink
 										href="/blog"
-										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
+										
 									>
 										<div
 											
@@ -161,7 +161,7 @@ export default function Navigation({
 								<NavigationMenuItem className="px-3">
 									<NavigationLink
 										href="/design"
-										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
+									
 									>
 										<div
 											
