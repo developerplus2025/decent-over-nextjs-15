@@ -6,11 +6,11 @@ import { createMDXSource } from "fumadocs-mdx";
 import { useLocale } from "next-intl";
  
 export const source = loader({
-  baseUrl: "/docs",
+  baseUrl: "../docs",
   source: docs.toFumadocsSource(),
   // To add blog posts, use a different loader or merge sources appropriately.
 });
 export const blog = loader({
-  baseUrl: "/blog",
+  baseUrl: "../blog",
   source: createMDXSource(blogPosts),
 });
