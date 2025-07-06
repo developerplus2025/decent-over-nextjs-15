@@ -29,7 +29,18 @@ export const routing = {
       ko: "/경로이름",
       ru: "/пути",
     },
-
+    "/pricing": {
+      en: "/pricing",
+      vi: "/gia-ca",
+      de: "/preise",
+      fr: "/tarifs",
+      es: "/precios",
+      it: "/prezzi",
+      ja: "/価格",
+      zh: "/定价",
+      ko: "/가격",
+      ru: "/цены",
+    },
     // Example: about page
     "/blog": {
       en: "/about",
