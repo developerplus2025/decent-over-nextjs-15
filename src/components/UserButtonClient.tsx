@@ -128,7 +128,7 @@ export default function UserButtonClient() {
         initial={{ opacity: 0 }} // Trạng thái ban đầu: mờ và di chuyển xuống
         animate={!isPending ? { opacity: 1 } : { opacity: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
+        className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
        
         <div className="flex h-[32px] w-[260px] items-center justify-center gap-2 rounded-md border border-(--input)">
