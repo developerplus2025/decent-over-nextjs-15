@@ -66,7 +66,7 @@ export default function LocaleSwitcherSelect()  {
       <PopoverContent className="w-[200px] border-(--input) p-0">
         <Command>
         <CommandInput placeholder={"Search Locale..."} className="h-9" />
-          <ScrollArea><CommandList className='max-h-[335px]'>
+          <ScrollArea className='max-h-[335px]'><CommandList className='max-h-[335px]'>
             <CommandEmpty>Language No Support</CommandEmpty>
             <CommandGroup heading={t('label')}>
               {routing.locales.map((cur) => (
