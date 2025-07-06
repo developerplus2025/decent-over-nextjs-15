@@ -131,7 +131,7 @@ export default function UserButtonClient() {
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
        
-        <div className="flex h-[32px] w-[260px] items-center justify-center gap-2 rounded-md border border-(--input)">
+        <div className="flex h-[32px] w-fit p-3 items-center justify-center gap-2 rounded-md border border-(--input)">
           <svg
             className="size-4.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
