@@ -20,6 +20,7 @@ import {
   CommandList,
 } from './ui/command';
 import { cn } from '@/lib/utils';
+import { ScrollArea } from './ui/scroll-area';
 
 export default function LocaleSwitcherSelect()  {
   const router = useRouter();
@@ -64,7 +65,7 @@ export default function LocaleSwitcherSelect()  {
       <PopoverContent className="w-[200px] border-(--input) p-0">
         <Command>
           <CommandInput placeholder={"Search Locale"} className="h-9" />
-          <CommandList>
+          <ScrollArea><CommandList>
             <CommandEmpty>{t('notFound')}</CommandEmpty>
             <CommandGroup heading={t('label')}>
               {routing.locales.map((cur) => (
@@ -88,7 +89,7 @@ export default function LocaleSwitcherSelect()  {
             
               ))}
             </CommandGroup>
-          </CommandList>
+          </CommandList></ScrollArea>
         </Command>
       </PopoverContent>
     </Popover>
