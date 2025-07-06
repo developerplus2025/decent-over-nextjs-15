@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "LibraryLink": "Libreria",
+    "PricingLink": "Prezzi",
+    "CreativeLink": "Creativo",
+    "BlogLink": "Blog",
+    "DesignLink": "Design",
+    "DocsLink": "Documenti",
+    "RadioLink": "Radio"
+  },
+  "LocaleSwitcher": {
+    "label": "Cambia lingua",
+    "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Русский} other {🌐 Sconosciuto}}"
+  }
+}

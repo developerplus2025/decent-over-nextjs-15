@@ -3,13 +3,13 @@
     "LibraryLink": "Bibliothèque",
     "PricingLink": "Tarifs",
     "CreativeLink": "Créatif",
-    "BlogLink": "Blog",
+    "BlogLink": "Blogue",
     "DesignLink": "Conception",
-    "DocsLink": "Documentation",
+    "DocsLink": "Documents",
     "RadioLink": "Radio"
   },
   "LocaleSwitcher": {
     "label": "Changer de langue",
-    "locale": "{locale, select, fr {🇫🇷 Français} en {🇺🇸 Anglais} de {🇩🇪 Allemand} other {Inconnu}}"
+    "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Русский} other {🌐 Inconnu}}"
   }
 }

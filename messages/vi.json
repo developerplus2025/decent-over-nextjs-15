@@ -1,15 +1,15 @@
 {
   "Navigation": {
     "LibraryLink": "Thư viện",
-    "PricingLink": "Bảng giá",
+    "PricingLink": "Giá cả",
     "CreativeLink": "Sáng tạo",
-    "BlogLink": "Blog",
+    "BlogLink": "Bài viết",
     "DesignLink": "Thiết kế",
     "DocsLink": "Tài liệu",
     "RadioLink": "Radio"
   },
   "LocaleSwitcher": {
-    "label": "Chọn ngôn ngữ",
-    "locale": "{locale, select, vi {🇻🇳 Tiếng Việt} en {🇺🇸 Tiếng Anh} de {🇩🇪 Tiếng Đức} other {Không rõ}}"
+    "label": "Thay đổi ngôn ngữ",
+    "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Русский} other {🌐 Không xác định}}"
   }
 }
