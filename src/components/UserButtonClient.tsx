@@ -25,6 +25,7 @@ import GitHub from "./GitHub";
 import X from "./x";
 import { Loader } from "./ui/loader";
 import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
+import { useTranslations } from "next-intl";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -83,7 +84,8 @@ export default function UserButtonClient() {
 
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
-
+  const t = useTranslations('ButtonText');
+ 
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setIsOpen,
@@ -143,7 +145,7 @@ export default function UserButtonClient() {
             <title>Search Icon</title>
             <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
           </svg>
-          <p className="text-xs"> Search for documention</p>
+          <p className="text-xs"> {t('SearchText')}</p>
           <div className="flex gap-1">
             <kbd className="text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-(--input) px-1.5 font-sans text-[10px] font-medium opacity-100 select-none">
               <span className="text-xs">Ctrl</span>

@@ -5,15 +5,18 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from "next-intl";
 
 export default function FeedBack() {
+  const t = useTranslations('ButtonText');
+ 
   return (
     <div className="flex flex-col gap-4">
       <Popover>
         <PopoverTrigger asChild>
           <div className="relative">
             <Button variant="outline" className="h-[32px]">
-              Feed Back
+              {t('FeedBackText')}
             </Button>
           </div>
         </PopoverTrigger>
