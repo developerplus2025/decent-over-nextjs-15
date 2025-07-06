@@ -75,7 +75,7 @@ export default function LocaleSwitcherSelect()  {
               value={cur}
               onSelect={() => {
                 onSelectChange(cur); // ✅ truyền đúng giá trị locale
-                setValue(locale);
+                setValue(cur);
                 setOpen(false);
               }}
             >
