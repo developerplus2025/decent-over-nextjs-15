@@ -66,7 +66,7 @@ export default function LocaleSwitcherSelect()  {
         <Command>
           <CommandInput placeholder={"Search Locale"} className="h-9" />
           <ScrollArea><CommandList>
-            <CommandEmpty>{t('notFound')}</CommandEmpty>
+            <CommandEmpty>Language No Support</CommandEmpty>
             <CommandGroup heading={t('label')}>
               {routing.locales.map((cur) => (
               <CommandItem
@@ -74,7 +74,7 @@ export default function LocaleSwitcherSelect()  {
               value={cur}
               onSelect={() => {
                 onSelectChange(cur); // ✅ truyền đúng giá trị locale
-                setValue(cur);
+                setValue(locale);
                 setOpen(false);
               }}
             >
