@@ -7,7 +7,7 @@ import {
 import { z } from "zod";
 
 export const docs = defineDocs({
-  dir: "content/docs",
+  dir: "/content/docs",
 });
 
 export default defineConfig({
