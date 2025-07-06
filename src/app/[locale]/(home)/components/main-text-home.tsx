@@ -29,6 +29,7 @@ export default function MainTextHome() {
   const [value, setValue] = React.useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('MainTextHome');
+  const b = useTranslations('ButtonText');
   React.useEffect(() => {
     const interval = setInterval(() => {
       setValue((v) => (v >= 100 ? 0 : v + 10));
@@ -178,7 +179,7 @@ export default function MainTextHome() {
               style={{ fill: "currentColor" }}
             />
           </svg>
-          Watch Demo Now
+          {b('WatchText')}
         </Button>
       </div>
     </motion.div>

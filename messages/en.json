@@ -17,7 +17,9 @@
   },
   "ButtonText": {
     "FeedBackText": "Feedback",
-    "SearchText": "Search for documents"
+    "SearchText": "Search for documents",
+    "DownloadText": "Download for Windows",
+    "WatchText": "Watch Demo Now"
   },
   "LocaleSwitcher": {
     "label": "Change language",

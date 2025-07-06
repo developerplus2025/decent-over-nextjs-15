@@ -17,7 +17,9 @@
   },
   "ButtonText": {
     "FeedBackText": "피드백",
-    "SearchText": "문서 검색"
+    "SearchText": "문서 검색",
+    "DownloadText": "Windows용 다운로드",
+    "WatchText": "지금 데모 보기"
   },
   "LocaleSwitcher": {
     "label": "언어 변경",
