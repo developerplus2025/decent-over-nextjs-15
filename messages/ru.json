@@ -8,6 +8,13 @@
     "DocsLink": "Документы",
     "RadioLink": "Радио"
   },
+  "MainTextHome": {
+    "LableBadge": "значок",
+    "BadgeText": "Узнайте все, что мы анонсировали на Ship 25",
+    "TitleHome": "Новое поколение аудиосотрудничества.",
+    "DescriptionHome": "Dive into a seamless music experience with our cutting edge software. Collaborate effortlessly, unleash your creativity, manage playlists and craft professional quality tracks all in one powerful platform.",
+    "PrivacyText": "Используя VS Code, вы соглашаетесь с его лицензией и заявлением о конфиденциальности."
+  },
   "LocaleSwitcher": {
     "label": "Сменить язык",
     "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Русский} other {🌐 Неизвестно}}"

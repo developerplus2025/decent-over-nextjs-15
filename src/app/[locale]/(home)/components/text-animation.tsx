@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function AnimateTextHome() {
-  const headline = "The next generation of audio collaboration.";
+   const t = useTranslations('MainTextHome');
+  const headline = t('TitleHome');
   const words = headline.split(" ");
 
   const wordVariants = {
