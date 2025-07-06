@@ -28,6 +28,7 @@ import {
 
 import UserButtonClient from "./UserButtonClient";
 import { useTranslations } from "next-intl";
+import NavigationLink from "./NavigationLink";
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
@@ -108,106 +109,66 @@ export default function Navigation({
 							<NavigationMenuList className="font-medium">
 							
 								<NavigationMenuItem className="px-3">
-									<Link
+									<NavigationLink
 										href="/library"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/library"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
+										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
 									>
 										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white ${
-												pathname === "/library"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
+											
 										>
 											{t('LibraryLink')}
 										</div>
-									</Link>
+									</NavigationLink>
 								</NavigationMenuItem>
 								
 								<NavigationMenuItem className="px-3">
-									<Link
+									<NavigationLink
 										href="/creative"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/creative"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
+										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
 									>
 										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white${
-												pathname === "/creative"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
+											
 										>
 											{t('CreativeLink')}
 										</div>
-									</Link>
+									</NavigationLink>
 								</NavigationMenuItem>
 
 								<NavigationMenuItem className="px-3">
-									<Link
+									<NavigationLink
 										href="/pricing"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/pricing"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
+										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
 									>
 										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white${
-												pathname === "/pricing"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
+											
 										>
 											{t('PricingLink')}
 										</div>
-									</Link>
+									</NavigationLink>
 								</NavigationMenuItem>
 								<NavigationMenuItem className="px-3">
-									<Link
+									<NavigationLink
 										href="/blog"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/blog"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
+										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
 									>
 										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white${
-												pathname === "/blog"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
+											
 										>
 											{t('BlogLink')}
 										</div>
-									</Link>
+									</NavigationLink>
 								</NavigationMenuItem>
 								<NavigationMenuItem className="px-3">
-									<Link
+									<NavigationLink
 										href="/design"
-										className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
-											pathname === "/design"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
+										className={`cursor-pointer transition-colors select-none dark:hover:text-white`}
 									>
 										<div
-											className={`transition-colors duration-300 ease-out dark:hover:text-white${
-												pathname === "/design"
-													? "dark:text-white"
-													: "dark:text-[#9b9b9b]"
-											}`}
+											
 										>
 											{t('DesignLink')}
 										</div>
-									</Link>
+									</NavigationLink>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
 									<Link

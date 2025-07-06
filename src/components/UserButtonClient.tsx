@@ -130,7 +130,7 @@ export default function UserButtonClient() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${active ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        <LocaleSwitcherSelect />
+       
         <div className="flex h-[32px] w-[260px] items-center justify-center gap-2 rounded-md border border-(--input)">
           <svg
             className="size-4.5 shrink-0"
@@ -153,6 +153,7 @@ export default function UserButtonClient() {
             </kbd>
           </div>
         </div>
+        <LocaleSwitcherSelect />
         <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
          <Link href={"https://github.com/developerplus2025/decent-over-nextjs-15/tree/main"}> <GitHub /></Link>
         </div>

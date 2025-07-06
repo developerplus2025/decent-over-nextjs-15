@@ -1,22 +1,16 @@
-"use client";
-
+// .source folder will be generated when you run `next dev`
+import { docs } from "@/.source";
 import { loader } from "fumadocs-core/source";
+import { blogPosts } from "@/.source";
 import { createMDXSource } from "fumadocs-mdx";
 import { useLocale } from "next-intl";
-import { docs, blogPosts } from "@/.source";
 
-export const useSources = () => {
-  const locale = useLocale();
-
-  const source = loader({
-    baseUrl: `/${locale}/docs`, // ✅ đúng với đường dẫn locale
-    source: docs.toFumadocsSource(),
-  });
-
-  const blog = loader({
-    baseUrl: `/${locale}/blog`,
-    source: createMDXSource(blogPosts),
-  });
-
-  return { source, blog };
-};
+export const source = loader({
+  baseUrl: "/en/docs",
+  source: docs.toFumadocsSource(),
+  // To add blog posts, use a different loader or merge sources appropriately.
+});
+export const blog = loader({
+  baseUrl: "/en/blog",
+  source: createMDXSource(blogPosts),
+});
