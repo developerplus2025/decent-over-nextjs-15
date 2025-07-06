@@ -18,7 +18,7 @@ export default function NavigationLink({
       aria-current={isActive ? 'page' : undefined}
       className={clsx(
         'transition-colors duration-300 ease-out',
-        isActive ? 'dark:text-white' : 'dark:text-[#9b9b9b] dark:hover:text-white'
+        isActive ? 'dark:text-white' : 'dark:text-[#a1a1a1] dark:hover:text-white'
       )}
       href={href}
       {...rest}
