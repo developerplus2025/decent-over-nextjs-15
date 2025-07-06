@@ -33,6 +33,7 @@ export default function LocaleSwitcherSelect()  {
   const [value, setValue] = React.useState(locale);
   function onSelectChange(nextLocale: Locale) {
     startTransition(() => {
+      router.refresh(); // Làm mới trang hiện tại
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
         // are used in combination with a given `pathname`. Since the two will
