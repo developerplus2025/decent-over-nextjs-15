@@ -12,11 +12,7 @@ export const routing = defineRouting({
     "zh", // Chinese
     "ko", // Korean
     "ru", // Russian
-    "pt", // Portuguese
-    "hi", // Hindi
-    "th", // Thai
-    "id", // Indonesian
-    "ar", // Arabic
+
   ],
 
   defaultLocale: "en",
