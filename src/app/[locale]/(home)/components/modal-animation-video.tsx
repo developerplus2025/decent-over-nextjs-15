@@ -41,7 +41,7 @@ export const ModalAnimationVideo = () => {
           {b('WatchText')}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[25rem] h-[18rem]" from="left">
+      <DialogContent className="sm:max-w-[54rem] h-[34rem]" from="left">
        
       <div className="flex h-full w-full items-center justify-center">
               <Video
