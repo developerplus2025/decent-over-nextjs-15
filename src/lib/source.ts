@@ -1,16 +1,18 @@
-// .source folder will be generated when you run `next dev`
-import { docs } from "@/.source";
+// lib/source.ts
 import { loader } from "fumadocs-core/source";
-import { blogPosts } from "@/.source";
 import { createMDXSource } from "fumadocs-mdx";
-import { useLocale } from "next-intl";
+import { docs, blogPosts } from "@/.source";
 
-export const source = loader({
-  baseUrl: "/en/docs",
-  source: docs.toFumadocsSource(),
-  // To add blog posts, use a different loader or merge sources appropriately.
-});
-export const blog = loader({
-  baseUrl: "/en/blog",
-  source: createMDXSource(blogPosts),
-});
+export function getSource(locale: string) {
+  return loader({
+    baseUrl: `/${locale}/docs`,
+    source: docs.toFumadocsSource(),
+  });
+}
+
+export function getBlog(locale: string) {
+  return loader({
+    baseUrl: `/${locale}/blog`,
+    source: createMDXSource(blogPosts),
+  });
+}

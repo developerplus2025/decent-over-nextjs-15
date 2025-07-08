@@ -1,4 +1,4 @@
-import { source } from "@/lib/source";
+import { getSource } from "@/lib/source";
 import {
   DocsPage,
   DocsBody,
@@ -12,6 +12,7 @@ import { getMDXComponents } from "@/mdx-components";
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
+  const source = getSource(locale);
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();

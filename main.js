@@ -13,7 +13,7 @@ function createWindow() {
     }, // Loại bỏ khung mặc định của hệ điều hành
   });
 
-  win.loadURL("http://Decent-app.vercel.app/design");
+  win.loadURL("https://decent-over.vercel.app/");
 }
 
 app.whenReady().then(() => {
