@@ -11,14 +11,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { blog } from "@/lib/source";
+import { getBlog } from "@/lib/source";
 import CompAvatarListBlog from "@/components/comp-410";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { AnimatedTabs } from "./AnimationTab";
 import { DatePickerBlog } from "../../date-picker-blog";
+import { useLocale } from "next-intl";
 export default function BlogPage() {
-  const posts = blog.getPages();
+   const locale = useLocale(); // 🔥 lấy locale động
+    const blog = getBlog(locale); // ✅ truyền locale
+    const posts = blog.getPages(); // ✅ hoạt động đúng
   return (
     <main className="mb-16 flex w-full flex-col items-center justify-center px-40">
       <div className="flex w-full items-center justify-between gap-16 pt-16">
