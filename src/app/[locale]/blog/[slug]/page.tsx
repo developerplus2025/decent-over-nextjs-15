@@ -2,12 +2,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
-import { blog } from "@/lib/source";
+import { getBlog } from "@/lib/source";
 
-export default async function Page(props: {
-  params: Promise<{ slug: string }>;
+export default async function Page({
+  params,
+}: {
+  params: { slug: string; locale: string };
 }) {
-  const params = await props.params;
+  const blog = getBlog(params.locale); // ✅ lấy blog theo locale
   const page = blog.getPage([params.slug]);
 
   if (!page) notFound();
@@ -42,8 +44,12 @@ export default async function Page(props: {
   );
 }
 
-export function generateStaticParams(): { slug: string }[] {
-  return blog.getPages().map((page) => ({
-    slug: page.slugs[0],
-  }));
+export function generateStaticParams() {
+  const locales = ["en", "vi"]; // hoặc lấy từ config
+  return locales.flatMap((locale) =>
+    getBlog(locale).getPages().map((page) => ({
+      slug: page.slugs[0],
+      locale,
+    }))
+  );
 }
