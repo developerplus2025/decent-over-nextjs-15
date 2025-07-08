@@ -20,7 +20,7 @@ export default async function Page({
       <div className="container rounded-xl border py-12 md:px-8">
         <h1 className="mb-2 text-3xl font-bold">{page.data.title}</h1>
         <p className="text-fd-muted-foreground mb-4">{page.data.description}</p>
-        <Link href="/blog">Back</Link>
+        <Link href={`/${params.locale}/blog`}>Back</Link>
       </div>
       <article className="container flex flex-col px-4 py-8">
         <div className="prose min-w-0">
@@ -44,12 +44,17 @@ export default async function Page({
   );
 }
 
-export function generateStaticParams() {
-  const locales = ["en", "vi"]; // hoặc lấy từ config
+export async function generateStaticParams(): Promise<
+  Array<{ params: { slug: string; locale: string } }>
+> {
+  const locales = ["en", "vi"]; // hoặc lấy từ i18n config
+
   return locales.flatMap((locale) =>
     getBlog(locale).getPages().map((page) => ({
-      slug: page.slugs[0],
-      locale,
+      params: {
+        slug: page.slugs[0],
+        locale,
+      },
     }))
   );
 }
