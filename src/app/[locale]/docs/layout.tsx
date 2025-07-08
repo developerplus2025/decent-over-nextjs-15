@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   const locale = useLocale();
   const source = getSource(locale);
   return (
-    <DocsLayout source={source} tree={source.pageTree} {...baseOptions}>
+    <DocsLayout  tree={source.pageTree} {...baseOptions}>
       {children}
     </DocsLayout>
   );
