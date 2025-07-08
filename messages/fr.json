@@ -1,15 +1,28 @@
 {
   "Navigation": {
     "LibraryLink": "Bibliothèque",
-    "PricingLink": "Tarifs",
-    "CreativeLink": "Créatif",
-    "BlogLink": "Blogue",
-    "DesignLink": "Conception",
+    "PricingLink": "Pricing",
+    "CreativeLink": "Creativity",
+    "BlogLink": "Blog",
+    "DesignLink": "Design",
     "DocsLink": "Documents",
     "RadioLink": "Radio"
   },
+  "MainTextHome": {
+    "LableBadge": "Nouveau",
+    "BadgeText": "Catch up with everything we announced at Ship 25",
+    "TitleHome": "La nouvelle génération de collaboration audio",
+    "DescriptionHome": "Plongez dans une expérience musicale transparente grâce à notre logiciel de pointe. Collaborez sans effort, libérez votre créativité, gérez des listes de lecture et créez des pistes de qualité professionnelle, le tout sur une plateforme puissante.",
+    "PrivacyText": "En utilisant VS Code, vous acceptez sa licence et sa déclaration de confidentialité."
+  },
+  "ButtonText": {
+    "FeedBackText": "Feedback",
+    "SearchText": "Recherche de documents",
+    "DownloadText": "Télécharger pour Windows",
+    "WatchText": "Regarder la démo maintenant"
+  },
   "LocaleSwitcher": {
-    "label": "Changer de langue",
-    "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Русский} other {🌐 Inconnu}}"
+    "label": "Changez de langue",
+    "locale": "{locale, select, en {🇺🇸 English} vi {🇻🇳 Tiếng Việt} de {🇩🇪 Deutsch} fr {🇫🇷 Français} es {🇪🇸 Español} it {🇮🇹 Italiano} ja {🇯🇵 日本語} zh {🇨🇳 中文} ko {🇰🇷 한국어} ru {🇷🇺 Руский} other {🌐 Unknown}}"
   }
 }
