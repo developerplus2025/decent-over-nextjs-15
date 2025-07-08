@@ -1,18 +1,8 @@
-// lib/source.ts
+// .source folder will be generated when you run `next dev`
+import { docs } from "@/.source";
 import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
-import { docs, blogPosts } from "@/.source";
 
-export function getSource(locale: string) {
-  return loader({
-    baseUrl: `/${locale}/docs`,
-    source: docs.toFumadocsSource(),
-  });
-}
-
-export function getBlog(locale: string) {
-  return loader({
-    baseUrl: `/${locale}/blog`,
-    source: createMDXSource(blogPosts),
-  });
-}
+export const source = loader({
+  baseUrl: "/docs",
+  source: docs.toFumadocsSource(),
+});
