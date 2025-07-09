@@ -62,6 +62,8 @@ export default function UserButtonClient() {
   };
   const [open, setOpen] = useState("closed");
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
   const t = useTranslations('ButtonText');
@@ -191,7 +193,7 @@ export default function UserButtonClient() {
                   className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex h-fit w-[16rem] flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
                 >
                   <div className="flex w-full flex-col gap-2">
-                    <div className="flex flex-col gap-2 px-4 py-2">
+                    <div className="flex flex-col gap-1 px-4 py-2">
                       <h1 className="text-sm">{cleanName}</h1>
                       <span className="text-sm text-[#a1a1a1]">
                         {session?.user?.email ?? ""}
@@ -199,8 +201,17 @@ export default function UserButtonClient() {
                     </div>
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex w-full flex-col gap-2 px-4 py-2 [&_svg]:size-4">
+                    
                       <Button
-                        className="w-full justify-between"
+                      onMouseEnter={() => {
+                        setIsHovered(true); // Khi bắt đầu hover
+                        console.log("Hovered");
+                      }}
+                      onMouseLeave={() => {
+                        setIsHovered(false); // Khi kết thúc hover
+                        console.log("Unhovered");
+                      }}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
                         variant="outline"
                       >
                         Account Settings
@@ -216,7 +227,15 @@ export default function UserButtonClient() {
                         </svg>
                       </Button>
                       <Button
-                        className="w-full justify-between"
+                        onMouseEnter={() => {
+                          setIsHovered(true); // Khi bắt đầu hover
+                          console.log("Hovered");
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false); // Khi kết thúc hover
+                          console.log("Unhovered");
+                        }}
+                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
                         onClick={() => router.push("/dashboard")}
                         variant="outline"
                       >
@@ -233,7 +252,15 @@ export default function UserButtonClient() {
                         </svg>
                       </Button>
                       <Button
-                        className="w-full justify-between"
+                        onMouseEnter={() => {
+                          setIsHovered(true); // Khi bắt đầu hover
+                          console.log("Hovered");
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false); // Khi kết thúc hover
+                          console.log("Unhovered");
+                        }}
+                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
                         onClick={() => router.push("/dashboard")}
                         variant="outline"
                       >
@@ -252,7 +279,15 @@ export default function UserButtonClient() {
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex flex-col gap-2 px-4 py-2">
                       <Button
-                        className="w-full justify-between"
+                        onMouseEnter={() => {
+                          setIsHovered(true); // Khi bắt đầu hover
+                          console.log("Hovered");
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false); // Khi kết thúc hover
+                          console.log("Unhovered");
+                        }}
+                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
                         variant="outline"
                         onClick={handleLogout}
                       >
@@ -268,7 +303,15 @@ export default function UserButtonClient() {
                         </svg>
                       </Button>
                       <Button
-                        className="w-full justify-between"
+                        onMouseEnter={() => {
+                          setIsHovered(true); // Khi bắt đầu hover
+                          console.log("Hovered");
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false); // Khi kết thúc hover
+                          console.log("Unhovered");
+                        }}
+                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
                         variant="outline"
                         onClick={handleLogout}
                       >
@@ -286,7 +329,7 @@ export default function UserButtonClient() {
                     </div>
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex flex-col px-4 py-2">
-                      <Button>Upgrade to Pro</Button>
+                      <Button >Upgrade to Pro</Button>
                     </div>
                   </div>
                 </div>
