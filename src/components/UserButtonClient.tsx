@@ -11,6 +11,9 @@ import {
   limitShift,
   hide,
   arrow as floatingUIarrow,
+  FloatingFocusManager,
+  useTransitionStyles,
+  useDismiss,
 } from "@floating-ui/react";
 import { authClient } from "@/lib/auth-client";
 import { motion } from "framer-motion";
@@ -119,18 +122,14 @@ export default function UserButtonClient() {
   });
 
   const click = useClick(context);
-  const [isMounted, setIsMounted] = useState(false);
+  const dismiss = useDismiss(context);
+  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss]);
 
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true); // Bắt đầu hiển thị
-    } else {
-      // Chờ animation chạy xong (~150-200ms), rồi mới remove khỏi DOM
-      const timeout = setTimeout(() => setIsMounted(false), 200);
-      return () => clearTimeout(timeout);
-    }
-  }, [isOpen]);
-  const { getReferenceProps, getFloatingProps } = useInteractions([click]);
+  // 👇 Transition hook from Floating UI
+  const { isMounted, styles } = useTransitionStyles(context, {
+    duration: 200, // duration for fade/zoom
+  });
+
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
   }
@@ -197,7 +196,8 @@ export default function UserButtonClient() {
             </div>
 
             {isMounted &&  (
-              <div
+               <FloatingFocusManager context={context} modal={false}>
+                <div
                 ref={refs.setFloating}
                 style={floatingStyles}
                 {...getFloatingProps()}
@@ -308,6 +308,8 @@ export default function UserButtonClient() {
                   </div>
                 </div>
               </div>
+               </FloatingFocusManager>
+              
             )}
           </div>
         )}
