@@ -95,6 +95,7 @@ export default function UserButtonClient() {
     onOpenChange: setIsOpen,
     placement: "bottom-end",
     strategy: "absolute",
+    whileElementsMounted: autoUpdate,
     middleware: [
       offset(8),
       size({
@@ -178,6 +179,7 @@ export default function UserButtonClient() {
             <div
               ref={refs.setReference}
               {...getReferenceProps()}
+              onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer"
             >
               {session && session.user && session.user.image ? (
