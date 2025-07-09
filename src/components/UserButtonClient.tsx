@@ -123,8 +123,7 @@ export default function UserButtonClient() {
     ],
   });
 
-  const click = useClick(context);
-  const { getReferenceProps, getFloatingProps } = useInteractions([click]);
+  
 
   // 👇 Transition hook from Floating UI
   const {isMounted, status} = useTransitionStatus(context);
@@ -178,7 +177,7 @@ export default function UserButtonClient() {
           <div ref={popoverRef}>
             <div
               ref={refs.setReference}
-              {...getReferenceProps()}
+ 
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer"
             >
@@ -200,7 +199,7 @@ export default function UserButtonClient() {
                 <div
                 ref={refs.setFloating}
                 style={floatingStyles}
-                {...getFloatingProps()}
+             
               >
                 <div
                   data-state={status === "open" ? 'open' : 'closed'}
