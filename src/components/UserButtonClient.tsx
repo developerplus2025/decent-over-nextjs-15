@@ -14,6 +14,7 @@ import {
   FloatingFocusManager,
   useTransitionStyles,
   useDismiss,
+  useTransitionStatus,
 } from "@floating-ui/react";
 import { authClient } from "@/lib/auth-client";
 import { motion } from "framer-motion";
@@ -122,13 +123,10 @@ export default function UserButtonClient() {
   });
 
   const click = useClick(context);
-  const dismiss = useDismiss(context);
-  const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([click]);
 
   // 👇 Transition hook from Floating UI
-  const { isMounted, styles } = useTransitionStyles(context, {
-    duration: 200, // duration for fade/zoom
-  });
+  const {isMounted, status} = useTransitionStatus(context);
 
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
@@ -196,14 +194,14 @@ export default function UserButtonClient() {
             </div>
 
             {isMounted &&  (
-               <FloatingFocusManager context={context} modal={false}>
+              
                 <div
                 ref={refs.setFloating}
                 style={floatingStyles}
                 {...getFloatingProps()}
               >
                 <div
-                  data-state={isOpen ? 'open' : 'closed'}
+                  data-state={status === "open" ? 'open' : 'closed'}
                   data-side="right"
                   className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex h-fit w-[16rem] flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
                 >
@@ -308,7 +306,7 @@ export default function UserButtonClient() {
                   </div>
                 </div>
               </div>
-               </FloatingFocusManager>
+        
               
             )}
           </div>
