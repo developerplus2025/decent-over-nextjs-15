@@ -126,7 +126,12 @@ export default function UserButtonClient() {
   
 
   // 👇 Transition hook from Floating UI
-  const {isMounted, status} = useTransitionStatus(context);
+  const {isMounted, status} = useTransitionStatus(context,{
+    duration: {
+      open: 200,
+      close: 100,
+    },
+  });
 
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
