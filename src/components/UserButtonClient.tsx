@@ -20,7 +20,6 @@ import { authClient } from "@/lib/auth-client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { useAuth } from "@workos-inc/authkit-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
@@ -40,6 +39,7 @@ function removeVietnameseTones(str?: string): string {
 }
 
 export default function UserButtonClient() {
+  
   const router = useRouter();
 
   const {
@@ -61,31 +61,7 @@ export default function UserButtonClient() {
     hidden: { opacity: 0, transitionEnd: { display: "none" } },
   };
   const [open, setOpen] = useState("closed");
-  const { user, loading } = useAuth();
-  const [active, setActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActive(true);
-    }, 3000);
-  }, [active, setActive]);
-  const popoverRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        popoverRef.current &&
-        !popoverRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   const name = session?.user.name;
   const cleanName = removeVietnameseTones(name); // "Pham Quang Truong An"
   const t = useTranslations('ButtonText');
@@ -123,7 +99,7 @@ export default function UserButtonClient() {
     ],
   });
 
-  
+  const dismiss = useDismiss(context, { outsidePressEvent: "mousedown" })
 
   // 👇 Transition hook from Floating UI
   const {isMounted, status} = useTransitionStatus(context,{
@@ -132,7 +108,9 @@ export default function UserButtonClient() {
       close: 100,
     },
   });
-
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    dismiss
+  ]);
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
   }
@@ -179,10 +157,10 @@ export default function UserButtonClient() {
 
         <FeedBack />
         {session?.user && (
-          <div ref={popoverRef}>
+          <div >
             <div
               ref={refs.setReference}
- 
+              {...getReferenceProps()}
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer"
             >
@@ -202,6 +180,7 @@ export default function UserButtonClient() {
             {isMounted &&  (
               
                 <div
+                {...getFloatingProps()}
                 ref={refs.setFloating}
                 style={floatingStyles}
              
