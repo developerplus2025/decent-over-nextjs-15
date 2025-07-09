@@ -119,7 +119,17 @@ export default function UserButtonClient() {
   });
 
   const click = useClick(context);
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true); // Bắt đầu hiển thị
+    } else {
+      // Chờ animation chạy xong (~150-200ms), rồi mới remove khỏi DOM
+      const timeout = setTimeout(() => setIsMounted(false), 200);
+      return () => clearTimeout(timeout);
+    }
+  }, [isOpen]);
   const { getReferenceProps, getFloatingProps } = useInteractions([click]);
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
@@ -186,14 +196,14 @@ export default function UserButtonClient() {
               )}
             </div>
 
-            {isOpen && (
+            {isMounted &&  (
               <div
                 ref={refs.setFloating}
                 style={floatingStyles}
                 {...getFloatingProps()}
               >
                 <div
-                  data-state={!isOpen ? "closed" : "open"}
+                  data-state={isOpen ? 'open' : 'closed'}
                   data-side="right"
                   className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex h-fit w-[16rem] flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
                 >
