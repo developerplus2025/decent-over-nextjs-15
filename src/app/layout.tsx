@@ -11,7 +11,7 @@ type Props = {
 export default function RootLayout({children}: Props) {
   return (
     <> 
-    <RootProvider>{children}</RootProvider>
+    {children}
     </> 
    
   )
