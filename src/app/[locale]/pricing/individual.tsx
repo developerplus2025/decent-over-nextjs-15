@@ -877,8 +877,7 @@ export default function Individual() {
             className={`${tier.title === "Basic Plan" ? "hidden" : ""} relative`}
             key={tier.price}
           >
-            <div className="absolute top-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-            <div className="absolute bottom-0 left-1/2 h-px w-full -translate-x-1/2 rounded-lg bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+           
             <Card
               key={tier.title}
               className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-[#302f2f] dark:bg-[#000000]`}
