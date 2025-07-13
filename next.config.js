@@ -1,9 +1,11 @@
 const { withNextVideo } = require("next-video/process");
-const { createMDX } = require("fumadocs-mdx/next");
+import createMDX from "@next/mdx";
 const createNextIntlPlugin = require("next-intl/plugin");
 
 const withNextIntl = createNextIntlPlugin();
-const withMDX = createMDX();
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -15,6 +17,7 @@ const nextConfig = {
       },
     ];
   },
+
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   turbopack: {
     resolveAlias: {
