@@ -972,7 +972,7 @@ export default function Individual() {
                       key={feature.name}
                       className="flex items-center gap-4 px-2"
                     >
-                      <div className="">
+                      <div className="[&_svg]:size-[14px]">
                       {feature.icon}
                       </div>
                       <p className="text-[0.85rem] text-[#a1a1a1]">
