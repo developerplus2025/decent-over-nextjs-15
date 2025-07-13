@@ -7,16 +7,12 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
   images: {
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-      "i.scdn.co",
-      ["workoscdn.com"],
-    ],
+    domains: ["api.microlink.io", "i.scdn.co", "workoscdn.com"],
   },
 };
-const withMDX = createMDX();
-/** @type {import('next').NextConfig} */
-const config = {
-  reactStrictMode: true,
-};
-export default withMDX(config);
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
+
+export default withMDX(nextConfig);
