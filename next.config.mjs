@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
   images: {
     domains: [
