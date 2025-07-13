@@ -8,7 +8,6 @@ import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
 import { DocsNavigation } from "@/components/DocsNavigation";
-import { AuthKitProvider } from "@workos-inc/authkit-nextjs/components";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
@@ -82,7 +81,7 @@ export default async function RootLayout({
 								defaultTheme="dark"
 							>
 								{" "}
-								<AuthKitProvider>
+								
 									<Navigation className="min-[300px]:hidden xl:block">
 										Navigation children content, or empty fragment if not needed
 										<></>
@@ -130,7 +129,7 @@ export default async function RootLayout({
 										<ViewTransition>{children}</ViewTransition>
 									</RootProvider>
 									<Footer />
-								</AuthKitProvider>
+								
 							</ThemeProvider>
 						</ConsentManagerProvider>
 						</NextIntlClientProvider>
