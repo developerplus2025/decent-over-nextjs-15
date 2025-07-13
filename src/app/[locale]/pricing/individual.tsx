@@ -880,7 +880,7 @@ export default function Individual() {
            
             <Card
               key={tier.title}
-              className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-[#302f2f] dark:bg-[#000000]`}
+              className={`flex py-0 flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} h-full rounded-lg border-[#302f2f] dark:bg-[#000000]`}
             >
               <CardHeader
                 className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg border-b border-b-[#302f2f] bg-[#00000099] p-6`}
@@ -944,7 +944,7 @@ export default function Individual() {
                 </CardTitle>
                 <NumberFlowGroup>
                   <NumberFlow
-                    className="mb-4 flex items-center justify-center text-3xl font-medium"
+                    className=" flex items-center justify-center text-3xl font-medium"
                     value={
                       isYearly
                         ? parseFloat((tier.price * 12 * 2).toFixed(2))
@@ -970,12 +970,12 @@ export default function Individual() {
                   {tier.features.map((feature) => (
                     <li
                       key={feature.name}
-                      className="flex items-center gap-2 px-2"
+                      className="flex items-center gap-4 px-2"
                     >
                       <div className="">
                       {feature.icon}
                       </div>
-                      <p className="text-[0.85rem] text-[white]">
+                      <p className="text-[0.85rem] text-[#a1a1a1]">
                         {feature.name}
                       </p>
                     </li>
