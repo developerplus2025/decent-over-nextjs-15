@@ -962,7 +962,7 @@ export default function Individual() {
                   />
                 </NumberFlowGroup>
 
-                <CardDescription className="text-center text-[0.86rem] text-balance">
+                <CardDescription className="text-center text-[#a1a1a1] text-[0.86rem] text-balance">
                   {tier.description}
                 </CardDescription>
               </CardHeader>
