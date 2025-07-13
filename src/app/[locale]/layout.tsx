@@ -28,6 +28,7 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
+import { unstable_ViewTransition as ViewTransition } from 'react'
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -126,8 +127,7 @@ export default async function RootLayout({
 									<RootProvider
 										
 									>
-										{" "}
-										{children}
+										<ViewTransition>{children}</ViewTransition>
 									</RootProvider>
 									<Footer />
 								</AuthKitProvider>
