@@ -25,7 +25,7 @@
     ],
     "paths": {
       "@/.source": ["./.source/index.ts"],
-      "@/*": ["./src/*", "mdx-components.tsx", "source.ts"],
+      "@/*": ["./src/*", "source.ts", "./markdown"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "#site/content": ["./.velite"]
     },
