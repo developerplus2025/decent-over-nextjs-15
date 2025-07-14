@@ -44,16 +44,11 @@ function PricingPage() {
       </motion.div> */}
       {/* <AnimatedBar /> */}
       <div className="relative flex h-[100px] flex-col items-center justify-center gap-4 text-center">
-        {/* <Button variant="outline" className="h-[30px]">
-          Pricing and Buy
-        </Button>
+   
         <h1 className="w-228 text-center text-[3.5rem] font-bold leading-[53px]">
-          Choose the Ideal Plan to Elevate Your Music Creation Journey
+        Find a plan to power your apps.
         </h1>
-        <p className="text-md w-120 text-[1.3rem] text-center text-muted-foreground">
-          Unlock Your Full Creative Potential with Our Comprehensive, Advanced,
-          and Cutting-Edge Music Software Suite Designed for Every Artist
-        </p> */}
+      
         <div className="flex justify-center space-x-1">
           <div
             className={`box-border flex h-[32px] w-fit border ${activeTab === "business" ? "border-r" : ""} ${activeTab === "individual" ? "border-l" : ""} rounded-md`}

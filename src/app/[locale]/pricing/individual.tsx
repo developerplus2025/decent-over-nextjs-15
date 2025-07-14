@@ -966,7 +966,7 @@ export default function Individual() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="grow pt-[8px]">
-                <ul className="border-(--input)-t flex flex-col gap-1.5 rounded-lg first:pt-4">
+                <ul className="border-(--input)-t flex flex-col gap-3 rounded-lg first:pt-4">
                   {tier.features.map((feature) => (
                     <li
                       key={feature.name}
