@@ -57,18 +57,18 @@ export default function BeautifulFeaturesLayout() {
           <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             The foundation for professional music creation
           </h1>
-          <span className="md:text-md max-w-[450px] text-center text-zinc-500 dark:text-zinc-400">
-            Our software is more than just a tool. It’s an ecosystem that
+          <span className="md:text-md max-w-[450px] text-center text-zinc-500 dark:text-[#a1a1a1]">
+            Our software is more than just a tool. It`s an ecosystem that
             supports everything from APIs to platforms, helping developers and
             artists innovate effortlessly.
           </span>
         </div>
 
-        <div className="relative mx-auto grid max-w-4xl rounded-lg border bg-[#000000] *:p-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto grid max-w-[1300px] rounded-lg border bg-[#000000] *:p-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((items) => (
             <div
               key={items.id}
-              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} w-[200px] ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
             >
               <div className="flex items-center gap-2">
                 <items.icons className="size-4" />
