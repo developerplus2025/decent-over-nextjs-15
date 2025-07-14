@@ -90,7 +90,7 @@ const items = [
 export default function AccordionFAQ() {
   return (
     <div className="flex w-full justify-center px-12">
-      <div className="flex w-full flex-col-reverse items-center gap-4 rounded-lg">
+      <div className="flex w-[800px] flex-col-reverse items-center gap-4 rounded-lg">
       <Accordion
       type="single"
       collapsible

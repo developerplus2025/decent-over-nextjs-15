@@ -163,7 +163,7 @@ export function PeopleSay() {
         <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
           <p>What People Say ?</p>
         </div>
-        <span className="text-md w-[557px] text-center dark:text-zinc-400">
+        <span className="text-md w-[557px] text-center dark:text-[#a1a1a1]">
           Discover what users around the world are saying about our music
           software. From producers to casual listeners, hear real feedback on
           how it&apos;s transforming the way they create, mix, and enjoy music.
