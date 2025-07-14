@@ -7,22 +7,22 @@ export default function NotFoundPage() {
     <div className="w-full flex h-[calc(100vh-80px)] justify-center mt-12">
       <div className=" w-[900px] gap-8 h-[400px] flex flex-col items-center justify-center rounded-lg">
         <p className="text-[6rem] font-semibold">404</p>
-        <p className="w-[400px] font-medium">
+        <p className="w-[400px] text-3xl font-medium">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="flex gap-4">
-          <Button> <Link
+          <Button variant={"outline"}> <Link
             href="/"
            
           >
             Home
           </Link></Button>
-         <Button> <Link
+         <Button variant={"outline"}> <Link
             href="/docs"
             
           >
             Docs
-          </Link></Button><Button> <Link
+          </Link></Button ><Button variant={"outline"}> <Link
             href="/pricing"
            
           >
