@@ -4,6 +4,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
@@ -90,17 +91,22 @@ export default function AccordionFAQ() {
   return (
     <div className="flex w-full justify-center px-12">
       <div className="flex w-full flex-col-reverse items-center gap-4 rounded-lg">
-        <div className="flex w-[800px] flex-col gap-3">
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="flex flex-col gap-2 border-t pt-4 first:border-t-0 last:border-b-0"
-            >
-              <h1 className="font-medium">{item.title}</h1>
-              <p className="text-sm text-[#a1a1a1]">{item.content}</p>
-            </div>
-          ))}
-        </div>
+      <Accordion
+      type="single"
+      collapsible
+      className="w-full"
+      defaultValue="item-1"
+    >
+      {items.map((items) => (
+        <AccordionItem key={items.id} value="item-1">
+        <AccordionTrigger>{items.title}</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+        <p>{items.content}</p>
+        </AccordionContent>
+      </AccordionItem>
+      ))}
+      
+    </Accordion>
         <div className="flex h-full w-[700px] flex-col items-center justify-center gap-8">
           <h1 className="text-center text-[2rem] font-bold leading-18 tracking-tighter text-white sm:text-[2rem] xl:text-[2rem]">
             Frequently asked questions
