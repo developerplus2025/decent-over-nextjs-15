@@ -37,7 +37,7 @@ function PricingPage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
 
   return (
-    <main className="pb-24">
+    <main className="pb-24 pt-[2rem]">
   
       {/* <motion.div initial={{top:"100%"}} animate={{top:"0",translateY:"-100%"}} transition={{duration:3,delay:1}} className="top-full flex items-center justify-center h-screen  z-50 bg-[black] fixed  w-screen ">
       <div className="text-xl font-bold">Pricing Page</div>
@@ -45,7 +45,7 @@ function PricingPage() {
       {/* <AnimatedBar /> */}
       <div className="relative flex h-[100px] flex-col items-center justify-center gap-4 text-center">
    
-        <h1 className="w-228 text-center text-[3.5rem] font-bold leading-[53px]">
+        <h1 className="w-228 text-center text-4xl font-bold leading-[53px]">
         Find a plan to power your apps.
         </h1>
       
