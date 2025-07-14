@@ -11,6 +11,7 @@ import variables from "../variables.module.scss";
 import { Badge } from "@/components/luxe/badge";
 import PopoverRws from "@/components/popover-rws";
 import { useTranslations } from "next-intl";
+import LogoCloud from "@/components/logo-cloud";
 export default function Home() {
    const t = useTranslations('MainTextHome');
   return (
@@ -37,7 +38,7 @@ export default function Home() {
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <Metric />
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-      <PowerBy />
+      <LogoCloud />
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <AccordionFAQ />
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
