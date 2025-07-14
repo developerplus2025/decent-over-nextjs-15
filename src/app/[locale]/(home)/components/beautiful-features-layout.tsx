@@ -64,14 +64,14 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid max-w-[1300px] rounded-lg border bg-[#000000] *:p-12 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="relative mx-auto grid gap-[2rem] max-w-[1600px] rounded-lg border bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-6">
           {items.map((items) => (
             <div
               key={items.id}
-              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} w-[200px] ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} h-[200px] justify-center flex flex-col w-[200px] ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
             >
               <div className="flex items-center gap-2">
-                <items.icons className="size-4" />
+                <items.icons className="size-4 shrink-0" />
                 <h3 className="text-sm font-medium">{items.title}</h3>
               </div>
               <p className="text-sm">{items.description}</p>
