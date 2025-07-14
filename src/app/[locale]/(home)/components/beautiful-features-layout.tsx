@@ -52,7 +52,7 @@ const items = [
 export default function BeautifulFeaturesLayout() {
   return (
     <section className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+      <div className="mx-auto  space-y-8 px-6 md:space-y-16">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             The foundation for professional music creation
@@ -64,7 +64,7 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid gap-[2rem] max-w-[1600px] rounded-lg border bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-6">
+        <div className="relative mx-auto grid gap-[2rem] max-w-[1290px] rounded-lg border bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-6">
           {items.map((items) => (
             <div
               key={items.id}
