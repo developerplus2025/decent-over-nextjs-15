@@ -118,9 +118,9 @@ export default async function RootLayout({
 													"dark:bg-black left-[325px] top-1/2 -translate-y-1/2 border border-[#404040] transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
 											},
 										}}
-										offset={{ top: "80px" }}
+										offset={{ top: "3rem" }}
 										closeButton
-										className={` ${GeistSans.className}`}
+										className={` ${GeistSans.className} border-(--accent)`}
 										position="top-center"
 									/>
 									<RootProvider
