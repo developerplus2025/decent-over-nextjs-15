@@ -1,21 +1,19 @@
 'use client'
- 
-import { useTheme } from 'next-themes'
-import { useSearchParams } from 'next/navigation'
+
 import { useEffect } from 'react'
- 
+import { useSearchParams } from 'next/navigation'
+
 export default function ThemeParams() {
   const searchParams = useSearchParams()
-const { theme,  setTheme } = useTheme()
-  const PreTheme = searchParams.get('theme')
- useEffect(() => {
-   if(PreTheme === "dark"){
-    setTheme("light")
+  const theme = searchParams.get('theme')
 
-   }else{
-    setTheme("dark")
-   }
- }
-)
-return null
-} 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else if (theme === 'light') {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+  return null // Không cần render gì cả
+}
