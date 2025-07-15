@@ -177,6 +177,8 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
+    "remark-mdx": "^3.1.0",
+    "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "sonner": "^1.7.4",
     "sugar-high": "^0.9.3",
@@ -185,6 +187,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-mixins": "^0.0.11",
     "three": "^0.170.0",
+    "unified": "^11.0.5",
     "use-composed-ref": "^1.4.0",
     "vaul": "^0.9.9",
     "zod": "^3.25.67"
