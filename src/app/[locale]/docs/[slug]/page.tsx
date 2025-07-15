@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: { locale: string; slug: string }
+  params: { slug: string; locale: string }
 }) {
   const { slug } = params
 
