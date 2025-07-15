@@ -4,32 +4,23 @@ import { Button } from "./ui/button";
 
 export default function NotFoundPage() {
   return (
-    <div className="w-full flex h-[calc(100vh-80px)] justify-center mt-12">
-      <div className=" w-[900px] gap-8 h-[400px] flex flex-col items-center justify-center rounded-lg">
+    <div className="mt-12 flex h-[calc(100vh-80px)] w-full justify-center">
+      <div className="flex h-[400px] w-[900px] flex-col items-center justify-center gap-8 rounded-lg">
         <p className="text-[6rem] font-semibold">404</p>
-        <p className="w-[400px] text-3xl font-medium">
+        <p className="w-[500px] text-center text-3xl font-medium">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className="flex gap-4">
-          <Button variant={"outline"}> <Link
-            href="/"
-           
-          >
-            Home
-          </Link></Button>
-         <Button variant={"outline"}> <Link
-            href="/docs"
-            
-          >
-            Docs
-          </Link></Button ><Button variant={"outline"}> <Link
-            href="/pricing"
-           
-          >
-            Pricing
-          </Link></Button>
-         
-         
+          <Link href="/">
+
+            <Button variant={"outline"}>Home</Button>
+          </Link>
+          <Link href="/docs">
+            <Button variant={"outline"}>Docs</Button>
+          </Link>
+          <Link href="/pricing">
+            <Button variant={"outline"}>Pricing</Button>
+          </Link>
         </div>
       </div>
     </div>

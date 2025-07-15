@@ -15,7 +15,7 @@ import LogoCloud from "@/components/logo-cloud";
 export default function Home() {
    const t = useTranslations('MainTextHome');
   return (
-    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-[3rem] xl:pb-4 dark:bg-black dark:scheme-dark">
+    <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-20 xl:pb-4 dark:bg-black dark:scheme-dark">
       <div className="flex items-center justify-center gap-4">
         <Badge variant="animated-border">{t('LableBadge')}</Badge>
         <span className="text-sm">
