@@ -6,26 +6,19 @@ import * as runtime from 'react/jsx-runtime'
 import { TOC } from '@/components/toc'
 import { getHeadingsFromMdx } from '@/lib/getHeadingsFromMdx'
 
-export async function generateStaticParams() {
-  const dir = path.join(process.cwd(), 'content/docs')
-  const files = fs.readdirSync(dir)
-
-  return files
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => ({
-      locale: 'vi', // hoặc 'en', tùy theo bạn có i18n không
-      slug: f.replace(/\.mdx$/, ''),
-    }))
+type Props = {
+  params: {
+    locale: string
+    slug: string
+  }
 }
 
-export default async function Page({
-  params,
-}: {
-  params: { slug: string; locale: string }
-}) {
+// ✅ Trang hiển thị nội dung MDX
+export default async function Page({ params }: Props) {
   const { slug } = params
 
   const filePath = path.join(process.cwd(), 'content/docs', `${slug}.mdx`)
+
   if (!fs.existsSync(filePath)) {
     notFound()
   }
@@ -47,4 +40,17 @@ export default async function Page({
       </article>
     </div>
   )
+}
+
+// ✅ Tạo các static path từ slug
+export async function generateStaticParams() {
+  const dir = path.join(process.cwd(), 'content/docs')
+  const files = fs.readdirSync(dir)
+
+  return files
+    .filter((file) => file.endsWith('.mdx'))
+    .map((file) => ({
+      locale: 'vi', // hoặc 'en' nếu bạn dùng đa ngôn ngữ
+      slug: file.replace(/\.mdx$/, ''),
+    }))
 }
