@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import { compile } from '@mdx-js/mdx'
-import { getHeadingsFromMdx } from '@/lib/getHeadingsFromMdx'
-import { TOC } from '@/components/toc'
-import * as runtime from 'react/jsx-runtime'
 import { notFound } from 'next/navigation'
+import { compile } from '@mdx-js/mdx'
+import * as runtime from 'react/jsx-runtime'
+import { TOC } from '@/components/toc'
+import { getHeadingsFromMdx } from '@/lib/getHeadingsFromMdx'
 
 export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'content/docs')
@@ -12,13 +12,20 @@ export async function generateStaticParams() {
 
   return files
     .filter((f) => f.endsWith('.mdx'))
-    .map((f) => ({ slug: f.replace(/\.mdx$/, '') }))
+    .map((f) => ({
+      locale: 'vi', // hoặc 'en', tùy theo bạn có i18n không
+      slug: f.replace(/\.mdx$/, ''),
+    }))
 }
 
-export default async function DocPage({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { locale: string; slug: string }
+}) {
   const { slug } = params
-  const filePath = path.join(process.cwd(), 'content/docs', `${slug}.mdx`)
 
+  const filePath = path.join(process.cwd(), 'content/docs', `${slug}.mdx`)
   if (!fs.existsSync(filePath)) {
     notFound()
   }
@@ -26,10 +33,9 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
   const raw = fs.readFileSync(filePath, 'utf8')
   const headings = getHeadingsFromMdx(raw)
 
-  // ✅ Compile to component (NOT HTML string)
   const compiled = await compile(raw, {
-  outputFormat: 'function-body', // ✅ đủ rồi
-})
+    outputFormat: 'function-body',
+  })
 
   const MDXComponent = new Function(String(compiled))(runtime).default
 
