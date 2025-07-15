@@ -1,4 +1,5 @@
 // hooks/useActiveHeading.ts
+"use client";
 import { useEffect, useState } from "react";
 
 export function useActiveHeading(ids: string[]) {
