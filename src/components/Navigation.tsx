@@ -102,7 +102,7 @@ export default function Navigation({
 								href="/"
 								className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
 							>
-								Adventure 
+								SonixLab
 							</Link>
 						</div>
 						<NavigationMenu>

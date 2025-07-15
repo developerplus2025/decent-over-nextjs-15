@@ -109,6 +109,7 @@ export function MobileNav({ className }: { className?: string }) {
               <div className="flex flex-col gap-3">
                 {LinkItem.map((item) => (
                   <Link
+                  onClick={() => setOpen(false)}
                     key={item.id + item.name}
                     href={item.src}
                     className="text-lg font-medium text-white"
