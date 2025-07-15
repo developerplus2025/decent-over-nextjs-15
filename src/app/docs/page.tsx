@@ -3,6 +3,6 @@ import Welcome from '@/app/markdown/welcome.mdx'
  
 export default function Page() {
   return (
-    <div></div>
+    <div><Welcome/></div>
   )
 }

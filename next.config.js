@@ -1,7 +1,8 @@
 const { withNextVideo } = require("next-video/process");
 const createNextIntlPlugin = require("next-intl/plugin");
-
+const createMDX = require("@next/mdx");
 const withNextIntl = createNextIntlPlugin();
+const withMDX = createMDX({});
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
@@ -39,4 +40,4 @@ const nextConfig = {
 };
 
 // Gộp 2 middleware lại
-module.exports = withNextIntl(withNextVideo(nextConfig));
+module.exports = withMDX(withNextIntl(withNextVideo(nextConfig)));
