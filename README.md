@@ -26,6 +26,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Decent Documentation](https://Decentvf.vercel.app/docs) - learn about Next.js features and API.
+- [Decent Documentation](https://decent-over.vercel.app/docs) - learn about Next.js features and API.
 
 ## Deploy on Vercel
