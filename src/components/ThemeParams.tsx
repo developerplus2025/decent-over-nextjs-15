@@ -6,16 +6,16 @@ import { useEffect } from 'react'
  
 export default function ThemeParams() {
   const searchParams = useSearchParams()
-const {  setTheme } = useTheme()
-  const theme = searchParams.get('theme')
+const { theme,  setTheme } = useTheme()
+  const PreTheme = searchParams.get('theme')
  useEffect(() => {
-   if(theme === "dark"){
+   if(PreTheme === "dark"){
     setTheme("light")
 
    }else{
     setTheme("dark")
    }
- },[theme]
+ }
 )
 return null
 } 
