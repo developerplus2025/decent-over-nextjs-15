@@ -1,4 +1,5 @@
 export const routing = {
+  localePrefix: "as-needed",
   locales: ["en", "vi", "de", "fr", "it", "ja", "zh", "ko", "ru"],
   defaultLocale: "en",
   pathnames: {
