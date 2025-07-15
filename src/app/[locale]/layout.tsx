@@ -28,6 +28,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
 import { unstable_ViewTransition as ViewTransition } from 'react'
+import ThemeParams from "@/components/ThemeParams";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -81,7 +82,7 @@ export default async function RootLayout({
 								defaultTheme="dark"
 							>
 								{" "}
-								
+								<ThemeParams/>
 									<Navigation className="min-[300px]:hidden xl:block">
 										Navigation children content, or empty fragment if not needed
 										<></>

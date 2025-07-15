@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
  
-export default function SearchBar() {
+export default function ThemeParams() {
   const searchParams = useSearchParams()
 const {  setTheme } = useTheme()
   const theme = searchParams.get('theme')
@@ -17,4 +17,5 @@ const {  setTheme } = useTheme()
    }
  },[theme]
 )
+return null
 } 
