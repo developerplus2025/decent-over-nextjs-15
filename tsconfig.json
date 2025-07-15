@@ -24,6 +24,7 @@
       }
     ],
     "paths": {
+      "@/content/*": ["content/*"],
       "@/.source": ["./.source/index.ts"],
       "@/*": ["./src/*", "source.ts", "./markdown"],
       "contentlayer/generated": ["./.contentlayer/generated"],
