@@ -973,6 +973,11 @@
 number-flow-react::part(suffix) {
   color: #a1a1a1;
 }
+.styled-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #eaeaea transparent;
+    scrollbar-gutter: stable;
+}
 /*
   ---break---
 */
