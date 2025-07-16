@@ -31,7 +31,7 @@
   "scripts": {
     "tauri": "tauri dev",
     "dev": "next dev --turbopack  & npx next-video sync -w ",
-    "build": "next build",
+    "build": "next build --turbopack",
     "start": "next start",
     "lint": "next lint",
     "electron-build": "electron-builder",
