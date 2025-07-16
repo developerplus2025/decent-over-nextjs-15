@@ -15,10 +15,12 @@ export default function NavigationLink({
 
   return (
     <Link
-      aria-current={isActive ? 'page' : undefined}
+      aria-current={isActive ? "page" : undefined}
       className={clsx(
-        'transition-colors duration-300 ease-out cursor-pointer dark:text-[#a1a1a1]  select-none dark:hover:text-white',
-        isActive ? 'dark:text-white' : 'dark:text-[#a1a1a1] dark:hover:text-white'
+        "relative flex cursor-pointer items-center transition-colors duration-300 ease-out select-none dark:text-[#a1a1a1] dark:hover:text-white",
+        isActive
+          ? "dark:text-white"
+          : "dark:text-[#a1a1a1] dark:hover:text-white",
       )}
       href={href}
       {...rest}
