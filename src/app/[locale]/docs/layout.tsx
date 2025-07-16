@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SideBar from "./components/side-bar";
 export const metadata: Metadata = {
   title: "Docs - Page",
   description: "Decent - Docs",
@@ -8,5 +9,5 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return <section className="w-full flex justify-between gap-[2rem] h-[calc(100vh-75.6px)]"><SideBar/>{children}</section>;
 }
