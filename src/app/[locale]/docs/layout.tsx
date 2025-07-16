@@ -25,13 +25,13 @@ export default function DocsLayout({
         <Breadcrumb className="h-fit">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink className="text-[#a1a1a1]" asChild>
                 <Link href="/">Docs</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink className="text-[#a1a1a1]" asChild>
                 <Link href="/components">Getting Started</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
