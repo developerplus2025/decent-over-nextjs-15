@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const docsNav = [
   {
     title: "Getting Started",
@@ -133,14 +135,16 @@ export const docsNav = [
 
 export default function SideBar() {
   return (
-    <div className="flex sticky top-[121px] styled-scrollbar w-[230px] flex-col h-[500px] overflow-y-auto gap-[1rem]">
+    <div className="styled-scrollbar sticky top-[121px] flex h-[500px] w-[230px] flex-col gap-[1rem] overflow-y-auto">
       {docsNav.map((items) => (
         <div key={items.title} className="flex flex-col gap-2">
           <p className="text-sm text-[#a1a1a1]">{items.title}</p>
           {items.children && (
-            <ul className="text-sm flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 text-sm">
               {items.children.map((child) => (
-                <li key={child.slug}>{child.title}</li>
+                <Link href={child.slug} key={child.slug}>
+                  <li key={child.slug}>{child.title}</li>
+                </Link>
               ))}
             </ul>
           )}

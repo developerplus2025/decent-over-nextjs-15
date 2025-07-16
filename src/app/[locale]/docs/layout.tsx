@@ -21,8 +21,8 @@ export default function DocsLayout({
   return (
     <section className="flex h-[calc(100vh-75.6px)] w-full gap-[2rem] p-[4rem]">
       <SideBar />
-      <div className="flex-cols flex">
-        <Breadcrumb>
+      <div className="flex flex-col">
+        <Breadcrumb className="h-fit">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>

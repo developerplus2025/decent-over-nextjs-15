@@ -11,54 +11,53 @@ type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="font-medium pt-12 mb-0" {...props} />
+    <h1 className="mb-0 pt-6 font-medium" {...props} />
   ),
   h2: (props: HeadingProps) => (
     <h2
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+      className="mt-8 mb-3 font-medium text-gray-800 dark:text-zinc-200"
       {...props}
     />
   ),
   h3: (props: HeadingProps) => (
     <h3
-      className="text-gray-800 dark:text-zinc-200 font-medium mt-8 mb-3"
+      className="mt-8 mb-3 font-medium text-gray-800 dark:text-zinc-200"
       {...props}
     />
   ),
   h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
   p: (props: ParagraphProps) => (
-    <p className="text-gray-800 dark:text-zinc-300 leading-snug" {...props} />
+    <p className="leading-snug text-gray-800 dark:text-zinc-300" {...props} />
   ),
   ol: (props: ListProps) => (
     <ol
-      className="text-gray-800 dark:text-zinc-300 list-decimal pl-5 space-y-2"
+      className="list-decimal space-y-2 pl-5 text-gray-800 dark:text-zinc-300"
       {...props}
     />
   ),
   ul: (props: ListProps) => (
     <ul
-      className="text-gray-800 dark:text-zinc-300 list-disc pl-5 space-y-1"
+      className="list-disc space-y-1 pl-5 text-gray-800 dark:text-zinc-300"
       {...props}
     />
   ),
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
-  em: (props: ComponentPropsWithoutRef<'em'>) => (
+  em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium" {...props} />
   ),
-  strong: (props: ComponentPropsWithoutRef<'strong'>) => (
+  strong: (props: ComponentPropsWithoutRef<"strong">) => (
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className =
-      'text-blue-500 hover:text-blue-700 dark:text-gray-400 hover:dark:text-gray-300 dark:underline dark:underline-offset-2 dark:decoration-gray-800';
-    if (href?.startsWith('/')) {
+    const className = "text-[#52a8ff] hover:text-[#68b5fb]";
+    if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
           {children}
         </Link>
       );
     }
-    if (href?.startsWith('#')) {
+    if (href?.startsWith("#")) {
       return (
         <a href={href} className={className} {...props}>
           {children}
@@ -77,7 +76,7 @@ const components = {
       </a>
     );
   },
-  code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
+  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
     const codeHTML = highlight(children as string);
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },
