@@ -73,180 +73,136 @@ export default function Navigation({
 	}, []);
 	const t = useTranslations('Navigation');
 	return (
-		<motion.div
-			// initial={{ opacity: 0, y: -20 }}
-			// animate={{ opacity: 1, y: 0 }}
-			// transition={{ duration: 0.5, ease: "easeOut" }}
-			className={`${
-				isWebfilmPath ||
-				isWebAppPath ||
-				isAi ||
-				isChatV2 ||
-				isSignIn ||
-				isGuides ||
-				isDocs ||
-				isHelp ||
-				isDesign ||
-				pathname.startsWith("/docs")
-					? "webfilm-class"
-					: ""
-			} ${className} sticky top-0 z-20`}
-		>
-			<nav className="relative z-4 px-[2rem] pt-[1rem] shrink-0 items-center justify-center min-[300px]:hidden sm:hidden md:hidden lg:flex xl:flex">
-				<nav
-					className={`${isScrolled ? "border bg-[#0c0c0c]" : "border"} rounded-xl ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
-				>
-					<div className="flex h-[58px] w-fit items-center gap-4 text-sm">
-						<div className="flex items-center gap-4">
-							<Link
-								href="/"
-								className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
-							>
-								SonixLab
-							</Link>
-						</div>
-						<NavigationMenu>
-							<NavigationMenuList className="font-medium">
-							
-								<NavigationMenuItem className="px-3">
-									<NavigationLink
-										href="/library"
-										
-									>
-										<div
-											
-										>
-											{t('LibraryLink')}
-										</div>
-									</NavigationLink>
-								</NavigationMenuItem>
-								
-								<NavigationMenuItem className="px-3">
-									<NavigationLink
-										href="/creative"
-										
-									>
-										<div
-											
-										>
-											{t('CreativeLink')}
-										</div>
-									</NavigationLink>
-								</NavigationMenuItem>
+    <motion.div
+      // initial={{ opacity: 0, y: -20 }}
+      // animate={{ opacity: 1, y: 0 }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`${
+        isWebfilmPath ||
+        isWebAppPath ||
+        isAi ||
+        isChatV2 ||
+        isSignIn ||
+        isGuides ||
+        isDocs ||
+        isHelp ||
+        isDesign ||
+        pathname.startsWith("/docs")
+          ? "webfilm-class"
+          : ""
+      } ${className} sticky top-0 z-20`}
+    >
+      <nav className="relative z-4 shrink-0 items-center justify-center px-[2rem] pt-[1rem] min-[300px]:hidden sm:hidden md:hidden lg:flex xl:flex">
+        <nav
+          className={`${isScrolled ? "border bg-[#0c0c0c]" : "border"} rounded-xl ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
+        >
+          <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+              >
+                SonixLab
+              </Link>
+            </div>
+            <NavigationMenu>
+              <NavigationMenuList className="font-medium">
+                <NavigationMenuItem className="px-3">
+                  <NavigationLink href="/library">
+                    <div>{t("LibraryLink")}</div>
+                  </NavigationLink>
+                </NavigationMenuItem>
 
-								<NavigationMenuItem className="px-3">
-									<NavigationLink
-										href="/pricing"
-										
-									>
-										<div
-											
-										>
-											{t('PricingLink')}
-										</div>
-									</NavigationLink>
-								</NavigationMenuItem>
-								<NavigationMenuItem className="px-3">
-									<NavigationLink
-										href="/blog"
-										
-									>
-										<div
-											
-										>
-											{t('BlogLink')}
-										</div>
-									</NavigationLink>
-								</NavigationMenuItem>
-								<NavigationMenuItem className="px-3">
-									<NavigationLink
-										href="/design"
-									
-									>
-										<div
-											
-										>
-											{t('DesignLink')}
-										</div>
-									</NavigationLink>
-								</NavigationMenuItem>
-								<NavigationMenuItem>
-									<Link
-										href="/docs"
-										className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-											pathname === "/docs"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
-									>
-										{t('DocsLink')}
-										{pathname !== "/docs" && (
-											<sup>
-												<svg
-													data-testid="geist-icon"
-													height={12}
-													strokeLinejoin="round"
-													viewBox="0 0 15 15"
-													width={12}
-													style={{ color: "currentcolor" }}
-												>
-													<title>Arrow Up Right</title>
-													<path
-														fillRule="evenodd"
-														clipRule="evenodd"
-														d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
-														fill="currentColor"
-													/>
-												</svg>
-											</sup>
-										)}
-									</Link>
-								</NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
+                  <NavigationLink href="/creative">
+                    <div>{t("CreativeLink")}</div>
+                  </NavigationLink>
+                </NavigationMenuItem>
 
-								<NavigationMenuItem>
-									<Link
-										href="/radio"
-										className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-											pathname === "/radio"
-												? "dark:text-white"
-												: "dark:text-[#9b9b9b]"
-										} cursor-pointer transition-colors select-none dark:hover:text-white`}
-									>
-										{t('RadioLink')}
-										<sup>
-											<svg
-												data-testid="geist-icon"
-												height={12}
-												strokeLinejoin="round"
-												viewBox="0 0 15 15"
-												width={12}
-												style={{ color: "currentcolor" }}
-											>
-												<title>Arrow Up Right</title>
-												<path
-													fillRule="evenodd"
-													clipRule="evenodd"
-													d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
-													fill="currentColor"
-												/>
-											</svg>
-										</sup>
-									</Link>
-								</NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
+                  <NavigationLink href="/pricing">
+                    <div>{t("PricingLink")}</div>
+                  </NavigationLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
+                  <NavigationLink href="/blog">
+                    <div>{t("BlogLink")}</div>
+                  </NavigationLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
+                  <NavigationLink href="/design">
+                    <div>{t("DesignLink")}</div>
+                  </NavigationLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationLink href="/docs">
+                    {t("DocsLink")}
+                    {pathname !== "/docs" && (
+                      <sup>
+                        <svg
+                          data-testid="geist-icon"
+                          height={12}
+                          strokeLinejoin="round"
+                          viewBox="0 0 15 15"
+                          width={12}
+                          style={{ color: "currentcolor" }}
+                        >
+                          <title>Arrow Up Right</title>
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </sup>
+                    )}
+                  </NavigationLink>
+                </NavigationMenuItem>
 
-								
-								<NavigationMenuIndicator />
-							</NavigationMenuList>
-						</NavigationMenu>
-					</div>
-					<div className="flex items-center gap-4">
-						<div className="h-[1.2rem] border-r"></div>
+                <NavigationMenuItem>
+                  <Link
+                    href="/radio"
+                    className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                      pathname === "/radio"
+                        ? "dark:text-white"
+                        : "dark:text-[#9b9b9b]"
+                    } cursor-pointer transition-colors select-none dark:hover:text-white`}
+                  >
+                    {t("RadioLink")}
+                    <sup>
+                      <svg
+                        data-testid="geist-icon"
+                        height={12}
+                        strokeLinejoin="round"
+                        viewBox="0 0 15 15"
+                        width={12}
+                        style={{ color: "currentcolor" }}
+                      >
+                        <title>Arrow Up Right</title>
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M6.75011 4H6.00011V5.5H6.75011H9.43945L5.46978 9.46967L4.93945 10L6.00011 11.0607L6.53044 10.5303L10.499 6.56182V9.25V10H11.999V9.25V5C11.999 4.44772 11.5512 4 10.999 4H6.75011Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </sup>
+                  </Link>
+                </NavigationMenuItem>
 
-						<UserButtonClient />
-					</div>
-					<div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
-				</nav>
-			</nav>
-		</motion.div>
-	);
+                <NavigationMenuIndicator />
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="h-[1.2rem] border-r"></div>
+
+            <UserButtonClient />
+          </div>
+          <div className="absolute top-0 left-0 z-3 rounded-full bg-slate-100 transition-[width] dark:bg-[#000000]" />
+        </nav>
+      </nav>
+    </motion.div>
+  );
 }
