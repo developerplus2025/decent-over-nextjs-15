@@ -133,10 +133,10 @@ export const docsNav = [
 
 export default function SideBar() {
   return (
-    <div className="flex styled-scrollbar flex-col h-[500px] overflow-y-auto gap-[1rem]">
+    <div className="flex sticky top-[121px] styled-scrollbar w-[230px] flex-col h-[500px] overflow-y-auto gap-[1rem]">
       {docsNav.map((items) => (
         <div key={items.title} className="flex flex-col gap-2">
-          <p className="text-sm">{items.title}</p>
+          <p className="text-sm text-[#a1a1a1]">{items.title}</p>
           {items.children && (
             <ul className="text-sm flex flex-col gap-2">
               {items.children.map((child) => (
