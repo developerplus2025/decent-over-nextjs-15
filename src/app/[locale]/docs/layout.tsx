@@ -43,8 +43,8 @@ export default function DocsLayout({
           </BreadcrumbList>
         </Breadcrumb>
         {children}
-        <TocHeading />
       </div>
+      <TocHeading />
     </section>
   );
 }

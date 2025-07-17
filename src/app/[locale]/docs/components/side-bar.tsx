@@ -135,7 +135,7 @@ export const docsNav = [
 
 export default function SideBar() {
   return (
-    <div className="styled-scrollbar sticky top-[121px] flex h-[500px] w-[230px] flex-col gap-[1rem] overflow-y-auto">
+    <div className="styled-scrollbar sticky top-[121px] flex h-[500px] w-[360px] flex-col gap-[1rem] overflow-y-auto">
       {docsNav.map((items) => (
         <div key={items.title} className="flex flex-col gap-2">
           <p className="text-sm text-[#a1a1a1]">{items.title}</p>

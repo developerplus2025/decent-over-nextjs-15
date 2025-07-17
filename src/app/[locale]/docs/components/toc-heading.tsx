@@ -1,6 +1,6 @@
 export default function TocHeading() {
     return (
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 text-sm">
         <p className="text-[#a1a1a1]">On this page</p>
         <div className="flex flex-col gap-2">
           <span className="text-[#a1a1a1]">Installation Steps</span>
