@@ -1,28 +1,22 @@
-import type { Metadata } from 'next/types';
+export type OpenGraphImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
 
-export function createMetadata(override: Metadata): Metadata {
-  return {
-    ...override,
-    openGraph: {
-      title: override.title ?? undefined,
-      description: override.description ?? undefined,
-      url: 'https://fumadocs.vercel.app',
-      images: '/banner.png',
-      siteName: 'Fumadocs',
-      ...override.openGraph,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      creator: '@money_is_shark',
-      title: override.title ?? undefined,
-      description: override.description ?? undefined,
-      images: '/banner.png',
-      ...override.twitter,
-    },
-  };
-}
+export type OpenGraph = {
+  type: "website" | "article";
+  title: string;
+  description: string;
+  siteName: string;
+  images: OpenGraphImage[];
+};
 
-export const baseUrl =
-  process.env.NODE_ENV === 'development' || !process.env.VERCEL_URL
-    ? new URL('http://localhost:3000')
-    : new URL(`https://${process.env.VERCEL_URL}`);
+export type TwitterCard = {
+  card: "summary_large_image" | "summary" | "app" | "player";
+  title: string;
+  description: string;
+  site: string;
+  images: { url: string; alt: string }[];
+};
