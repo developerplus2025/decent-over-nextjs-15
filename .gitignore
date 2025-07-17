@@ -48,3 +48,5 @@ dist/**/electron
 dist/**/next-swc.*.node
 dist/
 .env.local
+
+.content-collections

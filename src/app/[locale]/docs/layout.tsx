@@ -9,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import TocHeading from "./components/toc-heading";
 export const metadata: Metadata = {
   title: "Docs - Page",
   description: "Decent - Docs",
@@ -42,6 +43,7 @@ export default function DocsLayout({
           </BreadcrumbList>
         </Breadcrumb>
         {children}
+        <TocHeading />
       </div>
     </section>
   );
