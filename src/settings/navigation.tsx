@@ -1,4 +1,4 @@
-import { PageRoutes } from "@/lib/pageroutes";
+import { PageRoutes } from "@/lib/pageroutes"
 
 export const Navigations = [
   {
@@ -10,8 +10,8 @@ export const Navigations = [
     href: "https://rubixstudios.com.au",
     external: true,
   },
-];
+]
 
 export const GitHubLink = {
   href: "https://github.com/rubixvi/rubix-documents",
-};
+}

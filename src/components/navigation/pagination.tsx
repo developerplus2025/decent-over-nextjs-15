@@ -1,10 +1,10 @@
-import { Link } from "lib/transition"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+import { Link } from "@/lib/transition";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
-import { getPreviousNext } from "@/lib/markdown"
+import { getPreviousNext } from "@/lib/markdown";
 
 export default function Pagination({ pathname }: { pathname: string }) {
-  const res = getPreviousNext(pathname)
+  const res = getPreviousNext(pathname);
 
   return (
     <div className="flex items-center justify-between py-5 sm:py-7">
@@ -31,5 +31,5 @@ export default function Pagination({ pathname }: { pathname: string }) {
         )}
       </div>
     </div>
-  )
+  );
 }

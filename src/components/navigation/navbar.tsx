@@ -4,11 +4,8 @@ import { LuArrowUpRight, LuGithub } from "react-icons/lu"
 
 import { buttonVariants } from "@/components/ui/button"
 import { SheetClose } from "@/components/ui/sheet"
-import Anchor from "@/components/navigation/anchor"
-import { Logo } from "@/components/navigation/logo"
-import Search from "@/components/navigation/search"
-import { SheetLeft } from "@/components/navigation/sidebar"
-import { ModeToggle } from "@/components/navigation/theme-toggle"
+import Anchor from "@/components/navigation/anchor";
+import { SheetLeft } from "@/components/navigation/sidebar";
 
 export function Navbar() {
   return (
@@ -17,9 +14,6 @@ export function Navbar() {
         <div className="flex items-center gap-5">
           <SheetLeft />
           <div className="flex items-center gap-6">
-            <div className="hidden md:flex">
-              <Logo />
-            </div>
             <div className="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
               <NavMenu />
             </div>
@@ -27,7 +21,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Search />
           <div className="flex gap-2 sm:ml-0">
             {GitHubLink.href && (
               <Link
@@ -40,12 +33,11 @@ export function Navbar() {
                 <LuGithub className="h-[1.1rem] w-[1.1rem]" />
               </Link>
             )}
-            <ModeToggle />
           </div>
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export function NavMenu({ isSheet = false }) {

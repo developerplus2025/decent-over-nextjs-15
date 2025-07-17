@@ -26,6 +26,7 @@
     "paths": {
       "content-collections": ["./.content-collections/generated"],
       "@/content/*": ["content/*"],
+      "@settings": ["./settings"],
       "@/content-collections": ["./content-collections.ts"],
       "@/.source": ["./.source/index.ts"],
       "@/*": ["./src/*", "source.ts", "./markdown"],

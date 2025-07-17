@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { Link } from "lib/transition"
+import { Link } from "@/lib/transition";
 import { LuHouse } from "react-icons/lu"
 
 import {

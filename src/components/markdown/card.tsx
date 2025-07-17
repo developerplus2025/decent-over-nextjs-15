@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react"
 import Image from "next/image"
 import { iconMap } from "@/settings/icons"
 import clsx from "clsx"
-import { Link } from "lib/transition"
+import { Link } from "@/lib/transition";
 
 type CardProps = PropsWithChildren & {
   subtitle?: string
