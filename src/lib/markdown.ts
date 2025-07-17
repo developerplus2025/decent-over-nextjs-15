@@ -1,6 +1,6 @@
 import { createReadStream, promises as fs } from "fs"
 import path from "path"
-import { Element, Text } from "hast"
+import type { Element, Text } from "hast";
 import { compileMDX } from "next-mdx-remote/rsc"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeCodeTitles from "rehype-code-titles"
