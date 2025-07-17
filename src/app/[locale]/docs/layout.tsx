@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 import TocHeading from "./components/toc-heading";
+import { Sidebar } from "./components/sidebar";
 export const metadata: Metadata = {
   title: "Docs - Page",
   description: "Decent - Docs",
@@ -21,30 +22,8 @@ export default function DocsLayout({
 }) {
   return (
     <section className="flex h-[calc(100vh-75.6px)] w-full gap-[2rem] p-[4rem]">
-      <SideBar />
-      <div className="flex flex-col">
-        <Breadcrumb className="h-fit">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink className="text-[#a1a1a1]" asChild>
-                <Link href="/">Docs</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink className="text-[#a1a1a1]" asChild>
-                <Link href="/components">Getting Started</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Installation</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-        {children}
-      </div>
-      <TocHeading />
+      <Sidebar />
+      <div className="flex flex-col">{children}</div>
     </section>
   );
 }
