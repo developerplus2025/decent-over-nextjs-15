@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { useSearch } from "fumadocs-ui/components/dialog/search";
 import {
-	Lightbulb,
-	Medal,
-	NotebookText,
-	Podcast,
-	Share2,
-	WifiOff,
+  Lightbulb,
+  Medal,
+  NotebookText,
+  Podcast,
+  Share2,
+  WifiOff,
 } from "lucide-react";
-import {Link} from '@/i18n/navigation'
 import { usePathname } from "next/navigation";
 import type React from "react";
 import { useEffect, useState } from "react";
@@ -29,6 +28,7 @@ import {
 import UserButtonClient from "./UserButtonClient";
 import { useTranslations } from "next-intl";
 import NavigationLink from "./NavigationLink";
+import Link from "next/link";
 
 // const UserButton = dynamic(() => import("./UserButtonClient"), {
 //   ssr: false,
