@@ -29,8 +29,7 @@ export default function MainTextHome() {
 
   const [value, setValue] = React.useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const t = useTranslations('MainTextHome');
- 
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setValue((v) => (v >= 100 ? 0 : v + 10));
@@ -57,13 +56,14 @@ export default function MainTextHome() {
           The Next AI Music Editor
         </h1>
         <h1 className="text-[#a1a1a1] min-[300px]:w-screen min-[300px]:text-center min-[300px]:text-[12px] min-[300px]:text-balance xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
-         {t('DescriptionHome')}
+          Dive into a seamless music experience with our cutting edge software.
+          Collaborate effortlessly, unleash your creativity, manage playlists
+          and craft professional quality tracks all in one powerful platform.
         </h1>
       </div>
       <div className="min-[300px]:flex min-[300px]:w-[200px] min-[300px]:flex-col min-[300px]:items-center min-[300px]:gap-[1rem] xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
         <DownloadButton />
-       <ModalAnimationVideo/>
-       
+        <ModalAnimationVideo />
       </div>
     </motion.div>
   );

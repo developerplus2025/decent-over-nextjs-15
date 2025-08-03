@@ -12,13 +12,12 @@ import {
  import awesomeVideo from "/videos/get-started.mp4";
 import { useTranslations } from 'next-intl';
 export const ModalAnimationVideo = () => {
-   const b = useTranslations('ButtonText');
+
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button
+        <Button
           className="min-[300px]:w-full md:w-fit xl:w-fit"
-          
           variant={"default"}
         >
           <svg
@@ -38,21 +37,19 @@ export const ModalAnimationVideo = () => {
               style={{ fill: "currentColor" }}
             />
           </svg>
-          {b('WatchText')}
+          Watch Demo Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[54rem] h-[34rem]" from="left">
-       
-      <div className="flex h-full w-full items-center justify-center">
-              <Video
-                aria-errormessage=""
-                aria-hidden="false"
-                className="host rounded-lg"
-                src={awesomeVideo}
-              />
-              {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
-            </div>
-       
+      <DialogContent className="h-[34rem] sm:max-w-[54rem]" from="left">
+        <div className="flex h-full w-full items-center justify-center">
+          <Video
+            aria-errormessage=""
+            aria-hidden="false"
+            className="host rounded-lg"
+            src={awesomeVideo}
+          />
+          {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
+        </div>
       </DialogContent>
     </Dialog>
   );

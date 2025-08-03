@@ -9,8 +9,7 @@ import { useEffect, useState } from "react";
 const DownloadButton: React.FC = () => {
   const router = useRouter();
   const [downloadReady, setDownloadReady] = useState(false);
-  const t = useTranslations('ButtonText');
- 
+
   const handleClick = async () => {
     // Chuyển trang và chờ quá trình chuyển hoàn tất
     await router.push("/docs/user-win-download");
@@ -19,7 +18,7 @@ const DownloadButton: React.FC = () => {
   return (
     <Button className="" variant={"outline"} onClick={handleClick}>
       <ArrowDownToLine className="mr-2 h-4 w-4" />
-    {t('DownloadText')}
+      Download for Windows
     </Button>
   );
 };
