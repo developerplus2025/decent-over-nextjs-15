@@ -1,8 +1,6 @@
 const { withNextVideo } = require("next-video/process");
-const createNextIntlPlugin = require("next-intl/plugin");
-const {createMDX}  =  require("fumadocs-mdx/next");
+const { createMDX } = require("fumadocs-mdx/next");
 const withMDX = createMDX();
-const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
@@ -40,4 +38,4 @@ const nextConfig = {
 };
 
 // Gộp 2 middleware lại
-module.exports = withNextIntl(withNextVideo(withMDX(nextConfig)));
+module.exports = withNextVideo(withMDX(nextConfig));
