@@ -84,8 +84,7 @@ export default function Navigation({
         isSignIn ||
         isGuides ||
         isHelp ||
-        isDesign ||
-        pathname.startsWith("/docs")
+        isDesign
           ? "webfilm-class"
           : ""
       } ${className} sticky top-0 z-20`}
