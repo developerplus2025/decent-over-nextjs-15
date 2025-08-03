@@ -177,9 +177,6 @@ export default async function Page(props: {
             <div className="h-12" />
           </div>
         ) : null}
-        <div className="flex flex-1 flex-col gap-12 px-6">
-          <OpenInV0Cta />
-        </div>
       </div>
     </div>
   );
