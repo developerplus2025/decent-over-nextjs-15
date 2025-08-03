@@ -1,11 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 
 export default function AnimateTextHome() {
-   const t = useTranslations('MainTextHome');
-  const headline = t('TitleHome');
-  const words = headline.split(" ");
+  const words: string[] = "The Open Source Ai Music Studio".split(" ");
 
   const wordVariants = {
     hidden: { filter: "blur(10px)", opacity: 0, y: 12 },
@@ -13,7 +10,7 @@ export default function AnimateTextHome() {
       filter: "blur(0px)",
       opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.5,
         delay: 0.1 * index,
         ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
