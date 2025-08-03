@@ -125,7 +125,7 @@ export default function Navigation({
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/blog">
-                    <div>BlogLink</div>
+                    <div>Blog</div>
                   </NavigationLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
