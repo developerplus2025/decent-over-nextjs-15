@@ -10,16 +10,14 @@ import MainTextHome from "./components/main-text-home";
 import variables from "../variables.module.scss";
 import { Badge } from "@/components/luxe/badge";
 import PopoverRws from "@/components/popover-rws";
-import { useTranslations } from "next-intl";
 import LogoCloud from "@/components/logo-cloud";
 export default function Home() {
-   const t = useTranslations('MainTextHome');
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-20 xl:pb-4 dark:bg-black dark:scheme-dark">
       <div className="flex items-center justify-center gap-4">
-        <Badge variant="animated-border">{t('LableBadge')}</Badge>
+        <Badge variant="animated-border">New</Badge>
         <span className="text-sm">
-          {t('BadgeText')}
+          Catch up with everything we announced at Ship 25
         </span>
       </div>
       <MainTextHome />
@@ -27,7 +25,7 @@ export default function Home() {
         className="text-center min-[300px]:w-[200px] min-[300px]:text-xs xl:w-full xl:text-sm"
         style={{ color: variables.mutedColor }}
       >
-        {t('PrivacyText')}
+        By using SonixLab, you agree to its license and privacy statement.
       </h1>
       <div className="mx-auto mt-40 mb-16 h-px w-full bg-[#262626]"></div>
       <div className="w-full">
