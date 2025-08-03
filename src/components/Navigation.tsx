@@ -83,7 +83,6 @@ export default function Navigation({
         isChatV2 ||
         isSignIn ||
         isGuides ||
-        isDocs ||
         isHelp ||
         isDesign ||
         pathname.startsWith("/docs")

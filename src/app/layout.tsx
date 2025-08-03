@@ -80,7 +80,7 @@ export default function RootLayout({
                 {/* Add children here if needed */}
                 <></>
               </NavigationMobile>
-              <DocsNavigation />
+              {/* <DocsNavigation /> */}
               <Toaster
                 icons={{
                   success: (
