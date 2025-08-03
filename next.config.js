@@ -3,14 +3,14 @@ const { createMDX } = require("fumadocs-mdx/next");
 const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/api/c15t/:path*",
-  //       destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/api/c15t/:path*",
+        destination: `${process.env.NEXT_PUBLIC_C15T_URL}/:path*`,
+      },
+    ];
+  },
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   turbopack: {
     resolveAlias: {
