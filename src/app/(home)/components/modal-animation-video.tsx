@@ -10,7 +10,6 @@ import {
 } from '@/components/animate-ui/radix/dialog';
  import Video from "next-video";
  import awesomeVideo from "/videos/get-started.mp4";
-import { useTranslations } from 'next-intl';
 export const ModalAnimationVideo = () => {
 
   return (
