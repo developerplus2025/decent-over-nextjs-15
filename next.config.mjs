@@ -1,4 +1,5 @@
-import createMDX from "@next/mdx";
+import { createMDX } from "fumadocs-mdx/next";
+const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -10,9 +11,5 @@ const nextConfig = {
     domains: ["api.microlink.io", "i.scdn.co", "workoscdn.com"],
   },
 };
-
-const withMDX = createMDX({
-  
-});
 
 export default withMDX(nextConfig);
