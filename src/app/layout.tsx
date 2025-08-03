@@ -24,8 +24,7 @@ import {
   ConsentManagerDialog,
 } from "@c15t/nextjs";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { notFound } from "next/navigation";
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
 import { unstable_ViewTransition as ViewTransition } from 'react'
 import ThemeParams from "@/components/ThemeParams";
