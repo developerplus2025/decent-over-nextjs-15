@@ -60,19 +60,18 @@ export default function Navigation({
 
 	
 	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(
-				window.scrollY > 60 ||
-					window.scrollY + window.innerHeight >=
-						document.documentElement.scrollHeight,
-			);
-		};
+    const handleScroll = () => {
+      setIsScrolled(
+        window.scrollY > 60 ||
+          window.scrollY + window.innerHeight >=
+            document.documentElement.scrollHeight,
+      );
+    };
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
-	const t = useTranslations('Navigation');
-	return (
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  return (
     <motion.div
       // initial={{ opacity: 0, y: -20 }}
       // animate={{ opacity: 1, y: 0 }}
@@ -109,34 +108,34 @@ export default function Navigation({
               <NavigationMenuList className="font-medium">
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/library">
-                    <div>{t("LibraryLink")}</div>
+                    <div>Library</div>
                   </NavigationLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/creative">
-                    <div>{t("CreativeLink")}</div>
+                    <div>Creative</div>
                   </NavigationLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/pricing">
-                    <div>{t("PricingLink")}</div>
+                    <div>Pricing</div>
                   </NavigationLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/blog">
-                    <div>{t("BlogLink")}</div>
+                    <div>BlogLink</div>
                   </NavigationLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="px-3">
                   <NavigationLink href="/design">
-                    <div>{t("DesignLink")}</div>
+                    <div>Design</div>
                   </NavigationLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="relative px-3">
                   <NavigationLink href="/docs">
-                    {t("DocsLink")}
+                    Docs
                     {pathname !== "/docs" && (
                       <sup>
                         <svg
@@ -169,7 +168,7 @@ export default function Navigation({
                         : "dark:text-[#9b9b9b]"
                     } cursor-pointer transition-colors select-none dark:hover:text-white`}
                   >
-                    {t("RadioLink")}
+                    Radio
                     <sup>
                       <svg
                         data-testid="geist-icon"

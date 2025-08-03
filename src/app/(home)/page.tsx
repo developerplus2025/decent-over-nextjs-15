@@ -7,7 +7,6 @@ import AccordionFAQ from "./components/faq";
 import { PeopleSay } from "./components/people-say";
 import { NavigationEffect } from "@/components/NavigationEffect";
 import MainTextHome from "./components/main-text-home";
-import variables from "../variables.module.scss";
 import { Badge } from "@/components/luxe/badge";
 import PopoverRws from "@/components/popover-rws";
 import LogoCloud from "@/components/logo-cloud";
@@ -21,10 +20,7 @@ export default function Home() {
         </span>
       </div>
       <MainTextHome />
-      <h1
-        className="text-center min-[300px]:w-[200px] min-[300px]:text-xs xl:w-full xl:text-sm"
-        style={{ color: variables.mutedColor }}
-      >
+      <h1 className="text-center min-[300px]:w-[200px] min-[300px]:text-xs xl:w-full xl:text-sm">
         By using SonixLab, you agree to its license and privacy statement.
       </h1>
       <div className="mx-auto mt-40 mb-16 h-px w-full bg-[#262626]"></div>
