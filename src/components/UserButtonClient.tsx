@@ -27,7 +27,6 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { Loader } from "./ui/loader";
-import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 import { useTranslations } from "next-intl";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
@@ -124,8 +123,7 @@ export default function UserButtonClient() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-       
-        <div className="flex h-[32px] w-fit p-3 items-center justify-center gap-2 rounded-md border border-(--input)">
+        <div className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3">
           <svg
             className="size-4.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +135,7 @@ export default function UserButtonClient() {
             <title>Search Icon</title>
             <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
           </svg>
-          <p className="text-xs"> {t('SearchText')}</p>
+          <p className="text-xs"> {t("SearchText")}</p>
           <div className="flex gap-1">
             <kbd className="text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-(--input) px-1.5 font-sans text-[10px] font-medium opacity-100 select-none">
               <span className="text-xs">Ctrl</span>
@@ -147,19 +145,28 @@ export default function UserButtonClient() {
             </kbd>
           </div>
         </div>
-        <LocaleSwitcherSelect />
+
         <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-         <Link href={"https://github.com/developerplus2025/decent-over-nextjs-15/tree/main"}> <GitHub /></Link>
+          <Link
+            href={
+              "https://github.com/developerplus2025/decent-over-nextjs-15/tree/main"
+            }
+          >
+            {" "}
+            <GitHub />
+          </Link>
         </div>
         <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-         <Link href={"https://x.com/DeveloperPlus24"}><X /></Link> 
+          <Link href={"https://x.com/DeveloperPlus24"}>
+            <X />
+          </Link>
         </div>
 
         <ThemeToggle />
 
         <FeedBack />
         {session?.user && (
-          <div >
+          <div>
             <div
               ref={refs.setReference}
               {...getReferenceProps()}
@@ -179,16 +186,14 @@ export default function UserButtonClient() {
               )}
             </div>
 
-            {isMounted &&  (
-              
-                <div
+            {isMounted && (
+              <div
                 {...getFloatingProps()}
                 ref={refs.setFloating}
                 style={floatingStyles}
-             
               >
                 <div
-                  data-state={isOpen ? 'open' : 'closed'}
+                  data-state={isOpen ? "open" : "closed"}
                   data-side="right"
                   className="data-[state=open]:animate-in data data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex h-fit w-[16rem] flex-col justify-between rounded-xl border border-[#2c2c2c] bg-black"
                 >
@@ -201,17 +206,16 @@ export default function UserButtonClient() {
                     </div>
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex w-full flex-col gap-2 px-4 py-2 [&_svg]:size-4">
-                    
                       <Button
-                      onMouseEnter={() => {
-                        setIsHovered(true); // Khi bắt đầu hover
-                        console.log("Hovered");
-                      }}
-                      onMouseLeave={() => {
-                        setIsHovered(false); // Khi kết thúc hover
-                        console.log("Unhovered");
-                      }}
-                        className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
+                        onMouseEnter={() => {
+                          setIsHovered(true); // Khi bắt đầu hover
+                          console.log("Hovered");
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false); // Khi kết thúc hover
+                          console.log("Unhovered");
+                        }}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""} justify-between`}
                         variant="outline"
                       >
                         Account Settings
@@ -235,7 +239,7 @@ export default function UserButtonClient() {
                           setIsHovered(false); // Khi kết thúc hover
                           console.log("Unhovered");
                         }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""} justify-between`}
                         onClick={() => router.push("/dashboard")}
                         variant="outline"
                       >
@@ -260,7 +264,7 @@ export default function UserButtonClient() {
                           setIsHovered(false); // Khi kết thúc hover
                           console.log("Unhovered");
                         }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""} justify-between`}
                         onClick={() => router.push("/dashboard")}
                         variant="outline"
                       >
@@ -287,7 +291,7 @@ export default function UserButtonClient() {
                           setIsHovered(false); // Khi kết thúc hover
                           console.log("Unhovered");
                         }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""} justify-between`}
                         variant="outline"
                         onClick={handleLogout}
                       >
@@ -311,7 +315,7 @@ export default function UserButtonClient() {
                           setIsHovered(false); // Khi kết thúc hover
                           console.log("Unhovered");
                         }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : ""}  justify-between`}
+                        className={`w-full ${isHovered ? "bg-primary/90" : ""} justify-between`}
                         variant="outline"
                         onClick={handleLogout}
                       >
@@ -329,13 +333,11 @@ export default function UserButtonClient() {
                     </div>
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex flex-col px-4 py-2">
-                      <Button >Upgrade to Pro</Button>
+                      <Button>Upgrade to Pro</Button>
                     </div>
                   </div>
                 </div>
               </div>
-        
-              
             )}
           </div>
         )}
