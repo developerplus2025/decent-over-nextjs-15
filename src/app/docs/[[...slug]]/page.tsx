@@ -153,6 +153,8 @@ export default async function Page(props: {
                 ) : null}
               </div>
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
+                {/* @ts-expect-error - revisit fumadocs types. */}
+                <p>{page.data.content}</p>
                 <MDX components={mdxComponents} />
               </div>
             </div>
