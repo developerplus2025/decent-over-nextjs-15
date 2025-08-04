@@ -134,7 +134,7 @@ export default function Navigation({
                 <NavigationMenuItem className="relative px-3">
                   <NavigationLink href="/docs">
                     Docs
-                    {pathname !== "/docs" && (
+                    {pathname !== "/docs-root" && (
                       <sup>
                         <svg
                           data-testid="geist-icon"
