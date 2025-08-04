@@ -69,7 +69,12 @@ export default async function Page(props: {
   const links = doc.links;
 
   return (
-    <DocsPage>
+    <DocsPage
+      tableOfContent={{
+        style: "clerk",
+        header: <div className="h-4 w-10"></div>,
+      }}
+    >
       <DocsBody>
         <div
           data-slot="docs"
@@ -146,32 +151,6 @@ export default async function Page(props: {
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
                 <MDX components={mdxComponents} />
               </div>
-            </div>
-            <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
-              {neighbours.previous && (
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  asChild
-                  className="shadow-none"
-                >
-                  <Link href={neighbours.previous.url}>
-                    <IconArrowLeft /> {neighbours.previous.name}
-                  </Link>
-                </Button>
-              )}
-              {neighbours.next && (
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="ml-auto shadow-none"
-                  asChild
-                >
-                  <Link href={neighbours.next.url}>
-                    {neighbours.next.name} <IconArrowRight />
-                  </Link>
-                </Button>
-              )}
             </div>
           </div>
         </div>
