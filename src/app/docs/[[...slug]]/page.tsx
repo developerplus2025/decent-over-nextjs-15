@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { mdxComponents } from "@/../mdx-components";
+import { getMDXComponents  } from "@/../mdx-components";
 import {
   IconArrowLeft,
   IconArrowRight,
@@ -129,7 +129,7 @@ export default async function Page(props: {
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX components={mdxComponents} />
+       <MDX components={getMDXComponents()} />
       </DocsBody>
     </DocsPage>
   );
