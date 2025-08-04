@@ -79,7 +79,7 @@ export default async function Page(props: {
         header: <div className="h-4 w-10"></div>,
       }}
     >
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
           <div className="flex items-start justify-between">
             <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
@@ -125,7 +125,9 @@ export default async function Page(props: {
             </p>
           )}
         </div>
-      </div>
+      </div> */}
+      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <div
           data-slot="docs"
