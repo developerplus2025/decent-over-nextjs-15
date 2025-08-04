@@ -1,5 +1,5 @@
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-
+import { source } from "@/lib/source";
 /**
  * Shared layout configurations
  *
@@ -9,6 +9,7 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
+    enabled: false,
     // can be JSX too!
     title: "Decent Version 10.9.5",
   },
@@ -19,4 +20,8 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url",
     },
   ],
+};
+export const docsOptions = {
+  ...baseOptions,
+  tree: source.pageTree,
 };
