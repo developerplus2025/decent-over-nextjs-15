@@ -16,7 +16,9 @@ export default function BlurCollapsible() {
   return (
     <Collapsible open={open} onOpenChange={setOpen} className="w-full">
       <div className="flex items-center justify-between">
-        <h4 className="text-lg font-medium">Thông tin thêm</h4>
+        <h4 className="text-sm font-semibold">
+          @peduarte starred 3 repositories
+        </h4>
         <CollapsibleTrigger asChild>
           <button className="p-2">
             <motion.div
@@ -38,9 +40,19 @@ export default function BlurCollapsible() {
               animate={{ opacity: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(8px)" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="text-muted-foreground mt-2"
+              className="rounded-md border px-4 py-2 font-mono text-sm"
             >
-              Nội dung này có hiệu ứng **blur** khi xuất hiện và biến mất.
+              @radix-ui/colors
+            </motion.div>
+            <motion.div
+              key="blur-content"
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, filter: "blur(8px)" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="rounded-md border px-4 py-2 font-mono text-sm"
+            >
+              @stitches/react
             </motion.div>
           </CollapsibleContent>
         )}
