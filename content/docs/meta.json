@@ -1,7 +1,7 @@
 {
   "root": true,
   "pages": [
-    "getting-started",
+    "(root)",
     "playback-features",
     "audio-effects",
     "library-management",
