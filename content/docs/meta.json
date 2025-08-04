@@ -10,32 +10,26 @@
     "interface-overview",
     "importing-songs",
     "first-play",
-
     "---Playback Features---",
     "playlists",
     "looping-shuffle",
     "playback-speed",
-
     "---Audio Effects---",
     "equalizer",
     "reverb-delay",
     "custom-fx",
-
     "---Library Management---",
     "organizing-songs",
     "tag-editing",
     "smart-playlists",
-
     "---Settings---",
     "themes",
     "audio-devices",
     "keyboard-shortcuts",
-
     "---Advanced---",
     "midi-integration",
     "plugin-support",
     "developer-mode",
-
     "---Troubleshooting---",
     "no-sound",
     "app-crashes",
