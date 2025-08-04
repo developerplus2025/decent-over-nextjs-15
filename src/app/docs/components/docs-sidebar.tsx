@@ -28,7 +28,6 @@ export function DocsSidebar({
       {...props}
     >
       <SidebarContent className="no-scrollbar styled-scrollbar px-2 pb-12 pl-[1.5rem]">
-        <div className="h-(--top-spacing) shrink-0" />
         {tree.children.map((item) => (
           <SidebarGroup key={item.$id}>
             <SidebarGroupLabel className="text-muted-foreground font-medium">
