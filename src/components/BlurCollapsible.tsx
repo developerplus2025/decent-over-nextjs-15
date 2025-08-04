@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/collapsible";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronsUpDown } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function BlurCollapsible() {
   const [open, setOpen] = useState(false);
@@ -20,20 +21,24 @@ export default function BlurCollapsible() {
           @peduarte starred 3 repositories
         </h4>
         <CollapsibleTrigger asChild>
-          <button className="p-2">
+          {/* <button className="p-2">
             <motion.div
               animate={{ rotate: open ? 180 : 0 }}
               transition={{ duration: 0.2 }}
             >
               <ChevronDown />
             </motion.div>
-          </button>
+          </button> */}
+          <Button variant="ghost" size="icon" className="size-8">
+            <ChevronsUpDown />
+            <span className="sr-only">Toggle</span>
+          </Button>
         </CollapsibleTrigger>
       </div>
 
       <AnimatePresence>
         {open && (
-          <CollapsibleContent forceMount>
+          <CollapsibleContent className="flex flex-col gap-2" forceMount>
             <motion.div
               key="blur-content"
               initial={{ opacity: 0, filter: "blur(8px)" }}
