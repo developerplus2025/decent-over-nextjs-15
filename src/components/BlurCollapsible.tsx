@@ -33,7 +33,7 @@ export default function BlurCollapsible() {
 
       <AnimatePresence>
         {open && (
-          <CollapsibleContent asChild forceMount>
+          <CollapsibleContent forceMount>
             <motion.div
               key="blur-content"
               initial={{ opacity: 0, filter: "blur(8px)" }}
