@@ -23,11 +23,11 @@ export function DocsSidebar({
 
   return (
     <Sidebar
-      className="sticky top-[calc(var(--header-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
+      className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
       collapsible="none"
       {...props}
     >
-      <SidebarContent className="no-scrollbar px-2 pb-12 pl-[1.5rem]">
+      <SidebarContent className="no-scrollbar styled-scrollbar px-2 pb-12 pl-[1.5rem]">
         <div className="h-(--top-spacing) shrink-0" />
         {tree.children.map((item) => (
           <SidebarGroup key={item.$id}>
