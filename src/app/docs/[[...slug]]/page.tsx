@@ -132,7 +132,7 @@ export default async function Page(props: {
       <DocsDescription className="mb-0">
         {page.data.description}
       </DocsDescription>
-      <DocsBody>
+      <DocsBody className="px-2">
         <div
           data-slot="docs"
           className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
