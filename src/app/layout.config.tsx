@@ -9,7 +9,6 @@ import { source } from "@/lib/source";
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    enabled: false,
     // can be JSX too!
     title: "Decent Version 10.9.5",
   },

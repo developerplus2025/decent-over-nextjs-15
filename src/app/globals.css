@@ -989,6 +989,9 @@ number-flow-react::part(suffix) {
 #nd-toc{
   top: 5rem !important;
 }
+#nd-tocnav{
+  top: 3rem;
+}
 /*
   ---break---
 */
