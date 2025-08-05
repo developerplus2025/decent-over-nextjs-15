@@ -27,6 +27,7 @@ import FeedBack from "./feedback";
 import GitHub from "./GitHub";
 import X from "./x";
 import { Loader } from "./ui/loader";
+import { useSearchContext } from "fumadocs-ui/provider";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -107,6 +108,7 @@ export default function UserButtonClient() {
     },
   });
   const { getReferenceProps, getFloatingProps } = useInteractions([dismiss]);
+  const { setOpenSearch } = useSearchContext();
   if (isPending) {
     return <Loader variant={"circular"} size={"sm"} />;
   }
@@ -118,7 +120,10 @@ export default function UserButtonClient() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        <div className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3">
+        <div
+          onClick={() => setOpenSearch(true)}
+          className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3"
+        >
           <svg
             className="size-4.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
