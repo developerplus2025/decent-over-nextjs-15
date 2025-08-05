@@ -121,7 +121,9 @@ export default function UserButtonClient() {
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
         <div
-          onClick={() => setOpenSearch(true)}
+          onClick={() => {
+            setOpenSearch(true);
+          }}
           className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3"
         >
           <svg
