@@ -119,7 +119,10 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
           <DropdownMenuTrigger asChild className="hidden sm:flex">
             {trigger}
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="shadow-none">
+          <DropdownMenuContent
+            align="end"
+            className="border-input border shadow-none"
+          >
             {Object.entries(menuItems).map(([key, value]) => (
               <DropdownMenuItem key={key} asChild>
                 {value(url)}
