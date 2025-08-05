@@ -122,6 +122,7 @@ export default function UserButtonClient() {
       >
         <div
           onClick={() => {
+            console.log("Use Search");
             setOpenSearch(true);
           }}
           className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3 select-none"
