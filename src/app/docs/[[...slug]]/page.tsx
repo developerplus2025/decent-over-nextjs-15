@@ -128,7 +128,14 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-      <DocsTitle className="">{page.data.title}</DocsTitle>
+      <DocsTitle className="flex items-center justify-between">
+        {page.data.title}{" "}
+        <DocsCopyPage
+          // @ts-expect-error - revisit fumadocs types.
+          page={doc.content}
+          url={absoluteUrl(page.url)}
+        />
+      </DocsTitle>
       <DocsDescription className="mb-0">
         {page.data.description}
       </DocsDescription>
