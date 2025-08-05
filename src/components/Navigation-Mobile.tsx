@@ -73,7 +73,7 @@ export default function NavigationMobile({
   }, [isOpen]);
   return (
     <div
-      className={`${className} fixed top-0 z-30 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
+      className={`${className} fixed top-0 z-25 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
     >
       <div className="flex items-center gap-4">
         <Link
