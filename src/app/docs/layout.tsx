@@ -5,10 +5,22 @@ import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { docsOptions } from "../layout.config";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import NavigationMobile from "@/components/Navigation-Mobile";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       {...docsOptions}
+      nav={{
+        component: (
+          <div>
+            {" "}
+            <NavigationMobile className="xl:hidden">
+              {/* Add children here if needed */}
+              <></>
+            </NavigationMobile>
+          </div>
+        ),
+      }}
       sidebar={{
         enabled: true,
         component: (
