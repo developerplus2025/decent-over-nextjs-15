@@ -52,10 +52,10 @@ export default function MainTextHome() {
         className="flex flex-col items-center justify-center min-[300px]:gap-4 xl:gap-8"
       >
         <AnimateTextHome />
-        <h1 className="w-[299px] text-center text-[3rem] leading-12 font-bold text-pretty min-[300px]:block xl:hidden">
+        <h1 className="w-[299px] text-center text-[2.2rem] leading-[2.5rem] font-bold text-pretty min-[300px]:block xl:hidden">
           The Open Source Ai Music Studio
         </h1>
-        <h1 className="text-[#a1a1a1] min-[300px]:w-screen min-[300px]:text-center min-[300px]:text-[12px] min-[300px]:text-balance xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
+        <h1 className="text-[#a1a1a1] min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[12px] xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
           Dive into a seamless music experience with our cutting edge software.
           Collaborate effortlessly, unleash your creativity, manage playlists
           and craft professional quality tracks all in one powerful platform.
