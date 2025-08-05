@@ -54,6 +54,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+--fd-sidebar-width:0px !important;
 }
 /*
   ---break---
@@ -94,13 +95,13 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-  --fd-sidebar-width:0px;
+  --fd-sidebar-width:0px !important;
 }
 /*
   ---break---
 */
 .dark {
-  --fd-sidebar-width:0px;
+  --fd-sidebar-width:0px !important;
   --sidebar-docs:#000000;
   --theme-toggle-sun-icon-display:none;
   --theme-toggle-moon-icon-display:block;
