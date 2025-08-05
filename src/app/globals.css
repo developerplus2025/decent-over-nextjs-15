@@ -986,6 +986,9 @@ number-flow-react::part(suffix) {
   --fd-sidebar-width:0px !important;
   flex-direction: row !important;
 }
+#nd-toc{
+  top: 5rem !important;
+}
 /*
   ---break---
 */
