@@ -987,6 +987,7 @@ number-flow-react::part(suffix) {
   flex-direction: row !important;
 }
 #nd-toc{
+  --fd-banner-height:84px !important;
   top: 5rem !important;
 }
 #nd-tocnav{
