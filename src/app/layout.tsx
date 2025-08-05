@@ -73,15 +73,6 @@ export default function RootLayout({
               defaultTheme="dark"
             >
               {" "}
-              <Navigation className="min-[300px]:hidden xl:block">
-                Navigation children content, or empty fragment if not needed
-                <></>
-              </Navigation>
-              <NavigationMobile className="xl:hidden">
-                {/* Add children here if needed */}
-                <></>
-              </NavigationMobile>
-              {/* <DocsNavigation /> */}
               <Toaster
                 icons={{
                   success: (
@@ -119,6 +110,14 @@ export default function RootLayout({
                   SearchDialog,
                 }}
               >
+                <Navigation className="min-[300px]:hidden xl:block">
+                  Navigation children content, or empty fragment if not needed
+                  <></>
+                </Navigation>
+                <NavigationMobile className="xl:hidden">
+                  {/* Add children here if needed */}
+                  <></>
+                </NavigationMobile>
                 <ViewTransition>{children}</ViewTransition>
               </RootProvider>
               <Footer />
