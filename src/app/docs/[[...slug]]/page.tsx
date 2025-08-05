@@ -74,6 +74,7 @@ export default async function Page(props: {
       toc={page.data.toc}
       // @ts-expect-error - revisit fumadocs types.
       full={page.data.full}
+      breadcrumb={{ enabled: true }}
       tableOfContent={{
         style: "clerk",
         header: <div className="h-4 w-10"></div>,
@@ -126,7 +127,7 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsTitle className="">{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">
         {page.data.description}
       </DocsDescription>
