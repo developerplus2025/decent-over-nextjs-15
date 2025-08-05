@@ -21,6 +21,7 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page";
+import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -74,7 +75,7 @@ export default async function Page(props: {
       toc={page.data.toc}
       // @ts-expect-error - revisit fumadocs types.
       full={page.data.full}
-      breadcrumb={{ enabled: false }}
+      breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
       tableOfContent={{
         style: "clerk",
         header: <div className="h-4 w-10"></div>,
