@@ -42,10 +42,13 @@ export default function BlurCollapsible() {
             <motion.div
               layout
               key="blur-content"
-              initial={{ opacity: 0, filter: "blur(8px)", height: 0 }}
-              animate={{ opacity: 1, filter: "blur(0px)", height: "auto" }}
-              exit={{ opacity: 0, filter: "blur(8px)", height: "auto" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              initial={false}
+              animate={
+                open
+                  ? { opacity: 1, height: "auto", overflow: "hidden" }
+                  : { opacity: 0, height: 0, overflow: "hidden" }
+              }
+              transition={{ type: "spring", stiffness: 150, damping: 17 }}
               className="rounded-md border px-4 py-2 font-mono text-sm"
             >
               @radix-ui/colors
