@@ -14,7 +14,7 @@ import BlurCollapsible from "@/components/BlurCollapsible";
 export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-40 min-[300px]:pb-16 xl:pt-20 xl:pb-4 dark:bg-black dark:scheme-dark">
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center gap-4 min-[300px]:flex-col xl:flex-row">
         <Badge variant="animated-border">New</Badge>
         <span className="text-sm">
           Catch up with everything we announced at Ship 25
