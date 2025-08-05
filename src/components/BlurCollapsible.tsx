@@ -40,10 +40,11 @@ export default function BlurCollapsible() {
         {open && (
           <CollapsibleContent className="flex flex-col gap-2" forceMount>
             <motion.div
+              layout
               key="blur-content"
-              initial={{ opacity: 0, filter: "blur(8px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, filter: "blur(8px)" }}
+              initial={{ opacity: 0, filter: "blur(8px)", height: 0 }}
+              animate={{ opacity: 1, filter: "blur(0px)", height: "auto" }}
+              exit={{ opacity: 0, filter: "blur(8px)", height: "auto" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="rounded-md border px-4 py-2 font-mono text-sm"
             >
