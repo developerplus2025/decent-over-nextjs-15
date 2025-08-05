@@ -980,7 +980,6 @@ number-flow-react::part(suffix) {
 .styled-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: #eaeaea transparent;
-    scrollbar-gutter: stable;
 }
 #nd-docs-layout{
   --fd-sidebar-width:0px !important;
