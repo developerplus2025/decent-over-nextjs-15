@@ -981,6 +981,9 @@ number-flow-react::part(suffix) {
     scrollbar-color: #eaeaea transparent;
     scrollbar-gutter: stable;
 }
+#nd-docs-layout{
+  flex-direction: row !important;
+}
 /*
   ---break---
 */
