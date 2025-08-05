@@ -17,6 +17,7 @@ import FrameVideo from "./(home)/components/frame-video";
 import { Analytics } from "@vercel/analytics/react";
 import NavigationMobile from "@/components/Navigation-Mobile";
 import { cn } from "@/lib/utils";
+import SearchDialog from "@/components/search";
 import Navigation from "@/components/Navigation";
 import {
   CookieBanner,
@@ -113,7 +114,11 @@ export default function RootLayout({
                 className={` ${GeistSans.className} border-(--accent)`}
                 position="top-center"
               />
-              <RootProvider>
+              <RootProvider
+                search={{
+                  SearchDialog,
+                }}
+              >
                 <ViewTransition>{children}</ViewTransition>
               </RootProvider>
               <Footer />
