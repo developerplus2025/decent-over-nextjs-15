@@ -3,6 +3,7 @@
 import type { Variants } from "motion/react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import { useSearchContext } from "fumadocs-ui/provider";
 import { useEffect, useRef, useState } from "react";
 import NavigationIcon from "./comp-100";
 import { MobileNav } from "./mobile-nav";
@@ -58,6 +59,7 @@ export default function NavigationMobile({
 }: NavigationMobileProps): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { setOpenSearch } = useSearchContext();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflowY = "hidden"; // Tắt scroll
@@ -83,6 +85,10 @@ export default function NavigationMobile({
       </div>
       <div className="flex items-center gap-4">
         <svg
+          onClick={() => {
+            console.log("Use Search");
+            setOpenSearch(true);
+          }}
           data-testid="geist-icon"
           height={16}
           strokeLinejoin="round"
