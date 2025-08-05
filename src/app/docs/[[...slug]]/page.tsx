@@ -138,7 +138,7 @@ export default async function Page(props: {
           className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
         >
           <div className="flex min-w-0 flex-col">
-            <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 px-4 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+            <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
                 <MDX components={mdxComponents} />
               </div>
