@@ -13,7 +13,7 @@ export default function FeedBack() {
       <Popover>
         <PopoverTrigger asChild>
           <div className="relative">
-            <Button variant="outline" className="h-[32px]">
+            <Button variant="outline" className="h-[32px] cursor-pointer">
               FeedBack
             </Button>
           </div>
