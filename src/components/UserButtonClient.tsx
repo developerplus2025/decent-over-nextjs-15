@@ -128,6 +128,10 @@ export default function UserButtonClient() {
           className="flex h-[32px] w-fit items-center justify-center gap-2 rounded-md border border-(--input) p-3 select-none"
         >
           <svg
+            onClick={() => {
+              console.log("Use Search");
+              setOpenSearch(true);
+            }}
             className="size-4.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
