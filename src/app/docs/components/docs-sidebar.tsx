@@ -43,7 +43,7 @@ export function DocsSidebar({
                           <SidebarMenuButton
                             asChild
                             isActive={item.url === pathname}
-                            className="data-[active=true]:border-input 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
+                            className="data-[active=true]:border-input hover:bg-input 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:bg-white dark:data-[active=true]:bg-black"
                           >
                             <Link href={item.url}>{item.name}</Link>
                           </SidebarMenuButton>
