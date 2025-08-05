@@ -10,17 +10,6 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       {...docsOptions}
-      nav={{
-        component: (
-          <div>
-            {" "}
-            <NavigationMobile className="xl:hidden">
-              {/* Add children here if needed */}
-              <></>
-            </NavigationMobile>
-          </div>
-        ),
-      }}
       sidebar={{
         enabled: true,
         component: (
