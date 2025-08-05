@@ -114,10 +114,6 @@ export default function RootLayout({
                   Navigation children content, or empty fragment if not needed
                   <></>
                 </Navigation>
-                <NavigationMobile className="xl:hidden">
-                  {/* Add children here if needed */}
-                  <></>
-                </NavigationMobile>
                 <ViewTransition>{children}</ViewTransition>
               </RootProvider>
               <Footer />
