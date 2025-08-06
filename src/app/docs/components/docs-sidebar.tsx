@@ -43,10 +43,13 @@ export function DocsSidebar({
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
         >
           {tree.children.map((item) =>
-            item.name === "Library Management" ||
-            "Settings Customization" ||
-            "Advanced Usage" ||
-            "Troubleshooting" ? (
+            typeof item.name === "string" &&
+            [
+              "Library Management",
+              "Settings Customization",
+              "Advanced Usage",
+              "Troubleshooting",
+            ].includes(item.name) ? (
               <SidebarGroup key={item.$id}>
                 <SidebarMenu>
                   <Collapsible defaultOpen className="group/collapsible">
