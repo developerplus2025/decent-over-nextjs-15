@@ -65,7 +65,7 @@ export function DocsSidebar({
                       </CollapsibleTrigger>
                       <CollapsibleContent className="">
                         {item.type === "folder" && (
-                          <SidebarMenuSub className="gap-0.5">
+                          <SidebarMenuSub className="gap-0.5 border-[#404040]">
                             {item.children.map((item) => {
                               return (
                                 item.type === "page" && (
