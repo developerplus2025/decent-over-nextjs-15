@@ -41,7 +41,7 @@ export default function RootLayout({
       <html
         suppressHydrationWarning
         lang={"en"}
-        className={cn("custom_command_scroll dark font-sans", fontVariables)}
+        className={cn("styled-scrollbar dark font-sans", fontVariables)}
         style={{ colorScheme: "dark" }}
       >
         <head>
