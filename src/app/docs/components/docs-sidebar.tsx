@@ -46,13 +46,16 @@ export function DocsSidebar({
               <SidebarMenu>
                 <Collapsible defaultOpen className="group/collapsible">
                   <SidebarMenuItem>
-                    <CollapsibleTrigger asChild>
+                    <CollapsibleTrigger
+                      className="hover:bg-[#1b1b1b] dark:data-[active=true]:hover:bg-[#1b1b1b]"
+                      asChild
+                    >
                       <SidebarMenuButton>
                         {item.name}
                         <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
-                    <CollapsibleContent className="hover:bg-[#1b1b1b] dark:data-[active=true]:hover:bg-[#1b1b1b]">
+                    <CollapsibleContent className="">
                       {item.type === "folder" && (
                         <SidebarMenuSub className="gap-0.5">
                           {item.children.map((item) => {

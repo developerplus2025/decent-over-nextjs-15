@@ -35,21 +35,18 @@ export default function BlurCollapsible() {
           </Button>
         </CollapsibleTrigger>
       </div>
-
       <AnimatePresence>
         {open && (
-          <CollapsibleContent className="flex flex-col gap-2" forceMount>
+          <CollapsibleContent asChild forceMount>
             <motion.div
+              key="collapsible-content"
+              data-slot="collapsible-content"
               layout
-              key="blur-content"
-              initial={false}
-              animate={
-                open
-                  ? { opacity: 1, height: "auto", overflow: "hidden" }
-                  : { opacity: 0, height: 0, overflow: "hidden" }
-              }
-              transition={{ type: "spring", stiffness: 150, damping: 17 }}
-              className="rounded-md border px-4 py-2 font-mono text-sm"
+              initial={{ opacity: 0, height: 0, overflow: "hidden" }}
+              animate={{ opacity: 1, height: "auto", overflow: "hidden" }}
+              exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+              transition={{ type: "spring", stiffness: 150, damping: 22 }}
+              className="flex flex-col gap-2"
             >
               <div className="rounded-md border px-4 py-3 font-mono text-sm">
                 @radix-ui/colors
