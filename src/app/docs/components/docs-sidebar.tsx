@@ -17,12 +17,12 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import { div } from "motion/react-client";
+import { ChevronRight } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { ChevronRight } from "lucide-react";
+} from "@/components/animate-ui/radix/collapsible";
 
 export function DocsSidebar({
   tree,
