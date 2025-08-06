@@ -8,5 +8,9 @@ export default function ResourcesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return (
+    <section className="flex h-[calc(100vh-75.6px)] flex-col items-center justify-center">
+      {children}
+    </section>
+  );
 }
