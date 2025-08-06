@@ -79,10 +79,12 @@ export function DocsSidebar({
             </SidebarGroup>
           ) : (
             <SidebarGroup key={item.$id}>
-              <SidebarGroupLabel className="">{item.name}</SidebarGroupLabel>
+              <SidebarGroupLabel className="font-sm text-white">
+                {item.name}
+              </SidebarGroupLabel>
               <ul className="flex flex-col gap-2 text-sm">
                 {item.type === "folder" && (
-                  <SidebarMenuSub className="border-input gap-0.5">
+                  <SidebarMenuSub className="gap-0.5 border-[#404040]">
                     {item.children.map((item) => {
                       return (
                         item.type === "page" && (
