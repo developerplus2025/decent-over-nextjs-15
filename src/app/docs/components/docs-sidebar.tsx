@@ -22,6 +22,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { ChevronRight } from "lucide-react";
 
 export function DocsSidebar({
   tree,
@@ -46,7 +47,10 @@ export function DocsSidebar({
                 <Collapsible defaultOpen className="group/collapsible">
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton>{item.name}</SidebarMenuButton>
+                      <SidebarMenuButton>
+                        {item.name}
+                        <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                      </SidebarMenuButton>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
                       {item.type === "folder" && (
@@ -75,10 +79,12 @@ export function DocsSidebar({
             </SidebarGroup>
           ) : (
             <SidebarGroup key={item.$id}>
-              <p className="text-sm text-[#a1a1a1]">{item.name}</p>
+              <SidebarGroupLabel className="text-muted-foreground font-medium">
+                {item.name}
+              </SidebarGroupLabel>
               <ul className="flex flex-col gap-2 text-sm">
                 {item.type === "folder" && (
-                  <SidebarMenuSub className="gap-0.5">
+                  <SidebarMenuSub className="border-input gap-0.5">
                     {item.children.map((item) => {
                       return (
                         item.type === "page" && (
