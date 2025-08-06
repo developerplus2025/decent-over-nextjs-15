@@ -55,7 +55,7 @@ export function DocsSidebar({
                   <Collapsible defaultOpen className="group/collapsible">
                     <SidebarMenuItem>
                       <CollapsibleTrigger
-                        className="hover:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
+                        className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                         asChild
                       >
                         <SidebarMenuButton>
