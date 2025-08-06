@@ -27,13 +27,14 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
-      <SidebarContent className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]">
+      <SidebarContent
+        style={{ scrollbarWidth: "none" }}
+        className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
+      >
         {tree.children.map((item) => (
           <SidebarGroup key={item.$id}>
-            <SidebarGroupLabel className="text-muted-foreground font-medium">
-              {item.name}
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
+            <p className="text-sm text-[#a1a1a1]">{item.name}</p>
+            <ul className="flex flex-col gap-2 text-sm">
               {item.type === "folder" && (
                 <SidebarMenu className="gap-0.5">
                   {item.children.map((item) => {
@@ -53,7 +54,7 @@ export function DocsSidebar({
                   })}
                 </SidebarMenu>
               )}
-            </SidebarGroupContent>
+            </ul>
           </SidebarGroup>
         ))}
       </SidebarContent>
