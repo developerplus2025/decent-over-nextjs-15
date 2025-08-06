@@ -52,7 +52,7 @@ export function DocsSidebar({
                         <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
-                    <CollapsibleContent>
+                    <CollapsibleContent className="hover:bg-[#1b1b1b] dark:data-[active=true]:hover:bg-[#1b1b1b]">
                       {item.type === "folder" && (
                         <SidebarMenuSub className="gap-0.5">
                           {item.children.map((item) => {
@@ -79,7 +79,7 @@ export function DocsSidebar({
             </SidebarGroup>
           ) : (
             <SidebarGroup key={item.$id}>
-              <SidebarGroupLabel className="font-sm text-white">
+              <SidebarGroupLabel className="text-sm dark:text-white">
                 {item.name}
               </SidebarGroupLabel>
               <ul className="flex flex-col gap-2 text-sm">
@@ -92,7 +92,7 @@ export function DocsSidebar({
                             <SidebarMenuButton
                               asChild
                               isActive={item.url === pathname}
-                              className="3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                              className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
                             >
                               <Link href={item.url}>{item.name}</Link>
                             </SidebarMenuButton>
