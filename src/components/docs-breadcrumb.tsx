@@ -14,6 +14,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
 
   return (
     <div className="text-fd-muted-foreground -mb-3 flex flex-row items-center gap-1 text-sm font-medium">
+      <span className="truncate">Docs</span>
       {items.map((item, i) => (
         <Fragment key={i}>
           {i !== 0 && (
