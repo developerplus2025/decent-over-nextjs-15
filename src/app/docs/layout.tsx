@@ -11,7 +11,6 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout
       {...docsOptions}
       sidebar={{
-        enabled: true,
         tabs: [
           {
             title: "Docs",
@@ -24,6 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             url: "/docs/api-reference",
           },
         ],
+
         component: (
           <div
             className={cn(
