@@ -10,6 +10,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -24,7 +25,10 @@ import {
   CollapsibleTrigger,
 } from "@/components/animate-ui/radix/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
+import { VersionSwitcher } from "@/components/version-switcher";
+const data = {
+  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
+};
 export function DocsSidebar({
   tree,
   ...props
@@ -37,6 +41,12 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
+      <SidebarHeader>
+        <VersionSwitcher
+          versions={data.versions}
+          defaultVersion={data.versions[0]}
+        />
+      </SidebarHeader>
       <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
         <SidebarContent
           style={{ scrollbarWidth: "none" }}
