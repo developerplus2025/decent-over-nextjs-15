@@ -29,12 +29,14 @@ import { VersionSwitcher } from "@/components/version-switcher";
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
 };
+const collapsibleSections = ["docs", "api-reference"];
+
 export function DocsSidebar({
   tree,
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
-
+  console.log(tree.children);
   return (
     <Sidebar
       className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
