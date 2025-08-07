@@ -57,7 +57,7 @@ export function VersionSwitcher({
                   {
                     items.find(
                       (item) => item.description === selectedGuidedMode,
-                    )?.title
+                    )?.description
                   }
                 </span>
               </div>
