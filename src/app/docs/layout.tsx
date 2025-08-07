@@ -1,5 +1,5 @@
 import { source } from "@/lib/source";
-import { DocsSidebar } from "./components/docs-side-bar";
+import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { docsOptions } from "../layout.config";
