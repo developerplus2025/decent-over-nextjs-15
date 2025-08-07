@@ -12,6 +12,18 @@ export default function Layout({ children }: { children: ReactNode }) {
       {...docsOptions}
       sidebar={{
         enabled: true,
+        tabs: [
+          {
+            title: "Docs",
+            description: "The docs for SonixLab",
+            url: "/docs/",
+          },
+          {
+            title: "API reference",
+            description: "The guided for Developer",
+            url: "/docs/api-reference",
+          },
+        ],
         component: (
           <div
             className={cn(
