@@ -15,6 +15,7 @@ export default function Footer() {
   const isSignIn = path === "/signin";
   const isDocs = path === "/docs";
   const isDesign = path === "/design";
+  const isVideo = path === "/video";
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     const promise = () =>
@@ -33,7 +34,7 @@ export default function Footer() {
   };
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn || isDocs || isDesign || path.startsWith("/docs") ? "webfilm-class" : ""} border-t py-4`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn || isDocs || isDesign || isVideo || path.startsWith("/docs") ? "webfilm-class" : ""} border-t py-4`}
     >
       <div className="">
         <div className="mb-10 grid grid-cols-1 gap-8 px-4 md:grid-cols-5">
