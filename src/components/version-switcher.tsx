@@ -52,7 +52,14 @@ export function VersionSwitcher({
                       ?.title
                   }
                 </span>
-                <span className="">{selectedGuidedMode}</span>
+                <span className="">
+                  {" "}
+                  {
+                    items.find(
+                      (item) => item.description === selectedGuidedMode,
+                    )?.title
+                  }
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
@@ -66,6 +73,7 @@ export function VersionSwitcher({
                 key={version.id}
                 onSelect={() => setSelectedGuidedMode(version.title)}
               >
+                {version.description}
                 {version.description === selectedGuidedMode && (
                   <Check className="ml-auto" />
                 )}
