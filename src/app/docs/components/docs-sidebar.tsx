@@ -27,7 +27,18 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { VersionSwitcher } from "@/components/version-switcher";
 const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
+  mode: [
+    {
+      id: 1,
+      title: "Docs",
+      description: "The Guided For User",
+    },
+    {
+      id: 2,
+      title: "API Reference",
+      description: "The Guided For Developer",
+    },
+  ],
 };
 const collapsibleSections = ["docs", "api-reference"];
 
@@ -44,10 +55,7 @@ export function DocsSidebar({
       {...props}
     >
       <SidebarHeader>
-        <VersionSwitcher
-          versions={data.versions}
-          defaultVersion={data.versions[0]}
-        />
+        <VersionSwitcher ModeGuided={data.mode} defaultModeGuided={"Docs"} />
       </SidebarHeader>
       <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
         <SidebarContent
