@@ -1,12 +1,3 @@
 {
-  "root": true,
-  "pages": [
-    "(root)",
-    "playback-features",
-    "audio-effects",
-    "library-management",
-    "settings-customization",
-    "advanced-usage",
-    "troubleshooting"
-  ]
+  "pages": ["docs", "api-reference"]
 }
