@@ -78,7 +78,7 @@ export function DocsSidebar({
                       <CollapsibleContent className="">
                         {item.type === "folder" && (
                           <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                            {item.children.children.map((item) => {
+                            {item.children.map((item) => {
                               return (
                                 item.type === "page" && (
                                   <SidebarMenuItem key={item.url}>
