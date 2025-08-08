@@ -16,6 +16,7 @@ import {
 
 type ModeItem = {
   id: number;
+  icon: React.JSX.Element;
   name: string;
   title: string;
   description: string;
@@ -44,7 +45,7 @@ export function VersionSwitcher({
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="border-input w-[15rem] focus-visible:ring-0 active:bg-black"
+            className="border-input w-[15rem] border focus-visible:ring-0 active:bg-black"
             asChild
           >
             <SidebarMenuButton
@@ -52,7 +53,7 @@ export function VersionSwitcher({
               className="data-[state=open]:text-sidebar-accent-foreground hover:bg-black data-[state=open]:bg-[#1b1b1b]"
             >
               <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border border-[#404040]">
-                <GalleryVerticalEnd className="size-4" />
+                {ModeGuided[selectedGuidedMode].icon}
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
                 <span className="font-medium">
