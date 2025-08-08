@@ -40,7 +40,7 @@ export function VersionSwitcher({
   const items = Object.entries(ModeGuided); // [['docs', {...}], ['api', {...}]]
 
   return (
-    <SidebarMenu>
+    <SidebarMenu className="pl-[1.5rem]">
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger
@@ -58,7 +58,9 @@ export function VersionSwitcher({
                 <span className="font-medium">
                   {ModeGuided[selectedGuidedMode].title}
                 </span>
-                <span>{ModeGuided[selectedGuidedMode].description}</span>
+                <span className="text-xs">
+                  {ModeGuided[selectedGuidedMode].description}
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
