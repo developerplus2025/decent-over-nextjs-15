@@ -30,11 +30,13 @@ const data = {
   mode: {
     docs: {
       id: 1,
+      name: "docs",
       title: "Docs",
       description: "The Guided For User",
     },
     api: {
       id: 2,
+      name: "api",
       title: "API Reference",
       description: "The Guided For Developer",
     },
@@ -55,7 +57,10 @@ export function DocsSidebar({
       {...props}
     >
       <SidebarHeader>
-        <VersionSwitcher ModeGuided={data.mode} defaultModeGuided={"docs"} />
+        <VersionSwitcher
+          ModeGuided={data.mode}
+          defaultModeGuided={data.mode.docs.name}
+        />
       </SidebarHeader>
       <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
         <SidebarContent

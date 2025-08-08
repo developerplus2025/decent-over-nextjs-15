@@ -16,6 +16,7 @@ import {
 
 type ModeItem = {
   id: number;
+  name: string;
   title: string;
   description: string;
 };
@@ -30,10 +31,11 @@ export function VersionSwitcher({
   defaultModeGuided,
 }: {
   ModeGuided: ModeGuided;
-  defaultModeGuided: keyof ModeGuided; // 'docs' hoặc 'api'
+  defaultModeGuided: ModeGuided[keyof ModeGuided]["name"]; // 'docs' hoặc 'api'
 }) {
-  const [selectedGuidedMode, setSelectedGuidedMode] =
-    React.useState<keyof ModeGuided>(defaultModeGuided);
+  const [selectedGuidedMode, setSelectedGuidedMode] = React.useState<
+    keyof ModeGuided
+  >(defaultModeGuided as keyof ModeGuided);
 
   const items = Object.entries(ModeGuided); // [['docs', {...}], ['api', {...}]]
 
