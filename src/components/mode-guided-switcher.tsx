@@ -1,7 +1,9 @@
+
+
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,23 +16,31 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-type VersionGuidedItem = {
+type ModeItem = {
   id: number;
-  name: string;
-  version: string;
   icon: React.JSX.Element;
+  name: string;
+  title: string;
+  description: string;
 };
 
-type Props = {
-  VersionGuided: VersionGuidedItem[];
-  defaultModeGuided: number; // id của version mặc định
+type ModeGuided = {
+  docs: ModeItem;
+  api: ModeItem;
 };
 
-export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
-  const [selectedId, setSelectedId] = React.useState<number>(defaultModeGuided);
+export function ModeGuidedSwitcher({
+  ModeGuided,
+  defaultModeGuided,
+}: {
+  ModeGuided: ModeGuided;
+  defaultModeGuided: ModeGuided[keyof ModeGuided]["name"]; // 'docs' hoặc 'api'
+}) {
+  const [selectedGuidedMode, setSelectedGuidedMode] = React.useState<
+    keyof ModeGuided
+  >(defaultModeGuided as keyof ModeGuided);
 
-  // tìm object đang được chọn
-  const selectedItem = VersionGuided.find((item) => item.id === selectedId);
+  const items = Object.entries(ModeGuided); // [['docs', {...}], ['api', {...}]]
 
   return (
     <SidebarMenu className="pl-[1.5rem]">
@@ -45,29 +55,30 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
               className="data-[state=open]:text-sidebar-accent-foreground hover:bg-black data-[state=open]:bg-[#1b1b1b]"
             >
               <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border border-[#404040]">
-                {selectedItem?.icon}
+                {ModeGuided[selectedGuidedMode].icon}
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-medium">{selectedItem?.name}</span>
-                <span className="font-medium">{selectedItem?.version}</span>
+                <span className="font-medium">
+                  {ModeGuided[selectedGuidedMode].title}
+                </span>
+                <span className="text-xs">
+                  {ModeGuided[selectedGuidedMode].description}
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width)"
             align="start"
           >
-            {VersionGuided.map((item) => (
+            {items.map(([key, value]) => (
               <DropdownMenuItem
-                key={item.id}
-                onSelect={() => setSelectedId(item.id)}
+                key={key}
+                onSelect={() => setSelectedGuidedMode(key as keyof ModeGuided)}
               >
-                {item.name}
-                {item.version}
-
-                {item.id === selectedId && <Check className="ml-auto" />}
+                {value.title}
+                {key === selectedGuidedMode && <Check className="ml-auto" />}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
