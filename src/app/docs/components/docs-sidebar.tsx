@@ -62,7 +62,7 @@ export function DocsSidebar({
           defaultModeGuided={data.mode.docs.name}
         />
       </SidebarHeader>
-      <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
+      <ScrollArea className="h-[calc(100svh-10rem-var(--footer-height))]">
         <SidebarContent className="no-scrollbar px-2 pb-0 pl-[1.5rem]">
           {tree.children.map((item) =>
             typeof item.name === "string" &&
