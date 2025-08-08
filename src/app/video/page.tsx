@@ -26,18 +26,18 @@ const items = [
   },
   {
     id: 6,
-    link: "https://drive.google.com/file/d/1Igv3t5hzs4RkGpi_btn_6SllN-XTCTSH/preview",
+    link: "https://drive.google.com/file/d/1UJWvoM6FRj88350IEz_FnZMTc0IJzO5-/preview",
   },
 ];
 export default function VideoPage() {
   return (
-    <div className="border-input flex h-[30rem] w-[70rem] rounded-xl border">
+    <div className="border-input flex h-[25rem] w-[70rem] rounded-xl border">
       <div
-        className="styled-scrollbar h-full w-[90rem]"
-        style={{ scrollbarWidth: "thin" }}
+        className="styled-scrollbar h-full w-[90rem] overflow-y-auto"
+        style={{ scrollbarWidth: "none" }}
       >
         {items.map((items) => (
-          <iframe src={items.link} key={items.id}></iframe>
+          <iframe src={items.link} id={`"${items.id}"`} key={items.id}></iframe>
         ))}
       </div>
       <div className="divide-input grid h-full w-full grid-cols-2 border border-l">
