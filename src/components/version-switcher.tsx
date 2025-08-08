@@ -44,7 +44,7 @@ export function VersionSwitcher({
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="focus-visible:ring-0 active:bg-black"
+            className="w-[15rem] focus-visible:ring-0 active:bg-black"
             asChild
           >
             <SidebarMenuButton
