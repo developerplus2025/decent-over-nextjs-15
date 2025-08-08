@@ -84,13 +84,19 @@ const version = [
     version: "6.7.8",
     icon: (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
+        data-testid="geist-icon"
         height="16"
-        fill="#ffffff"
-        viewBox="0 0 256 256"
+        stroke-linejoin="round"
+        viewBox="0 0 16 16"
+        width="16"
+        style={{ color: "currentcolor" }}
       >
-        <path d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1.5 3.5H14.5V5.5H13.5H2.5H1.5V3.5ZM1 7H0V5.5V3.5V2H1.5H14.5H16V3.5V5.5V7H15V12.5C15 13.8807 13.8807 15 12.5 15H3.5C2.11929 15 1 13.8807 1 12.5V7ZM2.5 7V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H12.5C13.0523 13.5 13.5 13.0523 13.5 12.5V7H2.5ZM6 9.5H6.75H9.25H10V11H9.25H6.75H6V9.5Z"
+          fill="currentColor"
+        ></path>
       </svg>
     ),
   },
@@ -100,13 +106,19 @@ const version = [
     version: "5.4.2",
     icon: (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
+        data-testid="geist-icon"
         height="16"
-        fill="#ffffff"
-        viewBox="0 0 256 256"
+        stroke-linejoin="round"
+        viewBox="0 0 16 16"
+        width="16"
+        style={{ color: "currentcolor" }}
       >
-        <path d="M224,48H32A16,16,0,0,0,16,64V88a16,16,0,0,0,16,16v88a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V104a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM208,192H48V104H208ZM224,88H32V64H224V88ZM96,136a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,136Z"></path>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1.5 3.5H14.5V5.5H13.5H2.5H1.5V3.5ZM1 7H0V5.5V3.5V2H1.5H14.5H16V3.5V5.5V7H15V12.5C15 13.8807 13.8807 15 12.5 15H3.5C2.11929 15 1 13.8807 1 12.5V7ZM2.5 7V12.5C2.5 13.0523 2.94772 13.5 3.5 13.5H12.5C13.0523 13.5 13.5 13.0523 13.5 12.5V7H2.5ZM6 9.5H6.75H9.25H10V11H9.25H6.75H6V9.5Z"
+          fill="currentColor"
+        ></path>
       </svg>
     ),
   },

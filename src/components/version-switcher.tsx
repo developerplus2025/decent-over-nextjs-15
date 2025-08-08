@@ -63,7 +63,7 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
           >
             {VersionGuided.map((item) => (
               <DropdownMenuItem
-                className="gap-[1rem] hover:bg-[#1b1b1b]"
+                className="gap-[1rem] hover:!bg-[#1b1b1b]"
                 key={item.id}
                 onSelect={() => setSelectedId(item.id)}
               >
