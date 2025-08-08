@@ -74,11 +74,12 @@ export function ModeGuidedSwitcher({
           >
             {items.map(([key, value]) => (
               <DropdownMenuItem
+                className="gap-[1rem] hover:bg-[#1b1b1b]"
                 key={key}
                 onSelect={() => setSelectedGuidedMode(key as keyof ModeGuided)}
               >
                 {value.icon}
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col text-xs">
                   <span> {value.title}</span>
                   <span> {value.description}</span>
                 </div>

@@ -48,8 +48,10 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
                 {selectedItem?.icon}
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-medium">{selectedItem?.name}</span>
-                <span className="font-medium">{selectedItem?.version}</span>
+                <span className="font-medium">Using {selectedItem?.name}</span>
+                <span className="text-xs text-[#a1a1a1]">
+                  {selectedItem?.version}
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
@@ -61,13 +63,14 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
           >
             {VersionGuided.map((item) => (
               <DropdownMenuItem
+                className="gap-[1rem] hover:bg-[#1b1b1b]"
                 key={item.id}
                 onSelect={() => setSelectedId(item.id)}
               >
                 {item.icon}
-                <div className="flex flex-col gap-1">
-                  {item.name}
-                  {item.version}
+                <div className="flex flex-col text-xs">
+                  <span>{item.name}</span>
+                  <span>{item.version}</span>
                 </div>
 
                 {item.id === selectedId && <Check className="ml-auto" />}
