@@ -74,7 +74,7 @@ export function ModeGuidedSwitcher({
           >
             {items.map(([key, value]) => (
               <DropdownMenuItem
-                className="gap-[1rem] hover:bg-[#1b1b1b]"
+                className="gap-[1rem] hover:!bg-[#1b1b1b]"
                 key={key}
                 onSelect={() => setSelectedGuidedMode(key as keyof ModeGuided)}
               >
