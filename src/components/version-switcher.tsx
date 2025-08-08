@@ -64,8 +64,11 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
                 key={item.id}
                 onSelect={() => setSelectedId(item.id)}
               >
-                {item.name}
-                {item.version}
+                {item.icon}
+                <div className="flex flex-col gap-1">
+                  {item.name}
+                  {item.version}
+                </div>
 
                 {item.id === selectedId && <Check className="ml-auto" />}
               </DropdownMenuItem>
