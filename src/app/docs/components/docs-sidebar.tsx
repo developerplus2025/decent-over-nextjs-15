@@ -63,10 +63,7 @@ export function DocsSidebar({
         />
       </SidebarHeader>
       <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
-        <SidebarContent
-          style={{ scrollbarWidth: "none" }}
-          className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
-        >
+        <SidebarContent className="no-scrollbar px-2 pb-0 pl-[1.5rem]">
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
