@@ -56,7 +56,11 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
-      <SidebarHeader>
+      <SidebarHeader className="flex flex-col gap-4">
+        <VersionSwitcher
+          ModeGuided={data.mode}
+          defaultModeGuided={data.mode.docs.name}
+        />
         <VersionSwitcher
           ModeGuided={data.mode}
           defaultModeGuided={data.mode.docs.name}

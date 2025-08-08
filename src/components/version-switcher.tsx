@@ -44,12 +44,12 @@ export function VersionSwitcher({
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="w-[15rem] focus-visible:ring-0 active:bg-black"
+            className="border-input w-[15rem] focus-visible:ring-0 active:bg-black"
             asChild
           >
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="data-[state=open]:text-sidebar-accent-foreground hover:bg-black data-[state=open]:bg-[#1b1b1b]"
             >
               <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border border-[#404040]">
                 <GalleryVerticalEnd className="size-4" />
