@@ -37,7 +37,12 @@ export default function VideoPage() {
         style={{ scrollbarWidth: "none" }}
       >
         {items.map((items) => (
-          <iframe src={items.link} id={`"${items.id}"`} key={items.id}></iframe>
+          <iframe
+            className="h-full w-full"
+            src={items.link}
+            id={`"${items.id}"`}
+            key={items.id}
+          ></iframe>
         ))}
       </div>
       <div className="divide-input grid h-full w-full grid-cols-2 border border-l">
