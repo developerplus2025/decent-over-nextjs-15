@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,22 +13,30 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-type ModeGuided = {
+
+type ModeItem = {
   id: number;
   title: string;
   description: string;
+};
+
+type ModeGuided = {
+  docs: ModeItem;
+  api: ModeItem;
 };
 
 export function VersionSwitcher({
   ModeGuided,
   defaultModeGuided,
 }: {
-  ModeGuided: ModeGuided[];
-  defaultModeGuided: string;
+  ModeGuided: ModeGuided;
+  defaultModeGuided: keyof ModeGuided; // 'docs' hoặc 'api'
 }) {
   const [selectedGuidedMode, setSelectedGuidedMode] =
-    React.useState(defaultModeGuided);
-  const items = ModeGuided;
+    React.useState<keyof ModeGuided>(defaultModeGuided);
+
+  const items = Object.entries(ModeGuided); // [['docs', {...}], ['api', {...}]]
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -47,19 +54,9 @@ export function VersionSwitcher({
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
                 <span className="font-medium">
-                  {
-                    items.find((item) => item.title === selectedGuidedMode)
-                      ?.title
-                  }
+                  {ModeGuided[selectedGuidedMode].title}
                 </span>
-                <span className="">
-                  {" "}
-                  {
-                    items.find(
-                      (item) => item.description === selectedGuidedMode,
-                    )?.description
-                  }
-                </span>
+                <span>{ModeGuided[selectedGuidedMode].description}</span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
@@ -68,15 +65,13 @@ export function VersionSwitcher({
             className="w-(--radix-dropdown-menu-trigger-width)"
             align="start"
           >
-            {ModeGuided.map((version) => (
+            {items.map(([key, value]) => (
               <DropdownMenuItem
-                key={version.id}
-                onSelect={() => setSelectedGuidedMode(version.title)}
+                key={key}
+                onSelect={() => setSelectedGuidedMode(key as keyof ModeGuided)}
               >
-                {version.description}
-                {version.description === selectedGuidedMode && (
-                  <Check className="ml-auto" />
-                )}
+                {value.title}
+                {key === selectedGuidedMode && <Check className="ml-auto" />}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
