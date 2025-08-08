@@ -134,7 +134,6 @@ export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
-  console.log(tree.children);
   return (
     <Sidebar
       className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"

@@ -44,7 +44,7 @@ export function VersionSwitcher({ VersionGuided, defaultModeGuided }: Props) {
               size="lg"
               className="data-[state=open]:text-sidebar-accent-foreground hover:bg-black data-[state=open]:bg-[#1b1b1b]"
             >
-              <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border border-[#404040]">
+              <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg border border-transparent">
                 {selectedItem?.icon}
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
