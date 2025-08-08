@@ -55,10 +55,17 @@ export default function Navigation({
 	const isCreative = pathname === "/creative";
 	const isGeneration = pathname === "/generation";
 	const isDesign = pathname === "/design";
-
+const isDocsGlss = pathname === "/docs/glss";
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	
+	useEffect(() => {
+    if (isDocsGlss) {
+      document.body.classList.add("overflow-y-hidden");
+    }
+    return () => {
+      document.body.classList.remove("overflow-y-hidden");
+    };
+  });
 	useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(

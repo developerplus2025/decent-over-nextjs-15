@@ -38,7 +38,7 @@ export default function VideoPage() {
       >
         {items.map((items) => (
           <iframe
-            className="h-full w-full"
+            className="h-full w-full rounded-tl-xl rounded-bl-xl"
             src={items.link}
             id={`"${items.id}"`}
             key={items.id}
