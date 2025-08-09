@@ -1,8 +1,10 @@
+"use client";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
 const items = [
   {
@@ -43,6 +45,22 @@ const items = [
   },
 ];
 export default function VideoPage() {
+  const pathname = usePathname();
+  const isDocsGlss = pathname === "/docs/glss";
+
+  useEffect(() => {
+    if (isDocsGlss) {
+      const nddocs = document.getElementById("nd-toc");
+      if (nddocs) {
+        nddocs.style.display = "none";
+      }
+
+      document.body.style.overflowY = "hidden";
+    }
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  });
   return (
     <div className="border-input flex h-[25rem] w-[69rem] gap-[2rem] rounded-xl border">
       <div

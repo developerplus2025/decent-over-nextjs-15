@@ -23,6 +23,7 @@ import {
 } from "fumadocs-ui/page";
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
+import { InputOTPForm } from "@/components/input-otp-form";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -148,7 +149,7 @@ export default async function Page(props: {
           <div className="flex min-w-0 flex-col">
             <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-                <MDX components={{ mdxComponents, VideoPage }} />
+                <MDX components={{ mdxComponents, VideoPage, InputOTPForm }} />
               </div>
             </div>
           </div>
