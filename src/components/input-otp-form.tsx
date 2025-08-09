@@ -2,8 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import { z } from "zod";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +20,6 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import { useState } from "react";
 import VideoPage from "@/app/video/page";
 
 const FormSchema = z.object({
@@ -30,7 +29,8 @@ const FormSchema = z.object({
 });
 
 export function InputOTPForm() {
-    const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -39,17 +39,19 @@ export function InputOTPForm() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    if(data.pin == "555444"){
-        setActive(true);
-        return (
-            <VideoPage/>
-        )
+    if (data.pin === "555444") {
+      setActive(true);
     }
   }
 
+  // Nếu active thì hiển thị VideoPage
+  if (active) {
+    return <VideoPage />;
+  }
+
   return (
-    <Form {...form} >
-      <form onSubmit={form.handleSubmit(onSubmit)} className={`w-2/3 ${active ? "hidden" : ""} space-y-6`}>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
           name="pin"
@@ -75,7 +77,6 @@ export function InputOTPForm() {
             </FormItem>
           )}
         />
-
         <Button type="submit">Submit</Button>
       </form>
     </Form>
