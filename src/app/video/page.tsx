@@ -89,11 +89,7 @@ export default function VideoPage() {
       >
         {items.map((items) => (
           <div key={items.id}>
-            <Link
-              key={items.id}
-              onClick={() => handleScroll(items.id)}
-              href={`#${items.id}`}
-            >
+            <div key={items.id} onClick={() => handleScroll(items.id)}>
               {" "}
               <img
                 height={"200"}
@@ -101,7 +97,7 @@ export default function VideoPage() {
                 alt={items.link}
                 src={items.preview}
               ></img>
-            </Link>
+            </div>
           </div>
         ))}
       </div>
