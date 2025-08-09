@@ -60,6 +60,11 @@ const isDocsGlss = pathname === "/docs/glss";
 
 	useEffect(() => {
     if (isDocsGlss) {
+      const nddocs = document.getElementById("nd-toc");
+      if (nddocs) {
+        nddocs.style.display = "none";
+      }
+   
       document.body.style.overflowY = "hidden";
     }
     return () => {

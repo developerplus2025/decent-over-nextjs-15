@@ -31,7 +31,7 @@ const items = [
 ];
 export default function VideoPage() {
   return (
-    <div className="border-input flex h-[25rem] w-[34rem] flex-col rounded-xl border">
+    <div className="border-input flex h-[25rem] w-[34rem] gap-[2rem] rounded-xl border">
       <div
         className="styled-scrollbar h-full w-[34rem] overflow-y-auto"
         style={{ scrollbarWidth: "none" }}
@@ -45,7 +45,7 @@ export default function VideoPage() {
           ></iframe>
         ))}
       </div>
-      <div className="divide-input grid h-full w-full grid-cols-2 border border-l">
+      <div className="divide-input flex h-full w-full flex-col border border-l">
         {items.map((items) => (
           <Link key={items.id} href={`#${items.id}`}></Link>
         ))}
