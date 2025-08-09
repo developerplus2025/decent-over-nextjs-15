@@ -45,46 +45,46 @@ const items = [
   },
 ];
 export default function VideoPage() {
-  const handleScroll = (id: string | number) => {
-    const el = document.getElementById(`${id}`);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+ const handleScroll = (id: number) => {
+   const el = document.getElementById(id.toString());
+   if (el) {
+     el.scrollIntoView({ behavior: "smooth", block: "start" });
+   }
+ };
 
-  return (
-    <div className="border-input flex h-[25rem] w-[69rem] gap-[2rem] rounded-xl border">
-      <div
-        className="styled-scrollbar h-full w-[97rem] overflow-y-auto"
-        style={{ scrollbarWidth: "none" }}
-      >
-        {items.map((items) => (
-          <iframe
-            className="h-full w-full rounded-tl-xl rounded-bl-xl"
-            src={items.link}
-            id={`"${items.id}"`}
-            key={items.id}
-          ></iframe>
-        ))}
-      </div>
-      <div
-        style={{ scrollbarWidth: "none" }}
-        className="divide-input styled-scrollbar flex h-full w-full flex-col items-center overflow-y-auto border border-l p-4"
-      >
-        {items.map((items) => (
-          <div key={items.id}>
-            <div key={items.id} onClick={() => handleScroll(items.id)}>
-              {" "}
-              <img
-                height={"200"}
-                width={"200"}
-                alt={items.link}
-                src={items.preview}
-              ></img>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+ return (
+   <div className="border-input flex h-[25rem] w-[69rem] gap-[2rem] rounded-xl border">
+     <div
+       className="styled-scrollbar h-full w-[97rem] overflow-y-auto"
+       style={{ scrollbarWidth: "none" }}
+     >
+       {items.map((items) => (
+         <iframe
+           className="h-full w-full rounded-tl-xl rounded-bl-xl"
+           src={items.link}
+           id={items.id.toString()}
+           key={items.id}
+         ></iframe>
+       ))}
+     </div>
+     <div
+       style={{ scrollbarWidth: "none" }}
+       className="divide-input styled-scrollbar flex h-full w-full flex-col items-center overflow-y-auto border border-l p-4"
+     >
+       {items.map((items) => (
+         <div key={items.id}>
+           <div key={items.id} onClick={() => handleScroll(items.id)}>
+             {" "}
+             <img
+               height={"200"}
+               width={"200"}
+               alt={items.link}
+               src={items.preview}
+             ></img>
+           </div>
+         </div>
+       ))}
+     </div>
+   </div>
+ );
 }
