@@ -45,22 +45,6 @@ const items = [
   },
 ];
 export default function VideoPage() {
-  const pathname = usePathname();
-  const isDocsGlss = pathname === "/docs/glss";
-
-  useEffect(() => {
-    if (isDocsGlss) {
-      const nddocs = document.getElementById("nd-toc");
-      if (nddocs) {
-        nddocs.style.display = "none";
-      }
-
-      document.body.style.overflowY = "hidden";
-    }
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  });
   const handleScroll = (id: string | number) => {
     const el = document.getElementById(`${id}`);
     if (el) {

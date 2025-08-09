@@ -42,36 +42,23 @@ type NavigationProps = {
 export default function Navigation({
 	className,
 }: NavigationProps): React.ReactElement {
-	const pathname = usePathname();
-	const isWebfilmPath = pathname === "/webfilm";
-	const isWebAppPath = pathname === "/webapp";
-	const isDocsPath = pathname === "/docs";
-	const isAi = pathname === "/ai";
-	const isChatV2 = pathname === "/chat-v2";
-	const isHelp = pathname === "/help";
-	const isDocs = pathname === "/docs";
-	const isGuides = pathname === "/guides";
-	const isSignIn = pathname === "/signin";
-	const isCreative = pathname === "/creative";
-	const isGeneration = pathname === "/generation";
-	const isDesign = pathname === "/design";
-const isDocsGlss = pathname === "/docs/glss";
-	const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isWebfilmPath = pathname === "/webfilm";
+  const isWebAppPath = pathname === "/webapp";
+  const isDocsPath = pathname === "/docs";
+  const isAi = pathname === "/ai";
+  const isChatV2 = pathname === "/chat-v2";
+  const isHelp = pathname === "/help";
+  const isDocs = pathname === "/docs";
+  const isGuides = pathname === "/guides";
+  const isSignIn = pathname === "/signin";
+  const isCreative = pathname === "/creative";
+  const isGeneration = pathname === "/generation";
+  const isDesign = pathname === "/design";
+  const isDocsGlss = pathname === "/docs/glss";
+  const [isScrolled, setIsScrolled] = useState(false);
 
-	useEffect(() => {
-    if (isDocsGlss) {
-      const nddocs = document.getElementById("nd-toc");
-      if (nddocs) {
-        nddocs.style.display = "none";
-      }
-   
-      document.body.style.overflowY = "hidden";
-    }
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  });
-	useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(
         window.scrollY > 60 ||

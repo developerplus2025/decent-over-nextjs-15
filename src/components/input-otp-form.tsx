@@ -21,6 +21,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import VideoPage from "@/app/video/page";
+import { usePathname } from "next/navigation";
 
 const FormSchema = z.object({
   pin: z.string().min(6, {
@@ -37,10 +38,21 @@ export function InputOTPForm() {
       pin: "",
     },
   });
-
+ const pathname = usePathname();
+ const isDocsGlss = pathname === "/docs/glss";
   function onSubmit(data: z.infer<typeof FormSchema>) {
     if (data.pin === "555444") {
       setActive(true);
+       if (isDocsGlss) {
+         const nddocs = document.getElementById("nd-toc");
+         if (nddocs) {
+           nddocs.style.display = "none";
+         }
+
+         document.body.style.overflowY = "hidden";
+       } else {
+         document.body.style.overflowY = "auto";
+       }
     }
   }
 
