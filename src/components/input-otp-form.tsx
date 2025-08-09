@@ -30,7 +30,7 @@ const FormSchema = z.object({
 });
 
 export function InputOTPForm() {
-    const [active ,setActive] = useState(true);
+    const [active, setActive] = useState(false);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -40,6 +40,7 @@ export function InputOTPForm() {
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     if(data.pin == "555444"){
+        setActive(true);
         return (
             <VideoPage/>
         )
