@@ -60,7 +60,7 @@ export default function VideoPage() {
       </div>
       <div
         style={{ scrollbarWidth: "none" }}
-        className="divide-input styled-scrollbar flex h-full w-full flex-col border border-l"
+        className="divide-input styled-scrollbar flex h-full w-full flex-col items-center overflow-y-auto border border-l p-4"
       >
         {items.map((items) => (
           <div key={items.id}>
