@@ -1,30 +1,11 @@
-"use client"
 import { source } from "@/lib/source";
 import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { docsOptions } from "../layout.config";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import NavigationMobile from "@/components/Navigation-Mobile";
-import { usePathname } from "next/navigation";
 export default function Layout({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-  const isDocsGlss = pathname === "/docs/glss";
-
-  useEffect(() => {
-    if (isDocsGlss) {
-      const nddocs = document.getElementById("nd-toc");
-      if (nddocs) {
-        nddocs.style.display = "none";
-      }
-
-      document.body.style.overflowY = "hidden";
-    }
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  });
   return (
     <DocsLayout
       {...docsOptions}
