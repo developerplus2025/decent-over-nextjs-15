@@ -60,10 +60,10 @@ const isDocsGlss = pathname === "/docs/glss";
 
 	useEffect(() => {
     if (isDocsGlss) {
-      document.body.classList.add("overflow-y-hidden");
+      document.body.style.overflowY = "hidden";
     }
     return () => {
-      document.body.classList.remove("overflow-y-hidden");
+      document.body.style.overflowY = "auto";
     };
   });
 	useEffect(() => {

@@ -31,9 +31,9 @@ const items = [
 ];
 export default function VideoPage() {
   return (
-    <div className="border-input flex h-[25rem] w-[70rem] rounded-xl border">
+    <div className="border-input flex h-[25rem] w-[34rem] flex-col rounded-xl border">
       <div
-        className="styled-scrollbar h-full w-[90rem] overflow-y-auto"
+        className="styled-scrollbar h-full w-[34rem] overflow-y-auto"
         style={{ scrollbarWidth: "none" }}
       >
         {items.map((items) => (
