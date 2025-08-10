@@ -191,11 +191,7 @@ export function DocsSidebar({
                               .replace(/\s+/g, "-") === pathname
                           }
                         >
-                          <Link
-                            href={`docs/${String(item.name).toLowerCase().replace(/\s+/g, "-")}`}
-                          >
-                            {item.name}
-                          </Link>
+                          <Link href={""}>{item.name}</Link>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -245,11 +241,7 @@ export function DocsSidebar({
                     pathname
                   }
                 >
-                  <Link
-                    href={`docs/${String(item.name).toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    {item.name}
-                  </Link>
+                  <Link href={""}>{item.name}</Link>
                 </SidebarMenuButton>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (

@@ -29,7 +29,20 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
               {item.name}
             </Link>
           ) : (
-            <span className="truncate">{item.name}</span>
+            <span
+              className={`truncate ${
+                typeof item.name === "string" &&
+                [
+                  "Getting Started",
+                  "Playback Features",
+                  "Audio Effects",
+                ].includes(item.name)
+                  ? "!hidden"
+                  : ""
+              }`}
+            >
+              {item.name}
+            </span>
           )}
         </Fragment>
       ))}
