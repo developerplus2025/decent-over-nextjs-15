@@ -183,8 +183,17 @@ export function DocsSidebar({
                         className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                         asChild
                       >
-                        <SidebarMenuButton>
-                          {item.name}
+                        <SidebarMenuButton
+                          isActive={
+                            item.name.toLowerCase().replace(/\s+/g, "-") ===
+                            pathname
+                          }
+                        >
+                          <Link
+                            href={item.name.toLowerCase().replace(/\s+/g, "-")}
+                          >
+                            {item.name}
+                          </Link>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>

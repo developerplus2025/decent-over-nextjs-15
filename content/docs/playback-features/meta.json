@@ -1,4 +1,4 @@
 {
   "title": "Playback Features",
-  "pages": ["index", "looping-shuffle", "playback-speed"]
+  "pages": ["index", "playlists", "looping-shuffle", "playback-speed"]
 }
