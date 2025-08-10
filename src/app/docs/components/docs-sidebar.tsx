@@ -207,7 +207,9 @@ export function DocsSidebar({
                                 ? String(item.name)
                                     .toLowerCase()
                                     .replace(/\s+/g, "-")
-                                : ""
+                                : String(item.name)
+                                    .toLowerCase()
+                                    .replace(/\s+/g, "-")
                             }
                           >
                             {item.name}
