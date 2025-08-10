@@ -1,56 +1,51 @@
 import os
 import re
 import pyttsx3
-import markdown
-from bs4 import BeautifulSoup
 
-SOURCE_DIR = "content/docs"
-OUTPUT_DIR = "public/audio/markdown"
+# Hàm slugify để chuẩn hóa tên file
+def slugify(text):
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    text = text.strip('-')
+    return text
 
-def mdx_to_text(mdx_content):
-    mdx_content = re.sub(r"<[^>]+>", "", mdx_content)
-    html_content = markdown.markdown(mdx_content)
-    soup = BeautifulSoup(html_content, "html.parser")
-    return soup.get_text(separator=" ")
+# Đường dẫn thư mục MDX
+mdx_root = "content/docs"
+# Thư mục output audio
+output_root = "public/audio/markdown"
 
-def extract_title(mdx_content):
-    match = re.search(r"title:\s*(.+)", mdx_content)
-    if match:
-        title = match.group(1).strip()
-        return title.strip('"').strip("'")
-    return "untitled"
+# Khởi tạo TTS
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)
 
-def slugify_title(title):
-    words = title.split()
-    if len(words) > 2:
-        return "-".join(word.lower() for word in words)
-    return title.lower()
+# Quét tất cả file .mdx trong thư mục
+for root, _, files in os.walk(mdx_root):
+    for file in files:
+        if file.endswith(".mdx"):
+            mdx_path = os.path.join(root, file)
+            
+            # Lấy đường dẫn tương đối để giữ cấu trúc thư mục
+            rel_path = os.path.relpath(mdx_path, mdx_root)
+            rel_dir = os.path.dirname(rel_path)
+            
+            # Đọc nội dung file MDX
+            with open(mdx_path, "r", encoding="utf-8") as f:
+                text = f.read()
+            
+            # Tên file audio chuẩn hóa
+            filename = slugify(os.path.splitext(file)[0]) + ".mp3"
+            audio_dir = os.path.join(output_root, rel_dir)
+            audio_path = os.path.join(audio_dir, filename)
+            
+            # Tạo thư mục nếu chưa có
+            os.makedirs(audio_dir, exist_ok=True)
+            
+            # Chuyển văn bản thành giọng nói và lưu file
+            try:
+                engine.save_to_file(text, audio_path)
+                engine.runAndWait()
+                print(f"✅ Đã tạo: {audio_path}")
+            except Exception as e:
+                print(f"❌ Lỗi khi tạo audio cho {file}: {e}")
 
-def process_mdx_file(file_path, output_path, engine):
-    with open(file_path, "r", encoding="utf-8") as f:
-        mdx_content = f.read()
-
-    title = extract_title(mdx_content)
-    file_name = slugify_title(title) + ".mp3"
-
-    text = mdx_to_text(mdx_content)
-    os.makedirs(output_path, exist_ok=True)
-    audio_path = os.path.join(output_path, file_name)
-
-    engine.save_to_file(text, audio_path)
-    print(f"✅ Đã tạo: {audio_path}")
-
-def main():
-    engine = pyttsx3.init()  # 🔹 Chỉ khởi tạo 1 lần
-    for root, _, files in os.walk(SOURCE_DIR):
-        for file in files:
-            if file.endswith(".mdx"):
-                relative_dir = os.path.relpath(root, SOURCE_DIR)
-                output_path = os.path.join(OUTPUT_DIR, relative_dir)
-                process_mdx_file(os.path.join(root, file), output_path, engine)
-
-    engine.runAndWait()  # 🔹 Chạy tất cả queue 1 lần
-    engine.stop()  # 🔹 Đảm bảo giải phóng bộ nhớ
-
-if __name__ == "__main__":
-    main()
+print("🎯 Hoàn tất tạo audio cho toàn bộ file MDX.")

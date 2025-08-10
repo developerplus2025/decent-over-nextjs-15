@@ -183,17 +183,8 @@ export function DocsSidebar({
                         className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                         asChild
                       >
-                        <SidebarMenuButton
-                          isActive={
-                            item.name.toLowerCase().replace(/\s+/g, "-") ===
-                            pathname
-                          }
-                        >
-                          <Link
-                            href={item.name.toLowerCase().replace(/\s+/g, "-")}
-                          >
-                            {item.name}
-                          </Link>
+                        <SidebarMenuButton>
+                          {item.name}
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -224,9 +215,19 @@ export function DocsSidebar({
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
-                <SidebarGroupLabel className="text-sm dark:text-white">
-                  {item.name}
-                </SidebarGroupLabel>
+                <SidebarMenuButton
+                  isActive={
+                    String(item.name).toLowerCase().replace(/\s+/g, "-") ===
+                    pathname
+                  }
+                >
+                  <Link
+                    href={String(item.name).toLowerCase().replace(/\s+/g, "-")}
+                  >
+                    {item.name}
+                  </Link>
+                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                </SidebarMenuButton>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <SidebarMenuSub className="gap-0.5 border-[#404040]">
