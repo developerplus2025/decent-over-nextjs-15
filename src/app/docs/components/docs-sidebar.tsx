@@ -27,6 +27,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ModeGuidedSwitcher } from "@/components/mode-guided-switcher";
 import { VersionSwitcher } from "@/components/version-switcher";
+import { useState } from "react";
 const data = {
   mode: {
     docs: {
@@ -152,6 +153,13 @@ export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
+  const path = pathname.split("/");
+  const [part, setPart] = useState(1);
+  if (path.length === 2) {
+    setPart(2);
+  } else if (path.length === 3) {
+    setPart(3);
+  }
   return (
     <Sidebar
       className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
@@ -192,9 +200,13 @@ export function DocsSidebar({
                           }
                         >
                           <Link
-                            href={String(item.name)
-                              .toLowerCase()
-                              .replace(/\s+/g, "-")}
+                            href={
+                              part === 2
+                                ? String(item.name)
+                                    .toLowerCase()
+                                    .replace(/\s+/g, "-")
+                                : ""
+                            }
                           >
                             {item.name}
                           </Link>
@@ -212,7 +224,7 @@ export function DocsSidebar({
                                       typeof item.name === "string" &&
                                       [
                                         "Library Management",
-                                        "Settings Customization",
+                                        "Settings & Customization",
                                         "Advanced Usage",
                                         "Troubleshooting",
                                       ].includes(item.name)
@@ -249,7 +261,11 @@ export function DocsSidebar({
                   }
                 >
                   <Link
-                    href={String(item.name).toLowerCase().replace(/\s+/g, "-")}
+                    href={
+                      part === 2
+                        ? String(item.name).toLowerCase().replace(/\s+/g, "-")
+                        : ""
+                    }
                   >
                     {item.name}
                   </Link>
