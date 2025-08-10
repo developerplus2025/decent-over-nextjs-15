@@ -183,8 +183,19 @@ export function DocsSidebar({
                         className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                         asChild
                       >
-                        <SidebarMenuButton>
-                          {item.name}
+                        <SidebarMenuButton
+                          className="hover:bg-transparent dark:hover:bg-black"
+                          isActive={
+                            String(item.name)
+                              .toLowerCase()
+                              .replace(/\s+/g, "-") === pathname
+                          }
+                        >
+                          <Link
+                            href={`docs/${String(item.name).toLowerCase().replace(/\s+/g, "-")}`}
+                          >
+                            {item.name}
+                          </Link>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -194,20 +205,23 @@ export function DocsSidebar({
                             {item.children.map((item) => {
                               return (
                                 item.type === "page" && (
-                                  <SidebarMenuItem key={item.url}>
+                                  <SidebarMenuItem
+                                    className={`${
+                                      typeof item.name === "string" &&
+                                      [
+                                        "Getting Started",
+                                        "Playback Features",
+                                        "Audio Effects",
+                                      ].includes(item.name)
+                                        ? "!hidden"
+                                        : ""
+                                    } `}
+                                    key={item.url}
+                                  >
                                     <SidebarMenuButton
                                       asChild
                                       isActive={item.url === pathname}
-                                      className={`${
-                                        typeof item.name === "string" &&
-                                        [
-                                          "Getting Started",
-                                          "Playback Features",
-                                          "Audio Effects",
-                                        ].includes(item.name)
-                                          ? "!hidden"
-                                          : ""
-                                      } 3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
+                                      className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
                                     >
                                       <Link href={item.url}>{item.name}</Link>
                                     </SidebarMenuButton>
@@ -232,7 +246,7 @@ export function DocsSidebar({
                   }
                 >
                   <Link
-                    href={String(item.name).toLowerCase().replace(/\s+/g, "-")}
+                    href={`docs/${String(item.name).toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {item.name}
                   </Link>
@@ -243,20 +257,23 @@ export function DocsSidebar({
                       {item.children.map((item) => {
                         return (
                           item.type === "page" && (
-                            <SidebarMenuItem key={item.url}>
+                            <SidebarMenuItem
+                              className={`${
+                                typeof item.name === "string" &&
+                                [
+                                  "Getting Started",
+                                  "Playback Features",
+                                  "Audio Effects",
+                                ].includes(item.name)
+                                  ? "!hidden"
+                                  : ""
+                              } `}
+                              key={item.url}
+                            >
                               <SidebarMenuButton
                                 asChild
                                 isActive={item.url === pathname}
-                                className={`${
-                                  typeof item.name === "string" &&
-                                  [
-                                    "Getting Started",
-                                    "Playback Features",
-                                    "Audio Effects",
-                                  ].includes(item.name)
-                                    ? "!hidden"
-                                    : ""
-                                } 3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
+                                className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
                               >
                                 <Link href={item.url}>{item.name}</Link>
                               </SidebarMenuButton>
