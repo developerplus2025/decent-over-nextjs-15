@@ -191,7 +191,13 @@ export function DocsSidebar({
                               .replace(/\s+/g, "-") === pathname
                           }
                         >
-                          <Link href={""}>{item.name}</Link>
+                          <Link
+                            href={String(item.name)
+                              .toLowerCase()
+                              .replace(/\s+/g, "-")}
+                          >
+                            {item.name}
+                          </Link>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
@@ -205,9 +211,10 @@ export function DocsSidebar({
                                     className={`${
                                       typeof item.name === "string" &&
                                       [
-                                        "Getting Started",
-                                        "Playback Features",
-                                        "Audio Effects",
+                                        "Library Management",
+                                        "Settings Customization",
+                                        "Advanced Usage",
+                                        "Troubleshooting",
                                       ].includes(item.name)
                                         ? "!hidden"
                                         : ""
@@ -241,7 +248,11 @@ export function DocsSidebar({
                     pathname
                   }
                 >
-                  <Link href={""}>{item.name}</Link>
+                  <Link
+                    href={String(item.name).toLowerCase().replace(/\s+/g, "-")}
+                  >
+                    {item.name}
+                  </Link>
                 </SidebarMenuButton>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
