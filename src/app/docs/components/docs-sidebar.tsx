@@ -238,7 +238,7 @@ export function DocsSidebar({
                               <SidebarMenuButton
                                 asChild
                                 isActive={item.url === pathname}
-                                className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                                className={`${item.name === "Getting Started" || "Playback Features" || "Audio Effects" ? "!hidden" : ""} 3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
                               >
                                 <Link href={item.url}>{item.name}</Link>
                               </SidebarMenuButton>
