@@ -178,7 +178,7 @@ export function DocsSidebar({
         <VersionSwitcher VersionGuided={version} defaultModeGuided={1} />
       </SidebarHeader>
       <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))]">
-        <SidebarContent className="no-scrollbar px-2 pb-0 pl-[1.5rem]">
+        <SidebarContent className="no-scrollbar gap-0 px-2 pb-0 pl-[1.5rem]">
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
@@ -187,7 +187,7 @@ export function DocsSidebar({
               "Advanced Usage",
               "Troubleshooting",
             ].includes(item.name) ? (
-              <SidebarGroup key={item.$id}>
+              <SidebarGroup className="p-0" key={item.$id}>
                 <Collapsible defaultOpen className="group/collapsible">
                   {item.type === "folder" && (
                     <SidebarGroup>
@@ -243,7 +243,7 @@ export function DocsSidebar({
                 </Collapsible>
               </SidebarGroup>
             ) : (
-              <SidebarGroup className="first:hidden" key={item.$id}>
+              <SidebarGroup className="p-0 first:hidden" key={item.$id}>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <SidebarGroup>
