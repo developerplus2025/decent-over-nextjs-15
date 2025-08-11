@@ -28,6 +28,7 @@ import GitHub from "./GitHub";
 import X from "./x";
 import { Loader } from "./ui/loader";
 import { useSearchContext } from "fumadocs-ui/provider";
+import Image from "next/image";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -180,7 +181,14 @@ export default function UserButtonClient() {
               onClick={() => setIsOpen(!isOpen)}
               className="cursor-pointer"
             >
-              {session && session.user && session.user.image ? (
+              <Image
+                className="h-[50px] w-[50px] dark:invert-[1]"
+                alt="person"
+                src="/person.circle.fill.svg"
+                width="20"
+                height="20"
+              ></Image>
+              {/* {session && session.user && session.user.image ? (
                 <img
                   height={40}
                   width={40}
@@ -190,7 +198,7 @@ export default function UserButtonClient() {
                 />
               ) : (
                 <div className="h-[2.1rem] w-[2.1rem] cursor-pointer rounded-full bg-linear-to-r from-cyan-500 to-blue-500" />
-              )}
+              )} */}
             </div>
 
             {isMounted && (
