@@ -25,7 +25,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
    <div className="text-fd-muted-foreground -mb-3 flex flex-row items-center gap-1 text-sm font-medium">
      <span className="truncate">Docs</span>{" "}
      <ChevronRight className="size-4 shrink-0 rtl:rotate-180" />
-     {part == 2 && (
+     {part == 3 && (
        <div>
          {items.map((item, i) => (
            <Fragment key={i}>
@@ -37,7 +37,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
                  {item.name}
                </Link>
              ) : (
-               part == 2 && (
+               part == 3 && (
                  <span className={`hidden truncate`}>{item.name}</span>
                )
              )}
@@ -45,7 +45,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
          ))}
        </div>
      )}
-     {part == 3 && (
+     {part == 2 && (
        <div>
          {items.map((item, i) => (
            <Fragment key={i}>
