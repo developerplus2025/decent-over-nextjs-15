@@ -215,7 +215,7 @@ export function DocsSidebar({
                                 <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                               </SidebarMenuButton>
                             </CollapsibleTrigger>
-                          ) : item.name === "" ? (
+                          ) : item.name === "index" ? (
                             ""
                           ) : (
                             <CollapsibleContent className="">
@@ -261,7 +261,7 @@ export function DocsSidebar({
                             >
                               <Link href={item.url}>{item.name}</Link>
                             </SidebarMenuButton>
-                          ) : item.name === "" ? (
+                          ) : item.name === "index" ? (
                             ""
                           ) : (
                             <SidebarMenuSub className="gap-0.5 border-[#404040]">
