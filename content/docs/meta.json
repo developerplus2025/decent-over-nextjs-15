@@ -3,7 +3,7 @@
   "description": "The docs for SonixLab",
   "root": true,
   "pages": [
-    "index",
+    "sonixLab-app-documentation",
     "getting-started",
     "playback-features",
     "audio-effects",
