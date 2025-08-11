@@ -19,22 +19,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
       {items.map((item, i) => (
         <Fragment key={i}>
           {i !== 0 && (
-            <ChevronRight
-              className={`${
-                typeof item.name === "string" &&
-                [
-                  "Getting Started",
-                  "Playback Features",
-                  "Audio Effects",
-                  "Library Management",
-                  "Settings Customization",
-                  "Advanced Usage",
-                  "Troubleshooting",
-                ].includes(item.name)
-                  ? "!hidden"
-                  : ""
-              } size-4 shrink-0 rtl:rotate-180`}
-            />
+            <ChevronRight className={`size-4 shrink-0 rtl:rotate-180`} />
           )}
           {item.url ? (
             <Link
@@ -44,24 +29,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
               {item.name}
             </Link>
           ) : (
-            <span
-              className={`truncate ${
-                typeof item.name === "string" &&
-                [
-                  "Getting Started",
-                  "Playback Features",
-                  "Audio Effects",
-                  "Library Management",
-                  "Settings Customization",
-                  "Advanced Usage",
-                  "Troubleshooting",
-                ].includes(item.name)
-                  ? "!hidden"
-                  : ""
-              }`}
-            >
-              {item.name}
-            </span>
+            <span className={`truncate`}>{item.name}</span>
           )}
         </Fragment>
       ))}
