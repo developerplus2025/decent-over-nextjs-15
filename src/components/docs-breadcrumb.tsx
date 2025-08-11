@@ -18,6 +18,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
      setPart(3);
    }
  }, [pathname]);
+ console.log(part);
   if (items.length === 0) return null;
 
   return (
