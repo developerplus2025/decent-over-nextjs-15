@@ -138,10 +138,10 @@ export default async function Page(props: {
           url={absoluteUrl(page.url)}
         />
       </DocsTitle>
-      <DocsDescription className="mb-0">
+      <DocsDescription className="border-input mb-0 border-b pb-8">
         {page.data.description}
       </DocsDescription>
-      <DocsBody className="sm:px-2 md:px-0 xl:px-0">
+      <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
         <div
           data-slot="docs"
           className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"

@@ -182,7 +182,7 @@ export default function UserButtonClient() {
               className="cursor-pointer"
             >
               <Image
-                className="h-[50px] w-[50px] dark:invert-[1]"
+                className="h-[40px] w-[40px] dark:invert-[1]"
                 alt="person"
                 src="/person.circle.fill.svg"
                 width="20"
