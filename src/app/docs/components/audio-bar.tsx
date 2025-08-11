@@ -1,7 +1,7 @@
 export default function AudioBar() {
     return (
-      <div className="flx w-full items-center justify-between">
-        <div className="flex gap-[1rem]">
+      <div className="flex w-full items-center justify-between">
+        <div className="flex items-center gap-2">
           <svg
             className="flex border-none bg-transparent"
             xmlns="http://www.w3.org/2000/svg"
@@ -12,8 +12,8 @@ export default function AudioBar() {
           >
             <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
           </svg>
-          <div className="border-l"></div>
-          <div className="flex gap-2 text-[#a1a1a1]">
+          <div className="border-l border-input"></div>
+          <div className="flex text-sm gap-2 text-[#a1a1a1]">
             <p>0.5x</p>
             <p>1x</p>
             <p>1.5x</p>
