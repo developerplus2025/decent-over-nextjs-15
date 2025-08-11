@@ -44,7 +44,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
        </div>
      )}
      {part == 2 && (
-       <div>
+       <div className="flex items-center gap-1">
          {items.map((item, i) => (
            <Fragment key={i}>
              {i !== 0 && (
