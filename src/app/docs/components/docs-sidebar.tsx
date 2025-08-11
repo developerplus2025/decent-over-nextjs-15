@@ -153,7 +153,7 @@ export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
-  console.log(source.pageTree);
+
   const path = pathname.split("/");
   const [part, setPart] = useState(1);
   useEffect(() => {

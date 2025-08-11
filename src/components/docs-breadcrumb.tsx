@@ -37,9 +37,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
                  {item.name}
                </Link>
              ) : (
-               part == 3 && (
-                 <span className={`hidden truncate`}>{item.name}</span>
-               )
+               <span className={`hidden truncate`}>{item.name}</span>
              )}
            </Fragment>
          ))}
