@@ -90,7 +90,7 @@ export default function Navigation({
     >
       <nav className="relative z-4 shrink-0 items-center justify-center px-[2rem] pt-[1rem] min-[300px]:hidden sm:hidden md:hidden lg:flex xl:flex">
         <nav
-          className={`${isScrolled ? "border bg-[#0c0c0c]" : "border"} rounded-xl ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
+          className={`${isScrolled ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-1 flex w-full items-center justify-between gap-8 bg-white px-8 dark:border-[#292929] dark:bg-[#000000]`}
         >
           <div className="flex h-[58px] w-fit items-center gap-4 text-sm">
             <div className="flex items-center gap-4">

@@ -190,7 +190,7 @@ export function DocsSidebar({
               <SidebarGroup key={item.$id}>
                 <Collapsible defaultOpen className="group/collapsible">
                   {item.type === "folder" && (
-                    <SidebarGroup className="first:hidden">
+                    <SidebarGroup>
                       {item.children.map((item) => {
                         return (
                           item.type === "page" &&
@@ -246,7 +246,7 @@ export function DocsSidebar({
               <SidebarGroup key={item.$id}>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
-                    <SidebarGroup className="first:hidden">
+                    <SidebarGroup>
                       {item.children.map((item) => {
                         return (
                           item.type === "page" &&
