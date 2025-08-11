@@ -166,7 +166,7 @@ export function DocsSidebar({
   }, [pathname]);
   return (
     <Sidebar
-      className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
+      className="sticky top-[6rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
       collapsible="none"
       {...props}
     >
@@ -187,7 +187,7 @@ export function DocsSidebar({
               "Advanced Usage",
               "Troubleshooting",
             ].includes(item.name) ? (
-              <SidebarGroup className="first:hidden" key={item.$id}>
+              <SidebarGroup key={item.$id}>
                 <Collapsible defaultOpen className="group/collapsible">
                   {item.type === "folder" && (
                     <SidebarGroup>

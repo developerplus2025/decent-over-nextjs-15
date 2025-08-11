@@ -63,6 +63,9 @@ export function InputOTPForm() {
 
   return (
     <Form {...form}>
+      <div>
+        <h1 className="prose">Enter The Passwork to Open</h1>
+      </div>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
