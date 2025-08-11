@@ -186,63 +186,61 @@ export function DocsSidebar({
               "Troubleshooting",
             ].includes(item.name) ? (
               <SidebarGroup key={item.$id}>
-                <SidebarMenu>
-                  <Collapsible defaultOpen className="group/collapsible">
-                    <SidebarMenuItem>
-                      <CollapsibleContent className="">
-                        {item.type === "folder" && (
-                          <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                            {item.children.map((item) => {
-                              return (
-                                item.type === "page" &&
-                                (typeof item.name === "string" &&
-                                [
-                                  "Library Management",
-                                  "Settings Customization",
-                                  "Advanced Usage",
-                                  "Troubleshooting",
-                                ].includes(item.name) ? (
-                                  <CollapsibleTrigger
-                                    className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
-                                    asChild
+                <Collapsible defaultOpen className="group/collapsible">
+                  <SidebarMenuItem>
+                    <CollapsibleContent className="">
+                      {item.type === "folder" && (
+                        <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                          {item.children.map((item) => {
+                            return (
+                              item.type === "page" &&
+                              (typeof item.name === "string" &&
+                              [
+                                "Library Management",
+                                "Settings Customization",
+                                "Advanced Usage",
+                                "Troubleshooting",
+                              ].includes(item.name) ? (
+                                <CollapsibleTrigger
+                                  className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
+                                  asChild
+                                >
+                                  <SidebarMenuButton
+                                    className="hover:bg-transparent dark:hover:bg-black"
+                                    isActive={
+                                      String(item.name)
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-") === pathname
+                                    }
+                                  >
+                                    <Link href={item.url}>{item.name}</Link>
+                                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                                  </SidebarMenuButton>
+                                </CollapsibleTrigger>
+                              ) : (
+                                <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                                  {" "}
+                                  <SidebarMenuItem
+                                    className={` `}
+                                    key={item.url}
                                   >
                                     <SidebarMenuButton
-                                      className="hover:bg-transparent dark:hover:bg-black"
-                                      isActive={
-                                        String(item.name)
-                                          .toLowerCase()
-                                          .replace(/\s+/g, "-") === pathname
-                                      }
+                                      asChild
+                                      isActive={item.url === pathname}
+                                      className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
                                     >
                                       <Link href={item.url}>{item.name}</Link>
-                                      <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                                     </SidebarMenuButton>
-                                  </CollapsibleTrigger>
-                                ) : (
-                                  <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                                    {" "}
-                                    <SidebarMenuItem
-                                      className={` `}
-                                      key={item.url}
-                                    >
-                                      <SidebarMenuButton
-                                        asChild
-                                        isActive={item.url === pathname}
-                                        className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
-                                      >
-                                        <Link href={item.url}>{item.name}</Link>
-                                      </SidebarMenuButton>
-                                    </SidebarMenuItem>
-                                  </SidebarMenuSub>
-                                ))
-                              );
-                            })}
-                          </SidebarMenuSub>
-                        )}
-                      </CollapsibleContent>
-                    </SidebarMenuItem>
-                  </Collapsible>
-                </SidebarMenu>
+                                  </SidebarMenuItem>
+                                </SidebarMenuSub>
+                              ))
+                            );
+                          })}
+                        </SidebarMenuSub>
+                      )}
+                    </CollapsibleContent>
+                  </SidebarMenuItem>
+                </Collapsible>
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
