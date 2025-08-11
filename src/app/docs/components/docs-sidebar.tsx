@@ -195,7 +195,7 @@ export function DocsSidebar({
                           (typeof item.name === "string" &&
                           [
                             "Library Management",
-                            "Settings & Customization",
+                            "Settings Customization",
                             "Advanced Usage",
                             "Troubleshooting",
                           ].includes(item.name) ? (
@@ -215,6 +215,8 @@ export function DocsSidebar({
                                 <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                               </SidebarMenuButton>
                             </CollapsibleTrigger>
+                          ) : item.name === "" ? (
+                            ""
                           ) : (
                             <CollapsibleContent className="">
                               {" "}
@@ -259,6 +261,8 @@ export function DocsSidebar({
                             >
                               <Link href={item.url}>{item.name}</Link>
                             </SidebarMenuButton>
+                          ) : item.name === "" ? (
+                            ""
                           ) : (
                             <SidebarMenuSub className="gap-0.5 border-[#404040]">
                               {" "}

@@ -25,31 +25,52 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
    <div className="text-fd-muted-foreground -mb-3 flex flex-row items-center gap-1 text-sm font-medium">
      <span className="truncate">Docs</span>{" "}
      <ChevronRight className="size-4 shrink-0 rtl:rotate-180" />
-     {items.map((item, i) => (
-       <Fragment key={i}>
-         {i !== 0 && part == 2 && (
-           <ChevronRight
-             className={`${
-               part == 2 ? "" : "!hidden"
-             } size-4 shrink-0 rtl:rotate-180`}
-           />
-         )}
-         {item.url ? (
-           <Link
-             href={item.url}
-             className="hover:text-fd-accent-foreground truncate"
-           >
-             {item.name}
-           </Link>
-         ) : (
-           part == 2 && (
-             <span className={`${part == 2 ? "" : "!hidden"} truncate`}>
-               {item.name}
-             </span>
-           )
-         )}
-       </Fragment>
-     ))}
+     {part == 2 && (
+       <div>
+         {items.map((item, i) => (
+           <Fragment key={i}>
+             {i !== 0 && part == 2 && (
+               <ChevronRight
+                 className={`hidden size-4 shrink-0 rtl:rotate-180`}
+               />
+             )}
+             {item.url ? (
+               <Link
+                 href={item.url}
+                 className="hover:text-fd-accent-foreground truncate"
+               >
+                 {item.name}
+               </Link>
+             ) : (
+               part == 2 && (
+                 <span className={`hidden truncate`}>{item.name}</span>
+               )
+             )}
+           </Fragment>
+         ))}
+       </div>
+     )}
+     {part == 3 && (
+       <div>
+         {items.map((item, i) => (
+           <Fragment key={i}>
+             {i !== 0 && (
+               <ChevronRight className={`size-4 shrink-0 rtl:rotate-180`} />
+             )}
+             {item.url ? (
+               <Link
+                 href={item.url}
+                 className="hover:text-fd-accent-foreground truncate"
+               >
+                 {item.name}
+               </Link>
+             ) : (
+               <span className={`hidden truncate`}>{item.name}</span>
+             )}
+           </Fragment>
+         ))}
+       </div>
+     )}
    </div>
  );
 }
