@@ -257,54 +257,41 @@ export function DocsSidebar({
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
-                <SidebarMenuButton
-                  className="hover:bg-transparent dark:hover:bg-black"
-                  isActive={
-                    String(item.name).toLowerCase().replace(/\s+/g, "-") ===
-                    pathname
-                  }
-                >
-                  <Link
-                    href={
-                      part === 2
-                        ? String(item.name).toLowerCase().replace(/\s+/g, "-")
-                        : ""
-                    }
-                  >
-                    {item.name}
-                  </Link>
-                </SidebarMenuButton>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
-                    <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                    <SidebarGroup>
                       {item.children.map((item) => {
                         return (
-                          item.type === "page" && (
-                            <SidebarMenuItem
-                              className={`${
-                                typeof item.name === "string" &&
-                                [
-                                  "Getting Started",
-                                  "Playback Features",
-                                  "Audio Effects",
-                                ].includes(item.name)
-                                  ? "!hidden"
-                                  : ""
-                              } `}
-                              key={item.url}
+                          item.type === "page" &&
+                          (typeof item.name === "string" &&
+                          [
+                            "Getting Started",
+                            "Playback Features",
+                            "Audio Effects",
+                          ].includes(item.name) ? (
+                            <SidebarMenuButton
+                              className="hover:bg-transparent dark:hover:bg-black"
+                              isActive={item.url === pathname}
                             >
-                              <SidebarMenuButton
-                                asChild
-                                isActive={item.url === pathname}
-                                className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
-                              >
-                                <Link href={item.url}>{item.name}</Link>
-                              </SidebarMenuButton>
-                            </SidebarMenuItem>
-                          )
+                              <Link href={item.url}>{item.name}</Link>
+                            </SidebarMenuButton>
+                          ) : (
+                            <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                              {" "}
+                              <SidebarMenuItem className={` `} key={item.url}>
+                                <SidebarMenuButton
+                                  asChild
+                                  isActive={item.url === pathname}
+                                  className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
+                                >
+                                  <Link href={item.url}>{item.name}</Link>
+                                </SidebarMenuButton>
+                              </SidebarMenuItem>
+                            </SidebarMenuSub>
+                          ))
                         );
                       })}
-                    </SidebarMenuSub>
+                    </SidebarGroup>
                   )}
                 </ul>
               </SidebarGroup>
