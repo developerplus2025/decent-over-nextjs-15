@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import type { source } from "@/lib/source";
+import { source } from "@/lib/source";
 import {
   Sidebar,
   SidebarContent,
@@ -153,6 +153,7 @@ export function DocsSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
+  console.log(source.pageTree);
   const path = pathname.split("/");
   const [part, setPart] = useState(1);
   useEffect(() => {
