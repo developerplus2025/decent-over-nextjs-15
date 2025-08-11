@@ -243,7 +243,7 @@ export function DocsSidebar({
                 </Collapsible>
               </SidebarGroup>
             ) : (
-              <SidebarGroup key={item.$id}>
+              <SidebarGroup className="first:hidden" key={item.$id}>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <SidebarGroup>
