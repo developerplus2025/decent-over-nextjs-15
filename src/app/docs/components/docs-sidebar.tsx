@@ -187,7 +187,7 @@ export function DocsSidebar({
               "Advanced Usage",
               "Troubleshooting",
             ].includes(item.name) ? (
-              <SidebarGroup key={item.$id}>
+              <SidebarGroup className="first:hidden" key={item.$id}>
                 <Collapsible defaultOpen className="group/collapsible">
                   {item.type === "folder" && (
                     <SidebarGroup>
@@ -263,8 +263,6 @@ export function DocsSidebar({
                             >
                               <Link href={item.url}>{item.name}</Link>
                             </SidebarMenuButton>
-                          ) : item.name === "index" ? (
-                            ""
                           ) : (
                             <SidebarMenuSub className="gap-0.5 border-[#404040] first:hidden">
                               {" "}
