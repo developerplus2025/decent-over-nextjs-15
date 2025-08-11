@@ -265,7 +265,7 @@ export function DocsSidebar({
                           ) : item.name === "index" ? (
                             ""
                           ) : (
-                            <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                            <SidebarMenuSub className="gap-0.5 border-[#404040] first:hidden">
                               {" "}
                               <SidebarMenuItem className={` `} key={item.url}>
                                 <SidebarMenuButton
