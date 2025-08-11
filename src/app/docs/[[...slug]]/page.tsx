@@ -24,6 +24,7 @@ import {
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
 import { InputOTPForm } from "@/components/input-otp-form";
+import AudioBar from "../components/audio-bar";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -141,6 +142,7 @@ export default async function Page(props: {
       <DocsDescription className="border-input mb-0 border-b pb-8">
         {page.data.description}
       </DocsDescription>
+      <AudioBar />
       <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
         <div
           data-slot="docs"
