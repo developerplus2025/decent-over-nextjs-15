@@ -195,7 +195,7 @@ export function DocsSidebar({
                           (typeof item.name === "string" &&
                           [
                             "Library Management",
-                            "Settings Customization",
+                            "Settings & Customization",
                             "Advanced Usage",
                             "Troubleshooting",
                           ].includes(item.name) ? (
@@ -251,6 +251,7 @@ export function DocsSidebar({
                             "Getting Started",
                             "Playback Features",
                             "Audio Effects",
+                            "Glss",
                           ].includes(item.name) ? (
                             <SidebarMenuButton
                               className="hover:bg-transparent data-[active=true]:bg-[#000000] dark:hover:bg-black"
