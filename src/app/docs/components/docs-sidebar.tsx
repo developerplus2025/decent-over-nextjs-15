@@ -158,6 +158,7 @@ export function DocsSidebar({
   const [part, setPart] = useState(1);
   useEffect(() => {
     if (path.length === 2) {
+      console.log(tree);
       setPart(2);
     } else if (path.length === 3) {
       setPart(3);
