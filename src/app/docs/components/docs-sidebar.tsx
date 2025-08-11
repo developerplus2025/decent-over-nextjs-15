@@ -187,36 +187,37 @@ export function DocsSidebar({
             ].includes(item.name) ? (
               <SidebarGroup key={item.$id}>
                 <Collapsible defaultOpen className="group/collapsible">
-                  <CollapsibleContent className="">
-                    {item.type === "folder" && (
-                      <SidebarGroup>
-                        {item.children.map((item) => {
-                          return (
-                            item.type === "page" &&
-                            (typeof item.name === "string" &&
-                            [
-                              "Library Management",
-                              "Settings Customization",
-                              "Advanced Usage",
-                              "Troubleshooting",
-                            ].includes(item.name) ? (
-                              <CollapsibleTrigger
-                                className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
-                                asChild
+                  {item.type === "folder" && (
+                    <SidebarGroup>
+                      {item.children.map((item) => {
+                        return (
+                          item.type === "page" &&
+                          (typeof item.name === "string" &&
+                          [
+                            "Library Management",
+                            "Settings Customization",
+                            "Advanced Usage",
+                            "Troubleshooting",
+                          ].includes(item.name) ? (
+                            <CollapsibleTrigger
+                              className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
+                              asChild
+                            >
+                              <SidebarMenuButton
+                                className="hover:bg-transparent dark:hover:bg-black"
+                                isActive={
+                                  String(item.name)
+                                    .toLowerCase()
+                                    .replace(/\s+/g, "-") === pathname
+                                }
                               >
-                                <SidebarMenuButton
-                                  className="hover:bg-transparent dark:hover:bg-black"
-                                  isActive={
-                                    String(item.name)
-                                      .toLowerCase()
-                                      .replace(/\s+/g, "-") === pathname
-                                  }
-                                >
-                                  <Link href={item.url}>{item.name}</Link>
-                                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                                </SidebarMenuButton>
-                              </CollapsibleTrigger>
-                            ) : (
+                                <Link href={item.url}>{item.name}</Link>
+                                <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                              </SidebarMenuButton>
+                            </CollapsibleTrigger>
+                          ) : (
+                            <CollapsibleContent className="">
+                              {" "}
                               <SidebarMenuSub className="gap-0.5 border-[#404040]">
                                 {" "}
                                 <SidebarMenuItem className={` `} key={item.url}>
@@ -229,12 +230,12 @@ export function DocsSidebar({
                                   </SidebarMenuButton>
                                 </SidebarMenuItem>
                               </SidebarMenuSub>
-                            ))
-                          );
-                        })}
-                      </SidebarGroup>
-                    )}
-                  </CollapsibleContent>
+                            </CollapsibleContent>
+                          ))
+                        );
+                      })}
+                    </SidebarGroup>
+                  )}
                 </Collapsible>
               </SidebarGroup>
             ) : (
