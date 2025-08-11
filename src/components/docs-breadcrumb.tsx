@@ -29,7 +29,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
           {i !== 0 && (
             <ChevronRight
               className={`${
-                part === 2 ? "!hidden" : ""
+                part == 2 ? "!hidden" : ""
               } size-4 shrink-0 rtl:rotate-180`}
             />
           )}
@@ -41,7 +41,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
               {item.name}
             </Link>
           ) : (
-            <span className={`${part === 3 ? "" : "!hidden"} truncate`}>
+            <span className={`${part == 2 ? "!hidden" : ""} truncate`}>
               {item.name}
             </span>
           )}

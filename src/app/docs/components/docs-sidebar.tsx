@@ -270,7 +270,7 @@ export function DocsSidebar({
                             "Audio Effects",
                           ].includes(item.name) ? (
                             <SidebarMenuButton
-                              className="hover:bg-transparent dark:hover:bg-black"
+                              className="hover:bg-transparent data-[active=true]:bg-[#1b1b1b] dark:hover:bg-black"
                               isActive={item.url === pathname}
                             >
                               <Link href={item.url}>{item.name}</Link>
