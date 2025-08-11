@@ -29,11 +29,6 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
        <div>
          {items.map((item, i) => (
            <Fragment key={i}>
-             {i !== 0 && part == 2 && (
-               <ChevronRight
-                 className={`hidden size-4 shrink-0 rtl:rotate-180`}
-               />
-             )}
              {item.url ? (
                <Link
                  href={item.url}
@@ -65,7 +60,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
                  {item.name}
                </Link>
              ) : (
-               <span className={`hidden truncate`}>{item.name}</span>
+               <span className={`truncate`}>{item.name}</span>
              )}
            </Fragment>
          ))}
