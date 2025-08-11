@@ -2,14 +2,22 @@
 import { usePathname } from "next/navigation";
 import { useBreadcrumb } from "fumadocs-core/breadcrumb";
 import type { PageTree } from "fumadocs-core/server";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
   const pathname = usePathname();
   const items = useBreadcrumb(pathname, tree);
-
+ const path = pathname.split("/");
+ const [part, setPart] = useState(1);
+ useEffect(() => {
+   if (path.length === 2) {
+     setPart(2);
+   } else if (path.length === 3) {
+     setPart(3);
+   }
+ }, [pathname]);
   if (items.length === 0) return null;
 
   return (
@@ -19,7 +27,11 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
       {items.map((item, i) => (
         <Fragment key={i}>
           {i !== 0 && (
-            <ChevronRight className={`size-4 shrink-0 rtl:rotate-180`} />
+            <ChevronRight
+              className={`${
+                part === 2 ? "!hidden" : ""
+              } size-4 shrink-0 rtl:rotate-180`}
+            />
           )}
           {item.url ? (
             <Link
@@ -29,7 +41,9 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
               {item.name}
             </Link>
           ) : (
-            <span className={`truncate`}>{item.name}</span>
+            <span className={`${part === 3 ? "" : "!hidden"} truncate`}>
+              {item.name}
+            </span>
           )}
         </Fragment>
       ))}
