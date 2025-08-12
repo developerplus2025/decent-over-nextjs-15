@@ -7,6 +7,7 @@ export default function AudioBar() {
   const [play, setPlay] = useState(false);
   const pathAudio = path.split("/");
   const audioRef = useRef<HTMLAudioElement>(null);
+  console.log(pathAudio[pathAudio.length]);
   const handlePlay = () => {
     setPlay(true);
     if (audioRef.current) {
