@@ -38,7 +38,7 @@ export default function AudioBar() {
   };
   return (
     <div className="flex w-full items-center justify-between">
-      <audio src={`/audio/markdown/${audioSource}/${audioFile}.mp3`}></audio>
+      <audio ref={audioRef} preload="metadata" src={`/audio/markdown/${audioSource}/${audioFile}.mp3`}></audio>
       <div className="flex items-center gap-2">
         <svg
           onClick={() => handlePlay()}
