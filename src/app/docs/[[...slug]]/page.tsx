@@ -59,34 +59,34 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
-  if (params.slug && params.slug[0] !== "api-reference") {
-    // handle the "api-reference" case here if needed
-    const page = source.getPage(params.slug);
-    if (!page) {
-      notFound();
-    }
 
-    const doc = page.data;
-    // @ts-expect-error - revisit fumadocs types.
-    const MDX = doc.body;
-    const neighbours = await findNeighbour(source.pageTree, page.url);
+  // handle the "api-reference" case here if needed
+  const page = source.getPage(params.slug);
+  if (!page) {
+    notFound();
+  }
 
-    // @ts-expect-error - revisit fumadocs types.
-    const links = doc.links;
-    console.log(source.pageTree);
-    return (
-      <DocsPage
-        // @ts-expect-error - revisit fumadocs types.
-        toc={page.data.toc}
-        // @ts-expect-error - revisit fumadocs types.
-        full={page.data.full}
-        breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
-        tableOfContent={{
-          style: "clerk",
-          header: <div className="h-4 w-10"></div>,
-        }}
-      >
-        {/* <div className="flex flex-col gap-2">
+  const doc = page.data;
+  // @ts-expect-error - revisit fumadocs types.
+  const MDX = doc.body;
+  const neighbours = await findNeighbour(source.pageTree, page.url);
+
+  // @ts-expect-error - revisit fumadocs types.
+  const links = doc.links;
+  console.log(source.pageTree);
+  return (
+    <DocsPage
+      // @ts-expect-error - revisit fumadocs types.
+      toc={page.data.toc}
+      // @ts-expect-error - revisit fumadocs types.
+      full={page.data.full}
+      breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
+      tableOfContent={{
+        style: "clerk",
+        header: <div className="h-4 w-10"></div>,
+      }}
+    >
+      {/* <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
           <div className="flex items-start justify-between">
             <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
@@ -133,39 +133,37 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-        <div className="!xl:flex-row flex pt-4 min-[300px]:!flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:items-center xl:justify-between">
-          <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
-            {page.data.title}{" "}
-          </h1>
-          <DocsCopyPage
-            // @ts-expect-error - revisit fumadocs types.
-            page={doc.content}
-            url={absoluteUrl(page.url)}
-          />
-        </div>
-        <DocsDescription className="border-input mb-0 border-b pb-8">
-          {page.data.description}
-        </DocsDescription>
-        <AudioBar />
-        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
-          <div
-            data-slot="docs"
-            className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
-          >
-            <div className="flex min-w-0 flex-col">
-              <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
-                <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-                  <MDX
-                    components={{ mdxComponents, VideoPage, InputOTPForm }}
-                  />
-                </div>
+      <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
+        <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
+          {page.data.title}{" "}
+        </h1>
+        <DocsCopyPage
+          // @ts-expect-error - revisit fumadocs types.
+          page={doc.content}
+          url={absoluteUrl(page.url)}
+        />
+      </div>
+      <DocsDescription className="border-input mb-0 border-b pb-8">
+        {page.data.description}
+      </DocsDescription>
+      <AudioBar />
+      <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
+        <div
+          data-slot="docs"
+          className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
+        >
+          <div className="flex min-w-0 flex-col">
+            <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
+              <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
+                <MDX components={{ mdxComponents, VideoPage, InputOTPForm }} />
               </div>
             </div>
           </div>
-        </DocsBody>
-      </DocsPage>
-    );
-  }
+        </div>
+      </DocsBody>
+    </DocsPage>
+  );
+}
   
  
-}
+
