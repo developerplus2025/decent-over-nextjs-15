@@ -5,3 +5,8 @@ export const source: ReturnType<typeof loader> = loader({
   baseUrl: "/docs",
   source: docs.toFumadocsSource(),
 });
+
+export const apiReference: ReturnType<typeof loader> = loader({
+  baseUrl: "/docs/api-reference",
+  source: docs.toFumadocsSource(),
+});

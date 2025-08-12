@@ -995,6 +995,9 @@ number-flow-react::part(suffix) {
 #nd-subnav{
   display: none !important;
 }
+hr{
+  border-color:var(--input) !important;
+}
 /*
   ---break---
 */
