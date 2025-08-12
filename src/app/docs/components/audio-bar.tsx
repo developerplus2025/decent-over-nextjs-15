@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AudioBar() {
   const path = usePathname();
@@ -9,6 +9,7 @@ export default function AudioBar() {
   const audioRef = useRef<HTMLAudioElement>(null);
   // Use pathAudio.length - 1 to get the last segment
   const audioSource = pathAudio[pathAudio.length - 2];
+  const [currentTime, setCurrentTime] = useState(0);
   const audioFile = pathAudio[pathAudio.length - 1];
   const handlePlay = () => {
     setPlay(true);
@@ -16,6 +17,19 @@ export default function AudioBar() {
       audioRef.current.play();
     }
   };
+  useEffect(() => {
+    const audioEl = audioRef.current;
+    if (!audioEl) return;
+
+    const updateTime = () => {
+      setCurrentTime(audioEl.currentTime); // lấy thời gian đã phát
+    };
+
+    audioEl.addEventListener("timeupdate", updateTime);
+    return () => {
+      audioEl.removeEventListener("timeupdate", updateTime);
+    };
+  }, []);
   const handlePause = () => {
     setPlay(false);
     if (audioRef.current) {
@@ -49,11 +63,14 @@ export default function AudioBar() {
           <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
         </svg>
         <div className="border-input border-l"></div>
-        <div className="flex gap-2 text-sm text-[#a1a1a1]">
-          <p>0.5x</p>
-          <p>1x</p>
-          <p>1.5x</p>
-          <p>2x</p>
+        <div className="flex items-center gap-2">
+          <div className="flex gap-2 text-sm text-[#a1a1a1]">
+            <p>0.5x</p>
+            <p>1x</p>
+            <p>1.5x</p>
+            <p>2x</p>
+          </div>
+          <p className="tabular-nums">{currentTime}</p>
         </div>
       </div>
       <div className="flex items-center gap-2">
