@@ -131,7 +131,7 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-      <DocsTitle className="flex items-center justify-between pt-4 min-[300px]:flex-col-reverse min-[300px]:gap-2.5 xl:flex-row">
+      <DocsTitle className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
         <h1 className="flex flex-col items-start justify-between gap-2 text-3xl font-semibold">
           {page.data.title}{" "}
         </h1>
