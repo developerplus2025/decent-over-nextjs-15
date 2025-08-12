@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 export default function AudioBar() {
   const path = usePathname();
-  const [play, setPlay] = useState(true);
+  const [play, setPlay] = useState(false);
   const pathAudio = path.split("/");
   const audioRef = useRef<HTMLAudioElement>(null);
   const handlePlay = () => {
@@ -14,7 +14,7 @@ export default function AudioBar() {
     }
   };
   const handlePause = () => {
-    setPlay(true);
+    setPlay(false);
     if (audioRef.current) {
       audioRef.current.pause();
     }
