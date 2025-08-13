@@ -50,7 +50,8 @@ export default function AudioBar() {
   return (
     <div className="flex w-full items-center justify-between">
       <audio
-        src={`/audio/markdown/${pathAudio[1] === " " ? "index" : pathAudio[1]}.mp3`}
+        ref={audioRef}
+        src={`/audio/markdown/${pathAudio[1] === "" ? "index" : pathAudio[1]}.mp3`}
       ></audio>
       <div className="flex items-center gap-2">
         <svg
@@ -77,13 +78,15 @@ export default function AudioBar() {
         </svg>
         <div className="border-input border-l"></div>
         <div className="flex items-center gap-2">
+          <p className="border-input border-l pr-2 text-sm tabular-nums">
+            {formatTime(currentTime)}
+          </p>
           <div className="flex gap-2 text-sm text-[#a1a1a1]">
             <p>0.5x</p>
             <p>1x</p>
             <p>1.5x</p>
             <p>2x</p>
           </div>
-          <p className="tabular-nums">{formatTime(currentTime)}</p>
         </div>
       </div>
       <div className="flex items-center gap-2">
