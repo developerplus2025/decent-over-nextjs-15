@@ -80,7 +80,7 @@ export default function AudioBar() {
       <div className="flex items-center gap-2">
         <svg
           onClick={() => handlePlay()}
-          className={play ? "hidden" : ""}
+          className={`${play ? "hidden" : ""} cursor-pointer select-none`}
           xmlns="http://www.w3.org/2000/svg"
           width="14"
           height="14"
@@ -90,7 +90,7 @@ export default function AudioBar() {
           <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
         </svg>
         <svg
-          className={!play ? "hidden" : ""}
+          className={`${!play ? "hidden" : ""} cursor-pointer select-none`}
           onClick={() => handlePause()}
           xmlns="http://www.w3.org/2000/svg"
           width="14"
@@ -107,7 +107,7 @@ export default function AudioBar() {
           </p>
           <div className="flex gap-2 pl-2 text-sm text-[#a1a1a1]">
             <p
-              className={`${speed === "0.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              className={`${speed === "0.5" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
               onClick={() => {
                 speedAudio(0.5), setSpeed("0.5");
               }}
@@ -115,7 +115,7 @@ export default function AudioBar() {
               0.5x
             </p>
             <p
-              className={`${speed === "1" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              className={`${speed === "1" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
               onClick={() => {
                 speedAudio(1), setSpeed("1");
               }}
@@ -123,7 +123,7 @@ export default function AudioBar() {
               1x
             </p>
             <p
-              className={`${speed === "1.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              className={`${speed === "1.5" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
               onClick={() => {
                 speedAudio(1.5), setSpeed("1.5");
               }}
@@ -131,7 +131,7 @@ export default function AudioBar() {
               1.5x
             </p>
             <p
-              className={`${speed === "2" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              className={`${speed === "2" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
               onClick={() => {
                 speedAudio(2), setSpeed("2");
               }}
