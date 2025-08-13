@@ -1,4 +1,9 @@
 "use client";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -90,7 +95,9 @@ export default function AudioBar() {
           <div className="flex gap-2 text-sm text-[#a1a1a1]">
             <p
               className={`${speed === "0.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
-              onClick={() => speedAudio(0.5)}
+              onClick={() => {
+                speedAudio(0.5), setSpeed("0.5");
+              }}
             >
               0.5x
             </p>
@@ -105,7 +112,7 @@ export default function AudioBar() {
             <p
               className={`${speed === "1.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
               onClick={() => {
-                speedAudio(1.5), setSpeed("2");
+                speedAudio(1.5), setSpeed("1.5");
               }}
             >
               1.5x
@@ -119,6 +126,24 @@ export default function AudioBar() {
               2x
             </p>
           </div>
+          <Popover>
+            <PopoverTrigger>
+              {" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#f0f0f0"
+                viewBox="0 0 256 256"
+              >
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+              </svg>
+            </PopoverTrigger>
+            <PopoverContent className="flex flex-col gap-1">
+              <p className="text-sm hover:bg-[#1b1b1b]">Accent Man</p>
+              <p className="text-sm hover:bg-[#1b1b1b]">Accent Women</p>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
       <div className="flex items-center gap-2">
