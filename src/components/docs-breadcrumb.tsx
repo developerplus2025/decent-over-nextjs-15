@@ -10,7 +10,7 @@ export function DocsBreadcrumb({ tree }: { tree: PageTree.Root }) {
   const pathname = usePathname();
   const items = useBreadcrumb(pathname, tree);
  const path = pathname.split("/");
- const [part, setPart] = useState(2);
+ const [part, setPart] = useState(() => (path.length === 3 ? 3 : 2));
  useEffect(() => {
    if (path.length === 2) {
      setPart(2);
