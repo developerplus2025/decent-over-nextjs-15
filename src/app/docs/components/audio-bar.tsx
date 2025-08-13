@@ -5,12 +5,23 @@ import { useEffect, useRef, useState } from "react";
 export default function AudioBar() {
   const path = usePathname();
   const [play, setPlay] = useState(false);
-  const pathAudio = path.split("/");
+  const parts = path.slice(1).split("/");
+  // => "docs".split("/") => ["docs"]
+
+  const pathAudio = [parts[0], parts.slice(1).join("/")];
+
   const audioRef = useRef<HTMLAudioElement>(null);
   // Use pathAudio.length - 1 to get the last segment
-  const audioSource = pathAudio[pathAudio.length - 2];
   const [currentTime, setCurrentTime] = useState(0);
   const audioFile = pathAudio[pathAudio.length - 1];
+  const audio = audioRef.current;
+  const time = audio?.currentTime;
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60); // Tính phút
+    const seconds = Math.floor(time % 60); // Tính giây còn lại
+    // Định dạng với 2 chữ số (ví dụ: 01:05)
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
   const handlePlay = () => {
     setPlay(true);
     if (audioRef.current) {
@@ -38,7 +49,9 @@ export default function AudioBar() {
   };
   return (
     <div className="flex w-full items-center justify-between">
-      <audio ref={audioRef} preload="metadata" src={`/audio/markdown/${audioSource}/${audioFile}.mp3`}></audio>
+      <audio
+        src={`/audio/markdown/${pathAudio[2] === " " ? "index" : pathAudio[2]}.mp3`}
+      ></audio>
       <div className="flex items-center gap-2">
         <svg
           onClick={() => handlePlay()}
@@ -70,7 +83,7 @@ export default function AudioBar() {
             <p>1.5x</p>
             <p>2x</p>
           </div>
-          <p className="tabular-nums">{currentTime}</p>
+          <p className="tabular-nums">{formatTime(currentTime)}</p>
         </div>
       </div>
       <div className="flex items-center gap-2">
