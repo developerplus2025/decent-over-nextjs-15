@@ -50,7 +50,7 @@ export default function AudioBar() {
   return (
     <div className="flex w-full items-center justify-between">
       <audio
-        src={`/audio/markdown/${pathAudio[2] === " " ? "index" : pathAudio[2]}.mp3`}
+        src={`/audio/markdown/${pathAudio[1] === " " ? "index" : pathAudio[2]}.mp3`}
       ></audio>
       <div className="flex items-center gap-2">
         <svg
