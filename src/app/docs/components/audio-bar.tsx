@@ -5,6 +5,8 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -70,7 +72,7 @@ export default function AudioBar() {
   };
   const [showAccentMan, setShowAccentMan] = React.useState<Checked>(true);
   const [showAccentWomen, setShowAccentWomen] = React.useState<Checked>(false);
-
+  const [accent, setAccent] = React.useState("Man");
   return (
     <div className="flex w-full items-center justify-between">
       <audio
@@ -156,7 +158,7 @@ export default function AudioBar() {
                 Accent
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuCheckboxItem
+              {/* <DropdownMenuCheckboxItem
                 checked={showAccentMan}
                 onCheckedChange={setShowAccentMan}
               >
@@ -167,7 +169,15 @@ export default function AudioBar() {
                 onCheckedChange={setShowAccentWomen}
               >
                 Accent Women
-              </DropdownMenuCheckboxItem>
+              </DropdownMenuCheckboxItem> */}
+              <DropdownMenuRadioGroup value={accent} onValueChange={setAccent}>
+                <DropdownMenuRadioItem value="Man">
+                  Accent Man
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="Women">
+                  Accent Women
+                </DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
