@@ -13,6 +13,7 @@ export default function AudioBar() {
   const audioRef = useRef<HTMLAudioElement>(null);
   // Use pathAudio.length - 1 to get the last segment
   const [currentTime, setCurrentTime] = useState(0);
+  const [speed, setSpeed] = useState("1");
   const audioFile = pathAudio[pathAudio.length - 1];
   const audio = audioRef.current;
   const time = audio?.currentTime;
@@ -47,6 +48,11 @@ export default function AudioBar() {
       audioRef.current.pause();
     }
   };
+  const speedAudio = (number: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.playbackRate = number;
+  };
   return (
     <div className="flex w-full items-center justify-between">
       <audio
@@ -78,14 +84,40 @@ export default function AudioBar() {
         </svg>
         <div className="border-input border-l"></div>
         <div className="flex items-center gap-2">
-          <p className="border-input border-l pr-2 text-sm tabular-nums">
+          <p className="border-input border-r pr-2 text-sm tabular-nums">
             {formatTime(currentTime)}
           </p>
           <div className="flex gap-2 text-sm text-[#a1a1a1]">
-            <p>0.5x</p>
-            <p>1x</p>
-            <p>1.5x</p>
-            <p>2x</p>
+            <p
+              className={`${speed === "0.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              onClick={() => speedAudio(0.5)}
+            >
+              0.5x
+            </p>
+            <p
+              className={`${speed === "1" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              onClick={() => {
+                speedAudio(1), setSpeed("1");
+              }}
+            >
+              1x
+            </p>
+            <p
+              className={`${speed === "1.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              onClick={() => {
+                speedAudio(1.5), setSpeed("2");
+              }}
+            >
+              1.5x
+            </p>
+            <p
+              className={`${speed === "2" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
+              onClick={() => {
+                speedAudio(2), setSpeed("2");
+              }}
+            >
+              2x
+            </p>
           </div>
         </div>
       </div>
