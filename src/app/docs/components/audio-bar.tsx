@@ -92,7 +92,7 @@ export default function AudioBar() {
           <p className="border-input border-r pr-2 text-sm tabular-nums">
             {formatTime(currentTime)}
           </p>
-          <div className="flex gap-2 text-sm text-[#a1a1a1]">
+          <div className="flex gap-2 pl-2 text-sm text-[#a1a1a1]">
             <p
               className={`${speed === "0.5" ? "text-white transition-colors" : ""} text-[#a1a1a1]`}
               onClick={() => {
