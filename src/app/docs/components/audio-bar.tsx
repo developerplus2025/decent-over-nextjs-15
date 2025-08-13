@@ -1,12 +1,22 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+type Checked = DropdownMenuCheckboxItemProps["checked"];
 export default function AudioBar() {
   const path = usePathname();
   const [play, setPlay] = useState(false);
@@ -58,6 +68,9 @@ export default function AudioBar() {
     if (!audio) return;
     audio.playbackRate = number;
   };
+  const [showAccentMan, setShowAccentMan] = React.useState<Checked>(true);
+  const [showAccentWomen, setShowAccentWomen] = React.useState<Checked>(false);
+
   return (
     <div className="flex w-full items-center justify-between">
       <audio
@@ -126,24 +139,39 @@ export default function AudioBar() {
               2x
             </p>
           </div>
-          <Popover>
-            <PopoverTrigger>
-              {" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f0f0f0"
-                viewBox="0 0 256 256"
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="#f0f0f0"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                </svg>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuCheckboxItem
+                checked={showAccentMan}
+                onCheckedChange={setShowAccentMan}
               >
-                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-              </svg>
-            </PopoverTrigger>
-            <PopoverContent className="flex flex-col gap-1">
-              <p className="text-sm hover:bg-[#1b1b1b]">Accent Man</p>
-              <p className="text-sm hover:bg-[#1b1b1b]">Accent Women</p>
-            </PopoverContent>
-          </Popover>
+                Accent Man
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem
+                checked={showAccentWomen}
+                onCheckedChange={setShowAccentWomen}
+                disabled
+              >
+                Accent Women
+              </DropdownMenuCheckboxItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div className="flex items-center gap-2">
