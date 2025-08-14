@@ -280,7 +280,7 @@ import React, { useEffect, useRef, useState } from "react";
                </Slider.Track>
                <Slider.Thumb className="border-primary/50 bg-background focus-visible:ring-ring block h-3 w-3 rounded-full border shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
              </Slider.Root>
-             <p className="text-xs tabular-nums">{currentTimeMusic}</p>
+             <p className="text-xs tabular-nums">{data[index].duration}</p>
            </div>
          </div>
        </div>
