@@ -140,7 +140,7 @@ export default function AudioBar() {
                 fontSize: "0.875rem",
                 "--number-flow-char-height": "0.85em",
               }}
-              className="~text-3xl/4xl flex items-baseline font-semibold"
+              className="~text-3xl/4xl border-input flex items-baseline border-r pr-2 font-semibold"
             >
               {" "}
               <NumberFlow

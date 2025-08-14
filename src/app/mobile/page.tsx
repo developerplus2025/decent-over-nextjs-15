@@ -161,7 +161,7 @@ import React, { useEffect, useRef, useState } from "react";
                className="h-[300px] w-[300px]"
                width={200}
                height={200}
-               src={`/music-pre/${data[index].src}.jpg`}
+               src={`/music-pre/${data[index].img}.jpg`}
                alt=""
              />
            </div>
