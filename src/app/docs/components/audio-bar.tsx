@@ -15,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -37,6 +38,15 @@ export default function AudioBar() {
   const audioFile = pathAudio[pathAudio.length - 1];
   const audio = audioRef.current;
   const time = audio?.currentTime;
+  const formatSecond = (time: number) => {
+    const seconds = Math.floor(time % 60); // Tính giây còn lại
+    // Định dạng với 2 chữ số (ví dụ: 01:05)
+    return seconds;
+  };
+  const formatMinutes = (time: number) => {
+    const minutes = Math.floor(time / 60); // Tính phút
+    return minutes;
+  };
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
@@ -122,6 +132,28 @@ export default function AudioBar() {
         </svg>
         <div className="border-input border-l"></div>
         <div className="flex items-center gap-2">
+          <NumberFlowGroup>
+            <div
+              style={{
+                fontVariantNumeric: "tabular-nums",
+                "--number-flow-char-height": "0.85em",
+              }}
+              className="~text-3xl/4xl flex items-baseline font-semibold"
+            >
+              <NumberFlow
+                prefix=":"
+                value={Number(formatSecond(currentTime))}
+                format={{ minimumIntegerDigits: 2 }}
+              />
+              <NumberFlow
+                prefix=":"
+                trend={-1}
+                value={Number(formatMinutes(currentTime))}
+                digits={{ 1: { max: 5 } }}
+                format={{ minimumIntegerDigits: 2 }}
+              />
+            </div>
+          </NumberFlowGroup>
           <p className="border-input border-r pr-2 text-sm tabular-nums">
             {formatTime(currentTime)}
           </p>
@@ -173,27 +205,16 @@ export default function AudioBar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[12rem]">
               <DropdownMenuLabel className="flex items-center justify-center">
-                Accent
+                Voice
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              {/* <DropdownMenuCheckboxItem
-                checked={showAccentMan}
-                onCheckedChange={setShowAccentMan}
-              >
-                Accent Man
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem
-                checked={showAccentWomen}
-                onCheckedChange={setShowAccentWomen}
-              >
-                Accent Women
-              </DropdownMenuCheckboxItem> */}
+
               <DropdownMenuRadioGroup value={accent} onValueChange={setAccent}>
                 <DropdownMenuRadioItem value="Man">
-                  Accent Man
+                  Male Voice
                 </DropdownMenuRadioItem>
                 <DropdownMenuRadioItem value="Women">
-                  Accent Women
+                  Female Voice
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
