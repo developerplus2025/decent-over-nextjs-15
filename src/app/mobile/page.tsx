@@ -239,7 +239,7 @@ import React, { useEffect, useRef, useState } from "react";
              </svg>
 
              <svg
-               className={`${index == 7 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
+               className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
                onClick={() => setIndex((pre) => index + 1)}
                xmlns="http://www.w3.org/2000/svg"
                width="16"
