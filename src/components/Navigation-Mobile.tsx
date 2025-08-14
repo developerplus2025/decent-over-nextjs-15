@@ -50,6 +50,11 @@ const LinkItem = [
   },
   {
     id: 6,
+    name: "Mobile Listen",
+    src: "/mobile",
+  },
+  {
+    id: 7,
     name: "Nhận thẻ cào",
     src: "/free-card",
   },
