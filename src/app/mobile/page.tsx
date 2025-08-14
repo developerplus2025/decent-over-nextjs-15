@@ -178,6 +178,8 @@ import React, { useEffect, useRef, useState } from "react";
          <audio
            id="audio"
            ref={audioRef}
+           onPlay={() => setIsPlaying(true)}
+           onEnded={() => setIsPlaying(false)}
            src={`/${data[index].src}.mp3`}
            loop
            autoPlay
