@@ -136,6 +136,8 @@ export default function AudioBar() {
             <div
               style={{
                 fontVariantNumeric: "tabular-nums",
+                fontWeight: "400",
+                fontSize: "0.875rem",
                 "--number-flow-char-height": "0.85em",
               }}
               className="~text-3xl/4xl flex items-baseline font-semibold"
@@ -154,9 +156,7 @@ export default function AudioBar() {
               />
             </div>
           </NumberFlowGroup>
-          <p className="border-input border-r pr-2 text-sm tabular-nums">
-            {formatTime(currentTime)}
-          </p>
+
           <div className="flex gap-2 pl-2 text-sm text-[#a1a1a1]">
             <p
               className={`${speed === "0.5" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}

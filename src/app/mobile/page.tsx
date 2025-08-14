@@ -151,7 +151,7 @@ export default function MobilePage() {
               className="h-[300px] w-[300px]"
               width={200}
               height={200}
-              src={`/${data[index].src}`}
+              src={`/${data[index].src}.jpg`}
               alt=""
             />
           </div>
