@@ -102,9 +102,9 @@ export default function MobilePage() {
     {
       id: 2,
       src: "DaiDienHauSinhTuKienLouisRemix-VuongNgocManh-14125736",
-      img: "images",
-      name: "Vuong Ngoc Manh",
-      description: "32a35f4d26ee56366397c09953f6c269",
+      img: "32a35f4d26ee56366397c09953f6c269",
+      name: "Đại Điền Hậu Sinh Tử ",
+      description: "Vương Ngọc Manh (Remix)",
     },
     {
       id: 3,
@@ -139,7 +139,7 @@ export default function MobilePage() {
       src: "y2mate.com3",
       img: "05b73eff55f3d133942abf6ea29bc41b",
       name: "Tát nhật lãng rực rỡ ",
-      description: "",
+      description: "Fanny Tran",
     },
   ];
   return (
@@ -151,7 +151,7 @@ export default function MobilePage() {
               className="h-[300px] w-[300px]"
               width={200}
               height={200}
-              src={`/${data[index].src}.jpg`}
+              src={`/music-pre/${data[index].src}.jpg`}
               alt=""
             />
           </div>
