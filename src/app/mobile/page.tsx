@@ -64,7 +64,7 @@ import React, { useEffect, useRef, useState } from "react";
  export default function MobilePage() {
    const [isPlaying, setIsPlaying] = useState(false);
    const [currentTime, setCurrentTime] = useState<number>(0);
-   const [index, setIndex] = useState(1);
+   const [index, setIndex] = useState(0);
    const [currentTimeMusic, setCurrentTimeMusic] = useState<string>(
      String(data[index].duration),
    );
