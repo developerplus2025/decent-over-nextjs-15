@@ -95,35 +95,74 @@ export default function MobilePage() {
     {
       id: 1,
       src: "fiction-remix",
+      img: "images",
+      name: "Fixtion Remix",
+      description: "Pháp Sư Việt Nam",
     },
     {
       id: 2,
       src: "DaiDienHauSinhTuKienLouisRemix-VuongNgocManh-14125736",
+      img: "images",
+      name: "Vuong Ngoc Manh",
+      description: "32a35f4d26ee56366397c09953f6c269",
     },
     {
       id: 3,
       src: "kw04scrx7h",
+      img: "32b9b674c7cd7f39c94ea7b823685dec",
+      name: "Pháp Ta Bà",
+      description: "Bảo Vân",
     },
     {
       id: 4,
       src: "tawerrw6f4",
+      img: "7a5f6e35848b3362591da8e95b6382ea",
+      name: "Đi Giữa Trời Rực Rỡ",
+      description: "Ngô Lan Hương",
     },
     {
       id: 5,
       src: "y2mate.com1",
+      img: "5e28cfa087c005ce61523c4e6c2d0e48",
+      name: "Phải Chia Tay Thôi ",
+      description: "Hương Ly",
     },
     {
       id: 6,
       src: "y2mate.com2",
+      img: "60abf0227372b143476d5785b27bf346",
+      name: "Có Duyên Không Nợ ",
+      description: "Ngọc Diệp",
     },
     {
       id: 7,
       src: "y2mate.com3",
+      img: "05b73eff55f3d133942abf6ea29bc41b",
+      name: "Tát nhật lãng rực rỡ ",
+      description: "",
     },
   ];
   return (
     <div className="flex h-[100dvh] flex-col">
-      <div className="h-[calc(100dvh-80px)]"></div>
+      <div className="flex h-[calc(100dvh-80px)] flex-col items-center justify-center">
+        <div className="flex flex-col gap-[2rem]">
+          <div>
+            <img
+              className="h-[300px] w-[300px]"
+              width={200}
+              height={200}
+              src={`/${data[index].src}`}
+              alt=""
+            />
+          </div>
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="">Name: {data[index].name}</p>
+            <p className="text-sm text-[#a1a1a1]">
+              Artist: {data[index].description}
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="z-20 flex h-[80px] w-full items-center justify-center border-t bg-black px-8 select-none">
         <audio
@@ -148,6 +187,7 @@ export default function MobilePage() {
               <path d="M237.66,178.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L212.69,192H200.94a72.12,72.12,0,0,1-58.59-30.15l-41.72-58.4A56.1,56.1,0,0,0,55.06,80H32a8,8,0,0,1,0-16H55.06a72.12,72.12,0,0,1,58.59,30.15l41.72,58.4A56.1,56.1,0,0,0,200.94,176h11.75l-10.35-10.34a8,8,0,0,1,11.32-11.32ZM143,107a8,8,0,0,0,11.16-1.86l1.2-1.67A56.1,56.1,0,0,1,200.94,80h11.75L202.34,90.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L212.69,64H200.94a72.12,72.12,0,0,0-58.59,30.15l-1.2,1.67A8,8,0,0,0,143,107Zm-30,42a8,8,0,0,0-11.16,1.86l-1.2,1.67A56.1,56.1,0,0,1,55.06,176H32a8,8,0,0,0,0,16H55.06a72.12,72.12,0,0,0,58.59-30.15l1.2-1.67A8,8,0,0,0,113,149Z"></path>
             </svg>
             <svg
+              className={`${index == 0 ? "disabled:fill-[#a1a1a1]" : ""} `}
               onClick={() => setIndex((pre) => index - 1)}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -187,6 +227,7 @@ export default function MobilePage() {
             </svg>
 
             <svg
+              className={`${index == 7 ? "disabled:fill-[#a1a1a1]" : ""} `}
               onClick={() => setIndex((pre) => index + 1)}
               xmlns="http://www.w3.org/2000/svg"
               width="16"

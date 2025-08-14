@@ -140,16 +140,16 @@ export default function AudioBar() {
               }}
               className="~text-3xl/4xl flex items-baseline font-semibold"
             >
+              {" "}
               <NumberFlow
-                prefix=":"
-                value={Number(formatSecond(currentTime))}
+                trend={-1}
+                value={Number(formatMinutes(currentTime))}
+                digits={{ 1: { max: 5 } }}
                 format={{ minimumIntegerDigits: 2 }}
               />
               <NumberFlow
                 prefix=":"
-                trend={-1}
-                value={Number(formatMinutes(currentTime))}
-                digits={{ 1: { max: 5 } }}
+                value={Number(formatSecond(currentTime))}
                 format={{ minimumIntegerDigits: 2 }}
               />
             </div>
