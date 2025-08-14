@@ -19,6 +19,7 @@ import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 export default function AudioBar() {
   const path = usePathname();
@@ -46,6 +47,7 @@ export default function AudioBar() {
     navigator.clipboard.writeText(
       "https://decent-over.vercel.app/docs/" + pathAudio[1],
     );
+    toast("Link Copied", {});
     setCopy(true);
     setTimeout(
       () => {

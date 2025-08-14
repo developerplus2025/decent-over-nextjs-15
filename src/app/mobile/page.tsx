@@ -91,7 +91,8 @@ export default function MobilePage() {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   return (
-    <div>
+    <div className="h-[100vh]">
+      <div className="h-[calc(100vh-80px)]"></div>
       <div className="z-20 flex h-[80px] w-full items-center justify-between border-t bg-black px-8 select-none">
         <audio
           id="audio"
@@ -102,7 +103,7 @@ export default function MobilePage() {
           onTimeUpdate={handleTimeUpdate}
           className="hidden"
         ></audio>
-        
+
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-8 [&_svg]:cursor-pointer">
             <svg
@@ -195,7 +196,6 @@ export default function MobilePage() {
             <p className="text-xs tabular-nums">{currentTimeMusic}</p>
           </div>
         </div>
-        
       </div>
     </div>
   );
