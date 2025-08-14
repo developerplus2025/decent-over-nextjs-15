@@ -16,6 +16,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 type Checked = DropdownMenuCheckboxItemProps["checked"];
@@ -43,7 +44,7 @@ export default function AudioBar() {
   };
   function copyLink() {
     navigator.clipboard.writeText(
-      "https://decent-over.vercel.app/docs" + pathAudio[1],
+      "https://decent-over.vercel.app/docs/" + pathAudio[1],
     );
     setCopy(true);
     setTimeout(
@@ -199,12 +200,17 @@ export default function AudioBar() {
       </div>
       <div
         onClick={() => copyLink()}
-        className="relative flex items-center gap-2 select-none"
+        className="relative flex cursor-pointer items-center gap-2 select-none"
       >
         {copy && (
-          <div className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1">
+          <motion.div
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
+            animate={copy ? { opacity: 1 } : { opacity: 0 }}
+            className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
+          >
             <p className="text-center text-xs">Copied</p>
-          </div>
+          </motion.div>
         )}
 
         <svg
