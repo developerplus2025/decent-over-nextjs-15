@@ -15,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import NumberFlow from "@number-flow/react";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -105,9 +106,10 @@ export default function AudioBar() {
         </svg>
         <div className="border-input border-l"></div>
         <div className="flex items-center gap-2">
-          <p className="border-input border-r pr-2 text-sm tabular-nums">
-            {formatTime(currentTime)}
-          </p>
+          <NumberFlow
+            className="border-input border-r pr-2 text-sm tabular-nums"
+            value={Number(formatTime(currentTime))}
+          />
           <div className="flex gap-2 pl-2 text-sm text-[#a1a1a1]">
             <p
               className={`${speed === "0.5" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
