@@ -184,7 +184,7 @@ export default function UserButtonClient() {
               <Image
                 className="h-[40px] w-[40px] dark:invert-[1]"
                 alt="person"
-                src="/person.circle.fill.svg"
+                src="/person-circle-outline.svg"
                 width="20"
                 height="20"
               ></Image>
