@@ -56,6 +56,7 @@ export default function Navigation({
   const isGeneration = pathname === "/generation";
   const isDesign = pathname === "/design";
   const isDocsGlss = pathname === "/docs/glss";
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {

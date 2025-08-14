@@ -7,6 +7,7 @@ import { useSearchContext } from "fumadocs-ui/provider";
 import { useEffect, useRef, useState } from "react";
 import NavigationIcon from "./comp-100";
 import { MobileNav } from "./mobile-nav";
+import { usePathname } from "next/navigation";
 type NavigationMobileProps = {
   className?: string;
   children: React.ReactNode;
@@ -60,6 +61,8 @@ export default function NavigationMobile({
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { setOpenSearch } = useSearchContext();
+  const pathname = usePathname();
+  const isMobilePath = pathname === "/mobile";
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflowY = "hidden"; // Tắt scroll
@@ -73,7 +76,7 @@ export default function NavigationMobile({
   }, [isOpen]);
   return (
     <div
-      className={`${className} fixed top-0 z-25 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
+      className={`${className} ${isMobilePath ? "!hidden" : ""} fixed top-0 z-25 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
     >
       <div className="flex items-center gap-4">
         <Link

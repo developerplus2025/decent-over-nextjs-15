@@ -10,6 +10,4 @@ export default function LibraryLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <section></section>
-  )}
+  return <section>{children}</section>;}
