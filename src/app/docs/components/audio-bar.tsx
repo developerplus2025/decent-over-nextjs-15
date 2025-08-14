@@ -15,7 +15,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import NumberFlow from "@number-flow/react";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -32,6 +31,7 @@ export default function AudioBar() {
   // Use pathAudio.length - 1 to get the last segment
   const [currentTime, setCurrentTime] = useState(0);
   const [speed, setSpeed] = useState("1");
+  const [copy, setCopy] = useState(false);
   const audioFile = pathAudio[pathAudio.length - 1];
   const audio = audioRef.current;
   const time = audio?.currentTime;
@@ -41,6 +41,12 @@ export default function AudioBar() {
     // Định dạng với 2 chữ số (ví dụ: 01:05)
     return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+  function copyLink() {
+    navigator.clipboard.writeText(
+      "https://decent-over.vercel.app/docs" + pathAudio[1],
+    );
+    setCopy(true);
+  }
   const handlePlay = () => {
     setPlay(true);
     if (audioRef.current) {
@@ -106,10 +112,9 @@ export default function AudioBar() {
         </svg>
         <div className="border-input border-l"></div>
         <div className="flex items-center gap-2">
-          <NumberFlow
-            className="border-input border-r pr-2 text-sm tabular-nums"
-            value={Number(formatTime(currentTime))}
-          />
+          <p className="border-input border-r pr-2 text-sm tabular-nums">
+            {formatTime(currentTime)}
+          </p>
           <div className="flex gap-2 pl-2 text-sm text-[#a1a1a1]">
             <p
               className={`${speed === "0.5" ? "text-white transition-colors" : ""} cursor-pointer text-[#a1a1a1] select-none`}
@@ -185,7 +190,16 @@ export default function AudioBar() {
           </DropdownMenu>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div
+        onClick={() => copyLink()}
+        className="relative flex items-center gap-2 select-none"
+      >
+        {copy && (
+          <div className="border-input absolute top-[1rem] left-1/2 -translate-x-1/2 bg-black p-1">
+            <p className="text-xs">Copied</p>
+          </div>
+        )}
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
