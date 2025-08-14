@@ -38,7 +38,7 @@ export default function AudioBar() {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
     // Định dạng với 2 chữ số (ví dụ: 01:05)
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   const handlePlay = () => {
     setPlay(true);
@@ -76,6 +76,7 @@ export default function AudioBar() {
   return (
     <div className="flex w-full items-center justify-between">
       <audio
+        onEnded={() => setPlay(false)}
         ref={audioRef}
         src={`/audio/markdown/${pathAudio[1] === "" ? "index" : pathAudio[1]}.mp3`}
       ></audio>
@@ -142,7 +143,7 @@ export default function AudioBar() {
             </p>
           </div>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger className="cursor-pointer" asChild>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -153,7 +154,7 @@ export default function AudioBar() {
                 <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
               </svg>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-[12rem]">
               <DropdownMenuLabel className="flex items-center justify-center">
                 Accent
               </DropdownMenuLabel>
