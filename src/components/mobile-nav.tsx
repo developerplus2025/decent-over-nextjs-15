@@ -51,11 +51,15 @@ const LinkItem = [
     name: "Radio",
     src: "/radio",
   },
+{id: 9,
+    name: "Mobile Listen",
+    src: "/mobile",},
   {
     id: 9,
     name: "Nhận thẻ cào",
     src: "/free-card",
   },
+
 ];
 
 export function MobileNav({ className }: { className?: string }) {
