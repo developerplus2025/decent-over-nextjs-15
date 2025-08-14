@@ -158,7 +158,7 @@ import React, { useEffect, useRef, useState } from "react";
          <div className="flex flex-col gap-[2rem]">
            <div>
              <img
-               className="h-[300px] w-[300px]"
+               className="h-[300px] w-[300px] rounded-xl"
                width={200}
                height={200}
                src={`/music-pre/${data[index].img}.jpg`}
