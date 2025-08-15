@@ -73,6 +73,7 @@ import React, { useEffect, useRef, useState } from "react";
    const [value, setValue] = useState<number[]>([0]);
     const durationData = data[index].duration.split(":");
     const totalSecond = Number(durationData[0]) * 60 + Number(durationData[1]);
+    console.log(totalSecond);
     const [totalSeconds, setTotalSeconds] = useState<number>(totalSecond);
     const [soundValue, setSoundValue] = useState<number[]>([100]);
     const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
