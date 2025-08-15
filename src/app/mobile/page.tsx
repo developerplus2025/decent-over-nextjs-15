@@ -243,12 +243,12 @@ import React, { useEffect, useRef, useState } from "react";
               </svg>
 
               <svg
-                className={`${index == 7 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
+                className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
                 onClick={() => setIndex((pre) => index + 1)}
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill={`${index == 0 ? "#a1a1a1" : "#ffffff"}`}
+                fill={`${index == 6 ? "#a1a1a1" : "#ffffff"}`}
                 viewBox="0 0 256 256"
               >
                 <path d="M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A15.95,15.95,0,0,1,48,208.12V47.88A15.95,15.95,0,0,1,72.43,34.45L192,109.23V40a8,8,0,0,1,16,0Z"></path>
@@ -284,7 +284,7 @@ import React, { useEffect, useRef, useState } from "react";
                 </Slider.Track>
                 <Slider.Thumb className="border-primary/50 bg-background focus-visible:ring-ring block h-3 w-3 rounded-full border shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
               </Slider.Root>
-              <p className="text-xs tabular-nums">{currentTimeMusic}</p>
+              <p className="text-xs tabular-nums">{data[index].duration}</p>
             </div>
           </div>
         </div>
