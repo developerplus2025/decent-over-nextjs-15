@@ -4,16 +4,6 @@ import { cn } from "@/utils/cn";
 import * as Slider from "@radix-ui/react-slider";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import OpenAI from "openai";
-const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
-  apiKey:
-    "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",
-  defaultHeaders: {
-    "HTTP-Referer": "<YOUR_SITE_URL>", // Optional. Site URL for rankings on openrouter.ai.
-    "X-Title": "<YOUR_SITE_NAME>", // Optional. Site title for rankings on openrouter.ai.
-  },
-});
 import React, { useEffect, useRef, useState } from "react";
 const data = [
   {
@@ -107,11 +97,11 @@ export default function MobilePage() {
       audioRef.current.pause();
     }
   }, [pathname]);
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
-    }
-  }, [value, totalSeconds]);
+  // useEffect(() => {
+  //   if (audioRef.current) {
+  //     audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
+  //   }
+  // }, [value, totalSeconds]);
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
