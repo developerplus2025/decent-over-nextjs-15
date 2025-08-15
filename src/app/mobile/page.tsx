@@ -75,12 +75,27 @@ export default function MobilePage() {
   const [value, setValue] = useState<number[]>([0]);
   const durationData = data[index].duration.split(":");
   const totalSecond = Number(durationData[0]) * 60 + Number(durationData[1]);
-  const [totalSeconds, setTotalSeconds] = useState<number>(totalSecond);
+  const [totalSeconds, setTotalSeconds] = useState<number>(0);
   console.log(currentTime);
   const [soundValue, setSoundValue] = useState<number[]>([100]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
 
+useEffect(() => {
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  // Khi audio load metadata xong thì cập nhật thời lượng thật
+  const updateDuration = () => {
+    setTotalSeconds(audio.duration || 0);
+  };
+
+  audio.addEventListener("loadedmetadata", updateDuration);
+
+  return () => {
+    audio.removeEventListener("loadedmetadata", updateDuration);
+  };
+}, [index]); // chạy lại khi đổi bài hát
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
