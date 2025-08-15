@@ -42,7 +42,7 @@ export const mdxComponents = {
           .replace(/\?/g, "")
           .toLowerCase()}
         className={cn(
-          "font-heading mt-[2rem] scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-[2rem] [&+p]:!mt-4 *:[code]:text-2xl",
+          "font-heading scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-[2rem] [&+p]:!mt-4 *:[code]:text-2xl",
           className,
         )}
         {...props}
