@@ -93,6 +93,7 @@ import React, { useEffect, useRef, useState } from "react";
    }, [pathname]);
    const durationData = data[index].duration.split(":");
    const totalSecond = Number(durationData[0] + durationData[1]);
+   console.log(totalSecond);
    useEffect(() => {
      if (audioRef.current) {
        audioRef.current.currentTime = (Number(value) / 100) * totalSecond;
