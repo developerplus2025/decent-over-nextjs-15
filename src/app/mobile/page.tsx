@@ -66,7 +66,7 @@ const data = [
 ];
 export default function MobilePage() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState<number>(247);
+  const [currentTime, setCurrentTime] = useState<number>(0);
   const [index, setIndex] = useState(0);
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>(
     String(data[index].duration),
@@ -76,7 +76,7 @@ export default function MobilePage() {
   const [value, setValue] = useState<number[]>([0]);
   const durationData = data[index].duration.split(":");
   const totalSecond = Number(durationData[0]) * 60 + Number(durationData[1]);
-  const [totalSeconds, setTotalSeconds] = useState<number>(0);
+  const [totalSeconds, setTotalSeconds] = useState<number>(247);
   console.log(currentTime);
   const [soundValue, setSoundValue] = useState<number[]>([100]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
