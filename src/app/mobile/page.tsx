@@ -66,7 +66,7 @@ const data = [
 ];
 export default function MobilePage() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(247);
   const [index, setIndex] = useState(0);
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>(
     String(data[index].duration),
