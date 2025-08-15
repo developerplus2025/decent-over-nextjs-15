@@ -112,11 +112,11 @@ useEffect(() => {
       audioRef.current.pause();
     }
   }, [pathname]);
-  // useEffect(() => {
-  //   if (audioRef.current) {
-  //     audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
-  //   }
-  // }, [value, totalSeconds]);
+   useEffect(() => {
+     if (audioRef.current) {
+      audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
+     }
+   }, [value, totalSeconds]);
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
