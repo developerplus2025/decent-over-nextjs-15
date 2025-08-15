@@ -281,7 +281,8 @@ export default function MobilePage() {
               onValueChange={(newTempValue) => setTempValue(newTempValue)}
               onValueCommit={(newValue) => setValue(tempValue)}
               defaultValue={[0]}
-              value={[(currentTime / totalSeconds) * 100]}
+              // value={[(currentTime / totalSeconds) * 100]}
+              value={[currentTime]}
               max={100}
               step={1}
               className="relative flex w-full touch-none items-center select-none [&_svg]:cursor-pointer"
