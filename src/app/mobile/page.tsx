@@ -177,7 +177,7 @@ export default function MobilePage() {
 
   return (
     <div className="flex h-[100dvh] flex-col">
-      <div className="h-[50px] px-[1rem]">
+      <div className="border-input h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
       <div className="flex h-[calc(100dvh-130px)] flex-col items-center justify-center">
