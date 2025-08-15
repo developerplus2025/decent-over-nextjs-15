@@ -76,7 +76,7 @@ export default function MobilePage() {
   const durationData = data[index].duration.split(":");
   const totalSecond = Number(durationData[0]) * 60 + Number(durationData[1]);
   const [totalSeconds, setTotalSeconds] = useState<number>(totalSecond);
-  console.log([(currentTime / totalSeconds) * 100]);
+  console.log(currentTime);
   const [soundValue, setSoundValue] = useState<number[]>([100]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
