@@ -82,21 +82,21 @@ export default function MobilePage() {
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
 
-useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  // Khi audio load metadata xong thì cập nhật thời lượng thật
-  const updateDuration = () => {
-    setTotalSeconds(audio.duration || 0);
-  };
+    // Khi audio load metadata xong thì cập nhật thời lượng thật
+    const updateDuration = () => {
+      setTotalSeconds(audio.duration || 0);
+    };
 
-  audio.addEventListener("loadedmetadata", updateDuration);
+    audio.addEventListener("loadedmetadata", updateDuration);
 
-  return () => {
-    audio.removeEventListener("loadedmetadata", updateDuration);
-  };
-}, [index]); // chạy lại khi đổi bài hát
+    return () => {
+      audio.removeEventListener("loadedmetadata", updateDuration);
+    };
+  }, [index]); // chạy lại khi đổi bài hát
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -113,11 +113,11 @@ useEffect(() => {
       audioRef.current.pause();
     }
   }, [pathname]);
-   useEffect(() => {
-     if (audioRef.current) {
+  useEffect(() => {
+    if (audioRef.current) {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
-     }
-   }, [value, totalSeconds]);
+    }
+  }, [value, totalSeconds]);
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
@@ -177,7 +177,7 @@ useEffect(() => {
 
   return (
     <div className="flex h-[100dvh] flex-col">
-      <div>
+      <div className="h-[50px]">
         <Navigation />
       </div>
       <div className="flex h-[calc(100dvh-130px)] flex-col items-center justify-center">

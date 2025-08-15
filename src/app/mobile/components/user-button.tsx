@@ -122,25 +122,7 @@ export default function UserButton() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        
-        <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-          <Link
-            href={
-              "https://github.com/developerplus2025/decent-over-nextjs-15/tree/main"
-            }
-          >
-            {" "}
-            <GitHub />
-          </Link>
-        </div>
-        <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
-          <Link href={"https://x.com/DeveloperPlus24"}>
-            <X />
-          </Link>
-        </div>
-
         <ThemeToggle />
-
         {session?.user && (
           <div>
             <div
@@ -363,7 +345,7 @@ export default function UserButton() {
                     variant="outline"
                     className="h-[32px] gap-1 [&_svg]:size-[15px]"
                   >
-                    Create Account
+                    Sign Up
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
