@@ -71,7 +71,6 @@ import React, { useEffect, useRef, useState } from "react";
    const audioRef = useRef<HTMLAudioElement | null>(null);
    const pathname = usePathname();
    const [value, setValue] = useState<number[]>([0]);
-   const [totalSeconds, setTotalSeconds] = useState<number>(247);
    const [soundValue, setSoundValue] = useState<number[]>([100]);
    const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
    const [tempValue, setTempValue] = useState<number[]>([0]);
@@ -92,11 +91,13 @@ import React, { useEffect, useRef, useState } from "react";
        audioRef.current.pause();
      }
    }, [pathname]);
+   const durationData = data[index].duration.split(":");
+   const totalSecond = Number(durationData[0] + durationData[1]);
    useEffect(() => {
      if (audioRef.current) {
-       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
+       audioRef.current.currentTime = (Number(value) / 100) * totalSecond;
      }
-   }, [value, totalSeconds]);
+   }, [value, totalSecond]);
    useEffect(() => {
      setSoundTempValue(soundValue);
      if (audioRef.current) {
@@ -145,6 +146,7 @@ import React, { useEffect, useRef, useState } from "react";
        }
      }
    };
+
    const formatTime = (time: number) => {
      const minutes = Math.floor(time / 60); // Tính phút
      const seconds = Math.floor(time % 60); // Tính giây còn lại
@@ -265,7 +267,7 @@ import React, { useEffect, useRef, useState } from "react";
                onValueChange={(newTempValue) => setTempValue(newTempValue)}
                onValueCommit={(newValue) => setValue(tempValue)}
                defaultValue={[0]}
-               value={[(currentTime / totalSeconds) * 100]}
+               value={[(currentTime / totalSecond) * 100]}
                max={100}
                step={1}
                className="relative flex w-full touch-none items-center select-none [&_svg]:cursor-pointer"
