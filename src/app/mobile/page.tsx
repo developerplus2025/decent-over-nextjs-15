@@ -5,6 +5,7 @@ import * as Slider from "@radix-ui/react-slider";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import Navigation from "./components/navigation";
 const data = [
   {
     id: 1,
@@ -176,7 +177,10 @@ useEffect(() => {
 
   return (
     <div className="flex h-[100dvh] flex-col">
-      <div className="flex h-[calc(100dvh-80px)] flex-col items-center justify-center">
+      <div>
+        <Navigation />
+      </div>
+      <div className="flex h-[calc(100dvh-130px)] flex-col items-center justify-center">
         <div className="flex flex-col gap-[2rem]">
           <div>
             <img
@@ -222,7 +226,9 @@ useEffect(() => {
             </svg>
             <svg
               className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
-              onClick={() => {setIndex((pre) => index - 1),setCurrentTime(0)}}
+              onClick={() => {
+                setIndex((pre) => index - 1), setCurrentTime(0);
+              }}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -262,7 +268,9 @@ useEffect(() => {
 
             <svg
               className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
-              onClick={() =>{ setIndex((pre) => index + 1),setCurrentTime(0)}}
+              onClick={() => {
+                setIndex((pre) => index + 1), setCurrentTime(0);
+              }}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
