@@ -222,7 +222,7 @@ useEffect(() => {
             </svg>
             <svg
               className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
-              onClick={() => {setIndex((pre) => index - 1),setTotalSeconds(0)}}
+              onClick={() => {setIndex((pre) => index - 1),setCurrentTime(0)}}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -262,7 +262,7 @@ useEffect(() => {
 
             <svg
               className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
-              onClick={() =>{ setIndex((pre) => index + 1),setTotalSeconds(0)}}
+              onClick={() =>{ setIndex((pre) => index + 1),setCurrentTime(0)}}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
