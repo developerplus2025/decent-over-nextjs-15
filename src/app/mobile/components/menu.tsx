@@ -5,11 +5,13 @@ import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { Button } from "./ui/button";
+
+
 import DownloadButton from "@/app/(home)/components/DownloadButton";
 import Modal from "@/app/(home)/components/Modal";
 import ButtonAction from "@/app/(home)/components/button-action";
+import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 const LinkItem = [
   {
     id: 1,
@@ -57,9 +59,19 @@ const LinkItem = [
     name: "Nhận thẻ cào",
     src: "/free-card",
   },
+  {
+    id: 11,
+    name: "Sign In",
+    src: "/signin",
+  },
+  {
+    id: 12,
+    name: "Sign Up",
+    src: "/signup",
+  },
 ];
 
-export function MobileNav({ className }: { className?: string }) {
+export function Menu({ className }: { className?: string }) {
   const [open, setOpen] = React.useState(false);
 
   return (

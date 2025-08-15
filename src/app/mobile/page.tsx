@@ -88,7 +88,7 @@ export default function MobilePage() {
 
     // Khi audio load metadata xong thì cập nhật thời lượng thật
     const updateDuration = () => {
-      setTotalSeconds(audio.duration || 0);
+      setTotalSeconds(audio.duration);
     };
 
     audio.addEventListener("loadedmetadata", updateDuration);
@@ -177,7 +177,7 @@ export default function MobilePage() {
 
   return (
     <div className="flex h-[100dvh] flex-col">
-      <div className="h-[50px]">
+      <div className="h-[50px] px-[1rem]">
         <Navigation />
       </div>
       <div className="flex h-[calc(100dvh-130px)] flex-col items-center justify-center">
