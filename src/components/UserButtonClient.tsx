@@ -29,6 +29,7 @@ import X from "./x";
 import { Loader } from "./ui/loader";
 import { useSearchContext } from "fumadocs-ui/provider";
 import Image from "next/image";
+import ThemeToggleButton from "./ui/theme-toggle-button";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -111,7 +112,7 @@ export default function UserButtonClient() {
   const { getReferenceProps, getFloatingProps } = useInteractions([dismiss]);
   const { setOpenSearch } = useSearchContext();
   if (isPending) {
-    return <Loader variant={"circular"} size={"sm"} />;
+    return <Loader variant={"classic"} size={"sm"} />;
   }
   return (
     <div className={`flex items-center gap-4`}>
@@ -170,7 +171,7 @@ export default function UserButtonClient() {
           </Link>
         </div>
 
-        <ThemeToggle />
+        <ThemeToggleButton />
 
         <FeedBack />
         {session?.user && (
