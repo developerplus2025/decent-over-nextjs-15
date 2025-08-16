@@ -77,7 +77,6 @@ export default function MobilePage() {
   const durationData = data[index].duration.split(":");
   const totalSecond = Number(durationData[0]) * 60 + Number(durationData[1]);
   const [totalSeconds, setTotalSeconds] = useState<number>(247);
-  console.log(currentTime);
   const [soundValue, setSoundValue] = useState<number[]>([100]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
@@ -183,7 +182,7 @@ export default function MobilePage() {
       <div className="flex h-[calc(100dvh-130px)] flex-col items-center justify-center">
         <div className="flex flex-col gap-[2rem]">
           <div>
-            <img
+            <Image
               className="h-[300px] w-[300px] rounded-xl"
               width={200}
               height={200}

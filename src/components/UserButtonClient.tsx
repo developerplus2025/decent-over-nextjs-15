@@ -123,15 +123,17 @@ export default function UserButtonClient() {
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
         <div
+          style={{
+            backgroundColor:
+              "color-mix(in oklab,var(--color-fd-secondary)50%,transparent)",
+          }}
           onClick={() => {
-            console.log("Use Search");
             setOpenSearch(true);
           }}
           className="flex h-[32px] w-fit cursor-pointer items-center justify-center gap-2 rounded-md border border-(--input) p-3 select-none"
         >
           <svg
             onClick={() => {
-              console.log("Use Search");
               setOpenSearch(true);
             }}
             className="size-4.5 shrink-0"
@@ -144,7 +146,7 @@ export default function UserButtonClient() {
             <title>Search Icon</title>
             <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
           </svg>
-          <p className="text-muted-foreground text-xs"> Search for documents</p>
+          <p className="text-xs text-[#a1a1a1]"> Search for documents</p>
           <div className="flex gap-1">
             <kbd className="text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-(--input) px-1.5 font-sans text-[10px] font-medium opacity-100 select-none">
               <span className="text-xs">Ctrl</span>
