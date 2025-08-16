@@ -6,8 +6,8 @@ export default function PathAnimation() {
   return (
     <motion.div
       style={{
-        width: 28,
-        height: 28,
+        width: 20,
+        height: 1,
         background: "tomato",
         offsetPath: 'path("M0 50 Q 50 0 100 50")',
       }}
