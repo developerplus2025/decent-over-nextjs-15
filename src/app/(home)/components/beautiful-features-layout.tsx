@@ -64,21 +64,16 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid max-w-[1290px] gap-[2rem] bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto grid max-w-[1000px] justify-center justify-items-center gap-[2rem] bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-3">
           {items.map((items) => (
             <div
               key={items.id}
-              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} border-input flex h-[200px] w-[200px] flex-col justify-center border`}
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} border-input relative flex h-[200px] w-[300px] flex-col justify-center border`}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#ffffff"
-                viewBox="0 0 256 256"
-              >
-                <path d="M220,128a4,4,0,0,1-4,4H132v84a4,4,0,0,1-8,0V132H40a4,4,0,0,1,0-8h84V40a4,4,0,0,1,8,0v84h84A4,4,0,0,1,220,128Z"></path>
-              </svg>
+              <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[10px] border-r border-b"></div>
+              <div className="absolute -top-[10px] -right-[10px] h-[10px] w-[10px] border-b border-l"></div>
+              <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-t border-r"></div>
+              <div className="absolute -right-[10px] -bottom-[10px] h-[10px] w-[10px] border-t border-l"></div>
               <div className="flex items-center gap-2">
                 <items.icons className="size-4 shrink-0" />
                 <h3 className="text-sm font-medium">{items.title}</h3>
