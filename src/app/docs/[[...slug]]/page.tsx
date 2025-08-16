@@ -73,7 +73,7 @@ export default async function Page(props: {
 
   // @ts-expect-error - revisit fumadocs types.
   const links = doc.links;
-  console.log(source.pageTree);
+
   return (
     <DocsPage
       // @ts-expect-error - revisit fumadocs types.

@@ -92,6 +92,9 @@ export default function ThemeToggleButton({
         content="Toggle theme"
       >
         <IconButton
+          onClick={() => {
+            toggleTheme();
+          }}
           size="3"
           variant="ghost"
           color="gray"
