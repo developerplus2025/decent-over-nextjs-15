@@ -76,9 +76,11 @@ export default function BeautifulFeaturesLayout() {
               <div className="absolute -right-[10px] -bottom-[10px] h-[10px] w-[10px] border-t border-l border-white"></div>
               <div className="flex items-center gap-2">
                 <items.icons className="size-4 shrink-0" />
-                <h3 className="text-sm font-medium">{items.title}</h3>
+                <h3 className="text-center text-sm font-medium">
+                  {items.title}
+                </h3>
               </div>
-              <p className="text-sm">{items.description}</p>
+              <p className="text-center text-sm">{items.description}</p>
             </div>
           ))}
         </div>
