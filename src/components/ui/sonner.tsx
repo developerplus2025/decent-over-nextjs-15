@@ -14,7 +14,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         {
           "--normal-text": "var(--popover-foreground)",
           "--normal-border": "var(input)",
-          "-toast-close-button-transform": "translate(0%, 0%);",
+          "--toast-close-button-transform": "translate(0%, 0%);",
         } as React.CSSProperties
       }
       {...props}
