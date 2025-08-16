@@ -183,7 +183,7 @@ export default function MobilePage() {
         <div className="flex flex-col gap-[2rem]">
           <div>
             <Image
-              className="h-[300px] w-[300px] rounded-xl"
+              className="h-[300px] w-[300px] rounded-full animate-spin"
               width={200}
               height={200}
               src={`/music-pre/${data[index].img}.jpg`}
