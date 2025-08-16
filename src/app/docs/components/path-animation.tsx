@@ -1,0 +1,15 @@
+import { motion } from "motion/react";
+export default function PathAnimation() {
+  return (
+    <motion.div
+      style={{
+        width: 28,
+        height: 28,
+        background: "tomato",
+        offsetPath: 'path("M0 50 Q 50 0 100 50")', // simple arc
+      }}
+      animate={{ offsetDistance: ["100%", "0%", "100%"] }}
+      transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+    />
+  );
+}
