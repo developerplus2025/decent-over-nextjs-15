@@ -59,7 +59,7 @@
 /*
   ---break---
 */
-.light {
+:root {
   --sidebar-docs:#ffffff;
   --theme-toggle-sun-icon-display:block;
   --theme-toggle-moon-icon-display:none;
@@ -100,7 +100,7 @@
 /*
   ---break---
 */
-:root {
+.dark {
   --fd-sidebar-width:0px !important;
   --sidebar-docs:#000000;
   --theme-toggle-sun-icon-display:none;
