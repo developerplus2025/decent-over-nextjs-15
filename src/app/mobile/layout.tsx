@@ -10,5 +10,5 @@ export default function LibraryLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="h-dvh">{children}</section>;
+  return <section className="h-dvh overflow-x-hidden overflow-y-hidden">{children}</section>;
 }
