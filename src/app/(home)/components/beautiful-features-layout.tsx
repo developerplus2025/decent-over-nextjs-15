@@ -52,9 +52,9 @@ const items = [
 export default function BeautifulFeaturesLayout() {
   return (
     <section className="py-12 md:py-20">
-      <div className="mx-auto  space-y-8 px-6 md:space-y-16">
+      <div className="mx-auto space-y-8 px-6 md:space-y-16">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-18 tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+          <h1 className="w-[750px] text-center text-[3.5rem] leading-18 font-bold tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             The foundation for professional music creation
           </h1>
           <span className="md:text-md max-w-[450px] text-center text-zinc-500 dark:text-[#a1a1a1]">
@@ -64,12 +64,21 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid gap-[2rem] max-w-[1290px] rounded-lg border bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-6">
+        <div className="relative mx-auto grid max-w-[1290px] gap-[2rem] bg-[#000000] *:p-[1rem] sm:grid-cols-2 lg:grid-cols-3">
           {items.map((items) => (
             <div
               key={items.id}
-              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} h-[200px] justify-center flex flex-col w-[200px] ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} border-input flex h-[200px] w-[200px] flex-col justify-center border`}
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path d="M220,128a4,4,0,0,1-4,4H132v84a4,4,0,0,1-8,0V132H40a4,4,0,0,1,0-8h84V40a4,4,0,0,1,8,0v84h84A4,4,0,0,1,220,128Z"></path>
+              </svg>
               <div className="flex items-center gap-2">
                 <items.icons className="size-4 shrink-0" />
                 <h3 className="text-sm font-medium">{items.title}</h3>
