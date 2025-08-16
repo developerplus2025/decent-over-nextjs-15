@@ -225,16 +225,14 @@ export default function AudioBar() {
         onClick={() => copyLink()}
         className="relative flex cursor-pointer items-center gap-2 select-none"
       >
-        {copy && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 1 }}
-            animate={copy ? { opacity: 1 } : { opacity: 0 }}
-            className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
-          >
-            <p className="text-center text-xs">Copied</p>
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ opacity: 0 }}
+          exit={{ opacity: 1 }}
+          animate={copy ? { opacity: 1 } : { opacity: 0 }}
+          className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
+        >
+          <p className="text-center text-xs">Copied</p>
+        </motion.div>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"

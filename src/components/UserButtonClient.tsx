@@ -130,7 +130,7 @@ export default function UserButtonClient() {
           onClick={() => {
             setOpenSearch(true);
           }}
-          className="flex h-[32px] w-fit cursor-pointer items-center justify-center gap-2 rounded-md border border-(--input) p-3 select-none"
+          className="flex h-[32px] w-fit cursor-pointer items-center justify-center gap-2 rounded-full border border-(--input) p-3 select-none"
         >
           <svg
             onClick={() => {
