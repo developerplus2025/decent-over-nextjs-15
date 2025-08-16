@@ -103,6 +103,9 @@ export default function ThemeToggleButton({
               color: "currentcolor",
               display: "var(--theme-toggle-sun-icon-display)",
             }}
+            onClick={() => {
+              toggleTheme();
+            }}
             xmlns="http://www.w3.org/2000/svg"
             width={24}
             height={24}
@@ -123,6 +126,9 @@ export default function ThemeToggleButton({
           </motion.svg>
 
           <motion.svg
+            onClick={() => {
+              toggleTheme();
+            }}
             exit={{ scale: 100 }}
             style={{
               color: "currentcolor",
