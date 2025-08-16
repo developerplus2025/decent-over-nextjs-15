@@ -11,7 +11,7 @@ const data = [
     id: 1,
     src: "fiction-remix",
     img: "images",
-    name: "Fixtion Remix",
+    name: "Fiction Remix",
     description: "Pháp Sư Việt Nam",
     duration: "4:07",
   },
@@ -116,7 +116,7 @@ export default function MobilePage() {
     if (audioRef.current) {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
-  }, [value, totalSeconds]);
+  }, [value]);
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
