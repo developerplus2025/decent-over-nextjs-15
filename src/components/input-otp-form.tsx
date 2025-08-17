@@ -48,10 +48,7 @@ export function InputOTPForm() {
          if (nddocs) {
            nddocs.style.display = "none";
          }
-
-         document.body.style.overflowY = "hidden";
        } else {
-         document.body.style.overflowY = "auto";
        }
     }
   }
