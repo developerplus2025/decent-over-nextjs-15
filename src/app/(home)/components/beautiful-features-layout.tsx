@@ -70,8 +70,8 @@ export default function BeautifulFeaturesLayout() {
               key={items.id}
               className={`border-input relative flex h-[200px] w-[300px] flex-col items-center justify-center border`}
             >
-              <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[10px] border-r border-b border-white"></div>
-              <div className="absolute -top-[10px] -right-[10px] h-[10px] w-[10px] border-b border-l border-white"></div>
+              <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+              <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
               <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-t border-r border-white"></div>
               <div className="absolute -right-[10px] -bottom-[10px] h-[10px] w-[10px] border-t border-l border-white"></div>
               <div className="flex items-center gap-2">
