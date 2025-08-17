@@ -175,7 +175,7 @@ export default function MobilePage() {
   };
 
   return (
-    <div className="flex h-[100dvh] flex-col">
+    <div className="flex h-[100dvh] flex-col overflow-x-hidden overflow-y-hidden">
       <div className="border-input h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
@@ -183,7 +183,7 @@ export default function MobilePage() {
         <div className="flex flex-col gap-[2rem]">
           <div>
             <Image
-              className="h-[300px] w-[300px] rounded-full animate-spin"
+              className="h-[300px] w-[300px] animate-spin rounded-full"
               width={200}
               height={200}
               src={`/music-pre/${data[index].img}.jpg`}
