@@ -56,9 +56,9 @@ export function PeopleSay() {
     if (open) {
       document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.removeProperty("overflowY");
+      document.body.style.removeProperty("overflow-y");
     }
-  });
+  }, [open]);
   return (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col items-center gap-8">
