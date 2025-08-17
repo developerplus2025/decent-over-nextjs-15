@@ -66,7 +66,11 @@ export default function RootLayout({
 
             <Analytics />
 
-            <ThemeProvider attribute="class" defaultTheme="dark">
+            <ThemeProvider
+              disableTransitionOnChange
+              attribute="class"
+              defaultTheme="dark"
+            >
               {" "}
               <Toaster
                 icons={{
