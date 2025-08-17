@@ -52,6 +52,13 @@ export function PeopleSay() {
   const bookmarks = useStore($bookmarks);
   const likes = useStore($likes);
   const views = useStore($views);
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.removeProperty("overflowY");
+    }
+  });
   return (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col items-center gap-8">
