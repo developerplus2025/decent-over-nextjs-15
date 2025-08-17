@@ -84,7 +84,7 @@ export default function NavigationMobile({
           href="/"
           className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
         >
-          SonixLab
+          NeuroTune
         </Link>
       </div>
       <div className="flex items-center gap-4">
