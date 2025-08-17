@@ -72,12 +72,8 @@ export default function NavigationMobile({
     if (isOpen) {
       document.body.style.overflowY = "hidden"; // Tắt scroll
     } else {
-      document.body.style.overflowY = "auto"; // Bật lại scroll
+      document.body.style.removeProperty("overflow-y");
     }
-
-    return () => {
-      document.body.style.overflowY = "auto"; // Đảm bảo luôn khôi phục scroll khi unmount
-    };
   }, [isOpen]);
   return (
     <div
