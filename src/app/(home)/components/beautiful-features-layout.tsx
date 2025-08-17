@@ -70,12 +70,23 @@ export default function BeautifulFeaturesLayout() {
               key={items.id}
               className={`border-input relative flex h-[200px] w-[300px] flex-col items-center justify-center gap-4 border`}
             >
-              <div>
+              <div className="absolute top-0 left-0">
                 <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
                 <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
               </div>
-              <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-t border-r border-white"></div>
-              <div className="absolute -right-[10px] -bottom-[10px] h-[10px] w-[10px] border-t border-l border-white"></div>
+              <div className="absolute bottom-0 left-0">
+                <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+              </div>
+              <div className="absolute top-0 right-0">
+                <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+              </div>
+              <div className="absolute right-0 bottom-0">
+                <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+              </div>
+
               <div className="flex items-center gap-2">
                 <items.icons className="size-4 shrink-0" />
                 <h3 className="text-center text-sm font-medium text-balance">
