@@ -64,14 +64,15 @@ export function PeopleSay() {
           how it&apos;s transforming the way they create, mix, and enjoy music.
         </span>
       </div>
-      <div className="grid grid-cols-3 justify-items-center gap-8">
+      <div className="relative grid grid-cols-3 justify-items-center gap-8">
         <motion.div
+          onClick={(e) => e.stopPropagation()}
           layoutId=""
           initial={{ width: 0, height: 0 }}
           animate={
-            open ? { width: "25rem", height: "16rem" } : { width: 0, height: 0 }
+            open ? { width: "48rem", height: "24rem" } : { width: 0, height: 0 }
           }
-          className="border-input absolute rounded-xl border"
+          className="border-input absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 rounded-xl border bg-black p-[1rem]"
         >
           <div className="flex items-center gap-3">
             <div>
@@ -95,7 +96,7 @@ export function PeopleSay() {
               setIndex(index), setOpen(true);
             }}
             key={item.name}
-            className="flex-cols gap text-card-foreground relative flex w-[400px] flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 shadow-xs"
+            className="flex-cols gap text-card-foreground relative flex w-[400px] cursor-pointer flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 shadow-xs"
           >
             {/* <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>
