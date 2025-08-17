@@ -70,7 +70,9 @@ export function PeopleSay() {
           layoutId=""
           initial={{ width: 0, height: 0 }}
           animate={
-            open ? { width: "48rem", height: "24rem" } : { width: 0, height: 0 }
+            open
+              ? { width: "48rem", height: "24rem" }
+              : { width: 0, height: 0, opacity: 0 }
           }
           className="border-input absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 rounded-xl border bg-black p-[1rem]"
         >
