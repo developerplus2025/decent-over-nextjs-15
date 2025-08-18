@@ -102,7 +102,7 @@ export default function BlogPage() {
                       {post.data.title}
                     </Link>
                   </h3>
-                  <p className="text-muted-foreground mt-4 line-clamp-[9] text-sm">
+                  <p className="mt-4 line-clamp-[9] text-sm text-[#a1a1a1]">
                     {post.data.description}
                   </p>
                 </CardContent>
