@@ -28,7 +28,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
       {...props}
     >
       <SearchDialogOverlay />
-      <SearchDialogContent className="styled-scrollbar">
+      <SearchDialogContent className="styled-scrollbar !border-input !bg-black">
         <SearchDialogHeader>
           <SearchDialogIcon />
           <SearchDialogInput />

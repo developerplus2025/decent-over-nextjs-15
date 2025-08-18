@@ -100,7 +100,7 @@ export default function Navigation({ className }: NavigationProps): React.ReactE
                 <DrawLineText
                   className="font-[1.1rem]"
                   oneByOne={false}
-                  fontSize={60}
+                  fontSize={17.6}
                   strokeWidth={1.5}
                   text="PaceUI"
                   color="var(--color-foreground)"
