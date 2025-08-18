@@ -97,9 +97,9 @@ export default function Navigation({
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+                className="mask-logo-animation font-[BsespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                SonixLab
+                NeuroTune
               </Link>
             </div>
             <NavigationMenu>
