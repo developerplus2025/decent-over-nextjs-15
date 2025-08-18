@@ -27,6 +27,7 @@
       "content-collections": ["./.content-collections/generated"],
       "@/content/*": ["content/*"],
       "@settings": ["./settings"],
+      "@/components/gsap/": ["./components/gsap/*"],
       "@/content-collections": ["./content-collections.ts"],
       "@/.source": ["./.source/index.ts"],
       "@/*": ["./src/*", "source.ts", "./markdown"],

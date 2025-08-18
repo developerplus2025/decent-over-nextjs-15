@@ -24,7 +24,7 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-
+import { DrawLineText } from "../../components/gsap/draw-line-text";
 import UserButtonClient from "./UserButtonClient";
 import { useTranslations } from "next-intl";
 import NavigationLink from "./NavigationLink";
@@ -36,12 +36,10 @@ import Link from "next/link";
 // });
 
 type NavigationProps = {
-	className?: string;
-	children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 };
-export default function Navigation({
-	className,
-}: NavigationProps): React.ReactElement {
+export default function Navigation({ className }: NavigationProps): React.ReactElement {
   const pathname = usePathname();
   const isWebfilmPath = pathname === "/webfilm";
   const isWebAppPath = pathname === "/webapp";
@@ -97,9 +95,16 @@ export default function Navigation({
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="mask-logo-animation font-[BsespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+                className="mask-logo-animation text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                NeuroTune
+                <DrawLineText
+                  className="font-[1.1rem]"
+                  oneByOne={false}
+                  fontSize={60}
+                  strokeWidth={1.5}
+                  text="PaceUI"
+                  color="var(--color-foreground)"
+                />
               </Link>
             </div>
             <NavigationMenu>
