@@ -47,7 +47,7 @@ export default function BlogPage() {
             return (
               <Card
                 key={index}
-                className={`border-input relative flex flex-col justify-between overflow-hidden rounded-none bg-black`}
+                className={`border-input relative flex flex-col justify-between rounded-none bg-black`}
               >
                 <div className="absolute top-0 left-0">
                   <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
