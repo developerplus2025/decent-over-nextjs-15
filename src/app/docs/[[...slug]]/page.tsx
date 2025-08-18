@@ -7,6 +7,7 @@ import {
   IconArrowUpRight,
 } from "@tabler/icons-react";
 import { findNeighbour } from "fumadocs-core/server";
+import { Suspense } from "react";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { source } from "@/lib/source";
 import { absoluteUrl } from "@/lib/utils";
@@ -26,6 +27,7 @@ import VideoPage from "@/app/video/page";
 import { InputOTPForm } from "@/components/input-otp-form";
 import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
+import { Loader } from "@/components/ui/loader";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -148,27 +150,30 @@ export default async function Page(props: {
         {page.data.description}
       </DocsDescription>
       <AudioBar />
-      <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
-        <div
-          data-slot="docs"
-          className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
-        >
-          <div className="flex min-w-0 flex-col">
-            <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
-              <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-                <MDX
-                  components={{
-                    mdxComponents,
-                    VideoPage,
-                    InputOTPForm,
-                    PathAnimation,
-                  }}
-                />
+      <Suspense fallback={<Loader variant="classic" />}>
+        {" "}
+        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:px-0">
+          <div
+            data-slot="docs"
+            className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
+          >
+            <div className="flex min-w-0 flex-col">
+              <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
+                <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
+                  <MDX
+                    components={{
+                      mdxComponents,
+                      VideoPage,
+                      InputOTPForm,
+                      PathAnimation,
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </DocsBody>
+        </DocsBody>
+      </Suspense>
     </DocsPage>
   );
 }
