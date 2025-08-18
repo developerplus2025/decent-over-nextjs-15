@@ -40,14 +40,30 @@ export default function BlogPage() {
         <DatePickerBlog />
       </div>
       <div className="mt-12 space-y-8">
-        <div className="grid justify-items-center divide-x-1 divide-y-1 border-r sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
                 key={index}
-                className={`flex flex-col justify-between overflow-hidden rounded-none ${index === 0 ? "border-[0px] border-t border-l" : "border-[0px]"}`}
+                className={`" relative flex flex-col justify-between overflow-hidden rounded-none`}
               >
+                <div className="absolute top-0 left-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute bottom-0 left-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute top-0 right-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute right-0 bottom-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
                 <CardHeader className="hidden p-2">
                   <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
                 </CardHeader>

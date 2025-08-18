@@ -22,7 +22,7 @@ export default function BlogPage() {
   return (
     <main className="mb-[4rem] flex w-full flex-col items-center justify-center px-[10rem]">
       <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
-        <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
+        <h2 className="flex-shrink-0 text-2xl font-bold tracking-tight text-nowrap">
           Recent Articles
         </h2>
         <AnimatedTabs />
@@ -35,25 +35,41 @@ export default function BlogPage() {
           <MagnifyingGlassIcon
             width="21"
             height="21"
-            className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
+            className="search_input-blog absolute top-1/2 left-[16px] -translate-y-1/2"
           />
         </div>
         <DatePickerBlog />
       </div>
       <div className="mt-12 space-y-8">
-        <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-r first:!rounded first:!rounded-tr-lg sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 102 }).map((_, index) => {
+        <div className="grid justify-items-center sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 10 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
                 key={index}
-                className={`flex flex-col justify-between overflow-hidden rounded-none ${index === 2 ? "rounded-tr-lg" : ""} ${index === 0 ? "rounded-tl-lg border-[0px] border-l border-t" : "border-[0px]"}`}
+                className={`border-input flex flex-col justify-between overflow-hidden rounded-none`}
               >
+                <div className="absolute top-0 left-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute bottom-0 left-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute top-0 right-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
+                <div className="absolute right-0 bottom-0">
+                  <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>
+                  <div className="absolute -top-[10px] -left-[10px] h-[20px] w-[10px] border-r border-white"></div>
+                </div>
                 <CardHeader className="hidden p-2">
                   <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between gap-4 border-[0px] text-sm text-muted-foreground">
+                  <div className="text-muted-foreground flex items-center justify-between gap-4 border-[0px] text-sm">
                     <Badge
                       className="border-0 p-0 font-medium"
                       variant="outline"
@@ -86,11 +102,11 @@ export default function BlogPage() {
                       {post.data.title}
                     </Link>
                   </h3>
-                  <p className="mt-4 line-clamp-[9] text-sm text-muted-foreground">
+                  <p className="text-muted-foreground mt-4 line-clamp-[9] text-sm">
                     {post.data.description}
                   </p>
                 </CardContent>
-                <CardFooter className="flex flex-col items-start gap-4 border-[0px] px-6 pb-6 pt-0">
+                <CardFooter className="flex flex-col items-start gap-4 border-[0px] px-6 pt-0 pb-6">
                   <div className="flex w-full items-center justify-between">
                     <Button variant="link" className="p-0" asChild>
                       <Link
