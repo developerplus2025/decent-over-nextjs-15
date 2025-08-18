@@ -997,10 +997,9 @@ number-flow-react::part(suffix) {
 hr {
   border-color: var(--input) !important;
 }
-
-@media (min-width: 300px) {
-    #nd-tocnav {
-    margin-left: 2rem;
+@media (width >= 80rem) {  
+  #nd-tocnav {
+    margin-left: 2rem; 
   }
 }
 
