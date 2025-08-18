@@ -999,7 +999,8 @@ hr {
 }
 @media (width >= 80rem) {  
   #nd-tocnav {
-    margin-left: 2rem; 
+    margin-left: 2rem !important; 
+    border-right : 1px solid var(--input);
   }
 }
 
