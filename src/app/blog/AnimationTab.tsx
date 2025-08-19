@@ -18,11 +18,11 @@ export function AnimatedTabs() {
 
   const [index, setIndex] = useState(1);
   useEffect(() => {
-    if (path == "/blog/") {
+    if (path == "/blog") {
       setIndex(0);
-    } else if (path == "/blog/category/plugins/") {
+    } else if (path == "/blog/category/plugins") {
       setIndex(1);
-    } else if (path == "/blog/category/production-tips/") {
+    } else if (path == "/blog/category/production-tips") {
       setIndex(2);
     } else {
       setIndex(3);

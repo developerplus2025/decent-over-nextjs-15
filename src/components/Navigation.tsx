@@ -97,14 +97,7 @@ export default function Navigation({ className }: NavigationProps): React.ReactE
                 href="/"
                 className="mask-logo-animation text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                <DrawLineText
-                  className="font-[1.1rem]"
-                  oneByOne={false}
-                  fontSize={17.6}
-                  strokeWidth={1.5}
-                  text="PaceUI"
-                  color="var(--color-foreground)"
-                />
+                NueroTune
               </Link>
             </div>
             <NavigationMenu>
