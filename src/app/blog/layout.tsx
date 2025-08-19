@@ -1,10 +1,3 @@
-import dynamic from "next/dynamic";
-const AnimatedTabs = dynamic(
-  () => import("./AnimationTab").then((mod) => mod.AnimatedTabs),
-  {
-    ssr: true,
-  },
-);
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
@@ -21,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { DatePickerBlog } from "./date-picker-blog";
 // import Tabs from "./tabs";
 import TabAnimation from "./tabs";
+import { AnimatedTabs } from "./AnimationTab";
 export const metadata: Metadata = {
   title: "Blog - Decent",
   description: "Blog - Decent",
