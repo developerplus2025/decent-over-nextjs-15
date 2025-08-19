@@ -16,19 +16,18 @@ const normalizePath = (path: string) => path.replace(/\/$/, "");
 export function AnimatedTabs() {
   const path = usePathname();
 
-  const [index, setIndex] = useState(1);
-  useEffect(() => {
-    if (path == "/blog") {
-      setIndex(0);
-    } else if (path == "/blog/category/plugins") {
-      setIndex(1);
-    } else if (path == "/blog/category/production-tips") {
-      setIndex(2);
+  const getInitialIndex = (path: string) => {
+    if (path === "/blog") {
+      return 0;
+    } else if (path === "/blog/category/plugins") {
+      return 1;
+    } else if (path === "/blog/category/production-tips") {
+      return 2;
     } else {
-      setIndex(3);
+      return 3;
     }
-  }, [path]);
-  const [activeTab, setActiveTab] = useState(TABS[index].id);
+  };
+  const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
   const router = useRouter();
   return (
     <div className="flex space-x-1">
