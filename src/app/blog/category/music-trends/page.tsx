@@ -20,33 +20,15 @@ export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <main className="mb-[4rem] flex w-full flex-col items-center justify-center px-[10rem]">
-      <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
-        <h2 className="flex-shrink-0 text-2xl font-bold tracking-tight text-nowrap">
-          Recent Articles
-        </h2>
-        <AnimatedTabs />
-        <div className="relative w-full">
-          <Input
-            type="search"
-            placeholder="Search for favorite songs"
-            className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
-          />
-          <MagnifyingGlassIcon
-            width="21"
-            height="21"
-            className="search_input-blog absolute top-1/2 left-[16px] -translate-y-1/2"
-          />
-        </div>
-        <DatePickerBlog />
-      </div>
+     
       <div className="mt-12 space-y-8">
         <div className="grid justify-items-center sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 10 }).map((_, index) => {
+          {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
                 key={index}
-                className={`"} relative flex flex-col justify-between overflow-hidden rounded-none bg-black`}
+                className={`" relative flex flex-col justify-between overflow-hidden rounded-none`}
               >
                 <div className="absolute top-0 left-0">
                   <div className="absolute -top-[10px] -left-[10px] h-[10px] w-[20px] border-b border-white"></div>

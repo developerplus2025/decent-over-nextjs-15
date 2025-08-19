@@ -6,15 +6,29 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 const TABS = [
   { id: 1, label: "All Posts", link: "" },
-  { id: 2, label: "Interactions", link: "/category/interactions/" },
-  { id: 3, label: "Resources", link: "/category/resources/" },
-  { id: 4, label: "Docs", link: "/category/docs/" },
+  { id: 2, label: "Plugins", link: "/category/plugins/" },
+  { id: 3, label: "Production Tips", link: "/category/production-tips/" },
+  { id: 4, label: "Music Trends", link: "/category/music-trends/" },
 ];
 
 const normalizePath = (path: string) => path.replace(/\/$/, "");
 
 export function AnimatedTabs() {
-  const [activeTab, setActiveTab] = useState(TABS[0].id);
+  const path = usePathname();
+
+  const [index, setIndex] = useState(1);
+  useEffect(() => {
+    if (path == "/blog/") {
+      setIndex(0);
+    } else if (path == "/blog/category/interactions/") {
+      setIndex(1);
+    } else if (path == "/blog/category/resources/") {
+      setIndex(2);
+    } else {
+      setIndex(3);
+    }
+  }, [path]);
+  const [activeTab, setActiveTab] = useState(TABS[index].id);
   const router = useRouter();
   return (
     <div className="flex space-x-1">
@@ -27,7 +41,7 @@ export function AnimatedTabs() {
             }}
             className={`${
               activeTab === tab.id ? "" : "hover:text-white/60"
-            } relative flex h-8 items-center justify-center text-nowrap rounded-full p-3 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+            } relative flex h-8 items-center justify-center rounded-full p-3 text-sm font-medium text-nowrap text-white outline-sky-400 transition focus-visible:outline-2`}
             style={{
               WebkitTapHighlightColor: "transparent",
             }}
