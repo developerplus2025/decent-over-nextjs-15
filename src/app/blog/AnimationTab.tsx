@@ -20,9 +20,9 @@ export function AnimatedTabs() {
   useEffect(() => {
     if (path == "/blog/") {
       setIndex(0);
-    } else if (path == "/blog/category/interactions/") {
+    } else if (path == "/blog/category/plugins/") {
       setIndex(1);
-    } else if (path == "/blog/category/resources/") {
+    } else if (path == "/blog/category/production-tips/") {
       setIndex(2);
     } else {
       setIndex(3);
