@@ -26,7 +26,7 @@ export default function BlogLayout({
 }) {
   return (
     <section className="flex flex-col gap-[2rem]">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-[10rem] pt-[3rem]">
         <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
           <h2 className="flex-shrink-0 text-2xl font-bold tracking-tight text-nowrap">
             Recent Articles
@@ -46,7 +46,6 @@ export default function BlogLayout({
           </div>
           <DatePickerBlog />
         </div>
-        <AnimatedTabs />
       </div>
       {children}
     </section>
