@@ -152,7 +152,7 @@ export default async function Page(props: {
       <AudioBar />
       <Suspense fallback={<Loader variant="classic" />}>
         {" "}
-        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[1rem] xl:px-0">
+        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
           <div
             data-slot="docs"
             className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
