@@ -27,7 +27,7 @@ export default function AnimateTextHome() {
           variants={wordVariants}
           initial="hidden"
           animate="visible"
-          className="animation-h1 title-texct-home font-semibold -tracking-[3px] xl:mr-1.5 xl:inline-block xl:text-center xl:text-[5rem] xl:leading-[5.2rem]"
+          className="animation-h1 title-texct-home font-[500] -tracking-[3px] xl:mr-1.5 xl:inline-block xl:text-center xl:text-[5rem] xl:leading-[5.2rem]"
         >
           {word}
         </motion.p>
