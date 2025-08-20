@@ -11,6 +11,7 @@ import { Badge } from "@/components/luxe/badge";
 import PopoverRws from "@/components/popover-rws";
 import LogoCloud from "@/components/logo-cloud";
 import BlurCollapsible from "@/components/BlurCollapsible";
+import BlockTheme from "../docs/components/block-theme";
 export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-[7rem] min-[300px]:pb-16 xl:pt-20 xl:pb-4 dark:bg-black dark:scheme-dark">
@@ -37,6 +38,7 @@ export default function Home() {
       <div className="mx-auto my-16 h-px w-[700px] bg-linear-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
         <BlurCollapsible />
+        <BlockTheme />
         <p className={`font-[BespokeStencil-BoldItalic] text-[55px]`}>Decent</p>
       </div>
       <div className="mb-20"> </div>
