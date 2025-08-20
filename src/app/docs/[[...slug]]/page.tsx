@@ -155,7 +155,7 @@ export default async function Page(props: {
         <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[1rem] xl:px-0">
           <div
             data-slot="docs"
-            className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
+            className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
           >
             <div className="flex min-w-0 flex-col">
               <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">

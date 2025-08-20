@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         component: (
           <div
             className={cn(
-              "container-wrapper border-input flex flex-col border-r [--fd-sidebar-width:0px] xl:!w-[18rem]",
+              "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[18rem] xl:border-r",
             )}
           >
             <SidebarProvider className="3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:18rem] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
