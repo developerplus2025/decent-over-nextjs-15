@@ -25,9 +25,9 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col gap-[2rem]">
-      <div className="flex items-center justify-between px-[10rem] pt-[3rem]">
-        <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
+    <section className="flex flex-col gap-[3rem]">
+      <div className="flex items-center justify-between px-[10rem]">
+        <div className="flex w-full items-center justify-between gap-[4rem] pt-[3rem]">
           <h2 className="flex-shrink-0 text-2xl font-bold tracking-tight text-nowrap">
             Recent Articles
           </h2>

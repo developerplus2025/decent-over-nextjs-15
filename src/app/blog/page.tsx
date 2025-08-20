@@ -21,7 +21,7 @@ export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <main className="mb-[4rem] flex w-full flex-col items-center justify-center px-[10rem]">
-      <div className="mt-12 space-y-8">
+      <div className="space-y-8">
         <div className="grid justify-items-center gap-[2rem] sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 9 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
