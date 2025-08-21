@@ -36,6 +36,7 @@ export default async function Page(props: {
             Back to BLog
           </Link>
         </div>
+        <p className="text-sm">Monday, August 18th 2025</p>
         <h1 className="mb-2 text-center text-3xl font-bold">
           {page.data.title}
         </h1>
