@@ -23,8 +23,8 @@ export default async function Page(props: {
   
   return (
     <>
-      <div className="container flex w-[1000px] flex-col gap-2 rounded-xl border py-12 md:px-8">
-        <div className="flex gap-3">
+      <div className="border-input container flex w-[1000px] flex-col justify-center gap-2 border-b py-12 md:px-8">
+        <Link href={"/blog"} className="flex justify-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -34,17 +34,16 @@ export default async function Page(props: {
           >
             <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
           </svg>
-          <Link href="/blog" className="text-sm">
-            Back to BLog
-          </Link>
+          <p className="text-sm">Back to BLog</p>
+        </Link>
+        <div className="flex justify-center gap-2">
+          <p className="text-sm text-[#a1a1a1]">{page.data.date}</p>
+          <p>{page.data.author}</p>
+          <p>{page.data.category}</p>
         </div>
-        <p className="text-sm">Monday, August 18th 2025</p>
         <h1 className="mb-2 text-center text-3xl font-bold">
           {page.data.title}
         </h1>
-        <p className="text-fd-muted-foreground mb-4 text-center text-balance">
-          {page.data.description}
-        </p>
       </div>
       <article className="container flex w-[1000px] flex-col px-4 py-8">
         <div className="prose min-w-0">
@@ -54,18 +53,6 @@ export default async function Page(props: {
             }}
           />
         </div>
-        {/* <div className="flex flex-col gap-4 text-sm">
-          <div>
-            <p className="text-fd-muted-foreground mb-1">Written by</p>
-            <p className="font-medium">{page.data.author}</p>
-          </div>
-          <div>
-            <p className="text-fd-muted-foreground mb-1 text-sm">At</p>
-            <p className="font-medium">
-              {new Date(page.data.date).toDateString()}
-            </p>
-          </div>
-        </div> */}
       </article>
     </>
   );
