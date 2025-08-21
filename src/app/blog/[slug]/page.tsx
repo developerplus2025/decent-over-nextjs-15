@@ -5,22 +5,23 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { blog } from "@/lib/source";
 import { mdxComponents } from "@/../mdx-components";
 import { absoluteUrl } from "@/lib/utils";
+import Image from "next/image";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
 }) {
   const params = await props.params;
- 
-   // handle the "api-reference" case here if needed
-   const page = blog.getPage([params.slug]);
-   if (!page) {
-     notFound();
-   }
- 
-   const doc = page.data;
-   
-   const MDX = doc.body;
-  
+
+  // handle the "api-reference" case here if needed
+  const page = blog.getPage([params.slug]);
+  if (!page) {
+    notFound();
+  }
+
+  const doc = page.data;
+
+  const MDX = doc.body;
+
   return (
     <>
       <div className="border-input container flex w-[1000px] flex-col justify-center gap-2 border-b py-12 md:px-8">
@@ -38,12 +39,33 @@ export default async function Page(props: {
         </Link>
         <div className="flex justify-center gap-2">
           <p className="text-sm text-[#a1a1a1]">{page.data.date}</p>
-          <p>{page.data.author}</p>
+
           <p>{page.data.category}</p>
         </div>
         <h1 className="mb-2 text-center text-3xl font-bold">
           {page.data.title}
         </h1>
+        <div className="flex flex-col gap-2">
+          <p>Posted by</p>
+          {page.data.author.map((items) => (
+            <div className="flex items-center gap-2" key={items.name}>
+              <Image
+                alt={items.name}
+                height={"50"}
+                width={"50"}
+                className="h-[50px] w-[50px] rounded-full bg-black"
+                src={`${items.avatar}`}
+              >
+                {" "}
+              </Image>
+              <div className="flex flex-col gap-1">
+                {" "}
+                <p className="text-xs">{items.name}</p>
+                <p className="text-xs">{items.username}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <article className="container flex w-[1000px] flex-col px-4 py-8">
         <div className="prose min-w-0">

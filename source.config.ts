@@ -1,6 +1,6 @@
 import { defineDocs } from "fumadocs-mdx/config";
 import { defineCollections, frontmatterSchema } from "fumadocs-mdx/config";
-import { z } from "zod";
+import { array, z, ZodArray } from "zod";
 export const docs = defineDocs({
   dir: "content/docs",
 });
@@ -9,7 +9,13 @@ export const blogPosts = defineCollections({
   dir: "content/blog",
   // add required frontmatter properties
   schema: frontmatterSchema.extend({
-    author: z.string(),
+    author: z.array(
+      z.object({
+        name: z.string(),
+        avatar: z.string(), // có thể thêm .url() nếu luôn dùng link
+        username: z.string(),
+      }),
+    ),
     category: z.string(),
     date: z.string(),
     link: z.string(),
