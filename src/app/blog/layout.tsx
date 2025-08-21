@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
@@ -15,6 +16,8 @@ import { DatePickerBlog } from "./date-picker-blog";
 // import Tabs from "./tabs";
 import TabAnimation from "./tabs";
 import { AnimatedTabs } from "./AnimationTab";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 export const metadata: Metadata = {
   title: "Blog - Decent",
   description: "Blog - Decent",
@@ -24,6 +27,27 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const path = usePathname();
+  const pathname = path.slice(1).split("/");
+  const arraypath = pathname;
+  const [show, setShow] = useState(() => {
+    if (arraypath.length == 2) {
+      return false;
+    } else if (arraypath.length == 3) {
+      return true;
+    } else {
+      return true;
+    }
+  });
+  useEffect(() => {
+    if (arraypath.length == 2) {
+      setShow(false);
+    } else if (arraypath.length == 3) {
+      setShow(true);
+    } else {
+      setShow(true);
+    }
+  }, [arraypath.length]);
   return (
     <section className="flex flex-col gap-[3rem]">
       <div className="flex items-center justify-between px-[10rem]">
