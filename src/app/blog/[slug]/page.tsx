@@ -5,53 +5,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { blog } from "@/lib/source";
 import { mdxComponents } from "@/../mdx-components";
 import { absoluteUrl } from "@/lib/utils";
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const params = await props.params;
-  const page = blog.getPage(params.slug);
 
-  if (!page) {
-    notFound();
-  }
-
-  const doc = page.data;
-
-  if (!doc.title || !doc.description) {
-    notFound();
-  }
-
-  return {
-    title: doc.title,
-    description: doc.description,
-    openGraph: {
-      title: doc.title,
-      description: doc.description,
-      type: "article",
-      url: absoluteUrl(page.url),
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title,
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: doc.title,
-      description: doc.description,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title,
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
-      creator: "@neurotune",
-    },
-  };
-}
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
 }) {
