@@ -47,15 +47,15 @@ export default async function Page(props: {
         </h1>
         <div className="flex flex-col gap-2">
           <p className="text-sm">Posted by</p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             {page.data.authors.map((items) => (
-              <div className="flex items-center gap-2" key={items.name}>
+              <div className="flex items-center gap-3" key={items.name}>
                 <Image
                   alt={items.name}
                   height={"50"}
                   width={"50"}
                   className="h-[40px] w-[40px] rounded-full bg-black"
-                  src={`${items.avatar}`}
+                  src={`/alan-cowen.avif`}
                 />
                 <div className="flex flex-col gap-0">
                   <p className="text-xs">{items.name}</p>
