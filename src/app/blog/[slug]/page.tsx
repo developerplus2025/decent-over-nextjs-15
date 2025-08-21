@@ -40,28 +40,30 @@ export default async function Page(props: {
         <div className="flex justify-center gap-2">
           <p className="text-sm text-[#a1a1a1]">{page.data.date}</p>
 
-          <p>{page.data.category}</p>
+          <p className="text-sm">{page.data.category}</p>
         </div>
         <h1 className="mb-2 text-center text-3xl font-bold">
           {page.data.title}
         </h1>
         <div className="flex flex-col gap-2">
-          <p>Posted by</p>
-          {page.data.authors.map((items) => (
-            <div className="flex items-center gap-2" key={items.name}>
-              <Image
-                alt={items.name}
-                height={"50"}
-                width={"50"}
-                className="h-[50px] w-[50px] rounded-full bg-black"
-                src={`${items.avatar}`}
-              ></Image>
-              <div className="flex flex-col gap-1">
-                <p className="text-xs">{items.name}</p>
-                <p className="text-xs">{items.username}</p>
+          <p className="text-sm">Posted by</p>
+          <div className="flex items-center gap-2">
+            {page.data.authors.map((items) => (
+              <div className="flex items-center gap-2" key={items.name}>
+                <Image
+                  alt={items.name}
+                  height={"50"}
+                  width={"50"}
+                  className="h-[40px] w-[40px] rounded-full bg-black"
+                  src={`${items.avatar}`}
+                />
+                <div className="flex flex-col gap-1">
+                  <p className="text-xs">{items.name}</p>
+                  <p className="text-xs">{items.username}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <article className="container flex w-[1000px] flex-col px-4 py-8">
