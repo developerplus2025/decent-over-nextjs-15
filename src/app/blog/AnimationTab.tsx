@@ -15,6 +15,7 @@ const normalizePath = (path: string) => path.replace(/\/$/, "");
 
 export function AnimatedTabs() {
   const path = usePathname();
+  const [index, setIndex] = useState();
 
   const getInitialIndex = (path: string) => {
     if (path === "/blog") {
@@ -27,7 +28,12 @@ export function AnimatedTabs() {
       return 3;
     }
   };
+
   const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
+  useEffect(() => {
+    setActiveTab(TABS[getInitialIndex(path)].id);
+  }, [path]);
+
   const pathname = path.slice(1).split("/");
   const arraypath = pathname;
   console.log(arraypath);
