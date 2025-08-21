@@ -22,11 +22,11 @@ export default async function Page(props: {
   return (
     <>
       <div className="container rounded-xl border py-12 md:px-8">
+        <Link href="/blog">Back</Link>
         <h1 className="mb-2 text-3xl font-bold">{page.data.title}</h1>
         <p className="text-fd-muted-foreground mb-4">{page.data.description}</p>
-        <Link href="/blog">Back</Link>
       </div>
-      <article className="container flex flex-col px-4 py-8">
+      <article className="container flex w-[1000px] flex-col px-4 py-8">
         <div className="prose min-w-0">
           <InlineTOC items={page.data.toc} />
           <MDX
@@ -35,7 +35,7 @@ export default async function Page(props: {
             }}
           />
         </div>
-        <div className="flex flex-col gap-4 text-sm">
+        {/* <div className="flex flex-col gap-4 text-sm">
           <div>
             <p className="text-fd-muted-foreground mb-1">Written by</p>
             <p className="font-medium">{page.data.author}</p>
@@ -46,7 +46,7 @@ export default async function Page(props: {
               {new Date(page.data.date).toDateString()}
             </p>
           </div>
-        </div>
+        </div> */}
       </article>
     </>
   );
