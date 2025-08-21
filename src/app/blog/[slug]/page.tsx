@@ -45,7 +45,7 @@ export default async function Page(props: {
         <h1 className="mb-2 text-center text-3xl font-bold">
           {page.data.title}
         </h1>
-        <div className="flex flex-col gap-2">
+        <div className="mt-[2rem] flex flex-col gap-2">
           <p className="text-sm">Posted by</p>
           <div className="flex items-center gap-4">
             {page.data.authors.map((items) => (
@@ -54,12 +54,12 @@ export default async function Page(props: {
                   alt={items.name}
                   height={"50"}
                   width={"50"}
-                  className="h-[40px] w-[40px] rounded-full bg-black"
+                  className="h-[32px] w-[32px] rounded-full bg-black"
                   src={`/alan-cowen.avif`}
                 />
                 <div className="flex flex-col gap-0">
                   <p className="text-xs">{items.name}</p>
-                  <p className="text-xs">{items.username}</p>
+                  <p className="text-xs text-[#a1a1a1]">{items.username}</p>
                 </div>
               </div>
             ))}
