@@ -55,11 +55,8 @@ export default async function Page(props: {
                 width={"50"}
                 className="h-[50px] w-[50px] rounded-full bg-black"
                 src={`${items.avatar}`}
-              >
-                {" "}
-              </Image>
+              ></Image>
               <div className="flex flex-col gap-1">
-                {" "}
                 <p className="text-xs">{items.name}</p>
                 <p className="text-xs">{items.username}</p>
               </div>
