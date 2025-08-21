@@ -21,14 +21,30 @@ export default async function Page(props: {
   
   return (
     <>
-      <div className="container rounded-xl border py-12 md:px-8">
-        <Link href="/blog">Back</Link>
-        <h1 className="mb-2 text-3xl font-bold">{page.data.title}</h1>
-        <p className="text-fd-muted-foreground mb-4">{page.data.description}</p>
+      <div className="container flex w-[1000px] flex-col gap-2 rounded-xl border py-12 md:px-8">
+        <div className="flex gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#ffffff"
+            viewBox="0 0 256 256"
+          >
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+          </svg>
+          <Link href="/blog" className="text-sm">
+            Back to BLog
+          </Link>
+        </div>
+        <h1 className="mb-2 text-center text-3xl font-bold">
+          {page.data.title}
+        </h1>
+        <p className="text-fd-muted-foreground mb-4 text-center text-balance">
+          {page.data.description}
+        </p>
       </div>
       <article className="container flex w-[1000px] flex-col px-4 py-8">
         <div className="prose min-w-0">
-          <InlineTOC items={page.data.toc} />
           <MDX
             components={{
               ...mdxComponents,
