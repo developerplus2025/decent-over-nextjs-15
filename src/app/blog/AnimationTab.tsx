@@ -28,7 +28,7 @@ export function AnimatedTabs() {
     }
   };
   const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
-  const pathname = path.split("/");
+  const pathname = path.slice(1).split("/");
   const arraypath = pathname;
   console.log(arraypath);
 
