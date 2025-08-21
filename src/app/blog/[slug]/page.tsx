@@ -47,7 +47,7 @@ export default async function Page(props: {
         </h1>
         <div className="flex flex-col gap-2">
           <p>Posted by</p>
-          {page.data.author.map((items) => (
+          {page.data.authors.map((items) => (
             <div className="flex items-center gap-2" key={items.name}>
               <Image
                 alt={items.name}
