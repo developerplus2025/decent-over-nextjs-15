@@ -28,6 +28,10 @@ export function AnimatedTabs() {
     }
   };
   const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
+  const pathname = path.split("/");
+  const arraypath = pathname[2];
+  console.log(arraypath);
+
   const router = useRouter();
   return (
     <div className="flex space-x-1">
