@@ -1,4 +1,4 @@
 {
   "title": "Settings Customization",
-  "pages": ["index", "themes", "audio-devices", "keyboard-shortcuts"]
+  "pages": ["themes", "audio-devices", "keyboard-shortcuts"]
 }
