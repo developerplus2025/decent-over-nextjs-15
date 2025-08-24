@@ -225,7 +225,7 @@ export function DocsSidebar({
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <div>
-                      <Link href={String(item.$id)}>
+                      <Link href={`/docs/${String(item.index)}`}>
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
