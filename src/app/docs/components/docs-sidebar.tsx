@@ -186,7 +186,9 @@ export function DocsSidebar({
                 <SidebarMenu>
                   <Collapsible defaultOpen className="group/collapsible">
                     <SidebarMenuItem>
-                      <Link href={`docs/${String(item.$id)}`}>
+                      <Link
+                        href={`docs/${String(item.$id) === "(root)" ? "" : String(item.$id)}`}
+                      >
                         <CollapsibleTrigger
                           className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                           asChild
@@ -224,7 +226,9 @@ export function DocsSidebar({
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
-                <Link href={`/docs/${String(item.$id)}`}>
+                <Link
+                  href={`/docs/${String(item.$id) === "(root)" ? "" : String(item.$id)}`}
+                >
                   <SidebarGroupLabel className="text-sm dark:text-white">
                     {item.name}
                   </SidebarGroupLabel>
