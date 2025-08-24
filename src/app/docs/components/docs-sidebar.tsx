@@ -220,17 +220,14 @@ export function DocsSidebar({
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
-                <SidebarGroupLabel className="text-sm dark:text-white">
-                  {item.name}
-                </SidebarGroupLabel>
+                <Link href={`/docs/${String(item.$id)}`}>
+                  <SidebarGroupLabel className="text-sm dark:text-white">
+                    {item.name}
+                  </SidebarGroupLabel>
+                </Link>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <div>
-                      <Link href={`/docs/${String(item.$id)}`}>
-                        <SidebarGroupLabel className="text-sm dark:text-white">
-                          {item.name}
-                        </SidebarGroupLabel>
-                      </Link>
                       <SidebarMenuSub className="gap-0.5 border-[#404040]">
                         {item.children.map((item) => {
                           return (
