@@ -164,14 +164,16 @@ export function DocsSidebar({
         />
         <VersionSwitcher VersionGuided={version} defaultModeGuided={1} />
       </SidebarHeader>
-      <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
+      <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))]">
         <SidebarContent
           style={{ scrollbarWidth: "none" }}
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
         >
-          <SidebarGroupLabel className="text-sm dark:text-white">
-            {tree.name}
-          </SidebarGroupLabel>
+          <SidebarGroup>
+            <SidebarGroupLabel className="text-sm dark:text-white">
+              {tree.name}
+            </SidebarGroupLabel>
+          </SidebarGroup>
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
