@@ -169,11 +169,11 @@ export function DocsSidebar({
           style={{ scrollbarWidth: "none" }}
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
         >
-          <SidebarGroup>
+          {/* <SidebarGroup>
             <SidebarGroupLabel className="text-sm dark:text-white">
               {tree.name}
             </SidebarGroupLabel>
-          </SidebarGroup>
+          </SidebarGroup> */}
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
