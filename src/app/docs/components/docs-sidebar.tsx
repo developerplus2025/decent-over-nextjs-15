@@ -226,13 +226,17 @@ export function DocsSidebar({
               </SidebarGroup>
             ) : (
               <SidebarGroup key={item.$id}>
-                <Link
-                  href={`/docs/${String(item.$id) === "(root)" ? "" : String(item.$id)}`}
-                >
+                {item.type === "page" ? (
+                  <Link href={item.url}>
+                    <SidebarGroupLabel className="text-sm dark:text-white">
+                      {item.name}
+                    </SidebarGroupLabel>
+                  </Link>
+                ) : (
                   <SidebarGroupLabel className="text-sm dark:text-white">
                     {item.name}
                   </SidebarGroupLabel>
-                </Link>
+                )}
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
                     <div>
