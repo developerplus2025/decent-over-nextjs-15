@@ -169,6 +169,7 @@ export function DocsSidebar({
           style={{ scrollbarWidth: "none" }}
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
         >
+          {tree.name}
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
