@@ -1,4 +1,4 @@
 {
   "title": "Audio Effects",
-  "pages": ["index", "equalizer", "reverb-delay", "custom-fx"]
+  "pages": ["equalizer", "reverb-delay", "custom-fx"]
 }
