@@ -186,7 +186,7 @@ export function DocsSidebar({
                 <SidebarMenu>
                   <Collapsible defaultOpen className="group/collapsible">
                     <SidebarMenuItem>
-                      <Link href={String(item.$id)}>
+                      <Link href={`docs/${String(item.$id)}`}>
                         <CollapsibleTrigger
                           className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
                           asChild
