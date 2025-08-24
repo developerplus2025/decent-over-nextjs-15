@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { source } from "@/lib/source";
+import type { source } from "@/lib/source";
 import {
   Sidebar,
   SidebarContent,
@@ -25,9 +25,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/animate-ui/radix/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ModeGuidedSwitcher } from "@/components/mode-guided-switcher";
 import { VersionSwitcher } from "@/components/version-switcher";
-import { useEffect, useState } from "react";
+import { ModeGuidedSwitcher } from "@/components/mode-guided-switcher";
 const data = {
   mode: {
     docs: {
@@ -146,26 +145,15 @@ const version = [
     ),
   },
 ];
-const collapsibleSections = ["docs", "api-reference"];
-
 export function DocsSidebar({
   tree,
   ...props
 }: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
   const pathname = usePathname();
 
-  const path = pathname.split("/");
-  const [part, setPart] = useState(1);
-  useEffect(() => {
-    if (path.length === 2) {
-      setPart(2);
-    } else if (path.length === 3) {
-      setPart(3);
-    }
-  }, [pathname]);
   return (
     <Sidebar
-      className="sticky top-[6rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
+      className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
       collapsible="none"
       {...props}
     >
@@ -176,8 +164,11 @@ export function DocsSidebar({
         />
         <VersionSwitcher VersionGuided={version} defaultModeGuided={1} />
       </SidebarHeader>
-      <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))]">
-        <SidebarContent className="no-scrollbar gap-0 px-2 pb-0 pl-[1.5rem]">
+      <ScrollArea className="h-[calc(100svh-var(--header-height)-var(--footer-height))]">
+        <SidebarContent
+          style={{ scrollbarWidth: "none" }}
+          className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
+        >
           {tree.children.map((item) =>
             typeof item.name === "string" &&
             [
@@ -186,99 +177,70 @@ export function DocsSidebar({
               "Advanced Usage",
               "Troubleshooting",
             ].includes(item.name) ? (
-              <SidebarGroup className="p-0" key={item.$id}>
-                <Collapsible defaultOpen className="group/collapsible">
-                  {item.type === "folder" && (
-                    <SidebarGroup>
-                      {item.children.map((item) => {
-                        return (
-                          item.type === "page" &&
-                          (typeof item.name === "string" &&
-                          [
-                            "Library Management",
-                            "Settings Customization",
-                            "Advanced Usage",
-                            "Troubleshooting",
-                          ].includes(item.name) ? (
-                            <CollapsibleTrigger
-                              className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
-                              asChild
-                            >
-                              <SidebarMenuButton
-                                className="hover:bg-transparent dark:hover:bg-black"
-                                isActive={
-                                  String(item.name)
-                                    .toLowerCase()
-                                    .replace(/\s+/g, "-") === pathname
-                                }
-                              >
-                                <Link href={item.url}>{item.name}</Link>
-                                <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                              </SidebarMenuButton>
-                            </CollapsibleTrigger>
-                          ) : item.name === "index" ? (
-                            ""
-                          ) : (
-                            <CollapsibleContent className="">
-                              {" "}
-                              <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                                {" "}
-                                <SidebarMenuItem className={` `} key={item.url}>
-                                  <SidebarMenuButton
-                                    asChild
-                                    isActive={item.url === pathname}
-                                    className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
-                                  >
-                                    <Link href={item.url}>{item.name}</Link>
-                                  </SidebarMenuButton>
-                                </SidebarMenuItem>
-                              </SidebarMenuSub>
-                            </CollapsibleContent>
-                          ))
-                        );
-                      })}
-                    </SidebarGroup>
-                  )}
-                </Collapsible>
+              <SidebarGroup key={item.$id}>
+                <SidebarMenu>
+                  <Collapsible defaultOpen className="group/collapsible">
+                    <SidebarMenuItem>
+                      <Link href={String(item.$id)}>
+                        <CollapsibleTrigger
+                          className="hover:bg-[#1b1b1b] dark:active:bg-[#1b1b1b] dark:data-[state=open]:hover:bg-[#1b1b1b]"
+                          asChild
+                        >
+                          <SidebarMenuButton>
+                            {item.name}
+                            <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                          </SidebarMenuButton>
+                        </CollapsibleTrigger>
+                      </Link>
+                      <CollapsibleContent className="">
+                        {item.type === "folder" && (
+                          <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                            {item.children.map((item) => {
+                              return (
+                                item.type === "page" && (
+                                  <SidebarMenuItem key={item.url}>
+                                    <SidebarMenuButton
+                                      asChild
+                                      isActive={item.url === pathname}
+                                      className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                                    >
+                                      <Link href={item.url}>{item.name}</Link>
+                                    </SidebarMenuButton>
+                                  </SidebarMenuItem>
+                                )
+                              );
+                            })}
+                          </SidebarMenuSub>
+                        )}
+                      </CollapsibleContent>
+                    </SidebarMenuItem>
+                  </Collapsible>
+                </SidebarMenu>
               </SidebarGroup>
             ) : (
-              <SidebarGroup className="p-0 first:hidden" key={item.$id}>
+              <SidebarGroup key={item.$id}>
+                <SidebarGroupLabel className="text-sm dark:text-white">
+                  {item.name}
+                </SidebarGroupLabel>
                 <ul className="flex flex-col gap-2 text-sm">
                   {item.type === "folder" && (
-                    <SidebarGroup>
+                    <SidebarMenuSub className="gap-0.5 border-[#404040]">
                       {item.children.map((item) => {
                         return (
-                          item.type === "page" &&
-                          (typeof item.name === "string" &&
-                          [
-                            "Getting Started",
-                            "Playback Features",
-                            "Audio Effects",
-                            "Glss",
-                          ].includes(item.name) ? (
-                            <SidebarMenuButton
-                              className="hover:bg-transparent data-[active=true]:bg-[#000000] dark:hover:bg-black"
-                              isActive={item.url === pathname}
-                            >
-                              <Link href={item.url}>{item.name}</Link>
-                            </SidebarMenuButton>
-                          ) : (
-                            <SidebarMenuSub className="gap-0.5 border-[#404040] first:hidden">
-                              {" "}
-                              <SidebarMenuItem className={` `} key={item.url}>
-                                <SidebarMenuButton
-                                  asChild
-                                  isActive={item.url === pathname}
-                                  className={`3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black`}
-                                >
-                                  <Link href={item.url}>{item.name}</Link>
-                                </SidebarMenuButton>
-                              </SidebarMenuItem>
-                            </SidebarMenuSub>
-                          ))
+                          item.type === "page" && (
+                            <SidebarMenuItem key={item.url}>
+                              <SidebarMenuButton
+                                asChild
+                                isActive={item.url === pathname}
+                                className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                              >
+                                <Link href={item.url}>{item.name}</Link>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          )
                         );
                       })}
-                    </SidebarGroup>
+                    </SidebarMenuSub>
                   )}
                 </ul>
               </SidebarGroup>
