@@ -174,16 +174,17 @@ export function DocsSidebar({
               {tree.name}
             </SidebarGroupLabel>
           </SidebarGroup> */}
-          {tree.children.map((item) =>
-            typeof item.name === "string" &&
-            [
-              "Library Management",
-              "Settings Customization",
-              "Advanced Usage",
-              "Troubleshooting",
-            ].includes(item.name) ? (
-              <SidebarGroup key={item.$id}>
-                <SidebarMenu>
+
+          <SidebarGroup>
+            {tree.children.map((item) =>
+              typeof item.name === "string" &&
+              [
+                "Library Management",
+                "Settings Customization",
+                "Advanced Usage",
+                "Troubleshooting",
+              ].includes(item.name) ? (
+                <SidebarMenu key={item.$id}>
                   <Collapsible defaultOpen className="group/collapsible">
                     <SidebarMenuItem>
                       <Link
@@ -223,10 +224,8 @@ export function DocsSidebar({
                     </SidebarMenuItem>
                   </Collapsible>
                 </SidebarMenu>
-              </SidebarGroup>
-            ) : (
-              <SidebarGroup key={item.$id}>
-                <SidebarMenu>
+              ) : (
+                <SidebarMenu key={item.$id}>
                   <SidebarMenuItem>
                     {item.type === "page" ? (
                       <Link href={item.url}>
@@ -262,9 +261,9 @@ export function DocsSidebar({
                     )}
                   </SidebarMenuItem>{" "}
                 </SidebarMenu>
-              </SidebarGroup>
-            ),
-          )}
+              ),
+            )}
+          </SidebarGroup>
         </SidebarContent>
       </ScrollArea>
     </Sidebar>
