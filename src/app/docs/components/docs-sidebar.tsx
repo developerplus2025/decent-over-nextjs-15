@@ -242,7 +242,7 @@ export function DocsSidebar({
                     <SidebarMenuItem>
                       <Link
                         href={String(item.index?.url)}
-                        className={`inline-block ${String(item.index?.url) === pathname ? "border-input border" : ""}`}
+                        className={`inline-block ${item.index?.url === pathname ? "rounded-md border border-[#404040]" : ""}`}
                       >
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
