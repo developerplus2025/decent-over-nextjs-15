@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/src/components/sidebar";
 import { DocsLayout } from "@/components/layout/docs";
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
