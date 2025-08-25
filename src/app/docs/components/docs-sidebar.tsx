@@ -215,17 +215,12 @@ export function DocsSidebar({
         />
         <VersionSwitcher VersionGuided={version} defaultModeGuided={1} />
       </SidebarHeader>
-      <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))] xl:w-[17rem]">
+      <Sidebar />
+      <ScrollArea className="hidden h-[calc(100svh-12.5rem-var(--footer-height))] xl:w-[17rem]">
         <SidebarContent
           style={{ scrollbarWidth: "none" }}
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
         >
-          {/* <SidebarGroup>
-            <SidebarGroupLabel className="text-sm dark:text-white">
-              {tree.name}
-            </SidebarGroupLabel>
-          </SidebarGroup> */}
-
           <SidebarGroup>
             {tree.children.map((item) =>
               typeof item.name === "string" &&

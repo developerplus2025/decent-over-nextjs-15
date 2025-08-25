@@ -5,6 +5,7 @@ import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { docsOptions } from "../layout.config";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { Sidebar } from "@/src/components/sidebar";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
@@ -29,9 +30,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
             )}
           >
-            <SidebarProvider className="3xl:fixed:container 3xl:fixed:px-3 min-h-min flex-1 items-start px-0 [--sidebar-width:18rem] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
-              <DocsSidebar tree={source.pageTree} />
-            </SidebarProvider>
+            <Sidebar Content />
           </div>
         ),
       }}
