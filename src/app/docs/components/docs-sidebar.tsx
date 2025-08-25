@@ -153,7 +153,7 @@ export function DocsSidebar({
   console.log(tree);
   return (
     <Sidebar
-      className="sticky top-[7rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
+      className="sticky top-[5rem] z-30 hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] bg-transparent lg:flex"
       collapsible="none"
       {...props}
     >
