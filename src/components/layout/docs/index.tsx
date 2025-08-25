@@ -289,7 +289,7 @@ export function DocsLayout({
           (nav.component ?? (
             <Navbar className="h-14 md:hidden">
               <Link
-                href={nav.url ?? '/'}
+                href={nav.url ?? "/"}
                 className="inline-flex items-center gap-2.5 font-semibold"
               >
                 {nav.title}
@@ -303,9 +303,9 @@ export function DocsLayout({
                 <SidebarTrigger
                   className={cn(
                     buttonVariants({
-                      color: 'ghost',
-                      size: 'icon-sm',
-                      className: 'p-2',
+                      color: "ghost",
+                      size: "icon-sm",
+                      className: "p-2",
                     }),
                   )}
                 >
@@ -317,11 +317,11 @@ export function DocsLayout({
         <LayoutBody
           {...props.containerProps}
           className={cn(
-            'md:[&_#nd-page_article]:pt-12 xl:[--fd-toc-width:286px] xl:[&_#nd-page_article]:px-8',
+            "xl:[--fd-toc-width:286px] md:[&_#nd-page_article]:pt-12 xl:[&_#nd-page_article]:px-8",
             sidebarEnabled && sidebarVariables,
             !nav.component &&
               nav.enabled !== false &&
-              '[--fd-nav-height:56px] md:[--fd-nav-height:0px]',
+              "[--fd-nav-height:56px] md:[--fd-nav-height:60px]",
             props.containerProps?.className,
           )}
         >
