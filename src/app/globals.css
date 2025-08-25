@@ -988,9 +988,6 @@ number-flow-react::part(suffix) {
 #nd-tocnav {
   top: 3rem;
 }
-#nd-subnav {
-  display: none !important;
-}
 .__className_fb8f2c {
   --toast-close-button-transform: translate(-35%, -35%) !important;
 }
