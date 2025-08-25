@@ -157,7 +157,6 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
-
       <SidebarHeader className="flex flex-col gap-4">
         <ModeGuidedSwitcher
           ModeGuided={data.mode}
@@ -231,7 +230,7 @@ export function DocsSidebar({
                     <SidebarMenuItem>
                       <Link
                         href={item.url}
-                        className={`inline-block ${item.url === pathname ? "border-input border" : ""}`}
+                        className={`inline-block ${item.url === pathname ? "rounded-md border border-[#404040]" : ""}`}
                       >
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
