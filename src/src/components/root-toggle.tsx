@@ -94,7 +94,7 @@ export function RootToggle({
           ) : (
             placeholder
           )}
-
+          {item}
           <ChevronsUpDown className="text-fd-muted-foreground ms-auto size-4 shrink-0" />
         </PopoverTrigger>
       )}
