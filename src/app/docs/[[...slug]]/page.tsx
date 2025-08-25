@@ -161,13 +161,14 @@ export default async function Page(props: {
         <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
           {page.data.title}{" "}
         </h1>
-        <DocsCopyPage
+       
+      </div>
+      <DocsDescription className="border-input flex flex-col gap-4 mb-0 border-b pb-8">
+ <DocsCopyPage
           // @ts-expect-error - revisit fumadocs types.
           page={doc.content}
           url={absoluteUrl(page.url)}
         />
-      </div>
-      <DocsDescription className="border-input mb-0 border-b pb-8">
         {page.data.description}
       </DocsDescription>
       <AudioBar />
