@@ -68,6 +68,8 @@ export default function NavigationMobile({
   const { setOpenSearch } = useSearchContext();
   const pathname = usePathname();
   const isMobilePath = pathname === "/mobile";
+const isDocs = pathname === "/docs";
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflowY = "hidden"; // Tắt scroll
@@ -77,7 +79,7 @@ export default function NavigationMobile({
   }, [isOpen]);
   return (
     <div
-      className={`${className} ${isMobilePath ? "!hidden" : ""} fixed top-0 z-25 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
+      className={`${className} ${isMobilePath || isDocs ? "!hidden" : ""} fixed top-0 z-25 flex h-[58px] w-full items-center justify-between border-b bg-black px-4`}
     >
       <div className="flex items-center gap-4">
         <Link
