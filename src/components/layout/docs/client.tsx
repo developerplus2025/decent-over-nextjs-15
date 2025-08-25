@@ -57,19 +57,19 @@ export function CollapsibleControl() {
   return (
     <div
       className={cn(
-        'fixed flex shadow-lg transition-opacity rounded-xl p-0.5 border bg-fd-muted text-fd-muted-foreground z-10 max-md:hidden xl:start-4 max-xl:end-4',
-        !collapsed && 'pointer-events-none opacity-0',
+        "bg-fd-muted text-fd-muted-foreground fixed z-10 flex rounded-xl border p-0.5 shadow-lg transition-opacity max-xl:end-4 max-md:hidden xl:start-4",
+        !collapsed && "pointer-events-none opacity-0",
       )}
       style={{
-        top: 'calc(var(--fd-banner-height) + var(--fd-tocnav-height) + var(--spacing) * 4)',
+        top: "calc(var(--fd-nav-height) + var(--fd-tocnav-height) + var(--spacing) * 4)",
       }}
     >
       <SidebarCollapseTrigger
         className={cn(
           buttonVariants({
-            color: 'ghost',
-            size: 'icon-sm',
-            className: 'rounded-lg',
+            color: "ghost",
+            size: "icon-sm",
+            className: "rounded-lg",
           }),
         )}
       >
