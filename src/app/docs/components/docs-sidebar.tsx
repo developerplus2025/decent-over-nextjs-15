@@ -227,37 +227,38 @@ export function DocsSidebar({
               ) : (
                 <SidebarMenu key={item.$id}>
                   <SidebarMenuItem>
-                    {item.type === "page" ? (
+                    {item.type === "page" && (
                       <Link href={item.url}>
-                        <SidebarGroupLabel className="text-sm dark:text-white">
-                          {item.name}
-                        </SidebarGroupLabel>
-                      </Link>
-                    ) : (
-                      <Link href={`/docs/${String(item.$id)}`}>
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
                       </Link>
                     )}
                     {item.type === "folder" && (
-                      <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                        {item.children.map((item) => {
-                          return (
-                            item.type === "page" && (
-                              <SidebarMenuItem key={item.url}>
-                                <SidebarMenuButton
-                                  asChild
-                                  isActive={item.url === pathname}
-                                  className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
-                                >
-                                  <Link href={item.url}>{item.name}</Link>
-                                </SidebarMenuButton>
-                              </SidebarMenuItem>
-                            )
-                          );
-                        })}
-                      </SidebarMenuSub>
+                      <SidebarMenuItem>
+                        <Link href={String(item.index?.url)}>
+                          <SidebarGroupLabel className="text-sm dark:text-white">
+                            {item.name}
+                          </SidebarGroupLabel>
+                        </Link>
+                        <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                          {item.children.map((item) => {
+                            return (
+                              item.type === "page" && (
+                                <SidebarMenuItem key={item.url}>
+                                  <SidebarMenuButton
+                                    asChild
+                                    isActive={item.url === pathname}
+                                    className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                                  >
+                                    <Link href={item.url}>{item.name}</Link>
+                                  </SidebarMenuButton>
+                                </SidebarMenuItem>
+                              )
+                            );
+                          })}
+                        </SidebarMenuSub>
+                      </SidebarMenuItem>
                     )}
                   </SidebarMenuItem>{" "}
                 </SidebarMenu>
