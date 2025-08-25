@@ -158,7 +158,10 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
-      <RootToggle placeholder options={[{ title: "sd", url: "/sd" }]} />
+      <RootToggle
+        placeholder={[]}
+        options={[{ title: "Docs", url: "/docs", props: { title: "Docs" } }]}
+      />
       <SidebarHeader className="flex flex-col gap-4">
         <ModeGuidedSwitcher
           ModeGuided={data.mode}
