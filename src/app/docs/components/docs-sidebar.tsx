@@ -228,7 +228,10 @@ export function DocsSidebar({
                 <SidebarMenu key={item.$id}>
                   {item.type === "page" && (
                     <SidebarMenuItem>
-                      <Link href={item.url} className="inline-block">
+                      <Link
+                        href={item.url}
+                        className={`inline-block ${item.url === pathname ? "border-input border" : ""}`}
+                      >
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
@@ -239,7 +242,7 @@ export function DocsSidebar({
                     <SidebarMenuItem>
                       <Link
                         href={String(item.index?.url)}
-                        className="inline-block"
+                        className={`inline-block ${String(item.index?.url) === pathname ? "border-input border" : ""}`}
                       >
                         <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
