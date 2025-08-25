@@ -74,15 +74,31 @@ export function RootToggle({
         <PopoverTrigger
           {...props}
           className={cn(
-            'flex items-center gap-2 rounded-lg p-2 border bg-fd-secondary/50 text-start text-fd-secondary-foreground transition-colors hover:bg-fd-accent data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground',
+            "bg-fd-secondary/50 text-fd-secondary-foreground hover:bg-fd-accent data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground flex items-center gap-2 rounded-lg border p-2 text-start transition-colors",
             props.className,
           )}
         >
-          {item}
-          <ChevronsUpDown className="shrink-0 ms-auto size-4 text-fd-muted-foreground" />
+          {selected ? (
+            <>
+              <div className="size-9 shrink-0 md:size-5">{selected.icon}</div>
+              <div>
+                <p className="text-sm font-medium">{selected.title}</p>
+                {/* Luôn hiển thị description */}
+                {selected.description && (
+                  <p className="text-fd-muted-foreground text-[13px]">
+                    {selected.description}
+                  </p>
+                )}
+              </div>
+            </>
+          ) : (
+            placeholder
+          )}
+
+          <ChevronsUpDown className="text-fd-muted-foreground ms-auto size-4 shrink-0" />
         </PopoverTrigger>
       )}
-      <PopoverContent className="flex flex-col gap-1 w-(--radix-popover-trigger-width) overflow-hidden p-1">
+      <PopoverContent className="flex w-(--radix-popover-trigger-width) flex-col gap-1 overflow-hidden p-1">
         {options.map((item) => {
           const isActive = selected && item.url === selected.url;
           if (!isActive && item.unlisted) return;
@@ -94,24 +110,24 @@ export function RootToggle({
               onClick={onClick}
               {...item.props}
               className={cn(
-                'flex items-center gap-2 rounded-lg p-1.5 hover:bg-fd-accent hover:text-fd-accent-foreground',
+                "hover:bg-fd-accent hover:text-fd-accent-foreground flex items-center gap-2 rounded-lg p-1.5",
                 item.props?.className,
               )}
             >
-              <div className="shrink-0 size-9 md:mt-1 md:mb-auto md:size-5">
+              <div className="size-9 shrink-0 md:mt-1 md:mb-auto md:size-5">
                 {item.icon}
               </div>
               <div>
                 <p className="text-sm font-medium">{item.title}</p>
-                <p className="text-[13px] text-fd-muted-foreground empty:hidden">
+                <p className="text-fd-muted-foreground text-[13px] empty:hidden">
                   {item.description}
                 </p>
               </div>
 
               <Check
                 className={cn(
-                  'shrink-0 ms-auto size-3.5 text-fd-primary',
-                  !isActive && 'invisible',
+                  "text-fd-primary ms-auto size-3.5 shrink-0",
+                  !isActive && "invisible",
                 )}
               />
             </Link>
