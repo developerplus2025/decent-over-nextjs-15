@@ -27,6 +27,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { VersionSwitcher } from "@/components/version-switcher";
 import { ModeGuidedSwitcher } from "@/components/mode-guided-switcher";
+import { RootToggle } from "@/src/components/root-toggle";
 const data = {
   mode: {
     docs: {
@@ -157,6 +158,7 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
+      <RootToggle placeholder options={[{ title: "sd", url: "/sd" }]} />
       <SidebarHeader className="flex flex-col gap-4">
         <ModeGuidedSwitcher
           ModeGuided={data.mode}
