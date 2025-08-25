@@ -26,15 +26,15 @@ export default function Layout({ children }: { children: ReactNode }) {
           },
         ],
 
-        // component: (
-        //   <div
-        //     className={cn(
-        //       "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
-        //     )}
-        //   >
-        //     <Sidebar Content />
-        //   </div>
-        // ),
+        component: (
+          <div
+            className={cn(
+              "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
+            )}
+          >
+            <Sidebar Content />
+          </div>
+        ),
       }}
     >
       {children}
