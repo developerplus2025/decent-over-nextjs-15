@@ -164,7 +164,7 @@ export function DocsSidebar({
         />
         <VersionSwitcher VersionGuided={version} defaultModeGuided={1} />
       </SidebarHeader>
-      <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))]">
+      <ScrollArea className="h-[calc(100svh-12.5rem-var(--footer-height))] xl:w-[17rem]">
         <SidebarContent
           style={{ scrollbarWidth: "none" }}
           className="no-scrollbar styled-scrollbar px-2 pb-0 pl-[1.5rem]"
@@ -226,41 +226,41 @@ export function DocsSidebar({
                 </SidebarMenu>
               ) : (
                 <SidebarMenu key={item.$id}>
-                  <SidebarMenuItem>
-                    {item.type === "page" && (
+                  {item.type === "page" && (
+                    <SidebarMenuItem>
                       <Link href={item.url}>
-                        <SidebarGroupLabel className="text-sm dark:text-white">
+                        <SidebarGroupLabel className="inline-block text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
                       </Link>
-                    )}
-                    {item.type === "folder" && (
-                      <SidebarMenuItem>
-                        <Link href={String(item.index?.url)}>
-                          <SidebarGroupLabel className="text-sm dark:text-white">
-                            {item.name}
-                          </SidebarGroupLabel>
-                        </Link>
-                        <SidebarMenuSub className="gap-0.5 border-[#404040]">
-                          {item.children.map((item) => {
-                            return (
-                              item.type === "page" && (
-                                <SidebarMenuItem key={item.url}>
-                                  <SidebarMenuButton
-                                    asChild
-                                    isActive={item.url === pathname}
-                                    className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
-                                  >
-                                    <Link href={item.url}>{item.name}</Link>
-                                  </SidebarMenuButton>
-                                </SidebarMenuItem>
-                              )
-                            );
-                          })}
-                        </SidebarMenuSub>
-                      </SidebarMenuItem>
-                    )}
-                  </SidebarMenuItem>{" "}
+                    </SidebarMenuItem>
+                  )}
+                  {item.type === "folder" && (
+                    <SidebarMenuItem>
+                      <Link href={String(item.index?.url)}>
+                        <SidebarGroupLabel className="inline-block text-sm dark:text-white">
+                          {item.name}
+                        </SidebarGroupLabel>
+                      </Link>
+                      <SidebarMenuSub className="gap-0.5 border-[#404040]">
+                        {item.children.map((item) => {
+                          return (
+                            item.type === "page" && (
+                              <SidebarMenuItem key={item.url}>
+                                <SidebarMenuButton
+                                  asChild
+                                  isActive={item.url === pathname}
+                                  className="3xl:fixed:w-full 3xl:fixed:max-w-48 hover:border-input relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-[#404040] data-[active=true]:bg-white dark:hover:!bg-black dark:data-[active=true]:bg-black"
+                                >
+                                  <Link href={item.url}>{item.name}</Link>
+                                </SidebarMenuButton>
+                              </SidebarMenuItem>
+                            )
+                          );
+                        })}
+                      </SidebarMenuSub>
+                    </SidebarMenuItem>
+                  )}
                 </SidebarMenu>
               ),
             )}
