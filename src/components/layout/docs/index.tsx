@@ -321,7 +321,7 @@ export function DocsLayout({
             sidebarEnabled && sidebarVariables,
             !nav.component &&
               nav.enabled !== false &&
-              "[--fd-nav-height:56px] md:[--fd-nav-height:60px]",
+              "[--fd-nav-height:58.8px] md:[--fd-nav-height:58.8px]",
             props.containerProps?.className,
           )}
         >
