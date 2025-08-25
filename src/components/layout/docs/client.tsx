@@ -35,7 +35,7 @@ export function LayoutBody(props: ComponentProps<'main'>) {
       id="nd-docs-layout"
       {...props}
       className={cn(
-        "flex flex-1 flex-col transition-[padding]",
+        "flex flex-1 pt-[--fd-nav-height] flex-col transition-[padding]",
         !collapsed && "mx-(--fd-layout-offset)",
         props.className,
       )}
