@@ -228,8 +228,8 @@ export function DocsSidebar({
                 <SidebarMenu key={item.$id}>
                   {item.type === "page" && (
                     <SidebarMenuItem>
-                      <Link href={item.url}>
-                        <SidebarGroupLabel className="inline-block text-sm dark:text-white">
+                      <Link href={item.url} className="inline-block">
+                        <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
                       </Link>
@@ -237,8 +237,11 @@ export function DocsSidebar({
                   )}
                   {item.type === "folder" && (
                     <SidebarMenuItem>
-                      <Link href={String(item.index?.url)}>
-                        <SidebarGroupLabel className="inline-block text-sm dark:text-white">
+                      <Link
+                        href={String(item.index?.url)}
+                        className="inline-block"
+                      >
+                        <SidebarGroupLabel className="text-sm dark:text-white">
                           {item.name}
                         </SidebarGroupLabel>
                       </Link>
