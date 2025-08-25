@@ -159,7 +159,6 @@ export function DocsSidebar({
       {...props}
     >
       <RootToggle
-        placeholder={"Docs"}
         options={[
           {
             title: "Docs",
@@ -186,7 +185,7 @@ export function DocsSidebar({
           },
           {
             title: "Api Reference",
-            url: "/api-reference",
+            url: "/docs/api-reference",
             props: { title: "Api Docs" },
             icon: (
               <svg
