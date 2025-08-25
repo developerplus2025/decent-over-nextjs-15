@@ -157,6 +157,7 @@ export function DocsSidebar({
       collapsible="none"
       {...props}
     >
+
       <SidebarHeader className="flex flex-col gap-4">
         <ModeGuidedSwitcher
           ModeGuided={data.mode}
