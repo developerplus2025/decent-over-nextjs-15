@@ -10,6 +10,7 @@ import { source } from "@/lib/source";
 export const baseOptions: BaseLayoutProps = {
   nav: {
     // can be JSX too!
+    enabled:true,
     title: "Decent Version 10.9.5",
   },
   links: [
