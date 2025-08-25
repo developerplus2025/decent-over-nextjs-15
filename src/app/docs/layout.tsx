@@ -1,11 +1,12 @@
 import { source } from "@/lib/source";
 import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
+
 import { docsOptions } from "../layout.config";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/src/components/sidebar";
+import { DocsLayout } from "@/components/layout/docs";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
@@ -24,15 +25,15 @@ export default function Layout({ children }: { children: ReactNode }) {
           },
         ],
 
-        component: (
-          <div
-            className={cn(
-              "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
-            )}
-          >
-            <Sidebar Content />
-          </div>
-        ),
+        // component: (
+        //   <div
+        //     className={cn(
+        //       "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
+        //     )}
+        //   >
+        //     <Sidebar Content />
+        //   </div>
+        // ),
       }}
     >
       {children}
