@@ -16,14 +16,18 @@ import { DocsTableOfContents } from "@/components/docs-toc";
 import { OpenInV0Cta } from "@/components/open-in-v0-cta";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+} from "fumadocs-ui/page";
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
 import { InputOTPForm } from "@/components/input-otp-form";
 import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
-import { DocsBody, DocsDescription, DocsPage } from "@/components/layout/page";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -157,25 +161,23 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-<DocsCopyPage
-          // @ts-expect-error - revisit fumadocs types.
-          page={doc.content}
-          url={absoluteUrl(page.url)}
-        />
       <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
         <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
           {page.data.title}{" "}
         </h1>
-       
+        <DocsCopyPage
+          // @ts-expect-error - revisit fumadocs types.
+          page={doc.content}
+          url={absoluteUrl(page.url)}
+        />
       </div>
-      <DocsDescription className="border-input flex flex-col gap-4 mb-0 border-b pb-8">
- 
+      <DocsDescription className="border-input mb-0 border-b pb-8">
         {page.data.description}
       </DocsDescription>
       <AudioBar />
       <Suspense fallback={<Loader variant="classic" />}>
         {" "}
-        <DocsBody className="!md:pt-0 pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
+        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
           <div
             data-slot="docs"
             className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
@@ -200,6 +202,3 @@ export default async function Page(props: {
     </DocsPage>
   );
 }
-  
- 
-
