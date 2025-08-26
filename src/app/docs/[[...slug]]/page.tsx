@@ -113,53 +113,6 @@ export default async function Page(props: {
           header: <div className="h-4 w-10"></div>,
         }}
       >
-        {/* <div className="flex flex-col gap-2">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-start justify-between">
-            <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-              {doc.title}
-            </h1>
-            <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 min-[300px]:flex-col xl:flex-row border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
-              <DocsCopyPage
-                // @ts-expect-error - revisit fumadocs types.
-                page={doc.content}
-                url={absoluteUrl(page.url)}
-              />
-              {neighbours.previous && (
-                <Button
-                  variant="secondary"
-                  size="icon"
-                  className="extend-touch-target ml-auto size-8 shadow-none md:size-7"
-                  asChild
-                >
-                  <Link href={neighbours.previous.url}>
-                    <IconArrowLeft />
-                    <span className="sr-only">Previous</span>
-                  </Link>
-                </Button>
-              )}
-              {neighbours.next && (
-                <Button
-                  variant="secondary"
-                  size="icon"
-                  className="extend-touch-target size-8 shadow-none md:size-7"
-                  asChild
-                >
-                  <Link href={neighbours.next.url}>
-                    <span className="sr-only">Next</span>
-                    <IconArrowRight />
-                  </Link>
-                </Button>
-              )}
-            </div>
-          </div>
-          {doc.description && (
-            <p className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
-              {doc.description}
-            </p>
-          )}
-        </div>
-      </div> */}
         <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
           <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
             {page.data.title}{" "}
@@ -174,19 +127,7 @@ export default async function Page(props: {
           {page.data.description}
         </DocsDescription>
         <AudioBar /> <PageTree />
-        <DocsBody
-          min-w-0
-          w-full
-          flex-col
-          gap-4
-          px-4
-          pt-8
-          md:px-6
-          md:mx-auto
-          xl:pt-12
-          xl:px-12
-          className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0"
-        >
+        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
           <div
             data-slot="docs"
             className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
