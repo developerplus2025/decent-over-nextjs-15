@@ -1,16 +1,4 @@
 {
-  "title": "Docs",
-  "description": "The docs for SonixLab",
   "root": true,
-  "pages": [
-    "index",
-    "getting-started",
-    "playback-features",
-    "audio-effects",
-    "library-management",
-    "settings-customization",
-    "advanced-usage",
-    "troubleshooting",
-    "glss"
-  ]
+  "pages": ["(root)", "api-reference"]
 }
