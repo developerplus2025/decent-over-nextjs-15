@@ -2,11 +2,12 @@ import { source } from "@/lib/source";
 import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import PageTree from "./components/page-tree";
-import { docsOptions } from "../layout.config";
+
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/src/components/sidebar";
 import { DocsLayout } from "@/components/layout/docs";
+import { docsOptions } from "@/lib/layout.shared";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

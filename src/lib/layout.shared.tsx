@@ -1,4 +1,5 @@
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+
+import type { BaseLayoutProps } from "@/components/layout/shared";
 import { source } from "@/lib/source";
 /**
  * Shared layout configurations
@@ -8,6 +9,7 @@ import { source } from "@/lib/source";
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
+  githubUrl: "https://github.com/developerplus2025/decent-over-nextjs-15/",
   nav: {
     // can be JSX too!
     enabled: true,
