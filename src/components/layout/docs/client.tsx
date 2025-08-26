@@ -61,7 +61,7 @@ export function CollapsibleControl() {
         !collapsed && "pointer-events-none opacity-0",
       )}
       style={{
-        top: "calc(58.8px+0)",
+        top: "70px",
       }}
     >
       <SidebarCollapseTrigger

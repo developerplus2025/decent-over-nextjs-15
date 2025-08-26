@@ -125,33 +125,33 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
       {...props}
       data-collapsed={collapsed}
       className={cn(
-        'fixed start-0 flex flex-col items-end top-(--fd-sidebar-top) bottom-(--fd-sidebar-margin) z-20 bg-fd-card text-sm border-e max-md:hidden *:w-(--fd-sidebar-width)',
+        "top-(58.8px) bg-fd-card fixed start-0 bottom-(--fd-sidebar-margin) z-20 flex flex-col items-end border-e text-sm *:w-(--fd-sidebar-width) max-md:hidden",
         collapsed && [
-          'rounded-xl border translate-x-(--fd-sidebar-offset) rtl:-translate-x-(--fd-sidebar-offset)',
-          hover ? 'z-50 shadow-lg' : 'opacity-0',
+          "translate-x-(--fd-sidebar-offset) rounded-xl border rtl:-translate-x-(--fd-sidebar-offset)",
+          hover ? "z-50 shadow-lg" : "opacity-0",
         ],
         props.className,
       )}
       style={
         {
-          transition: ['top', 'opacity', 'translate', 'width']
+          transition: ["top", "opacity", "translate", "width"]
             .map((v) => `${v} ease 250ms`)
-            .join(', '),
+            .join(", "),
           ...props.style,
-          ['--fd-sidebar-offset' as any]: hover
-            ? 'calc(var(--spacing) * 2)'
-            : 'calc(16px - 100%)',
-          ['--fd-sidebar-margin' as any]: collapsed ? '0.5rem' : '0px',
-          ['--fd-sidebar-top' as any]: `calc(var(--fd-banner-height) + var(--fd-nav-height) + var(--fd-sidebar-margin))`,
+          ["--fd-sidebar-offset" as any]: hover
+            ? "calc(var(--spacing) * 2)"
+            : "calc(16px - 100%)",
+          ["--fd-sidebar-margin" as any]: collapsed ? "0.5rem" : "0px",
+          ["--fd-sidebar-top" as any]: `calc(var(--fd-banner-height) + var(--fd-nav-height) + var(--fd-sidebar-margin))`,
           width: collapsed
-            ? 'var(--fd-sidebar-width)'
-            : 'calc(var(--spacing) + var(--fd-sidebar-width) + var(--fd-layout-offset))',
+            ? "var(--fd-sidebar-width)"
+            : "calc(var(--spacing) + var(--fd-sidebar-width) + var(--fd-layout-offset))",
         } as React.CSSProperties
       }
       onPointerEnter={(e) => {
         if (
           !collapsed ||
-          e.pointerType === 'touch' ||
+          e.pointerType === "touch" ||
           closeTimeRef.current > Date.now()
         )
           return;
@@ -159,7 +159,7 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
         setHover(true);
       }}
       onPointerLeave={(e) => {
-        if (!collapsed || e.pointerType === 'touch') return;
+        if (!collapsed || e.pointerType === "touch") return;
         window.clearTimeout(timerRef.current);
 
         timerRef.current = window.setTimeout(
