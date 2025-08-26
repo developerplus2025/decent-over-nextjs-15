@@ -99,8 +99,8 @@ export default async function Page(props: {
   const links = doc.links;
 
   return (
-    <Suspense fallback={<Loader variant="classic" />}>
-      {" "}
+    
+      
       <DocsPage
         // @ts-expect-error - revisit fumadocs types.
         toc={page.data.toc}
@@ -134,20 +134,24 @@ export default async function Page(props: {
             <div className="flex min-w-0 flex-col">
               <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
                 <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-                  <MDX
-                    components={{
-                      mdxComponents,
-                      VideoPage,
-                      InputOTPForm,
-                      PathAnimation,
-                    }}
-                  />
+<Suspense fallback={<Loader variant="classic" />}>
+              <MDX
+                components={{
+                  mdxComponents,
+                  VideoPage,
+                  InputOTPForm,
+                  PathAnimation,
+                }}
+              />
+            </Suspense>
+
+                  
                 </div>
               </div>
             </div>
           </div>
         </DocsBody>
       </DocsPage>
-    </Suspense>
+    
   );
 }
