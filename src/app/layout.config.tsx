@@ -11,6 +11,7 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     // can be JSX too!
     enabled: true,
+    url: "https://github.com/developerplus2025/decent-over-nextjs-15/",
     title: "Decent Version 10.9.5",
   },
 };
