@@ -120,7 +120,8 @@ export default function RootLayout({
                   {/* Add children here if needed */}
                   <></>
                 </NavigationMobile>
-                <ViewTransition>{children}</ViewTransition>
+                {children}
+                {/* <ViewTransition></ViewTransition> */}
               </RootProvider>
               <Footer />
             </ThemeProvider>
