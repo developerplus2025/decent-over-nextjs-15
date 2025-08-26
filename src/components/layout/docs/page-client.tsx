@@ -204,7 +204,7 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
           )}
           style={{
             ...props.style,
-            top: "calc(var(--fd-banner-height) + var(--fd-nav-height)) - 3px",
+            top: "calc(var(--fd-banner-height) + var(--fd-nav-height) - 3px)",
             insetInlineStart: collapsed
               ? "0px"
               : "calc(var(--fd-sidebar-width) + var(--fd-layout-offset))",
