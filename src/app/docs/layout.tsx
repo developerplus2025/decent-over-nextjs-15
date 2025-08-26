@@ -1,7 +1,7 @@
 import { source } from "@/lib/source";
 import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-
+import PageTree from "./components/page-tree";
 import { docsOptions } from "../layout.config";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -71,6 +71,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         // ),
       }}
     >
+      <PageTree />
       {children}
     </DocsLayout>
   );
