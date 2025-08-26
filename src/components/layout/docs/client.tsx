@@ -61,7 +61,7 @@ export function CollapsibleControl() {
         !collapsed && "pointer-events-none opacity-0",
       )}
       style={{
-        top: "calc(var(--fd-nav-height) + var(--fd-tocnav-height) + var(--spacing) * 4)",
+        top: "calc(58.8px+0)",
       }}
     >
       <SidebarCollapseTrigger
