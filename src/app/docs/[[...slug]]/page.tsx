@@ -16,12 +16,7 @@ import { DocsTableOfContents } from "@/components/docs-toc";
 import { OpenInV0Cta } from "@/components/open-in-v0-cta";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page";
+
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
 import { InputOTPForm } from "@/components/input-otp-form";
@@ -29,6 +24,7 @@ import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
 import PageTree from "../components/page-tree";
+import { DocsBody, DocsDescription, DocsPage } from "@/components/layout/page";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -178,7 +174,19 @@ export default async function Page(props: {
           {page.data.description}
         </DocsDescription>
         <AudioBar /> <PageTree />
-        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
+        <DocsBody
+          min-w-0
+          w-full
+          flex-col
+          gap-4
+          px-4
+          pt-8
+          md:px-6
+          md:mx-auto
+          xl:pt-12
+          xl:px-12
+          className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0"
+        >
           <div
             data-slot="docs"
             className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
