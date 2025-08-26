@@ -104,18 +104,20 @@ export default async function Page(props: {
   const links = doc.links;
 
   return (
-    <DocsPage
-      // @ts-expect-error - revisit fumadocs types.
-      toc={page.data.toc}
-      // @ts-expect-error - revisit fumadocs types.
-      full={page.data.full}
-      breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
-      tableOfContent={{
-        style: "clerk",
-        header: <div className="h-4 w-10"></div>,
-      }}
-    >
-      {/* <div className="flex flex-col gap-2">
+    <Suspense fallback={<Loader variant="classic" />}>
+      {" "}
+      <DocsPage
+        // @ts-expect-error - revisit fumadocs types.
+        toc={page.data.toc}
+        // @ts-expect-error - revisit fumadocs types.
+        full={page.data.full}
+        breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
+        tableOfContent={{
+          style: "clerk",
+          header: <div className="h-4 w-10"></div>,
+        }}
+      >
+        {/* <div className="flex flex-col gap-2">
         <div className="flex flex-col gap-2">
           <div className="flex items-start justify-between">
             <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
@@ -162,23 +164,20 @@ export default async function Page(props: {
           )}
         </div>
       </div> */}
-      <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
-        <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
-          {page.data.title}{" "}
-        </h1>
-        <DocsCopyPage
-          // @ts-expect-error - revisit fumadocs types.
-          page={doc.content}
-          url={absoluteUrl(page.url)}
-        />
-      </div>
-      <DocsDescription className="border-input mb-0 border-b pb-8">
-        {page.data.description}
-      </DocsDescription>
-      <AudioBar />
-      <Suspense fallback={<Loader variant="classic" />}>
-        {" "}
-        <PageTree />
+        <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
+          <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
+            {page.data.title}{" "}
+          </h1>
+          <DocsCopyPage
+            // @ts-expect-error - revisit fumadocs types.
+            page={doc.content}
+            url={absoluteUrl(page.url)}
+          />
+        </div>
+        <DocsDescription className="border-input mb-0 border-b pb-8">
+          {page.data.description}
+        </DocsDescription>
+        <AudioBar /> <PageTree />
         <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
           <div
             data-slot="docs"
@@ -200,7 +199,7 @@ export default async function Page(props: {
             </div>
           </div>
         </DocsBody>
-      </Suspense>
-    </DocsPage>
+      </DocsPage>
+    </Suspense>
   );
 }
