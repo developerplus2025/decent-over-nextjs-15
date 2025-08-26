@@ -23,7 +23,6 @@ import { InputOTPForm } from "@/components/input-otp-form";
 import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
-import PageTree from "../components/page-tree";
 import { DocsBody, DocsDescription, DocsPage } from "@/components/layout/page";
 export const revalidate = false;
 export const dynamic = "force-static";
@@ -126,7 +125,7 @@ export default async function Page(props: {
         <DocsDescription className="border-input mb-0 border-b pb-8">
           {page.data.description}
         </DocsDescription>
-        <AudioBar /> <PageTree />
+        <AudioBar />
         <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
           <div
             data-slot="docs"
