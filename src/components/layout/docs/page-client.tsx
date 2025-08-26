@@ -197,17 +197,17 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
           id="nd-tocnav"
           {...props}
           className={cn(
-            'fixed inset-x-0 z-10 border-b backdrop-blur-sm transition-colors xl:hidden',
-            (!isTransparent || open) && 'bg-fd-background/80',
-            open && 'shadow-lg',
+            "fixed inset-x-0 z-10 border-b backdrop-blur-sm transition-colors xl:hidden",
+            (!isTransparent || open) && "bg-fd-background/80",
+            open && "shadow-lg",
             props.className,
           )}
           style={{
             ...props.style,
-            top: 'calc(var(--fd-banner-height) + var(--fd-nav-height))',
+            top: "58.8px",
             insetInlineStart: collapsed
-              ? '0px'
-              : 'calc(var(--fd-sidebar-width) + var(--fd-layout-offset))',
+              ? "0px"
+              : "calc(var(--fd-sidebar-width) + var(--fd-layout-offset))",
           }}
         >
           {props.children}

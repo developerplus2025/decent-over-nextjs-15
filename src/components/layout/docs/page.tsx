@@ -70,7 +70,7 @@ export function PageArticle(props: ComponentProps<'article'>) {
     <article
       {...props}
       className={cn(
-        "flex w-full min-w-0 flex-col gap-4 px-4 sm:pt-[3rem] md:mx-auto md:px-6 xl:pt-8",
+        "flex w-full min-w-0 flex-col gap-4 px-4 min-[300px]:pt-[7.1rem] md:mx-auto md:px-6 xl:pt-8",
         props.className,
       )}
     >
