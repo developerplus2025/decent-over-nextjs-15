@@ -160,11 +160,11 @@ export default function MobilePage() {
         <Navigation />
       </div>
       <div className="h-[calc(100dvh-102px)]">{contents[activeTab]}</div>
-      <div className="border-input flex h-[50px] justify-between border-t px-[2rem]">
+      <div className="border-input flex h-[50px] justify-between items-center border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
-              className={`${activeTab == item.id ? "[&Svg]:fill-white" : "[&Svg]:fill-[#a1a1a1]"} `}
+              className={`${activeTab == item.id ? "[&Svg]:fill-white" : "[&Svg]:fill-[#a1a1a1]"} [&Svg]:size-[20px] `}
             >
               {item.icon}
             </div>
