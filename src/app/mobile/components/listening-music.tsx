@@ -175,9 +175,8 @@ export default function ListeningMusic() {
   };
 
   return (
-    <div className=" overflow-x-hidden overflow-y-hidden">
-     
-      <div className="flex h-[calc(100dvh-230px)] flex-col items-center justify-center">
+    <div className="overflow-x-hidden overflow-y-hidden">
+      <div className="flex h-[calc(100dvh-102px)] flex-col items-center justify-center">
         <div className="flex flex-col gap-[2rem]">
           <div>
             <Image

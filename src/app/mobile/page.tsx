@@ -115,7 +115,7 @@ const tabs: Tab[] = [
   },
   {
     id: "artistMusic",
-    label: " Artist Music",
+    label: "Artist Music",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -159,8 +159,8 @@ export default function MobilePage() {
       <div className="border-input h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
-      <div className="">{contents[activeTab]}</div>
-      <div className="border-input flex h-[calc(100dvh-51px)] justify-between border-t px-[2rem]">
+      <div className="h-[calc(100dvh-102px)]">{contents[activeTab]}</div>
+      <div className="border-input flex h-[50px] justify-between border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
