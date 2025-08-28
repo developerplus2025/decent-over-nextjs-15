@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         tabs: [
           {
             title: "Docs",
-            description: "The docs for SonixLab",
+            description: "The docs for LibreNote",
             url: "/docs/",
             icon: (
               <svg

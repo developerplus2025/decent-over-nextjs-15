@@ -97,7 +97,7 @@ export default function Navigation({ className }: NavigationProps): React.ReactE
                 href="/"
                 className="mask-logo-animation text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                NueroTune
+                LibreNote
               </Link>
             </div>
             <NavigationMenu>

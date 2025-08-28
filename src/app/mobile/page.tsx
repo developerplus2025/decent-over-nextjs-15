@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import Navigation from "./components/navigation";
+import WaveAudioCard from "./components/wave-audio-card";
 const data = [
   {
     id: 1,
@@ -257,7 +258,7 @@ export default function MobilePage() {
               className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black fill-white dark:bg-white dark:fill-black`}
             >
               <svg
-                className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
+                className={`${!isPlaying ? "hidden" : "flex"} size-[25px] border-none bg-transparent fill-white dark:fill-black`}
                 onClick={() => {
                   setIsPlaying(!isPlaying);
                   handlePlayPause();
@@ -265,7 +266,6 @@ export default function MobilePage() {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="#ffffff"
                 viewBox="0 0 256 256"
               >
                 <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
@@ -306,6 +306,7 @@ export default function MobilePage() {
               step={1}
               className={cn("w-full")}
             /> */}
+            <WaveAudioCard />
             <Slider.Root
               onValueChange={(newTempValue) => setTempValue(newTempValue)}
               onValueCommit={(newValue) => setValue(tempValue)}

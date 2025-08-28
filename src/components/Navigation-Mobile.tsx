@@ -86,7 +86,7 @@ const isDocs = pathname === "/docs";
           href="/"
           className="mask-logo-animation font-[BespokeStencil-Bold] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
         >
-          NeuroTune
+          LibreNote
         </Link>
       </div>
       <div className="flex items-center gap-4">

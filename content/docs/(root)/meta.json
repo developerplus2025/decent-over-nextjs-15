@@ -1,6 +1,6 @@
 {
   "title": "Docs",
-  "description": "The docs for SonixLab",
+  "description": "The docs for LibreNote",
   "root": true,
   "pages": [
     "index",

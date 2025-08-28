@@ -75,7 +75,7 @@ export async function generateMetadata(props: {
           )}&description=${encodeURIComponent(doc.description)}`,
         },
       ],
-      creator: "@neurotune",
+      creator: "@LibreNote",
     },
   };
 }

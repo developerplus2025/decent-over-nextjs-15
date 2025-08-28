@@ -23,7 +23,7 @@ export default function Home() {
       </div>
       <MainTextHome />
       <h1 className="text-center min-[300px]:w-[200px] min-[300px]:text-xs xl:w-full xl:text-sm">
-        By using SonixLab, you agree to its license and privacy statement.
+        By using LibreNote, you agree to its license and privacy statement.
       </h1>
       <div className="mx-auto mt-40 mb-16 h-px w-full bg-[#262626]"></div>
       <div className="w-full">
