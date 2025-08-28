@@ -306,7 +306,7 @@ export default function MobilePage() {
               step={1}
               className={cn("w-full")}
             /> */}
-            <WaveAudioCard />
+
             <Slider.Root
               onValueChange={(newTempValue) => setTempValue(newTempValue)}
               onValueCommit={(newValue) => setValue(tempValue)}
@@ -325,7 +325,7 @@ export default function MobilePage() {
                 {" "}
                 <Slider.Range className="bg-primary absolute h-full" />
               </Slider.Track>
-              <Slider.Thumb className="border-primary/50 bg-background focus-visible:ring-ring block h-3 w-3 rounded-full border shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
+              <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
             <p className="text-xs tabular-nums">{data[index].duration}</p>
           </div>
