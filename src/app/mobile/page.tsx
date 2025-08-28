@@ -237,10 +237,10 @@ export default function MobilePage() {
               <path d="M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z"></path>
             </svg>
             <div
-              className={`${isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border`}
+              className={`${isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black dark:bg-white`}
             >
               <svg
-                className={`size-[25px] border-none bg-transparent`}
+                className={`size-[25px] border-none fill-white dark:fill-black`}
                 onClick={() => {
                   setIsPlaying(!isPlaying);
                   handlePlayPause();
@@ -248,14 +248,13 @@ export default function MobilePage() {
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="#ffffff"
                 viewBox="0 0 256 256"
               >
                 <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
               </svg>
             </div>
             <div
-              className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border`}
+              className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black fill-white dark:bg-white dark:fill-black`}
             >
               <svg
                 className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
