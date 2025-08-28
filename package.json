@@ -201,7 +201,8 @@
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "use-composed-ref": "^1.4.0",
-    "vaul": "^0.9.9"
+    "vaul": "^0.9.9",
+    "wavesurfer.js": "^7.10.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.6",

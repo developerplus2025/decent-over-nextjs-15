@@ -208,7 +208,7 @@ importers:
         version: 1.5.0(next@15.5.0(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.89.2))(react@19.1.1)(svelte@5.34.7)(vue@3.5.17(typescript@5.8.3))
       '@wavesurfer/react':
         specifier: ^1.0.9
-        version: 1.0.11(react@19.1.1)(wavesurfer.js@7.9.5)
+        version: 1.0.11(react@19.1.1)(wavesurfer.js@7.10.1)
       '@workos-inc/authkit-nextjs':
         specifier: ^2.4.1
         version: 2.4.1(next@15.5.0(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(sass@1.89.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -497,6 +497,9 @@ importers:
       vaul:
         specifier: ^0.9.9
         version: 0.9.9(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      wavesurfer.js:
+        specifier: ^7.10.1
+        version: 7.10.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.0.6
@@ -12095,8 +12098,8 @@ packages:
     resolution: {integrity: sha512-c5EGNOiyxxV5qmTtAB7rbiXxi1ooX1pQKMLX/MIabJjRA0SJBQOjKF+KSVfHkr9U1cADPon0mRiVe/riyaiDUA==}
     engines: {node: '>=10.13.0'}
 
-  wavesurfer.js@7.9.5:
-    resolution: {integrity: sha512-ioOG9chuAn0bF2NYYKkZtaxjcQK/hFskLg8ViLYbJHhWPk1N5wWtuqVhqeh2ZWT2SK3t0E8UkD7lLDLuZQQaSA==}
+  wavesurfer.js@7.10.1:
+    resolution: {integrity: sha512-tF1ptFCAi8SAqKbM1e7705zouLC3z4ulXCg15kSP5dQ7VDV30Q3x/xFRcuVIYTT5+jB/PdkhiBRCfsMshZG1Ug==}
 
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
@@ -20104,10 +20107,10 @@ snapshots:
 
   '@vue/shared@3.5.17': {}
 
-  '@wavesurfer/react@1.0.11(react@19.1.1)(wavesurfer.js@7.9.5)':
+  '@wavesurfer/react@1.0.11(react@19.1.1)(wavesurfer.js@7.10.1)':
     dependencies:
       react: 19.1.1
-      wavesurfer.js: 7.9.5
+      wavesurfer.js: 7.10.1
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:
@@ -27302,7 +27305,7 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
 
-  wavesurfer.js@7.9.5: {}
+  wavesurfer.js@7.10.1: {}
 
   web-namespaces@2.0.1: {}
 
