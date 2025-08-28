@@ -266,7 +266,7 @@ export default function MobilePage() {
             >
               <motion.svg
 animate={
-                isPlaying ? { opacity: 0, scale: 0 } : { opacity: 1, scale: 1 }
+                !isPlaying ? { opacity: 0, scale: 0 } : { opacity: 1, scale: 1 }
               }
                 className={`${!isPlaying ? "hidden" : "flex"} size-[25px] border-none bg-transparent fill-white dark:fill-black`}
                 onClick={() => {
