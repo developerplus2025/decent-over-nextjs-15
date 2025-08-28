@@ -236,9 +236,11 @@ export default function MobilePage() {
             >
               <path d="M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z"></path>
             </svg>
-            <div className="border-input h-[70px] w-[70px] rounded-full border">
+            <div
+              className={`${isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border`}
+            >
               <svg
-                className={`${isPlaying ? "hidden" : "flex"} size-[30px] border-none bg-transparent`}
+                className={`size-[25px] border-none bg-transparent`}
                 onClick={() => {
                   setIsPlaying(!isPlaying);
                   handlePlayPause();
@@ -252,20 +254,24 @@ export default function MobilePage() {
                 <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
               </svg>
             </div>
-            <svg
-              className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
-              onClick={() => {
-                setIsPlaying(!isPlaying);
-                handlePlayPause();
-              }}
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#ffffff"
-              viewBox="0 0 256 256"
+            <div
+              className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border`}
             >
-              <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
-            </svg>
+              <svg
+                className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
+                onClick={() => {
+                  setIsPlaying(!isPlaying);
+                  handlePlayPause();
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
+              </svg>
+            </div>
 
             <svg
               className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
