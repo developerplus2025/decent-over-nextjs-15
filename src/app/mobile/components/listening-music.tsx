@@ -371,7 +371,7 @@ export default function ListeningMusic() {
                     style={{ width: widthValue }}
                   />
                 </Slider.Range>
-                <Slider.Range className="bg-primary absolute h-full transition-transform duration-300 ease-out" />
+                
               </Slider.Track>
               <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
