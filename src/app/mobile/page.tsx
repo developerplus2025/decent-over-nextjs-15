@@ -165,7 +165,7 @@ export default function MobilePage() {
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
-              className={`${activeTab == item.id ? "[&Svg]:fill-white" : "[&Svg]:fill-[#a1a1a1]"} [&Svg]:!size-[30px]`}
+              className={`${activeTab == item.id ? "[&svg]:fill-white" : "[&svg]:fill-[#a1a1a1]"} [&svg]:!size-[30px]`}
             >
               {item.icon}
             </div>
