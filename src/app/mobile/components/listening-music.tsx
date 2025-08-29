@@ -204,10 +204,8 @@ export default function ListeningMusic() {
             </motion.div>
           </AnimatePresence>
           <div className="flex flex-col items-center gap-2 text-center">
-            <p className="">Name: {track.name}</p>
-            <p className="text-sm text-[#a1a1a1]">
-              Artist: {track.description}
-            </p>
+            <p className="">{track.name}</p>
+            <p className="text-sm text-[#a1a1a1]">{track.description}</p>
           </div>
         </div>
       </div>
@@ -347,7 +345,7 @@ export default function ListeningMusic() {
                 className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
               >
                 {" "}
-                <Slider.Range className="bg-primary absolute h-full" />
+                <Slider.Range className="bg-primary absolute h-full transition-transform duration-300 ease-out" />
               </Slider.Track>
               <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
