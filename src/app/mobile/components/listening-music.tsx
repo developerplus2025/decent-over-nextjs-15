@@ -180,6 +180,11 @@ export default function ListeningMusic() {
     }
   };
   const springValue = useSpring(0, { stiffness: 120, damping: 20 });
+  useEffect(() => {
+    const percent = (currentTime / totalSeconds) * 100;
+    springValue.set(percent);
+  }, [currentTime, totalSeconds, springValue]);
+
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
