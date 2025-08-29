@@ -5,7 +5,7 @@ import * as Slider from "@radix-ui/react-slider";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 interface Data {
   id: Number;
   src: String;
@@ -186,21 +186,23 @@ export default function ListeningMusic() {
     <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
       <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
-          <motion.div
-            exit={
-              track.id == index + 1
-                ? { opacity: 1, scale: 1 }
-                : { opacity: 0, scale: 0 }
-            }
-          >
-            <Image
-              className="h-[200px] w-[200px] rounded-full"
-              width={200}
-              height={200}
-              src={`/music-pre/${track.img}.jpg`}
-              alt=""
-            />
-          </motion.div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={String(track.id)} // 👈 track thay đổi -> trigger animation
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                className="h-[200px] w-[200px] rounded-full"
+                width={200}
+                height={200}
+                src={`/music-pre/${track.img}.jpg`}
+                alt={String(track.name)}
+              />
+            </motion.div>
+          </AnimatePresence>
           <div className="flex flex-col items-center gap-2 text-center">
             <p className="">Name: {track.name}</p>
             <p className="text-sm text-[#a1a1a1]">
