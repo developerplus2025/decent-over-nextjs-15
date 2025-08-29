@@ -160,12 +160,12 @@ export default function MobilePage() {
       <div className="border-input h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
-      <div className="h-[calc(100dvh-102px)]">{contents[activeTab]}</div>
-      <div className="border-input flex h-[50px] items-center justify-between border-t px-[2rem]">
+      <div className="h-[calc(100dvh-112px)]">{contents[activeTab]}</div>
+      <div className="border-input flex h-[60px] items-center justify-between border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
-              className={`${activeTab == item.id ? "[&svg]:fill-white" : "[&svg]:fill-[#a1a1a1]"} [&>svg]:!size-[30px]`}
+              className={`${activeTab == item.id ? "[&>svg]:fill-white" : "[&>svg]:fill-[#a1a1a1]"} [&>svg]:size-[25px]`}
             >
               {item.icon}
             </div>

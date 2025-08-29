@@ -183,7 +183,7 @@ export default function ListeningMusic() {
   };
   const track = data[index];
   return (
-    <div className="flex h-[calc(100dvh-102px)] flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
+    <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
       <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
           <div>
