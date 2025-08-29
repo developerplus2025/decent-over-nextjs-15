@@ -161,7 +161,7 @@ export default function MobilePage() {
         <Navigation />
       </div>
       <div className="h-[calc(100dvh-112px)]">{contents[activeTab]}</div>
-      <div className="border-input flex h-[60px] items-center justify-between border-t px-[2rem]">
+      <div className="border-input divide-input flex h-[60px] items-center justify-between divide-x border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
