@@ -5,7 +5,12 @@ import * as Slider from "@radix-ui/react-slider";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 interface Data {
   id: Number;
   src: String;
@@ -174,13 +179,15 @@ export default function ListeningMusic() {
       }
     }
   };
-
+  const springValue = useSpring(0, { stiffness: 120, damping: 20 });
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60); // Tính phút
     const seconds = Math.floor(time % 60); // Tính giây còn lại
     // Định dạng với 2 chữ số (ví dụ: 01:05)
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+  const widthValue = useTransform(springValue, (v) => `${v}%`);
+
   const track = data[index];
   return (
     <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
@@ -239,6 +246,10 @@ export default function ListeningMusic() {
               className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} size-[20px]`}
               onClick={() => {
                 setIndex((pre) => index - 1), setCurrentTime(0);
+                springValue.jump(0); // reset ngay lập tức
+                setTimeout(() => {
+                  springValue.set((currentTime / totalSeconds) * 100);
+                }, 50);
               }}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -297,6 +308,10 @@ export default function ListeningMusic() {
               className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} size-[20px]`}
               onClick={() => {
                 setIndex((pre) => index + 1), setCurrentTime(0);
+                springValue.jump(0); // reset ngay lập tức
+                setTimeout(() => {
+                  springValue.set((currentTime / totalSeconds) * 100);
+                }, 50);
               }}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -345,11 +360,17 @@ export default function ListeningMusic() {
                 className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
               >
                 {" "}
+                <Slider.Range asChild>
+                  <motion.div
+                    className="bg-primary absolute h-full"
+                    style={{ width: widthValue }}
+                  />
+                </Slider.Range>
                 <Slider.Range className="bg-primary absolute h-full transition-transform duration-300 ease-out" />
               </Slider.Track>
               <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
-            <p className="text-xs tabular-nums">{data[index].duration}</p>
+            <p className="text-xs tabular-nums">{track.duration}</p>
           </div>
         </div>
       </div>
