@@ -229,8 +229,8 @@ export default function ListeningMusic() {
             >
               <path d="M237.66,178.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L212.69,192H200.94a72.12,72.12,0,0,1-58.59-30.15l-41.72-58.4A56.1,56.1,0,0,0,55.06,80H32a8,8,0,0,1,0-16H55.06a72.12,72.12,0,0,1,58.59,30.15l41.72,58.4A56.1,56.1,0,0,0,200.94,176h11.75l-10.35-10.34a8,8,0,0,1,11.32-11.32ZM143,107a8,8,0,0,0,11.16-1.86l1.2-1.67A56.1,56.1,0,0,1,200.94,80h11.75L202.34,90.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L212.69,64H200.94a72.12,72.12,0,0,0-58.59,30.15l-1.2,1.67A8,8,0,0,0,143,107Zm-30,42a8,8,0,0,0-11.16,1.86l-1.2,1.67A56.1,56.1,0,0,1,55.06,176H32a8,8,0,0,0,0,16H55.06a72.12,72.12,0,0,0,58.59-30.15l1.2-1.67A8,8,0,0,0,113,149Z"></path>
             </svg>
-            <motion.svg
-              className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
+            <svg
+              className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} size-[20px]`}
               onClick={() => {
                 setIndex((pre) => index - 1), setCurrentTime(0);
               }}
@@ -241,8 +241,12 @@ export default function ListeningMusic() {
               viewBox="0 0 256 256"
             >
               <path d="M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z"></path>
-            </motion.svg>
+            </svg>
             <div
+              onClick={() => {
+                setIsPlaying(!isPlaying);
+                handlePlayPause();
+              }}
               className={`${isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black dark:bg-white`}
             >
               <motion.svg
@@ -252,10 +256,6 @@ export default function ListeningMusic() {
                     : { opacity: 0, scale: 0 }
                 }
                 className={`size-[25px] border-none fill-white dark:fill-black`}
-                onClick={() => {
-                  setIsPlaying(!isPlaying);
-                  handlePlayPause();
-                }}
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -265,6 +265,10 @@ export default function ListeningMusic() {
               </motion.svg>
             </div>
             <div
+              onClick={() => {
+                setIsPlaying(!isPlaying);
+                handlePlayPause();
+              }}
               className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black fill-white dark:bg-white dark:fill-black`}
             >
               <motion.svg
@@ -274,10 +278,6 @@ export default function ListeningMusic() {
                     : { opacity: 0, scale: 0 }
                 }
                 className={`${!isPlaying ? "hidden" : "flex"} size-[25px] border-none bg-transparent fill-white dark:fill-black`}
-                onClick={() => {
-                  setIsPlaying(!isPlaying);
-                  handlePlayPause();
-                }}
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -288,7 +288,7 @@ export default function ListeningMusic() {
             </div>
 
             <svg
-              className={`${index == 6 ? "pointer-events-none size-[20px] fill-[#a1a1a1]" : ""} `}
+              className={`${index == 6 ? "pointer-events-none fill-[#a1a1a1]" : ""} size-[20px]`}
               onClick={() => {
                 setIndex((pre) => index + 1), setCurrentTime(0);
               }}
