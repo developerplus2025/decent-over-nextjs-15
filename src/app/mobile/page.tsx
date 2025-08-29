@@ -154,9 +154,7 @@ const contents: Record<TabKey, JSX.Element> = {
 
 export default function MobilePage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
-  useEffect(() => {
-    setActiveTab(activeTab);
-  }, [activeTab]);
+
   return (
     <div className="flex h-[100dvh] flex-col overflow-x-hidden overflow-y-hidden">
       <div className="border-input h-[50px] border-b px-[1rem]">

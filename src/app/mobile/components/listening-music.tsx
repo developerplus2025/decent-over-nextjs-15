@@ -6,7 +6,15 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-const data = [
+interface Data {
+  id: Number;
+  src: String;
+  img: String;
+  name: String;
+  description: String;
+  duration: String;
+}
+const data: Data[] = [
   {
     id: 1,
     src: "fiction-remix",
@@ -173,24 +181,24 @@ export default function ListeningMusic() {
     // Định dạng với 2 chữ số (ví dụ: 01:05)
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-
+  const track = data[index];
   return (
     <div className="flex h-[calc(100dvh-102px)] flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
       <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
           <div>
             <Image
-              className="h-[300px] w-[300px] animate-spin rounded-full"
+              className="h-[200px] w-[200px] animate-spin rounded-full"
               width={200}
               height={200}
-              src={`/music-pre/${data[index].img}.jpg`}
+              src={`/music-pre/${track.img}.jpg`}
               alt=""
             />
           </div>
           <div className="flex flex-col items-center gap-2 text-center">
-            <p className="">Name: {data[index].name}</p>
+            <p className="">Name: {track.name}</p>
             <p className="text-sm text-[#a1a1a1]">
-              Artist: {data[index].description}
+              Artist: {track.description}
             </p>
           </div>
         </div>
