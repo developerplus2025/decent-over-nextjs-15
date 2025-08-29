@@ -365,11 +365,8 @@ export default function ListeningMusic() {
                 className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
               >
                 {" "}
-                <Slider.Range asChild>
-                  <motion.div
-                    className="bg-primary absolute h-full"
-                    style={{ width: widthValue }}
-                  />
+                <Slider.Range className="bg-primary absolute h-full transition-all" >
+                 
                 </Slider.Range>
                 
               </Slider.Track>
