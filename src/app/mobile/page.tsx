@@ -154,17 +154,20 @@ const contents: Record<TabKey, JSX.Element> = {
 
 export default function MobilePage() {
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0].id);
+  useEffect(() => {
+    setActiveTab(activeTab);
+  }, [activeTab]);
   return (
     <div className="flex h-[100dvh] flex-col overflow-x-hidden overflow-y-hidden">
       <div className="border-input h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
       <div className="h-[calc(100dvh-102px)]">{contents[activeTab]}</div>
-      <div className="border-input flex h-[50px] justify-between items-center border-t px-[2rem]">
+      <div className="border-input flex h-[50px] items-center justify-between border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
-              className={`${activeTab == item.id ? "[&Svg]:fill-white" : "[&Svg]:fill-[#a1a1a1]"} [&Svg]:size-[20px] `}
+              className={`${activeTab == item.id ? "[&Svg]:fill-white" : "[&Svg]:fill-[#a1a1a1]"} [&Svg]:!size-[30px]`}
             >
               {item.icon}
             </div>

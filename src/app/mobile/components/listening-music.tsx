@@ -175,8 +175,8 @@ export default function ListeningMusic() {
   };
 
   return (
-    <div className="h-[calc(100dvh-102px)] overflow-x-hidden overflow-y-hidden">
-      <div className="flex h-[calc(100dvh-102px)] flex-col items-center justify-center">
+    <div className="flex h-[calc(100dvh-102px)] flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
+      <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
           <div>
             <Image
@@ -222,9 +222,6 @@ export default function ListeningMusic() {
               <path d="M237.66,178.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L212.69,192H200.94a72.12,72.12,0,0,1-58.59-30.15l-41.72-58.4A56.1,56.1,0,0,0,55.06,80H32a8,8,0,0,1,0-16H55.06a72.12,72.12,0,0,1,58.59,30.15l41.72,58.4A56.1,56.1,0,0,0,200.94,176h11.75l-10.35-10.34a8,8,0,0,1,11.32-11.32ZM143,107a8,8,0,0,0,11.16-1.86l1.2-1.67A56.1,56.1,0,0,1,200.94,80h11.75L202.34,90.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L212.69,64H200.94a72.12,72.12,0,0,0-58.59,30.15l-1.2,1.67A8,8,0,0,0,143,107Zm-30,42a8,8,0,0,0-11.16,1.86l-1.2,1.67A56.1,56.1,0,0,1,55.06,176H32a8,8,0,0,0,0,16H55.06a72.12,72.12,0,0,0,58.59-30.15l1.2-1.67A8,8,0,0,0,113,149Z"></path>
             </svg>
             <motion.svg
-              animate={
-                isPlaying ? { opacity: 0, scale: 0 } : { opacity: 1, scale: 1 }
-              }
               className={`${index == 0 ? "pointer-events-none fill-[#a1a1a1]" : ""} `}
               onClick={() => {
                 setIndex((pre) => index - 1), setCurrentTime(0);
@@ -262,7 +259,12 @@ export default function ListeningMusic() {
             <div
               className={`${!isPlaying ? "hidden" : "flex"} border-input h-[70px] w-[70px] items-center justify-center rounded-full border bg-black fill-white dark:bg-white dark:fill-black`}
             >
-              <svg
+              <motion.svg
+                animate={
+                  isPlaying
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0 }
+                }
                 className={`${!isPlaying ? "hidden" : "flex"} size-[25px] border-none bg-transparent fill-white dark:fill-black`}
                 onClick={() => {
                   setIsPlaying(!isPlaying);
@@ -274,7 +276,7 @@ export default function ListeningMusic() {
                 viewBox="0 0 256 256"
               >
                 <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z"></path>
-              </svg>
+              </motion.svg>
             </div>
 
             <svg
