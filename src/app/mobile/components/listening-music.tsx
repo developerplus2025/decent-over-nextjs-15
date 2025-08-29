@@ -188,7 +188,7 @@ export default function ListeningMusic() {
         <div className="flex flex-col gap-[2rem]">
           <motion.div
             animate={
-              track.id == index - 1
+              track.id == index + 1
                 ? { opacity: 1, scale: 1 }
                 : { opacity: 0, scale: 0 }
             }
