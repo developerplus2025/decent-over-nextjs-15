@@ -186,15 +186,21 @@ export default function ListeningMusic() {
     <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
       <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
-          <div>
+          <motion.div
+            animate={
+              track.id == index - 1
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 0 }
+            }
+          >
             <Image
-              className="h-[200px] w-[200px] animate-spin rounded-full"
+              className="h-[200px] w-[200px] rounded-full"
               width={200}
               height={200}
               src={`/music-pre/${track.img}.jpg`}
               alt=""
             />
-          </div>
+          </motion.div>
           <div className="flex flex-col items-center gap-2 text-center">
             <p className="">Name: {track.name}</p>
             <p className="text-sm text-[#a1a1a1]">
