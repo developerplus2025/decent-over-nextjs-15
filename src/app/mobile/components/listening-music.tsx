@@ -356,7 +356,11 @@ export default function ListeningMusic() {
               defaultValue={[0]}
               onMouseDown={handlemousedown}
               onMouseUp={() => {
-                setDrap(false), setCurrentTime(Number(value));
+                setDrap(false);
+                if (audioRef.current) {
+                  audioRef.current.currentTime =
+                    (Number(value) / 100) * totalSeconds;
+                }
               }}
               value={
                 !isDrap ? [(currentTime / totalSeconds) * 100] : [Number(value)]
