@@ -355,7 +355,7 @@ export default function ListeningMusic() {
               }}
               defaultValue={[0]}
               onMouseDown={handlemousedown}
-              onMouseUp={() => {
+              onValueCommit={() => {
                 setDrap(false);
                 if (audioRef.current) {
                   audioRef.current.currentTime =
