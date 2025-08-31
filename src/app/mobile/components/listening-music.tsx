@@ -358,8 +358,9 @@ export default function ListeningMusic() {
               onValueCommit={() => {
                 setDrap(false);
                 if (audioRef.current) {
-                  audioRef.current.currentTime =
-                    (Number(value) / 100) * totalSeconds;
+                 const times = (audioRef.current.currentTime =
+                   (Number(value) / 100) * totalSeconds);
+                    setCurrentTime(times);
                 }
               }}
               value={
