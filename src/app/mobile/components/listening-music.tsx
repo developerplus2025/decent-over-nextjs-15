@@ -355,7 +355,7 @@ export default function ListeningMusic() {
               }}
               defaultValue={[0]}
               onMouseDown={handlemousedown}
-              onMouseUp={() => ValueCommit()}
+              onMouseUp={() => setDrap(false)}
               value={
                 !isDrap
                   ? [(currentTime / totalSeconds) * 100]
