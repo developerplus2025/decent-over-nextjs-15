@@ -359,9 +359,7 @@ export default function ListeningMusic() {
                 setDrap(false), setCurrentTime(Number(value));
               }}
               value={
-                !isDrap
-                  ? [(currentTime / totalSeconds) * 100]
-                  : [(Number(value) / totalSeconds) * 100]
+                !isDrap ? [(currentTime / totalSeconds) * 100] : [Number(value)]
               }
               max={100}
               step={1}
