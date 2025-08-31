@@ -125,11 +125,11 @@ export default function ListeningMusic() {
       audioRef.current.pause();
     }
   }, [pathname]);
-  useEffect(() => {
+  const ValueCommit = () => {
     if (audioRef.current) {
       audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
     }
-  }, [value]);
+  };
   useEffect(() => {
     setSoundTempValue(soundValue);
     if (audioRef.current) {
@@ -351,6 +351,7 @@ export default function ListeningMusic() {
 
             <Slider.Root
               onValueChange={(newTempValue) => setValue(newTempValue)}
+              onValueCommit={() => ValueCommit()}
               defaultValue={[0]}
               value={[(currentTime / totalSeconds) * 100]}
               max={100}
@@ -365,7 +366,7 @@ export default function ListeningMusic() {
                 {" "}
                 <Slider.Range className="bg-primary absolute h-full transition-all"></Slider.Range>
               </Slider.Track>
-              <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
+              <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-all focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
             <p className="text-xs tabular-nums">{track.duration}</p>
           </div>
