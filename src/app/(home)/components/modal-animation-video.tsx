@@ -10,8 +10,8 @@ import {
 } from '@/components/animate-ui/radix/dialog';
  import Video from "next-video";
  import awesomeVideo from "/videos/get-started.mp4";
+import { PlayerContainer } from "./player-container";
 export const ModalAnimationVideo = () => {
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -39,14 +39,15 @@ export const ModalAnimationVideo = () => {
           Watch Demo Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="h-[34rem] sm:max-w-[54rem]" from="left">
+      <DialogContent className="h-[34rem] sm:max-w-[70rem]" from="left">
         <div className="flex h-full w-full items-center justify-center">
-          <Video
+          {/* <Video
             aria-errormessage=""
             aria-hidden="false"
             className="host rounded-lg"
             src={awesomeVideo}
-          />
+          /> */}
+          <PlayerContainer />
           {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
         </div>
       </DialogContent>

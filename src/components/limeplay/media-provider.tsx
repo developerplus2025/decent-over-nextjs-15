@@ -6,8 +6,8 @@ import { useStore } from "zustand"
 import type {
   CreateMediaStoreProps,
   TypeMediaStore,
-} from "@/lib/create-media-store"
-import { createMediaStore } from "@/lib/create-media-store"
+} from "@/components/linear-player/lib/create-media-store"
+import { createMediaStore } from "@/components/linear-player/lib/create-media-store"
 
 type MediaProviderContext = ReturnType<typeof createMediaStore>
 
