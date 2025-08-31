@@ -51,23 +51,23 @@ export default function ThemeToggleButton({
   }, [])
 
   const toggleTheme = React.useCallback(() => {
-    const animation = createAnimation(variant, start, url)
+    const animation = createAnimation(variant, start, url);
 
-    updateStyles(animation.css, animation.name)
+    updateStyles(animation.css, animation.name);
 
-    if (typeof window === "undefined") return
+    if (typeof window === "undefined") return;
 
     const switchTheme = () => {
-      setTheme(theme === "light" ? "dark" : "light")
-    }
+      setTheme(theme === "light" ? "dark" : "light");
+    };
 
     if (!document.startViewTransition) {
-      switchTheme()
-      return
+      switchTheme();
+      return;
     }
 
-    document.startViewTransition(switchTheme)
-  }, [theme, setTheme])
+    document.startViewTransition(switchTheme);
+  }, [updateStyles, url, variant, start, setTheme, theme]);
 
   return (
     <>
