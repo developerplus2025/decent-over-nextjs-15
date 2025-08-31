@@ -351,7 +351,6 @@ export default function ListeningMusic() {
 
             <Slider.Root
               onValueChange={(newTempValue) => setValue(newTempValue)}
-              onValueCommit={() => ValueCommit()}
               defaultValue={[0]}
               value={[(currentTime / totalSeconds) * 100]}
               max={100}
@@ -360,7 +359,7 @@ export default function ListeningMusic() {
             >
               <Slider.Track
                 onMouseDown={handlemousedown}
-                onMouseUp={handlemouseup}
+                onMouseUp={() => ValueCommit()}
                 className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
               >
                 {" "}
