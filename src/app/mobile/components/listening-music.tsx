@@ -1,7 +1,6 @@
 "use client";
 // import { Slider } from "@/components/ui/slider";
 import { cn } from "@/utils/cn";
-import * as Slider from "@radix-ui/react-slider";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -11,6 +10,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { Slider } from "@/components/ui/slider";
 interface Data {
   id: Number;
   src: String;
@@ -348,8 +348,7 @@ export default function ListeningMusic() {
               step={1}
               className={cn("w-full")}
             /> */}
-
-            <Slider.Root
+            <Slider
               onValueChange={(newTempValue) => {
                 setValue(newTempValue), setDrap(true);
               }}
@@ -358,9 +357,9 @@ export default function ListeningMusic() {
               onValueCommit={() => {
                 setDrap(false);
                 if (audioRef.current) {
-                 const times = (audioRef.current.currentTime =
-                   (Number(value) / 100) * totalSeconds);
-                    setCurrentTime(times);
+                  const times = (audioRef.current.currentTime =
+                    (Number(value) / 100) * totalSeconds);
+                  setCurrentTime(times);
                 }
               }}
               value={
@@ -369,13 +368,8 @@ export default function ListeningMusic() {
               max={100}
               step={1}
               className="relative flex w-full touch-none items-center select-none [&_svg]:cursor-pointer"
-            >
-              <Slider.Track className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full">
-                {" "}
-                <Slider.Range className="bg-primary absolute h-full transition-all"></Slider.Range>
-              </Slider.Track>
-              <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
-            </Slider.Root>
+            />
+
             <p className="text-xs tabular-nums">{track.duration}</p>
           </div>
         </div>

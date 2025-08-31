@@ -191,6 +191,7 @@
     "remark-mdx": "^3.1.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
+    "shaka-player": "^4.16.0",
     "sonner": "^1.7.4",
     "sugar-high": "^0.9.3",
     "tailwind-merge": "^2.6.0",
@@ -202,7 +203,8 @@
     "unist-util-visit": "^5.0.0",
     "use-composed-ref": "^1.4.0",
     "vaul": "^0.9.9",
-    "wavesurfer.js": "^7.10.1"
+    "wavesurfer.js": "^7.10.1",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.6",
