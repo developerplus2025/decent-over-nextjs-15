@@ -350,11 +350,9 @@ export default function ListeningMusic() {
             /> */}
 
             <Slider.Root
-              onValueChange={(newTempValue) => setTempValue(newTempValue)}
-              onValueCommit={(newValue) => setValue(tempValue)}
+              onValueChange={(newTempValue) => setValue(newTempValue)}
               defaultValue={[0]}
               value={[(currentTime / totalSeconds) * 100]}
-              // value={[currentTime]}
               max={100}
               step={1}
               className="relative flex w-full touch-none items-center select-none [&_svg]:cursor-pointer"
@@ -365,10 +363,7 @@ export default function ListeningMusic() {
                 className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
               >
                 {" "}
-                <Slider.Range className="bg-primary absolute h-full transition-all" >
-                 
-                </Slider.Range>
-                
+                <Slider.Range className="bg-primary absolute h-full transition-all"></Slider.Range>
               </Slider.Track>
               <Slider.Thumb className="border-primary focus-visible:ring-ring block h-3 w-3 rounded-full border bg-white shadow-sm transition-colors focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50" />
             </Slider.Root>
