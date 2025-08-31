@@ -93,7 +93,7 @@ export default function ListeningMusic() {
   const [soundValue, setSoundValue] = useState<number[]>([100]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
-
+  const [isDrap, setDrap] = useState<boolean>(false);
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -350,18 +350,22 @@ export default function ListeningMusic() {
             /> */}
 
             <Slider.Root
-              onValueChange={(newTempValue) => setValue(newTempValue)}
+              onValueChange={(newTempValue) => {
+                setValue(newTempValue), setDrap(true);
+              }}
               defaultValue={[0]}
-              value={[(currentTime / totalSeconds) * 100]}
+              onMouseDown={handlemousedown}
+              onMouseUp={() => ValueCommit()}
+              value={
+                !isDrap
+                  ? [(currentTime / totalSeconds) * 100]
+                  : [(Number(value) / totalSeconds) * 100]
+              }
               max={100}
               step={1}
               className="relative flex w-full touch-none items-center select-none [&_svg]:cursor-pointer"
             >
-              <Slider.Track
-                onMouseDown={handlemousedown}
-                onMouseUp={() => ValueCommit()}
-                className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full"
-              >
+              <Slider.Track className="bg-primary/20 relative h-1 w-full grow overflow-hidden rounded-full">
                 {" "}
                 <Slider.Range className="bg-primary absolute h-full transition-all"></Slider.Range>
               </Slider.Track>
