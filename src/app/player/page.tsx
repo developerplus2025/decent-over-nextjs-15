@@ -5,5 +5,5 @@ export default function Page() {
     <section className="dark flex h-dvh w-dvw bg-black">
       <LinearMediaPlayer />
     </section>
-  )
+  );
 }
