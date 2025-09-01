@@ -1,0 +1,10 @@
+diff --git a/dist/shaka-player.compiled.d.ts b/dist/shaka-player.compiled.d.ts
+index f6fafcf74d83b33dcf39a3065b16fa003b1b8055..44197bab41e43db1be6e2a9032850d1cfba4946d 100644
+--- a/dist/shaka-player.compiled.d.ts
++++ b/dist/shaka-player.compiled.d.ts
+@@ -5624,3 +5624,5 @@ declare namespace shaka.extern {
+ declare namespace shaka.extern {
+   type TransmuxerPlugin = ( ) => shaka.extern.Transmuxer ;
+ }
++export as namespace shaka;
++export = shaka;

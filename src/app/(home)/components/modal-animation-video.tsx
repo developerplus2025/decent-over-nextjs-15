@@ -11,6 +11,7 @@ import {
  import Video from "next-video";
  import awesomeVideo from "/videos/get-started.mp4";
 import { PlayerContainer } from "./player-container";
+import { LinearMediaPlayer } from "@/components/linear-player/components/media-player";
 export const ModalAnimationVideo = () => {
   return (
     <Dialog>
@@ -47,7 +48,7 @@ export const ModalAnimationVideo = () => {
             className="host rounded-lg"
             src={awesomeVideo}
           /> */}
-          <PlayerContainer />
+          <LinearMediaPlayer />
           {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
         </div>
       </DialogContent>

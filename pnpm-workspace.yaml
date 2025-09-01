@@ -12,3 +12,6 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - bcrypt
+
+patchedDependencies:
+  shaka-player: patches/shaka-player.patch
