@@ -18,3 +18,34 @@ p2 = (0,0)
 p1 = (2,0)
 p3 = (0,3)
 print(find_fourth_fast(p1,p2,p3))  # (2,3)
+
+
+def Generate(number,n) :
+    if number < n :
+       print(" "*((n-number)*2),end="")
+    else:
+        print(" "*(n-number),end="")
+    for i in range(1,number+1):
+        if i < number :
+            print(i ,"",end="")
+        if i == number :
+            for i in range(-number,0):
+                 print(-i ,"",end="")
+            break
+n = int(input("Enter your number: "))
+a = n
+for i in range(1,n+1):
+    Generate(i ,a)
+    print("")
+def Generate(number,n) :
+    for i in range(1,number+1):
+        if i < number :
+            print(i ,"",end="")
+        if i == number :
+            for i in range(-number,0):
+                 print(-i ,"",end="")
+            break
+a = n
+for i in range(1,n+1):
+    Generate(i ,a)
+    print("")

@@ -8,3 +8,5 @@ for i in range (1,10) :
         a = 20*(x**i)
     sum = sum + a
 print(x**10+sum )
+
+print(" "*(5-1),"s")
