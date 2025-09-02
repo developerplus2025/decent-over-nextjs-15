@@ -26,15 +26,9 @@ export const LinearMediaPlayer = React.forwardRef<
         ref={ref}
         height={720}
         width={1280}
-        className={cn(
-          `
-            m-auto w-full
-            md:min-w-80
-          `,
-          className
-        )}
+        className={cn(`m-auto w-full md:min-w-80`, className)}
       >
-        <Layout.PlayerContainer>
+        <Layout.PlayerContainer className="h-[34rem] rounded-xl">
           <FallbackPoster className="bg-black">
             <LimeplayLogo />
           </FallbackPoster>
@@ -49,7 +43,7 @@ export const LinearMediaPlayer = React.forwardRef<
         </Layout.PlayerContainer>
       </RootContainer>
     </MediaProvider>
-  )
+  );
 })
 
 LinearMediaPlayer.displayName = "LinearMediaPlayer"
