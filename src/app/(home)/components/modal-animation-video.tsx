@@ -40,7 +40,7 @@ export const ModalAnimationVideo = () => {
           Watch Demo Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="h-[34rem] sm:max-w-[70rem]" from="left">
+      <DialogContent className="h-[34rem] p-0 sm:max-w-[70rem]" from="left">
         <div className="flex h-full w-full items-center justify-center">
           {/* <Video
             aria-errormessage=""
@@ -48,7 +48,7 @@ export const ModalAnimationVideo = () => {
             className="host rounded-lg"
             src={awesomeVideo}
           /> */}
-          <LinearMediaPlayer />
+          <LinearMediaPlayer src="https://decent-over.vercel.app/videos/854224-hd_1280_720_30fps.mp4" />
           {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
         </div>
       </DialogContent>
