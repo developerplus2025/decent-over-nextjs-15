@@ -16,6 +16,13 @@ export interface DemoAsset {
 
 export const ASSETS: DemoAsset[] = [
   {
+    title: "CG Animation Of Rocket Taking Off",
+    description: "HLS Video",
+    src: "https://decent-over.vercel.app/videos/854224-hd_1280_720_30fps.mp4",
+    poster:
+      "https://decent-over.vercel.app/image/854224-hd_1280_720_30fps.webp",
+  },
+  {
     title: "Blender Foundation - Sintel",
     description:
       "A Blender Foundation short film, protected by Widevine encryption",
