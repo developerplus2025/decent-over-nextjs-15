@@ -125,7 +125,7 @@ export default async function Page(props: {
           url={absoluteUrl(page.url)}
         />
       </div>
-      <DocsDescription className="border-input mb-0 border-b pb-8">
+      <DocsDescription className="border-input mb-0 border-b pb-8 text-[1.05rem] text-balance sm:text-base">
         {page.data.description}
       </DocsDescription>
       <AudioBar />
@@ -140,7 +140,7 @@ export default async function Page(props: {
                 <Suspense fallback={<Loader variant="classic" />}>
                   <MDX
                     components={{
-                      mdxComponents,
+                      ...mdxComponents,
                       VideoPage,
                       InputOTPForm,
                       PathAnimation,
