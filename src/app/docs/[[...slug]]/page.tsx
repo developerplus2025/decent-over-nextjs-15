@@ -16,7 +16,12 @@ import { DocsTableOfContents } from "@/components/docs-toc";
 import { OpenInV0Cta } from "@/components/open-in-v0-cta";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
 import { InputOTPForm } from "@/components/input-otp-form";
@@ -99,59 +104,58 @@ export default async function Page(props: {
   const links = doc.links;
 
   return (
-    
-      
-      <DocsPage
-        // @ts-expect-error - revisit fumadocs types.
-        toc={page.data.toc}
-        // @ts-expect-error - revisit fumadocs types.
-        full={page.data.full}
-        breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
-        tableOfContent={{
-          style: "clerk",
-          header: <div className="h-4 w-10"></div>,
-        }}
-      >
-        <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
-          <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
-            {page.data.title}{" "}
-          </h1>
-          <DocsCopyPage
-            // @ts-expect-error - revisit fumadocs types.
-            page={doc.content}
-            url={absoluteUrl(page.url)}
-          />
-        </div>
-        <DocsDescription className="border-input mb-0 border-b pb-8">
-          {page.data.description}
-        </DocsDescription>
-        <AudioBar />
-        <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
-          <div
-            data-slot="docs"
-            className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
-          >
-            <div className="flex min-w-0 flex-col">
-              <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
-                <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-<Suspense fallback={<Loader variant="classic" />}>
-              <MDX
-                components={{
-                  mdxComponents,
-                  VideoPage,
-                  InputOTPForm,
-                  PathAnimation,
-                }}
-              />
-            </Suspense>
-
-                  
-                </div>
+    <DocsPage
+      // @ts-expect-error - revisit fumadocs types.
+      toc={page.data.toc}
+      // @ts-expect-error - revisit fumadocs types.
+      full={page.data.full}
+      breadcrumb={{ component: <DocsBreadcrumb tree={source.pageTree} /> }}
+      tableOfContent={{
+        style: "clerk",
+        header: <div className="h-4 w-10"></div>,
+      }}
+    >
+      <div className="flex pt-4 min-[300px]:flex-col-reverse min-[300px]:items-start min-[300px]:gap-2.5 xl:flex-row xl:items-center xl:justify-between">
+        <h1 className="flex items-start justify-between gap-2 text-3xl font-semibold">
+          {page.data.title}{" "}
+        </h1>
+        <DocsCopyPage
+          // @ts-expect-error - revisit fumadocs types.
+          page={doc.content}
+          url={absoluteUrl(page.url)}
+        />
+      </div>
+      <DocsDescription className="border-input mb-0 border-b pb-8">
+        {page.data.description}
+      </DocsDescription>
+      <AudioBar />
+      <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
+        <div
+          data-slot="docs"
+          className="items-stretch text-[1.05rem] sm:text-[15px] xl:w-full"
+        >
+          <div className="flex min-w-0 flex-col">
+            <div className="mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 pt-0 pb-6 text-neutral-800 md:px-0 lg:py-0 dark:text-neutral-300">
+              <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
+                <Suspense fallback={<Loader variant="classic" />}>
+                  <MDX
+                    components={{
+                      mdxComponents,
+                      VideoPage,
+                      InputOTPForm,
+                      PathAnimation,
+                      Accordion,
+                      AccordionItem,
+                      AccordionTrigger,
+                      AccordionContent,
+                    }}
+                  />
+                </Suspense>
               </div>
             </div>
           </div>
-        </DocsBody>
-      </DocsPage>
-    
+        </div>
+      </DocsBody>
+    </DocsPage>
   );
 }
