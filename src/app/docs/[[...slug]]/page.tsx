@@ -144,10 +144,6 @@ export default async function Page(props: {
                       VideoPage,
                       InputOTPForm,
                       PathAnimation,
-                      Accordion,
-                      AccordionItem,
-                      AccordionTrigger,
-                      AccordionContent,
                     }}
                   />
                 </Suspense>
