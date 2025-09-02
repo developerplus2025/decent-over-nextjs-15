@@ -54,10 +54,9 @@ export function MediaElement({
   return (
     <Media
       as="video"
-      className="size-full bg-background object-cover"
-      autoPlay={false}
-      muted
+      className="bg-background size-full object-cover"
+      autoPlay={true}
       loop
     />
-  )
+  );
 }
