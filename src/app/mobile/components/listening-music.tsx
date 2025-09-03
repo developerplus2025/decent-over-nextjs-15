@@ -381,7 +381,7 @@ export default function ListeningMusic() {
         {songs.map((song) => (
           <li
             key={song.id}
-            className="flex h-full w-[2800px] items-center justify-between gap-4 rounded-lg px-2 py-2 [&_Svg]:shrink-0"
+            className="flex h-full w-full items-center justify-between gap-4 rounded-lg px-2 py-2 [&_Svg]:shrink-0"
           >
             <div className="flex items-center gap-4">
               <Image
