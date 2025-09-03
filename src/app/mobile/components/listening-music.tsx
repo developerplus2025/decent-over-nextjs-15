@@ -428,7 +428,7 @@ export default function ListeningMusic() {
                 <p className="text-xs tabular-nums">
                   {formatTime(currentTime)}
                 </p>
-                <Slider
+                {/* <Slider
                   onValueChange={(newTempValue) => setTempValue(newTempValue)}
                   onValueCommit={(newValue) => setValue(tempValue)}
                   defaultValue={[0]}
@@ -436,7 +436,7 @@ export default function ListeningMusic() {
                   max={100}
                   step={1}
                   className={cn("w-full")}
-                />
+                /> */}
                 <Slider
                   onValueChange={(newTempValue) => {
                     setValue(newTempValue), setDrap(true);
