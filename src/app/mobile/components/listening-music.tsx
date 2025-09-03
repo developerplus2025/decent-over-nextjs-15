@@ -228,8 +228,10 @@ export default function ListeningMusic() {
                     alt={String(track.name)}
                   />
                   <div className="flex flex-col">
-                    <p className="text-xs font-medium">{track.name}</p>
-                    <p className="text-xs font-medium text-[#a1a1a1]">
+                    <p className="text-start text-xs font-medium">
+                      {track.name}
+                    </p>
+                    <p className="text-start text-xs font-medium text-[#a1a1a1]">
                       by {track.description}
                     </p>
                   </div>
@@ -262,8 +264,10 @@ export default function ListeningMusic() {
                     height={56}
                   />
                   <div className="flex flex-col">
-                    <p className="text-xs font-medium">{song.title}</p>
-                    <p className="text-xs font-medium text-[#a1a1a1]">
+                    <p className="text-start text-xs font-medium">
+                      {song.title}
+                    </p>
+                    <p className="text-start text-xs font-medium text-[#a1a1a1]">
                       by {song.artist.name}
                     </p>
                   </div>
