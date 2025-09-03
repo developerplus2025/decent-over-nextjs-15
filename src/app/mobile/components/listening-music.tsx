@@ -11,6 +11,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
+import { useSearch } from "../content/SearchContext";
+import SearchUi from "./search-ui";
 interface Data {
   id: Number;
   src: String;
@@ -192,11 +194,11 @@ export default function ListeningMusic() {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   const widthValue = useTransform(springValue, (v) => `${v}%`);
-
+  const { songs, loading } = useSearch();
   const track = data[index];
   return (
     <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
-      <div className="flex h-full flex-col items-center justify-center py-[2rem]">
+      {/* <div className="flex h-full flex-col items-center justify-center py-[2rem]">
         <div className="flex flex-col gap-[2rem]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -220,8 +222,8 @@ export default function ListeningMusic() {
             <p className="text-sm text-[#a1a1a1]">{track.description}</p>
           </div>
         </div>
-      </div>
-
+      </div> */}
+      {/* 
       <div className="z-20 flex h-[180px] w-full items-center justify-center border-t bg-black px-8 select-none">
         <audio
           id="audio"
@@ -339,7 +341,7 @@ export default function ListeningMusic() {
           </div>
           <div className="flex w-[270px] items-center gap-4">
             <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
-            {/* <Slider
+            <Slider
               onValueChange={(newTempValue) => setTempValue(newTempValue)}
               onValueCommit={(newValue) => setValue(tempValue)}
               defaultValue={[0]}
@@ -347,7 +349,7 @@ export default function ListeningMusic() {
               max={100}
               step={1}
               className={cn("w-full")}
-            /> */}
+            />
             <Slider
               onValueChange={(newTempValue) => {
                 setValue(newTempValue), setDrap(true);
@@ -373,7 +375,42 @@ export default function ListeningMusic() {
             <p className="text-xs tabular-nums">{track.duration}</p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <SearchUi />
+      <ul className="grid w-[300px] grid-cols-1 gap-x-4 divide-y overflow-x-hidden px-4">
+        {songs.map((song) => (
+          <li
+            key={song.id}
+            className="flex h-full w-[2800px] items-center justify-between gap-4 rounded-lg px-2 py-2 [&_Svg]:shrink-0"
+          >
+            <div className="flex items-center gap-4">
+              <Image
+                className="rounded-md"
+                unoptimized
+                src={song.album.cover_small}
+                alt={song.title}
+                width={56}
+                height={56}
+              />
+              <div className="flex flex-col">
+                <p className="text-xs font-medium">{song.title}</p>
+                <p className="text-xs font-medium text-[#a1a1a1]">
+                  by {song.artist.name}
+                </p>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#ffffff"
+              viewBox="0 0 256 256"
+            >
+              <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+            </svg>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
