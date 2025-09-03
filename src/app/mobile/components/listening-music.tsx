@@ -377,7 +377,7 @@ export default function ListeningMusic() {
         </div>
       </div> */}
       <SearchUi />
-      <ul className="grid w-[300px] grid-cols-1 gap-x-4 divide-y overflow-x-hidden px-4">
+      <ul className="grid w-screen grid-cols-1 gap-x-4 divide-y overflow-x-hidden px-4">
         {songs.map((song) => (
           <li
             key={song.id}

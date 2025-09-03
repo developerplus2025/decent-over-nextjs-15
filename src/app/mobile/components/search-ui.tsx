@@ -8,7 +8,7 @@ export default function SearchUi() {
   const { keyword, setKeyword } = useSearch();
   return (
     <div>
-      <div className="flex items-center justify-center gap-4 [&_svg]:h-[20px] [&_svg]:w-[20px]">
+      <div className="flex items-center justify-center gap-4 py-[1rem] [&_svg]:h-[20px] [&_svg]:w-[20px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -24,10 +24,10 @@ export default function SearchUi() {
             placeholder="Enter keyword..."
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
-            className="w-100 rounded-full pl-[42px]"
+            className="w-[16rem] rounded-full pl-[42px]"
           />
           <svg
-            className="absolute left-[26px] top-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-[26px] -translate-x-1/2 -translate-y-1/2"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
