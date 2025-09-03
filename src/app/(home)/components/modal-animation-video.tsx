@@ -48,7 +48,7 @@ export const ModalAnimationVideo = () => {
             className="host rounded-lg"
             src={awesomeVideo}
           /> */}
-          <LinearMediaPlayer src="https://decent-over.vercel.app/kevin-full.4CE3C73C-6032-4726-A296-E0AD9392874F.mp4" />
+          <LinearMediaPlayer src="https://decent-over.vercel.app/videos/kevin-full.4CE3C73C-6032-4726-A296-E0AD9392874F.mp4" />
           {/* <video src={"../../../../videos/vercel-ship.mp4"}></video> */}
         </div>
       </DialogContent>
