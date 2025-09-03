@@ -122,7 +122,7 @@ export default function UserButton() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         {session?.user && (
           <div>
             <div
