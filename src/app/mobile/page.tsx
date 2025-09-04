@@ -174,13 +174,13 @@ export default function MobilePage() {
 
   return (
     <div className="flex h-[100dvh] flex-col overflow-x-hidden overflow-y-hidden">
-      <div className="border-input h-[50px] border-b px-[1rem]">
+      <div className="border-input fixed top-0 h-[50px] border-b px-[1rem]">
         <Navigation />
       </div>
       <div className="h-[calc(100dvh-112px)]">
         {contents[activeTab] == "" ? "Comming Soon" : contents[activeTab]}
       </div>
-      <div className="border-input flex h-[60px] items-center justify-between border-t px-[2rem]">
+      <div className="border-input fixed bottom-0 flex h-[60px] items-center justify-between border-t px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
