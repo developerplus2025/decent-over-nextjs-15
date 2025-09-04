@@ -48,6 +48,11 @@ export default function RootLayout({
         style={{ colorScheme: "dark" }}
       >
         <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `<!-- Welcome developers! -->`,
+            }}
+          />
           <meta name="theme-color" content="#000000" />
         </head>
 
