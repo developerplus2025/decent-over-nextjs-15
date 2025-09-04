@@ -113,7 +113,7 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
   const [hover, setHover] = useState(false);
   const timerRef = useRef(0);
   const closeTimeRef = useRef(0);
-
+  const [pathname] = usePathname();
   useOnChange(collapsed, () => {
     setHover(false);
     closeTimeRef.current = Date.now() + 150;
@@ -125,7 +125,8 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
       {...props}
       data-collapsed={collapsed}
       className={cn(
-        "bg-fd-card fixed start-0 top-[58.8px] bottom-(--fd-sidebar-margin) z-20 flex flex-col items-end border-e text-sm *:w-(--fd-sidebar-width) max-md:hidden",
+        "bg-fd-card fixed start-0 top-[58.8px] bottom-(--fd-sidebar-margin) z-20 flex flex-col items-end text-sm *:w-(--fd-sidebar-width) max-md:hidden",
+        pathname.startsWith("/docs") ? "border-none" : "border-e",
         collapsed && [
           "translate-x-(--fd-sidebar-offset) rounded-xl border rtl:-translate-x-(--fd-sidebar-offset)",
           hover ? "z-50 shadow-lg" : "opacity-0",
