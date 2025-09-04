@@ -24,7 +24,7 @@ export default async function Page(props: {
 
   return (
     <>
-      <div className="border-input container flex w-[1000px] flex-col justify-center gap-2 border-b py-12 md:px-8">
+      <div className="border-input container flex max-w-2xl flex-col justify-center gap-2 border-b py-12 md:px-8">
         <Link href={"/blog"} className="flex justify-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
