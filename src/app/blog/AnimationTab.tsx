@@ -40,7 +40,7 @@ export function AnimatedTabs() {
    };
 
    const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
-   useEffect(() => {
+   useLayoutEffect(() => {
      setActiveTab(TABS[getInitialIndex(path)].id);
    }, [path]);
 
