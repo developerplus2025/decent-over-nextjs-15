@@ -126,7 +126,7 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
       data-collapsed={collapsed}
       className={cn(
         "bg-fd-card fixed start-0 top-[58.8px] bottom-(--fd-sidebar-margin) z-20 flex flex-col items-end text-sm *:w-(--fd-sidebar-width) max-md:hidden",
-        pathname.startsWith("/docs") ? "border-none" : "border-e",
+        pathname.startsWith("/docs") ? "border-none" : "border-none",
         collapsed && [
           "translate-x-(--fd-sidebar-offset) rounded-xl border rtl:-translate-x-(--fd-sidebar-offset)",
           hover ? "z-50 shadow-lg" : "opacity-0",
