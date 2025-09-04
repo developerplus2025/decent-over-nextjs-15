@@ -208,7 +208,7 @@ export default function ListeningMusic() {
   const { songs, loading } = useSearch();
   const track = data[index];
   return (
-    <div className="flex h-full flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
+    <div className="flex h-full flex-col items-center overflow-x-hidden overflow-y-hidden">
       <SearchUi />
       <Drawer>
         <ul className="grid w-screen grid-cols-1 gap-x-4 divide-y overflow-x-hidden px-4">

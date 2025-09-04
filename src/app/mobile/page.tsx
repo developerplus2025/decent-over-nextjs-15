@@ -180,7 +180,7 @@ export default function MobilePage() {
       <div className="h-[calc(100dvh-50px)]">
         {contents[activeTab] == "" ? "Comming Soon" : contents[activeTab]}
       </div>
-      <div className="border-input fixed bottom-0 z-[10] flex h-[60px] w-full items-center justify-between border-t px-[2rem]">
+      <div className="border-input fixed bottom-0 z-[10] flex h-[60px] w-full items-center justify-between border-t bg-black px-[2rem]">
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
