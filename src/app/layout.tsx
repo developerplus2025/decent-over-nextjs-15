@@ -45,7 +45,7 @@ export default function RootLayout({
         suppressHydrationWarning
         lang={"en"}
         className={cn(
-          "styled-scrollbar dark selection:bg-primary touch-manipulation selection:text-primary-foreground font-sans",
+          "styled-scrollbar touch-pan-x dark selection:bg-primary touch-manipulation selection:text-primary-foreground font-sans",
           fontVariables,
         )}
         style={{ colorScheme: "dark" }}
