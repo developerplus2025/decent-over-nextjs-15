@@ -26,8 +26,9 @@ import {
   ConsentManagerDialog,
 } from "@c15t/nextjs";
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { Suspense, unstable_ViewTransition as ViewTransition } from "react";
 import { ThemeParams } from "@/components/theme-params";
+import { Loader } from "@/components/ui/loader";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -129,7 +130,9 @@ export default function RootLayout({
                 </NavigationMobile>
                 <NuqsAdapter>
                   {" "}
-                  <ThemeParams />
+                  <Suspense fallback={<Loader variant="classic" />}>
+                    <ThemeParams />
+                  </Suspense>
                   {children}
                 </NuqsAdapter>
                 {/* <ViewTransition></ViewTransition> */}
