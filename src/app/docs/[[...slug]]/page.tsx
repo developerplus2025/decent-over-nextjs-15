@@ -128,7 +128,15 @@ export default async function Page(props: {
       <DocsDescription className="border-input mb-0 border-b pb-8 text-[1.05rem] text-balance sm:text-base">
         {page.data.description}
       </DocsDescription>
-      <AudioBar />
+      <div className="flex items-center justify-between">
+        {" "}
+        <AudioBar />{" "}
+        <DocsCopyPage
+          // @ts-expect-error - revisit fumadocs types.
+          page={doc.content}
+          url={absoluteUrl(page.url)}
+        />{" "}
+      </div>
       <DocsBody className="pt-4 sm:px-2 md:px-0 xl:mr-[0rem] xl:px-0">
         <div
           data-slot="docs"
