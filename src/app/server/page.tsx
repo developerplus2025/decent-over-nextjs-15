@@ -63,17 +63,14 @@ function ServerPage() {
     return (
       <div className="mb-[3rem] flex flex-col gap-[6rem]">
         <div className="grid grid-cols-3 place-items-center justify-items-center gap-[2rem]">
-          {Data.map(
-            (data) =>
-              data.rank == Number(rank) && (
-                <div
-                  key={data.rank}
-                  className="border-input flex h-[400px] w-[400px] items-center justify-center rounded-xl border bg-[#0c0c0c]"
-                >
-                  <p className="text-3xl">{data.name}</p>
-                </div>
-              ),
-          )}
+          {Data.filter((data) => data.rank === rank).map((data) => (
+            <div
+              key={`${data.rank}-${data.name}`}
+              className="border-input flex h-[400px] w-[400px] items-center justify-center rounded-xl border bg-[#0c0c0c]"
+            >
+              <p className="text-3xl">{data.name}</p>
+            </div>
+          ))}
         </div>
         <Pagination>
           <PaginationContent>
