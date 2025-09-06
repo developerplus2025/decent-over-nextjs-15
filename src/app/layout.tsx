@@ -119,7 +119,6 @@ export default function RootLayout({
                   SearchDialog,
                 }}
               >
-                <ThemeParams />
                 <Navigation className="min-[300px]:hidden xl:block">
                   Navigation children content, or empty fragment if not needed
                   <></>
@@ -128,7 +127,11 @@ export default function RootLayout({
                   {/* Add children here if needed */}
                   <></>
                 </NavigationMobile>
-                <NuqsAdapter>{children}</NuqsAdapter>
+                <NuqsAdapter>
+                  {" "}
+                  <ThemeParams />
+                  {children}
+                </NuqsAdapter>
                 {/* <ViewTransition></ViewTransition> */}
               </RootProvider>
               <Footer />
