@@ -27,7 +27,18 @@ const Data = [
     rank: 2,
     name: 3,
   },
-
+  {
+    rank: 3,
+    name: 1,
+  },
+  {
+    rank: 3,
+    name: 2,
+  },
+  {
+    rank: 3,
+    name: 3,
+  },
 ];
 const PaginationItems = [
   {
