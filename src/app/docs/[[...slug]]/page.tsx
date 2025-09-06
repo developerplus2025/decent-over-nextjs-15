@@ -120,7 +120,7 @@ export default async function Page(props: {
           {page.data.title}{" "}
         </h1>
         <DocsCopyPage
-          className="sm:flex xl:hidden"
+          className="min-[300px]:flex xl:hidden"
           // @ts-expect-error - revisit fumadocs types.
           page={doc.content}
           url={absoluteUrl(page.url)}
@@ -133,7 +133,7 @@ export default async function Page(props: {
         {" "}
         <AudioBar />{" "}
         <DocsCopyPage
-          className="sm:hidden xl:flex"
+          className="min-[300px]:hidden xl:flex"
           // @ts-expect-error - revisit fumadocs types.
           page={doc.content}
           url={absoluteUrl(page.url)}
