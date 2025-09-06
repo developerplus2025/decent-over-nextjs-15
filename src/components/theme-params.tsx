@@ -22,12 +22,12 @@ export function SettingsParams() {
   const router = useRouter();
   const [nameRouter, setNameRouter] = useQueryState("router");
   useEffect(() => {
-    DataRouter.forEach((item, index) => {
-      if (nameRouter != "" && nameRouter == item.name) {
-        return setNameRouter(String(item.name)), router.push(nameRouter);
-      }
-    });
+    const found = DataRouter.find((item) => item.name === nameRouter);
+    if (nameRouter != "" && found) {
+      router.push(String(nameRouter));
+    }
   });
+
   useEffect(() => {
     if ((name != "" && name == "light") || name == "dark") {
       return setTheme(String(name));
