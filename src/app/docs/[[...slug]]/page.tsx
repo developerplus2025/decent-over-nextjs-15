@@ -129,7 +129,7 @@ export default async function Page(props: {
       <DocsDescription className="border-input mb-0 border-b pb-8 text-[1.05rem] text-balance sm:text-base">
         {page.data.description}
       </DocsDescription>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         {" "}
         <AudioBar />{" "}
         <DocsCopyPage
