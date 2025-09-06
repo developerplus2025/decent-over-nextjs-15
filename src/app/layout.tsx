@@ -27,7 +27,7 @@ import {
 } from "@c15t/nextjs";
 import CustomAcceptButton from "@/components/CustomHeaderCookie";
 import { Suspense, unstable_ViewTransition as ViewTransition } from "react";
-import { ThemeParams } from "@/components/theme-params";
+import { SettingsParams } from "@/components/theme-params";
 import { Loader } from "@/components/ui/loader";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -131,7 +131,7 @@ export default function RootLayout({
                 <NuqsAdapter>
                   {" "}
                   <Suspense fallback={<Loader variant="classic" />}>
-                    <ThemeParams />
+                    <SettingsParams />
                   </Suspense>
                   {children}
                 </NuqsAdapter>
