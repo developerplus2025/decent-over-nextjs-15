@@ -43,16 +43,16 @@ const PaginationItems = [
 function ServerPage() {
    const [rank, setRank] = useQueryState("page", parseAsInteger.withDefault(1));
    return (
-     <div className="flex flex-col gap-[6rem]">
-       <div className="grid grid-cols-3 place-items-center justify-items-center">
+     <div className="mb-[3rem] flex flex-col gap-[6rem]">
+       <div className="grid grid-cols-3 place-items-center justify-items-center gap-[2rem]">
          {Data.map(
            (data) =>
              data.rank == Number(rank) && (
                <div
                  key={data.rank}
-                 className="border-input h-[400px] w-[400px] rounded-xl border bg-[#0c0c0c]"
+                 className="border-input flex h-[400px] w-[400px] items-center justify-center rounded-xl border bg-[#0c0c0c]"
                >
-                 {data.name}
+                 <p className="text-3xl">{data.name}</p>
                </div>
              ),
          )}
@@ -64,7 +64,10 @@ function ServerPage() {
            </PaginationItem>
            {PaginationItems.map((data) => (
              <PaginationItem key={data.rank}>
-               <PaginationLink href={`/server?page=${String(data.rank)}`}>
+               <PaginationLink
+                 isActive={data.rank == rank ? true : false}
+                 href={`/server?page=${String(data.rank)}`}
+               >
                  {data.rank}
                </PaginationLink>
              </PaginationItem>
