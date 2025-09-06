@@ -47,7 +47,7 @@ function ServerPage() {
        <div className="grid grid-cols-3 place-items-center justify-items-center">
          {Data.map(
            (data) =>
-             data.name == Number(rank) && (
+             data.rank == Number(rank) && (
                <div
                  key={data.rank}
                  className="border-input h-[400px] w-[400px] rounded-xl border bg-[#0c0c0c]"
