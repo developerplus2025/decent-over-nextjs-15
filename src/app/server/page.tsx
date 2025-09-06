@@ -1,6 +1,7 @@
 "use client"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+
 import { parseAsInteger, useQueryState } from 'nuqs';
 import React, { useEffect } from "react";
 const Data = [
