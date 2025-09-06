@@ -89,8 +89,16 @@ const menuItems = {
   ),
 }
 
-export function DocsCopyPage({ page, url }: { page: string; url: string }) {
-  const { copyToClipboard, isCopied } = useCopyToClipboard()
+export function DocsCopyPage({
+  page,
+  url,
+  className,
+}: {
+  page: string;
+  url: string;
+  className: string;
+}) {
+  const { copyToClipboard, isCopied } = useCopyToClipboard();
 
   const trigger = (
     <Button
@@ -104,7 +112,9 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 
   return (
     <Popover>
-      <div className="group/buttons border-input relative rounded-lg border bg-black sm:flex xl:hidden *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
+      <div
+        className={`${className} group/buttons border-input relative rounded-lg border bg-black *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10`}
+      >
         <PopoverAnchor />
         <Button
           variant="ghost"
