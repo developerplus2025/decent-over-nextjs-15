@@ -7,6 +7,7 @@ import { GeistMono } from "geist/font/mono";
 // import { Toaster, toast } from "sonner";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Image from "next/image";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { DocsNavigation } from "@/components/DocsNavigation";
 import Providers from "@/components/ProgressBarProvider";
 import Footer from "@/components/footer";
@@ -125,7 +126,7 @@ export default function RootLayout({
                   {/* Add children here if needed */}
                   <></>
                 </NavigationMobile>
-                {children}
+                <NuqsAdapter>{children}</NuqsAdapter>
                 {/* <ViewTransition></ViewTransition> */}
               </RootProvider>
               <Footer />
