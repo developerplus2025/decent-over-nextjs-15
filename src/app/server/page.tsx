@@ -2,7 +2,7 @@
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 import { useRouter } from "next/router";
 import { parseAsInteger, useQueryState } from 'nuqs';
-import React from 'react'
+import React, { useEffect } from "react";
 const Data = [
   {
     rank: 1,
@@ -58,6 +58,7 @@ function ServerPage() {
       "page",
       parseAsInteger.withDefault(1),
     );
+    useEffect(() => {}, [rank]);
     return (
       <div className="mb-[3rem] flex flex-col gap-[6rem]">
         <div className="grid grid-cols-3 place-items-center justify-items-center gap-[2rem]">
