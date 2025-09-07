@@ -7,11 +7,12 @@ import { PageTree } from "../docs/components/page-tree";
 import { source } from "@/lib/source";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Decent: A Useful Platform For Musicians",
-  description: "Decent - Home",
+  title: "Decent | The Open Source AI Music Studio",
+  description: "Decent | Home",
   openGraph: {
-    title: "Decent: Buy and Sell Pi Network",
-    description: "The Open Source AI Music Studio",
+    title: "Decent: The Open Source AI Music Studio",
+    description:
+      " Dive into a seamless music experience with our cutting edge software. Collaborate effortlessly, unleash your creativity, manage playlists and craft professional quality tracks all in one powerful platform.",
   },
 };
 export default function HomeLayout({
