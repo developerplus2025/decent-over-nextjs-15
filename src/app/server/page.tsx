@@ -75,7 +75,11 @@ function ServerPage() {
         <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious onClick={() => setRank(Number(rank) - 1)} />
+              <PaginationPrevious
+                onClick={() => setRank(Math.max(1, rank - 1))}
+                aria-disabled={rank <= 1}
+                className={rank <= 1 ? "pointer-events-none opacity-50" : ""}
+              />
             </PaginationItem>
             {PaginationItems.map((data) => (
               <PaginationItem key={data.rank}>
@@ -91,7 +95,17 @@ function ServerPage() {
             ))}
 
             <PaginationItem>
-              <PaginationNext onClick={() => setRank(Number(rank) + 1)} />
+              <PaginationNext
+                aria-disabled={rank >= PaginationItems.length}
+                onClick={() =>
+                  setRank(Math.min(PaginationItems.length, rank + 1))
+                }
+                className={
+                  rank >= PaginationItems.length
+                    ? "pointer-events-none opacity-50"
+                    : ""
+                }
+              />
             </PaginationItem>
           </PaginationContent>
         </Pagination>
