@@ -34,7 +34,7 @@ function ServerPage() {
             key={`rank${rank}-${index}`}
             className="border-input flex h-[400px] w-[400px] items-center justify-center rounded-xl border bg-[#0c0c0c]"
           >
-            <p className="text-6xl">{data.name}</p>
+            <p className="text-8xl">{data.name}</p>
           </div>
         ))}
       </div>
