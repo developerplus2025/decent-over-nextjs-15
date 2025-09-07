@@ -33,6 +33,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
   description: "Decent App ",
+  openGraph: {
+    title: "Decent: Buy and Sell Pi Network",
+    description: "The Open Source AI Music Studio",
+  },
 };
 export default function RootLayout({
   children,
