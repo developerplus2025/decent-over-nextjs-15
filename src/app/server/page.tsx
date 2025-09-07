@@ -68,7 +68,7 @@ function ServerPage() {
               key={`${data.rank}-${data.name}`}
               className="border-input flex h-[400px] w-[400px] items-center justify-center rounded-xl border bg-[#0c0c0c]"
             >
-              <p className="text-3xl">{data.name}</p>
+              <p className="text-6xl">{data.name}</p>
             </div>
           ))}
         </div>
@@ -78,11 +78,15 @@ function ServerPage() {
               <PaginationPrevious
                 onClick={() => setRank(Math.max(1, rank - 1))}
                 aria-disabled={rank <= 1}
-                className={rank <= 1 ? "pointer-events-none opacity-50" : ""}
+                className={
+                  rank <= 1
+                    ? "pointer-events-none cursor-pointer opacity-50"
+                    : ""
+                }
               />
             </PaginationItem>
             {PaginationItems.map((data) => (
-              <PaginationItem key={data.rank}>
+              <PaginationItem className="cursor-pointer" key={data.rank}>
                 <PaginationLink
                   isActive={data.rank == rank ? true : false}
                   onClick={() =>
@@ -102,7 +106,7 @@ function ServerPage() {
                 }
                 className={
                   rank >= PaginationItems.length
-                    ? "pointer-events-none opacity-50"
+                    ? "pointer-events-none cursor-pointer opacity-50"
                     : ""
                 }
               />
