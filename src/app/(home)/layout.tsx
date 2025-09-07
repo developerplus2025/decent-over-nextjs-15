@@ -9,6 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: A Useful Platform For Musicians",
   description: "Decent - Home",
+  openGraph: {
+    title: "Decent: Buy and Sell Pi Network",
+    description: "The Open Source AI Music Studio",
+  },
 };
 export default function HomeLayout({
   children,
