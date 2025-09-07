@@ -12,6 +12,37 @@ import PopoverRws from "@/components/popover-rws";
 import LogoCloud from "@/components/logo-cloud";
 import BlurCollapsible from "@/components/BlurCollapsible";
 import BlockTheme from "../docs/components/block-theme";
+import { Metadata } from "next";
+const title = "Decent: The Open Source AI Music Studio";
+const description =
+  "Dive into a seamless music experience with our cutting edge software. Collaborate effortlessly, unleash your creativity, manage playlists and craft professional quality tracks all in one powerful platform.";
+
+export const dynamic = "force-static";
+export const revalidate = false;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title,
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title,
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+};
 export default function Home() {
   return (
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-[7rem] min-[300px]:pb-16 xl:pt-20 xl:pb-4 dark:bg-black dark:scheme-dark">
