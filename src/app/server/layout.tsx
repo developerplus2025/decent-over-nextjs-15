@@ -12,7 +12,7 @@ export default function ResourcesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center justify-center gap-[6rem] pt-28">
+    <section className="flex h-[calc(100vh-58.8px)] flex-col items-center justify-center gap-[6rem] pt-28">
       <Suspense fallback={<Loader variant="classic" />}>
         <ServerPage />
       </Suspense>

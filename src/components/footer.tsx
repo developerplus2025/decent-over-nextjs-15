@@ -16,6 +16,7 @@ export default function Footer() {
   const isDocs = path === "/docs";
   const isDesign = path === "/design";
   const isVideo = path === "/video";
+  const isServer = path === "/server";
     const isMobilePath = path === "/mobile";
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ export default function Footer() {
   };
   return (
     <div
-      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn || isDocs || isDesign || isVideo || isMobilePath || path.startsWith("/docs") ? "webfilm-class" : ""} border-t py-4`}
+      className={`${isWebApp || isAi || isChatV2 || isRadio || isSignIn || isDocs || isDesign || isVideo || isMobilePath || isServer || path.startsWith("/docs") ? "webfilm-class" : ""} border-t py-4`}
     >
       <div className="">
         <div className="mb-10 grid grid-cols-1 gap-8 px-4 md:grid-cols-5">
