@@ -43,7 +43,7 @@ function ServerPage() {
       <Pagination>
         <PaginationContent>
           {/* Previous */}
-          <PaginationItem>
+          <PaginationItem className="cursor-pointer">
             <PaginationPrevious
               onClick={() => setRank(Math.max(1, rank - 1))}
               aria-disabled={rank <= 1}
@@ -64,7 +64,7 @@ function ServerPage() {
           ))}
 
           {/* Next */}
-          <PaginationItem>
+          <PaginationItem className="cursor-pointer">
             <PaginationNext
               onClick={() =>
                 setRank(Math.min(PaginationItems.length, rank + 1))
