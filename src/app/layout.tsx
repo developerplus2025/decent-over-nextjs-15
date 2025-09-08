@@ -69,7 +69,7 @@ export default function RootLayout({
 
         <body
           style={{ colorScheme: "dark" }}
-          className="theme-default relative touch-manipulation overflow-x-hidden font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:5rem]"
+          className="theme-default relative touch-pan-x touch-manipulation overflow-x-hidden font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:5rem]"
         >
           {" "}
           <ConsentManagerProvider
