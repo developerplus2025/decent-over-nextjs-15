@@ -1,4 +1,3 @@
-"use client";
 import { source } from "@/lib/source";
 import { DocsSidebar } from "./components/docs-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -9,31 +8,9 @@ import { cn } from "@/lib/utils";
 import { Sidebar, SidebarContent } from "@/src/components/sidebar";
 import { DocsLayout } from "@/components/layout/docs";
 import { docsOptions } from "@/lib/layout.shared";
-import Lenis from "lenis";
-import ReactLenis from "lenis/react";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2, // tốc độ scroll (giá trị cao -> cuộn chậm hơn, mượt hơn)
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing mượt
-      wheelMultiplier: 1, // độ nhạy của cuộn chuột
-      touchMultiplier: 1.5, // độ nhạy khi cuộn cảm ứng
-      infinite: false, // có loop vô hạn hay không
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <DocsLayout
       {...docsOptions}
@@ -97,7 +74,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
     >
       <PageTree tree={source.pageTree} />
-      <ReactLenis root>{children}</ReactLenis>
+      <SmoothScroll>{children}</SmoothScroll>
     </DocsLayout>
   );
 }
