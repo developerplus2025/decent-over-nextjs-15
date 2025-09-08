@@ -50,7 +50,7 @@ export default function RootLayout({
         suppressHydrationWarning
         lang={"en"}
         className={cn(
-          "styled-scrollbar dark selection:bg-primary selection:text-primary-foreground touch-pan-x touch-manipulation font-sans",
+          "styled-scrollbar dark selection:bg-primary selection:text-primary-foreground touch-pan-y font-sans",
           fontVariables,
         )}
         style={{ colorScheme: "dark" }}
@@ -58,7 +58,7 @@ export default function RootLayout({
         <head>
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
+            content="width=device-width, initial-scale=1, maximum-scale=1,user-scal"
           />
           <script
             dangerouslySetInnerHTML={{
@@ -70,7 +70,7 @@ export default function RootLayout({
 
         <body
           style={{ colorScheme: "dark" }}
-          className="theme-default relative touch-pan-x touch-manipulation overflow-x-hidden font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:5rem]"
+          className="theme-default relative overflow-x-hidden font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:5rem]"
         >
           {" "}
           <ConsentManagerProvider
