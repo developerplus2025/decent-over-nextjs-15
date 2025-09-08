@@ -29,6 +29,7 @@ import CustomAcceptButton from "@/components/CustomHeaderCookie";
 import { Suspense, unstable_ViewTransition as ViewTransition } from "react";
 import { SettingsParams } from "@/components/theme-params";
 import { Loader } from "@/components/ui/loader";
+import SmoothScroll from "@/components/SmoothScrollLenis";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Decent: Buy and Sell Pi Network",
@@ -141,7 +142,7 @@ export default function RootLayout({
                   <Suspense fallback={<Loader variant="classic" />}>
                     <SettingsParams />
                   </Suspense>
-                  {children}
+                  <SmoothScroll>{children}</SmoothScroll>
                 </NuqsAdapter>
                 {/* <ViewTransition></ViewTransition> */}
               </RootProvider>

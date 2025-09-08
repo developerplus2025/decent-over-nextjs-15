@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Sidebar, SidebarContent } from "@/src/components/sidebar";
 import { DocsLayout } from "@/components/layout/docs";
 import { docsOptions } from "@/lib/layout.shared";
-import SmoothScroll from "@/components/SmoothScroll";
+
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -74,7 +74,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       }}
     >
       <PageTree tree={source.pageTree} />
-      <SmoothScroll>{children}</SmoothScroll>
+      {children}
     </DocsLayout>
   );
 }
