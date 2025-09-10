@@ -24,7 +24,6 @@ import {
 } from "@/components/ui/accordion";
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
 import VideoPage from "@/app/video/page";
-import { InputOTPForm } from "@/components/input-otp-form";
 import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
@@ -152,7 +151,7 @@ export default async function Page(props: {
                     components={{
                       ...mdxComponents,
                       VideoPage,
-                      InputOTPForm,
+                     
                       PathAnimation,
                     }}
                   />
