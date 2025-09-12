@@ -23,7 +23,6 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { DocsBreadcrumb } from "@/components/docs-breadcrumb";
-import VideoPage from "@/app/video/page";
 import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
@@ -150,8 +149,6 @@ export default async function Page(props: {
                   <MDX
                     components={{
                       ...mdxComponents,
-                      VideoPage,
-                     
                       PathAnimation,
                     }}
                   />
