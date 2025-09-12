@@ -45,7 +45,7 @@ export default function MainTextHome() {
       initial={{ opacity: 0, y: 20, scale: 0.9598145285935085 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="relative mx-20 mt-4 flex w-full items-center justify-center min-[300px]:flex-col min-[300px]:gap-[1rem] min-[645px]:flex-col xl:flex-col xl:gap-8"
+      className="relative mx-20 flex w-full items-center justify-center min-[300px]:flex-col min-[300px]:gap-[1rem] min-[645px]:flex-col xl:flex-col xl:gap-8"
     >
       <div
         ref={containerRef}

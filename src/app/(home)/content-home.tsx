@@ -35,7 +35,7 @@ export default function ContentHome() {
 
   return (
     <ReactLenis root>
-      <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden min-[300px]:pt-[7rem] xl:pb-4 dark:bg-black dark:scheme-dark">
+      <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-4 overflow-x-hidden xl:pb-4 dark:bg-black dark:scheme-dark">
         <div className="flex w-full flex-col items-center justify-center min-[300px]:h-[calc(100vh-58px)] xl:h-[calc(100vh-58.8px)]">
           <div className="flex items-center justify-center gap-4 min-[300px]:flex-col xl:flex-row">
             <Badge variant="animated-border">New</Badge>

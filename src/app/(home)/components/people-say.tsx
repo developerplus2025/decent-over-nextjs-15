@@ -71,42 +71,44 @@ export function PeopleSay() {
           how it&apos;s transforming the way they create, mix, and enjoy music.
         </span>
       </div>
-      <div className="relative grid grid-cols-3 justify-items-center gap-8">
+      <div className="relative grid justify-items-center gap-8 min-[300px]:grid-cols-2 xl:grid-cols-3">
         <motion.div
-  // overlay toàn màn hình
-  className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50 ${
-    open ? "block" : "hidden"
-  }`}
-  onClick={() => setOpen(false)} // click overlay thì đóng
->
-  <motion.div
-    onClick={(e) => e.stopPropagation()} // chặn click trong modal
-    layoutId=""
-    initial={{ width: 0, height: 0 }}
-    animate={
-      open
-        ? { width: "48rem", height: "24rem", opacity: 1 }
-        : { width: 0, height: 0, opacity: 0 }
-    }
-    className="rounded-xl border border-input bg-black p-[1rem]"
-  >
-    <div className="flex items-center gap-3">
-      <div>
-        <Image
-          alt={items[index].img}
-          src={`/${items[index].img}.avif`}
-          width={50}
-          height={50}
-          className="h-[30px] w-[40px]"
-        />
-      </div>
-      <div className="flex w-full flex-col gap-1">
-        <p className="text-sm">{items[index].name}</p>
-        <p className="text-xs text-[#a1a1a1]">@{items[index].username}</p>
-      </div>
-    </div>
-  </motion.div>
-</motion.div>
+          // overlay toàn màn hình
+          className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50 ${
+            open ? "block" : "hidden"
+          }`}
+          onClick={() => setOpen(false)} // click overlay thì đóng
+        >
+          <motion.div
+            onClick={(e) => e.stopPropagation()} // chặn click trong modal
+            layoutId=""
+            initial={{ width: 0, height: 0 }}
+            animate={
+              open
+                ? { width: "48rem", height: "24rem", opacity: 1 }
+                : { width: 0, height: 0, opacity: 0 }
+            }
+            className="border-input rounded-xl border bg-black p-[1rem]"
+          >
+            <div className="flex items-center gap-3">
+              <div>
+                <Image
+                  alt={items[index].img}
+                  src={`/${items[index].img}.avif`}
+                  width={50}
+                  height={50}
+                  className="h-[30px] w-[40px]"
+                />
+              </div>
+              <div className="flex w-full flex-col gap-1">
+                <p className="text-sm">{items[index].name}</p>
+                <p className="text-xs text-[#a1a1a1]">
+                  @{items[index].username}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
         {items.map((item, index) => (
           <div
             onClick={() => {

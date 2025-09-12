@@ -90,25 +90,24 @@ const items = [
 export default function AccordionFAQ() {
   return (
     <div className="flex w-full justify-center px-12">
-      <div className="flex w-[800px] flex-col-reverse items-center gap-4 rounded-lg">
-      <Accordion
-      type="single"
-      collapsible
-      className="w-full"
-      defaultValue="item-1"
-    >
-      {items.map((items) => (
-        <AccordionItem key={items.id} value="item-1">
-        <AccordionTrigger>{items.title}</AccordionTrigger>
-        <AccordionContent className="flex flex-col gap-4 text-balance">
-        <p>{items.content}</p>
-        </AccordionContent>
-      </AccordionItem>
-      ))}
-      
-    </Accordion>
+      <div className="flex flex-col-reverse items-center gap-4 rounded-lg min-[300px]:w-[calc(100vw-12px)] xl:w-[800px]">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full"
+          defaultValue="item-1"
+        >
+          {items.map((items) => (
+            <AccordionItem key={items.id} value="item-1">
+              <AccordionTrigger>{items.title}</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-4 text-balance">
+                <p>{items.content}</p>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
         <div className="flex h-full w-[700px] flex-col items-center justify-center gap-8">
-          <h1 className="text-center text-[2rem] font-bold leading-18 tracking-tighter text-white sm:text-[2rem] xl:text-[2rem]">
+          <h1 className="text-center text-[2rem] leading-18 font-bold tracking-tighter text-white sm:text-[2rem] xl:text-[2rem]">
             Frequently asked questions
           </h1>
         </div>
