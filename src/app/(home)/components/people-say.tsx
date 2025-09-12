@@ -71,7 +71,7 @@ export function PeopleSay() {
           how it&apos;s transforming the way they create, mix, and enjoy music.
         </span>
       </div>
-      <div className="relative grid justify-items-center gap-8 min-[300px]:grid-cols-2 xl:grid-cols-3">
+      <div className="relative grid justify-items-center gap-8 min-[300px]:grid-cols-1 xl:grid-cols-3">
         <motion.div
           // overlay toàn màn hình
           className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50 ${
@@ -115,7 +115,7 @@ export function PeopleSay() {
               setIndex(index), setOpen(true);
             }}
             key={item.name}
-            className="flex-cols gap text-card-foreground relative flex w-[400px] cursor-pointer flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 shadow-xs"
+            className="flex-cols gap text-card-foreground relative flex cursor-pointer flex-col justify-between gap-3 rounded-lg border bg-[#0c0c0c] p-4 shadow-xs min-[300px]:w-[300px] xl:w-[400px]"
           >
             {/* <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>

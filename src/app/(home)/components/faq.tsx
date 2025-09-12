@@ -90,7 +90,7 @@ const items = [
 export default function AccordionFAQ() {
   return (
     <div className="flex w-full justify-center px-12">
-      <div className="flex flex-col-reverse items-center gap-4 rounded-lg min-[300px]:w-[calc(100vw-12px)] xl:w-[800px]">
+      <div className="flex flex-col-reverse items-center gap-4 rounded-lg min-[300px]:w-[calc(100vw-78px)] xl:w-[800px]">
         <Accordion
           type="single"
           collapsible
@@ -98,7 +98,7 @@ export default function AccordionFAQ() {
           defaultValue="item-1"
         >
           {items.map((items) => (
-            <AccordionItem key={items.id} value="item-1">
+            <AccordionItem key={items.id} value={`item-${items.id}`}>
               <AccordionTrigger>{items.title}</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-4 text-balance">
                 <p>{items.content}</p>
