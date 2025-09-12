@@ -1,8 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-
-export default function AnimateTextHome() {
-  const words: string[] = "The Open Source Ai Music Studio".split(" ");
+interface AnimateTextHomeProps {
+  words: string;
+  className?: string;
+}
+export default function AnimateTextHome({
+  words,
+  className,
+}: AnimateTextHomeProps) {
+  const Paramwords: string[] = words.split(" ");
 
   const wordVariants = {
     hidden: { filter: "blur(10px)", opacity: 0, y: 12 },
@@ -19,8 +25,10 @@ export default function AnimateTextHome() {
   };
 
   return (
-    <div className="title-text-home font-sans min-[300px]:hidden xl:flex xl:w-[900px] xl:flex-wrap xl:justify-center xl:gap-3">
-      {words.map((word, index) => (
+    <div
+      className={`${className} title-text-home font-sans xl:flex xl:w-[900px] xl:flex-wrap xl:justify-center xl:gap-3`}
+    >
+      {Paramwords.map((word, index) => (
         <motion.p
           key={index}
           custom={index}

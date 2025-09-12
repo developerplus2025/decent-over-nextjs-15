@@ -10,7 +10,6 @@ import { MobileNav } from "./mobile-nav";
 import { usePathname } from "next/navigation";
 type NavigationMobileProps = {
   className?: string;
-  children: React.ReactNode;
 };
 const LinkItem = [
   {
@@ -61,14 +60,13 @@ const LinkItem = [
 ];
 export default function NavigationMobile({
   className,
-  children,
 }: NavigationMobileProps): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { setOpenSearch } = useSearchContext();
   const pathname = usePathname();
   const isMobilePath = pathname === "/mobile";
-const isDocs = pathname === "/docs";
+  const isDocs = pathname === "/docs";
 
   useEffect(() => {
     if (isOpen) {
