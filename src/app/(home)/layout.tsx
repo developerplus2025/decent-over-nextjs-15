@@ -20,11 +20,5 @@ export default function HomeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <section>
-      {" "}
-      <PageTree tree={source.pageTree} />
-      {children}
-    </section>
-  );
+  return <section>{children}</section>;
 }
