@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 interface AnimateTextHomeProps {
   words: string;
   className?: string;
+  classNameWord?: string;
 }
 export default function AnimateTextHome({
   words,
   className,
+  classNameWord,
 }: AnimateTextHomeProps) {
   const Paramwords: string[] = words.split(" ");
 
@@ -35,7 +37,7 @@ export default function AnimateTextHome({
           variants={wordVariants}
           initial="hidden"
           animate="visible"
-          className="animation-h1 title-texct-home font-[500] -tracking-[3px] xl:mr-1.5 xl:inline-block xl:text-center xl:text-[5rem] xl:leading-[5.2rem]"
+          className={`${classNameWord} animation-h1 title-texct-home font-[500] -tracking-[3px] xl:mr-1.5 xl:inline-block xl:text-center xl:text-[5rem] xl:leading-[5.2rem]`}
         >
           {word}
         </motion.p>
