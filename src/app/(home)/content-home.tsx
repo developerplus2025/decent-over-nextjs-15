@@ -13,11 +13,11 @@ import Lenis from "lenis";
 export default function ContentHome() {
  useEffect(() => {
    const lenis = new Lenis({
-     duration: 1.2, // tốc độ scroll (giá trị cao -> cuộn chậm hơn, mượt hơn)
-     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing mượt
-     wheelMultiplier: 1, // độ nhạy của cuộn chuột
-     touchMultiplier: 1.5, // độ nhạy khi cuộn cảm ứng
-     infinite: false, // có loop vô hạn hay không
+     duration: 1.2, 
+     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+     wheelMultiplier: 1, 
+     touchMultiplier: 1.5, 
+     infinite: false, 
    });
 
    function raf(time: number) {
