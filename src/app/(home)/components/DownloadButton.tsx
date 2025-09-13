@@ -17,9 +17,9 @@ const DownloadButton: React.FC = () => {
   };
   return (
     <Button className="group" variant={"outline"} onClick={handleClick}>
-      <div className="flex h-[1rem] w-[2rem] gap-4 flex-col items-center overflow-y-hidden">
+      <div className="flex h-[1rem] w-[2rem]  flex-col items-center overflow-y-hidden">
         <ArrowDownToLine className="mr-2 h-4 w-4 transition-transform duration-500 ease-out group-hover:-translate-y-[2rem]" />
-        <ArrowDownToLine className="mr-2 h-4 w-4 transition-transform duration-500 ease-out group-hover:-translate-y-[1rem]" />
+        <ArrowDownToLine className="mr-2 h-4 w-4 transition-transform duration-500 ease-out group-hover:-translate-y-[1rem] groud-hover:top-0" />
       </div>
       Download for Windows
     </Button>
