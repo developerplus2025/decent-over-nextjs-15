@@ -5,7 +5,7 @@ import * as React from "react";
 import Activity from "./activity";
 import { useStore } from "@nanostores/react";
 import { $bookmarks, $likes, $reposts, $views } from "./stores";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 const items = [
   {
     name: "Eric Grigorian",
@@ -72,76 +72,78 @@ export function PeopleSay() {
         </span>
       </div>
       <div className="relative grid justify-items-center gap-8 min-[300px]:grid-cols-1 xl:grid-cols-3">
-        <motion.div
-          // overlay toàn màn hình
-          className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50 ${
-            open ? "block" : "hidden"
-          }`}
-          onClick={() => setOpen(false)} // click overlay thì đóng
-        >
+        <AnimatePresence>
           <motion.div
-            onClick={(e) => e.stopPropagation()} // chặn click trong modal
-            layout
-            initial={{ width: "30rem", height: "24rem" }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            animate={open ? { opacity: 1 } : { opacity: 0 }}
-            className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
+            // overlay toàn màn hình
+            className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50 ${
+              open ? "block" : "hidden"
+            }`}
+            onClick={() => setOpen(false)} // click overlay thì đóng
           >
-            <div className="flex items-center gap-3">
-              <div>
-                <Image
-                  alt={items[index].img}
-                  src={`/${items[index].img}.avif`}
-                  width={50}
-                  height={50}
-                  className="h-[30px] w-[40px]"
-                />
+            <motion.div
+              onClick={(e) => e.stopPropagation()} // chặn click trong modal
+              layout
+              initial={{ width: "30rem", height: "24rem", opacity: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              animate={open ? { opacity: 1 } : { opacity: 0 }}
+              className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
+            >
+              <div className="flex items-center gap-3">
+                <div>
+                  <Image
+                    alt={items[index].img}
+                    src={`/${items[index].img}.avif`}
+                    width={50}
+                    height={50}
+                    className="h-[30px] w-[40px]"
+                  />
+                </div>
+                <div className="flex w-full flex-col gap-1">
+                  <p className="text-sm">{items[index].name}</p>
+                  <p className="text-xs text-[#a1a1a1]">
+                    @{items[index].username}
+                  </p>
+                </div>
               </div>
-              <div className="flex w-full flex-col gap-1">
-                <p className="text-sm">{items[index].name}</p>
-                <p className="text-xs text-[#a1a1a1]">
-                  @{items[index].username}
-                </p>
-              </div>
-            </div>
-            <div>{items[index].body}</div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="#ffffff"
-                  viewBox="0 0 256 256"
-                >
-                  <path d="M240.49,103.52l-80-80A12,12,0,0,0,140,32V68.74c-25.76,3.12-53.66,15.89-76.75,35.47-29.16,24.74-47.32,56.69-51.14,90A16,16,0,0,0,39.67,207h0c10.46-11.14,47-45.74,100.33-50.42V192a12,12,0,0,0,20.48,8.48l80-80A12,12,0,0,0,240.49,103.52ZM164,163V144a12,12,0,0,0-12-12c-49,0-86.57,21.56-109.79,40.11,7.13-18.16,19.63-35.22,36.57-49.59C101.3,103.41,128.67,92,152,92a12,12,0,0,0,12-12V61l51,51Z"></path>
-                </svg>
+              <div>{items[index].body}</div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#ffffff"
+                    viewBox="0 0 256 256"
+                  >
+                    <path d="M240.49,103.52l-80-80A12,12,0,0,0,140,32V68.74c-25.76,3.12-53.66,15.89-76.75,35.47-29.16,24.74-47.32,56.69-51.14,90A16,16,0,0,0,39.67,207h0c10.46-11.14,47-45.74,100.33-50.42V192a12,12,0,0,0,20.48,8.48l80-80A12,12,0,0,0,240.49,103.52ZM164,163V144a12,12,0,0,0-12-12c-49,0-86.57,21.56-109.79,40.11,7.13-18.16,19.63-35.22,36.57-49.59C101.3,103.41,128.67,92,152,92a12,12,0,0,0,12-12V61l51,51Z"></path>
+                  </svg>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="#ffffff"
-                  viewBox="0 0 256 256"
-                >
-                  <path d="M237,77.47A28,28,0,0,0,216,68H164V56a44.05,44.05,0,0,0-44-44,12,12,0,0,0-10.73,6.63L72.58,92H32a20,20,0,0,0-20,20v88a20,20,0,0,0,20,20H204a28,28,0,0,0,27.78-24.53l12-96A28,28,0,0,0,237,77.47ZM36,116H68v80H36ZM220,96.5l-12,96a4,4,0,0,1-4,3.5H92V106.83L126.82,37.2A20,20,0,0,1,140,56V80a12,12,0,0,0,12,12h64a4,4,0,0,1,4,4.5Z"></path>
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#ffffff"
+                    viewBox="0 0 256 256"
+                  >
+                    <path d="M237,77.47A28,28,0,0,0,216,68H164V56a44.05,44.05,0,0,0-44-44,12,12,0,0,0-10.73,6.63L72.58,92H32a20,20,0,0,0-20,20v88a20,20,0,0,0,20,20H204a28,28,0,0,0,27.78-24.53l12-96A28,28,0,0,0,237,77.47ZM36,116H68v80H36ZM220,96.5l-12,96a4,4,0,0,1-4,3.5H92V106.83L126.82,37.2A20,20,0,0,1,140,56V80a12,12,0,0,0,12,12h64a4,4,0,0,1,4,4.5Z"></path>
+                  </svg>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="#ffffff"
-                  viewBox="0 0 256 256"
-                >
-                  <path d="M216,44H40A20,20,0,0,0,20,64V224A19.82,19.82,0,0,0,31.56,242.1a20.14,20.14,0,0,0,8.49,1.9,19.91,19.91,0,0,0,12.82-4.72l.12-.11L84.47,212H216a20,20,0,0,0,20-20V64A20,20,0,0,0,216,44Zm-4,144H80a11.93,11.93,0,0,0-7.84,2.92L44,215.23V68H212Z"></path>
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#ffffff"
+                    viewBox="0 0 256 256"
+                  >
+                    <path d="M216,44H40A20,20,0,0,0,20,64V224A19.82,19.82,0,0,0,31.56,242.1a20.14,20.14,0,0,0,8.49,1.9,19.91,19.91,0,0,0,12.82-4.72l.12-.11L84.47,212H216a20,20,0,0,0,20-20V64A20,20,0,0,0,216,44Zm-4,144H80a11.93,11.93,0,0,0-7.84,2.92L44,215.23V68H212Z"></path>
+                  </svg>
+                </div>
+                <p className="text-xs">March 15, 2024</p>
               </div>
-              <p className="text-xs">March 15, 2024</p>
-            </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </AnimatePresence>
         {items.map((item, index) => (
           <div
             onClick={() => {

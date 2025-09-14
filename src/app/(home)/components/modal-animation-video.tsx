@@ -40,7 +40,7 @@ export const ModalAnimationVideo = () => {
           Watch Demo Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="h-[34rem] p-0 sm:max-w-[70rem]" from="left">
+      <DialogContent className="h-[34rem] p-0 sm:max-w-[70rem]" from="top">
         <div className="flex h-full w-full items-center justify-center">
           {/* <Video
             aria-errormessage=""
