@@ -81,14 +81,10 @@ export function PeopleSay() {
         >
           <motion.div
             onClick={(e) => e.stopPropagation()} // chặn click trong modal
-            layoutId=""
+            layout
             initial={{ width: 0, height: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            animate={
-              open
-                ? { width: "48rem", height: "24rem", opacity: 1 }
-                : { opacity: 0 }
-            }
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            animate={open ? { opacity: 1 } : { opacity: 0 }}
             className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
           >
             <div className="flex items-center gap-3">
