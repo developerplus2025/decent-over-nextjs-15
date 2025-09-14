@@ -75,7 +75,7 @@ export function PeopleSay() {
         <AnimatePresence>
           <motion.div
             // overlay toàn màn hình
-            animate={open ? { opacity: 1 } : { opacity: 0 }}
+            animate={open ? { opacity: 1 } : { opacity: 0, display: "hidden" }}
             className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50`}
             onClick={() => setOpen(false)} // click overlay thì đóng
           >
