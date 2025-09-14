@@ -83,6 +83,7 @@ export function PeopleSay() {
             onClick={(e) => e.stopPropagation()} // chặn click trong modal
             layout
             initial={{ width: 0, height: 0 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             animate={open ? { opacity: 1 } : { opacity: 0 }}
             className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
