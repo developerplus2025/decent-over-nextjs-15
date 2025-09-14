@@ -82,7 +82,7 @@ export function PeopleSay() {
           <motion.div
             onClick={(e) => e.stopPropagation()} // chặn click trong modal
             layout
-            initial={{ width: 0, height: 0 }}
+            initial={{ width: "30rem", height: "24rem" }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             animate={open ? { opacity: 1 } : { opacity: 0 }}
