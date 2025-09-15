@@ -1038,9 +1038,6 @@ number-flow-react::part(suffix) {
   --fd-banner-height: 84px !important;
   top: 5rem !important;
 }
-.__className_fb8f2c {
-  --toast-close-button-transform: translate(-35%, -35%) !important;
-}
 hr {
   border-color: var(--input) !important;
 }

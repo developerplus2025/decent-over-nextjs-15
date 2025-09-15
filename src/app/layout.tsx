@@ -114,10 +114,9 @@ export default function RootLayout({
                 toastOptions={{
                   unstyled: false,
                   classNames: {
-                    actionButton: "bg-black",
+                    actionButton: "!bg-black",
                     cancelButton: "bg-orange-400",
-                    closeButton:
-                      "dark:bg-black  !left-[325px] !transform-[translate(0%,0%)] !top-1/2 !border-[#4c4c4c] !-translate-y-1/2 border border-[#404040] transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
+                    closeButton: "",
                   },
                 }}
                 offset={{ top: "5rem" }}
