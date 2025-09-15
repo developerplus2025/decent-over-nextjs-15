@@ -17,7 +17,7 @@ export const ModalAnimationVideo = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className="min-[300px]:w-full md:w-fit xl:w-fit"
+          className="group min-[300px]:w-full md:w-fit xl:w-fit"
           variant={"default"}
         >
           <div className="flex h-[1rem] w-[2rem] flex-col items-center overflow-y-hidden">
