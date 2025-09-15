@@ -37,7 +37,6 @@ import Link from "next/link";
 
 type NavigationProps = {
   className?: string;
-  children: React.ReactNode;
 };
 export default function Navigation({ className }: NavigationProps): React.ReactElement {
   const pathname = usePathname();
