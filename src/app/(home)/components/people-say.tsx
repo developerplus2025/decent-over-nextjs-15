@@ -91,7 +91,13 @@ export function PeopleSay() {
                   opacity: 0,
                 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+                transition={{
+                  duration: 0.2,
+                  ease: "easeOut",
+                  type: "spring",
+                  stiffness: 4000,
+                  damping: 10,
+                }}
                 animate={
                   open ? { scale: 1, opacity: 1 } : { opacity: 0, scale: 0.95 }
                 }
