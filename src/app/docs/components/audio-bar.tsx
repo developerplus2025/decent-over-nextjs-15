@@ -57,7 +57,36 @@ export default function AudioBar() {
     navigator.clipboard.writeText(
       "https://decent-over.vercel.app/docs/" + pathAudio[1],
     );
-    toast("Link Copied", {});
+     toast("Link Copied", {
+       description: "Sunday, December 03, 2023 at 9:00 AM",
+       action: {
+         label: (
+           <button
+             aria-label="Close toast"
+             data-disabled="false"
+             data-close-button="true"
+             className="hover:bg-muted border border-[#404040] bg-white transition-colors duration-500 ease-out dark:bg-black dark:hover:bg-white dark:hover:text-black"
+           >
+             <svg
+               xmlns="http://www.w3.org/2000/svg"
+               width="12"
+               height="12"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.5"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             >
+               <line x1="18" y1="6" x2="6" y2="18"></line>
+               <line x1="6" y1="6" x2="18" y2="18"></line>
+             </svg>
+           </button>
+         ),
+         onClick: () => "",
+       },
+     });
+    
     setCopy(true);
     setTimeout(
       () => {
@@ -225,14 +254,16 @@ export default function AudioBar() {
         onClick={() => copyLink()}
         className="relative flex cursor-pointer items-center gap-2 select-none"
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          exit={{ opacity: 1 }}
-          animate={copy ? { opacity: 1 } : { opacity: 0, display: "none" }}
-          className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
-        >
-          <p className="text-center text-xs">Copied</p>
-        </motion.div>
+        {copy && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
+            animate={copy ? { opacity: 1 } : { opacity: 0, display: "none" }}
+            className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
+          >
+            <p className="text-center text-xs">Copied</p>
+          </motion.div>
+        )}
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
