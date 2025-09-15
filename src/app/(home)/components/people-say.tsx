@@ -72,15 +72,15 @@ export function PeopleSay() {
         </span>
       </div>
       <div className="relative grid justify-items-center gap-8 min-[300px]:grid-cols-1 xl:grid-cols-3">
-        <motion.div
-          // overlay toàn màn hình
-          animate={open ? { opacity: 1 } : { opacity: 0 }}
-          className={`fixed inset-0 z-[5] flex items-center ${open ? "flex" : "hidden"} justify-center bg-black/50`}
-          onClick={() => setOpen(false)} // click overlay thì đóng
-        >
-          <AnimatePresence>
-            {" "}
-            {open && (
+        <AnimatePresence>
+          {" "}
+          {open && (
+            <motion.div
+              // overlay toàn màn hình
+
+              className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50`}
+              onClick={() => setOpen(false)} // click overlay thì đóng
+            >
               <motion.div
                 onClick={(e) => e.stopPropagation()} // chặn click trong modal
                 layout
@@ -94,9 +94,7 @@ export function PeopleSay() {
                 transition={{
                   duration: 0.2,
                   ease: "easeOut",
-                  type: "spring",
                   stiffness: 4000,
-                  damping: 10,
                 }}
                 animate={
                   open ? { scale: 1, opacity: 1 } : { opacity: 0, scale: 0.95 }
@@ -156,9 +154,9 @@ export function PeopleSay() {
                   <p className="text-xs">March 15, 2024</p>
                 </div>
               </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {items.map((item, index) => (
           <div
