@@ -116,7 +116,8 @@ export default function RootLayout({
                   classNames: {
                     actionButton: "!bg-black",
                     cancelButton: "bg-orange-400",
-                    closeButton: "",
+                    closeButton:
+                      "dark:bg-black   !border-[#4c4c4c]  border border-[#404040] transition-[background] transition-colors  ease-out duration-500 bg-white hover:bg-muted dark:hover:bg-white dark:hover:text-black",
                   },
                 }}
                 offset={{ top: "5rem" }}
