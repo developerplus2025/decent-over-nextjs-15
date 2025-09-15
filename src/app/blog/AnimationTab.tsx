@@ -1,7 +1,13 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useInsertionEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 const TABS = [
@@ -40,7 +46,7 @@ export function AnimatedTabs() {
    };
 
    const [activeTab, setActiveTab] = useState(TABS[getInitialIndex(path)].id);
-   useLayoutEffect(() => {
+   useInsertionEffect(() => {
      setActiveTab(TABS[getInitialIndex(path)].id);
    }, [path]);
 
