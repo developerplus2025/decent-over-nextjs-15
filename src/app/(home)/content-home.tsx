@@ -48,7 +48,7 @@ export default function ContentHome() {
             By using LibreNote, you agree to its license and privacy statement.
           </h1>
         </div>
-        <div className="mx-auto mt-40 mb-16 h-px w-full bg-[#262626]"></div>
+        <div className="mx-auto h-px w-full bg-[#262626]"></div>
         <div className="w-full">
           <BeautifulFeaturesLayout />
         </div>
