@@ -1,6 +1,6 @@
 {
   "name": "decent-over",
-  "version": "10.9.5",
+  "version": "11.9.6",
   "private": true,
   "main": "main.js",
   "build": {
@@ -121,7 +121,7 @@
     "draft-js": "^0.11.7",
     "embla-carousel-autoplay": "^8.2.1",
     "embla-carousel-react": "^8.6.0",
-    "framer-motion": "^12.4.2",
+    "framer-motion": "^12.23.16",
     "fs": "^0.0.1-security",
     "fumadocs": "^0.0.0",
     "fumadocs-core": "^15.6.0",
@@ -149,7 +149,7 @@
     "mermaid": "^11.9.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.1",
-    "motion": "^11.18.2",
+    "motion": "^12.23.16",
     "motion-plus": "^0.1.6",
     "nanostores": "^0.11.4",
     "next": "15.5.0",
