@@ -64,7 +64,7 @@ export default function AudioBar() {
         onClick: () => "",
       },
     });
-    if (Number(timePointer) < Date.now()) {
+   
       setTimeout(
         () => {
           setCopy(false);
@@ -72,7 +72,7 @@ export default function AudioBar() {
 
         1500,
       );
-    }
+  
     setCopy(true);
   }
   const handlePlay = () => {
@@ -241,7 +241,11 @@ export default function AudioBar() {
         <motion.div
           initial={{ opacity: 0 }}
           exit={{ opacity: 1 }}
-          animate={copy ? { opacity: 1 } : { opacity: 0, display: "none" }}
+          animate={
+            copy || Number(timePointer) > Date.now()
+              ? { opacity: 1 }
+              : { opacity: 0, display: "none" }
+          }
           className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
         >
           <p className="text-center text-xs">Copied</p>
