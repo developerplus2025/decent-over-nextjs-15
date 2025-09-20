@@ -77,6 +77,7 @@ export function AnimatedTabs() {
             >
               {activeTab === tab.id && (
                 <motion.span
+                  initial={false}
                   layoutId="bubble"
                   className="absolute inset-0 z-10 bg-white mix-blend-difference"
                   style={{ borderRadius: 9999 }}
