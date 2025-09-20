@@ -64,7 +64,15 @@ export default function AudioBar() {
         onClick: () => "",
       },
     });
+    if (Number(timePointer) < Date.now()) {
+      setTimeout(
+        () => {
+          setCopy(false);
+        },
 
+        1500,
+      );
+    }
     setCopy(true);
   }
   const handlePlay = () => {
