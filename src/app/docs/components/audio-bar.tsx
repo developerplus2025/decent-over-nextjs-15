@@ -224,9 +224,7 @@ export default function AudioBar() {
       </div>
       <div
         onClick={() => {
-          
-            copyLink();
-         
+          copyLink();
         }}
         onMouseLeave={() => (timePointer.current = 0)}
         onMouseEnter={() => (timePointer.current = Date.now() + 150)}
@@ -235,11 +233,7 @@ export default function AudioBar() {
         <motion.div
           initial={{ opacity: 0 }}
           exit={{ opacity: 1 }}
-          animate={
-            copy || timePointer
-              ? { opacity: 1 }
-              : { opacity: 0, display: "none" }
-          }
+          animate={copy ? { opacity: 1 } : { opacity: 0, display: "none" }}
           className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
         >
           <p className="text-center text-xs">Copied</p>
