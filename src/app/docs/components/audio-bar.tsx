@@ -231,7 +231,7 @@ export default function AudioBar() {
       </div>
       <div
         onClick={() => {
-          if (timePointer.current > Date.now()) {
+          if (timePointer.current < Date.now()) {
             copyLink();
           }
         }}
