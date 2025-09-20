@@ -57,22 +57,15 @@ export default function AudioBar() {
     navigator.clipboard.writeText(
       "https://decent-over.vercel.app/docs/" + pathAudio[1],
     );
-     toast("Link Copied", {
-       description: "Sunday, December 03, 2023 at 9:00 AM",
-       action: {
-         label: "Close",
-         onClick: () => "",
-       },
-     });
-    
-    setCopy(true);
-    setTimeout(
-      () => {
-        setCopy(false);
+    toast("Link Copied", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Close",
+        onClick: () => "",
       },
+    });
 
-      1500,
-    );
+    setCopy(true);
   }
   const handlePlay = () => {
     setPlay(true);
@@ -231,9 +224,9 @@ export default function AudioBar() {
       </div>
       <div
         onClick={() => {
-          if (timePointer.current < Date.now()) {
+          
             copyLink();
-          }
+         
         }}
         onMouseLeave={() => (timePointer.current = 0)}
         onMouseEnter={() => (timePointer.current = Date.now() + 150)}
