@@ -108,7 +108,7 @@ export function PeopleSay() {
                   transform: `perspective(500px) ${rotateAxis}(${initialRotation}) scale(0.8)`,
                 }}
                 transition={transition}
-                className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
+                className="border-input height-[24rem] flex w-[30rem] flex-col gap-4 rounded-xl border bg-black p-[1rem]"
               >
                 <div className="flex items-center gap-3">
                   <div>
