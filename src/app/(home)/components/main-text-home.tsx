@@ -52,7 +52,7 @@ export default function MainTextHome() {
         className="flex flex-col items-center justify-center min-[300px]:gap-4 xl:gap-8"
       >
         <AnimateTextHome
-          className="title-text-home font-sans min-[300px]:hidden xl:flex xl:w-[900px] xl:flex-wrap xl:justify-center xl:gap-3"
+          className="title-text-home font-sans min-[300px]:hidden xl:flex xl:w-[650px] xl:flex-wrap xl:justify-center xl:gap-3"
           words="The Open Source AI Music Studio"
         />
 
