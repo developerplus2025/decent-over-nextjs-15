@@ -62,6 +62,11 @@ export default function MainTextHome() {
           words="The Open Source AI Music Studio"
         />
         <h1 className="text-[#a1a1a1] min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[15px] xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
+          Dive into a seamless music experience with our cutting edge software.
+          Collaborate effortlessly, unleash your creativity, manage playlists
+          and craft professional quality tracks all in one powerful platform.
+        </h1>
+        <h1 className="text-[#a1a1a1] min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[15px] xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
           Enjoy a seamless music experience where you can create, collaborate,
           manage playlists and craft professional quality tracks in one powerful
           platform
