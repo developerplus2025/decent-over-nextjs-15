@@ -246,7 +246,7 @@ export default function AudioBar() {
               ? { opacity: 1 }
               : { opacity: 0, display: "none" }
           }
-          className="border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border bg-black p-1"
+          className={`border-input absolute top-[1.5rem] left-1/2 w-full -translate-x-1/2 rounded-md border ${copy ? "pointer-events-none" : ""} bg-black p-1`}
         >
           <p className="text-center text-xs">Copied</p>
         </motion.div>
