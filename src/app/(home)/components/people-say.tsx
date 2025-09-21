@@ -5,7 +5,7 @@ import * as React from "react";
 import Activity from "./activity";
 import { useStore } from "@nanostores/react";
 import { $bookmarks, $likes, $reposts, $views } from "./stores";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type Transition } from "framer-motion";
 const items = [
   {
     name: "Eric Grigorian",
@@ -46,6 +46,14 @@ const items = [
 ];
 
 export function PeopleSay() {
+  const initialRotation = "20deg";
+  const isVertical = "top";
+  const rotateAxis = isVertical ? "rotateX" : "rotateY";
+  const transition: Transition = {
+    type: "spring",
+    stiffness: 150,
+    damping: 25,
+  };
   const [index, setIndex] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const reposts = useStore($reposts);
@@ -85,20 +93,21 @@ export function PeopleSay() {
                 onClick={(e) => e.stopPropagation()} // chặn click trong modal
                 layout
                 initial={{
-                  width: "30rem",
-                  height: "24rem",
-                  scale: 0.95,
                   opacity: 0,
+                  filter: "blur(4px)",
+                  transform: `perspective(500px) ${rotateAxis}(${initialRotation}) scale(0.8)`,
                 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{
-                  duration: 0.2,
-                  ease: "easeOut",
-                  stiffness: 4000,
+                animate={{
+                  opacity: 1,
+                  filter: "blur(0px)",
+                  transform: `perspective(500px) ${rotateAxis}(0deg) scale(1)`,
                 }}
-                animate={
-                  open ? { scale: 1, opacity: 1 } : { opacity: 0, scale: 0.95 }
-                }
+                exit={{
+                  opacity: 0,
+                  filter: "blur(4px)",
+                  transform: `perspective(500px) ${rotateAxis}(${initialRotation}) scale(0.8)`,
+                }}
+                transition={transition}
                 className="border-input flex flex-col gap-4 rounded-xl border bg-black p-[1rem]"
               >
                 <div className="flex items-center gap-3">
