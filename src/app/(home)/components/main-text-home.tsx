@@ -58,16 +58,16 @@ export default function MainTextHome() {
 
         <AnimateTextHome
           classNameWord="min-[300px]:inline-block min-[300px]:mr-2"
-          className="w-[280px] text-center text-[2.3rem] leading-[2.5rem] font-bold text-pretty min-[300px]:block xl:hidden"
+          className="w-[300px] text-center text-[2.5rem] leading-[2.5rem] font-bold text-pretty min-[300px]:block xl:hidden"
           words="The Open Source AI Music Studio"
         />
-        <h1 className="text-[#a1a1a1] min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[12px] xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
-          Dive into a seamless music experience with our cutting edge software.
-          Collaborate effortlessly, unleash your creativity, manage playlists
-          and craft professional quality tracks all in one powerful platform.
+        <h1 className="text-[#a1a1a1] min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[15px] xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
+          Enjoy a seamless music experience where you can create, collaborate,
+          manage playlists and craft professional quality tracks in one powerful
+          platform
         </h1>
       </div>
-      <div className="min-[300px]:flex min-[300px]:w-[200px] min-[300px]:flex-col min-[300px]:items-center min-[300px]:gap-[1rem] xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
+      <div className="min-[300px]:flex min-[300px]:w-auto min-[300px]:flex-col min-[300px]:items-center min-[300px]:gap-[1rem] xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
         <DownloadButton />
         <ModalAnimationVideo />
       </div>
