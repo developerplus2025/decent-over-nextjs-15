@@ -31,7 +31,7 @@
   "scripts": {
     "postinstall": "fumadocs-mdx & patch-package",
     "tauri": "tauri dev",
-    "dev": "next dev  & npx next-video sync -w ",
+    "dev": "next dev ",
     "build": "next build ",
     "start": "next start",
     "lint": "next lint",
