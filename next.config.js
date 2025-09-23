@@ -1,4 +1,3 @@
-const { withNextVideo } = require("next-video/process");
 const { createMDX } = require("fumadocs-mdx/next");
 const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
@@ -38,4 +37,4 @@ const nextConfig = {
 };
 
 // Gộp 2 middleware lại
-module.exports = withNextVideo(withMDX(nextConfig));
+module.exports = withMDX(nextConfig);
