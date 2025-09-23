@@ -91,7 +91,6 @@ export function PeopleSay() {
             >
               <motion.div
                 onClick={(e) => e.stopPropagation()} // chặn click trong modal
-                layout
                 initial={{
                   opacity: 0,
                   filter: "blur(4px)",
