@@ -86,7 +86,7 @@ export function PeopleSay() {
             <motion.div
               // overlay toàn màn hình
 
-              className={`fixed inset-0 z-[5] flex items-center justify-center bg-black/50`}
+              className={`fixed inset-0 z-[5] flex items-center justify-center ${open ? "bg-black/50" : ""} `}
               onClick={() => setOpen(false)} // click overlay thì đóng
             >
               <motion.div
