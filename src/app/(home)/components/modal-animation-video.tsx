@@ -7,9 +7,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from '@/components/animate-ui/radix/dialog';
- import Video from "next-video";
- import awesomeVideo from "/videos/get-started.mp4";
+} from "@/components/animate-ui/radix/dialog";
 import { PlayerContainer } from "./player-container";
 import { LinearMediaPlayer } from "@/components/linear-player/components/media-player";
 export const ModalAnimationVideo = () => {

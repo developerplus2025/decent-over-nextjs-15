@@ -1,6 +1,4 @@
 "use client";
-import { Slider } from "@/components/ui/slider";
-import { cookies } from "next/headers";
 
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
