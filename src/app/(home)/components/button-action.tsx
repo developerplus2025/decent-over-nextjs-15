@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import DownloadButton from "./DownloadButton";
-import Modal from "./Modal";
+
 import { Button } from "@/components/ui/button";
 
 export default function ButtonAction() {
@@ -9,7 +9,7 @@ export default function ButtonAction() {
   return (
     <div className="min-[300px]:flex min-[300px]:w-[200px] min-[300px]:flex-col min-[300px]:items-center min-[300px]:gap-[1rem] xl:flex xl:w-fit xl:flex-row xl:items-center xl:justify-center xl:gap-8">
       <DownloadButton />
-      <Modal isOpen={open} onClose={() => setOpen(false)} />
+
       <Button
         className="min-[300px]:w-full md:w-fit xl:w-fit"
         onClick={() => setOpen(true)}
