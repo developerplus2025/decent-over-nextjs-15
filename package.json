@@ -152,7 +152,7 @@
     "motion": "^12.23.16",
     "motion-plus": "^0.1.6",
     "nanostores": "^0.11.4",
-    "next": "15.5.0",
+    "next": "15.5.3",
     "next-auth": "^4.24.10",
     "next-contentlayer2": "^0.5.0",
     "next-intl": "^4.3.4",
@@ -218,7 +218,7 @@
     "@content-collections/next": "^0.2.6",
     "@fumadocs/cli": "^0.0.3",
     "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "15.5.0",
+    "@next/mdx": "15.5.3",
     "@tailwindcss/forms": "^0.5.8",
     "@tauri-apps/cli": "^2.5.0",
     "@types/draft-js": "^0.11.18",
@@ -227,15 +227,15 @@
     "@types/lodash.clamp": "^4.0.9",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^20",
-    "@types/react": "19.1.10",
-    "@types/react-dom": "19.1.7",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@types/unist": "^3.0.3",
     "electron": "^37.2.0",
     "electron-builder": "^24.13.3",
     "electron-is-dev": "^3.0.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.5.0",
+    "eslint-config-next": "15.5.3",
     "patch-package": "^8.0.0",
     "postcss": "^8.5.6",
     "postcss-import": "^16.1.1",
@@ -250,7 +250,7 @@
     "zod": "^3.25.67"
   },
   "overrides": {
-    "@types/react": "19.1.10",
-    "@types/react-dom": "19.1.7"
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9"
   }
 }
