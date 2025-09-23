@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import Modal from "./Modal";
+
 import { useTranslations } from "next-intl";
 import { ModalAnimationVideo } from "./modal-animation-video";
 export default function MainTextHome() {
