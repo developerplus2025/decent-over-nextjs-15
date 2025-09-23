@@ -31,9 +31,9 @@
   "scripts": {
     "postinstall": "fumadocs-mdx & patch-package",
     "tauri": "tauri dev",
-    "dev": "next dev ",
-    "build": "next build ",
-    "start": "next start",
+    "dev": "next dev --turbopack ",
+    "build": "next build --turbopack ",
+    "start": "next start --turbopack",
     "lint": "next lint",
     "electron-build": "electron-builder",
     "electron": "electron ."
