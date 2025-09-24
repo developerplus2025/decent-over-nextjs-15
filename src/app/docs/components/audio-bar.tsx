@@ -143,12 +143,14 @@ export default function AudioBar() {
         <div className="flex items-center gap-2">
           <NumberFlowGroup>
             <div
-              style={{
-                fontVariantNumeric: "tabular-nums",
-                fontWeight: "400",
-                fontSize: "0.875rem",
-                "--number-flow-char-height": "0.85em",
-              }}
+              style={
+                {
+                  fontVariantNumeric: "tabular-nums",
+                  fontWeight: "400",
+                  fontSize: "0.875rem",
+                  "--number-flow-char-height": "0.85em",
+                } as React.CSSProperties
+              }
               className="~text-3xl/4xl border-input flex items-baseline border-r pr-2 font-semibold"
             >
               {" "}
