@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 
 
 import DownloadButton from "@/app/(home)/components/DownloadButton";
-import Modal from "@/app/(home)/components/Modal";
 import ButtonAction from "@/app/(home)/components/button-action";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

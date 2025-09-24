@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
 import DownloadButton from "@/app/(home)/components/DownloadButton";
-import Modal from "@/app/(home)/components/Modal";
 import ButtonAction from "@/app/(home)/components/button-action";
 const LinkItem = [
   {
