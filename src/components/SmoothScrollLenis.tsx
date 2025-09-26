@@ -23,10 +23,26 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
 
+    // 👇 Theo dõi thay đổi style của <html>
+    const html = document.documentElement;
+    const observer = new MutationObserver(() => {
+      const overflowY = window.getComputedStyle(html).overflowY;
+      if (overflowY === "hidden") {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
+    });
+
+    observer.observe(html, {
+      attributes: true,
+      attributeFilter: ["style", "class"], // style hoặc class thay đổi
+    });
+
     return () => {
+      observer.disconnect();
       lenis.destroy();
     };
   }, []);
