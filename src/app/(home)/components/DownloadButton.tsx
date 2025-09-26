@@ -12,7 +12,7 @@ const DownloadButton: React.FC = () => {
 
   const handleClick = async () => {
     // Chuyển trang và chờ quá trình chuyển hoàn tất
-    await router.push("/docs/user-win-download");
+    await router.push("/docs/user-windows-download");
     setDownloadReady(true);
   };
   return (
