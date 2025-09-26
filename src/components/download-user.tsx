@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React from "react";
 import { redirect, useRouter } from "next/navigation";
 function DownloadUser() {
   const router = useRouter();
@@ -10,4 +11,4 @@ function DownloadUser() {
   };
 }
 
-export default DownloadUser
+export default DownloadUser;
