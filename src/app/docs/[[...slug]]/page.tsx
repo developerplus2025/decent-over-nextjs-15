@@ -27,6 +27,7 @@ import AudioBar from "../components/audio-bar";
 import PathAnimation from "../components/path-animation";
 import { Loader } from "@/components/ui/loader";
 import { DocsBody, DocsDescription, DocsPage } from "@/components/layout/page";
+import DownloadUser from "@/components/download-user";
 export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -150,6 +151,7 @@ export default async function Page(props: {
                     components={{
                       ...mdxComponents,
                       PathAnimation,
+                      DownloadUser,
                     }}
                   />
                 </Suspense>
