@@ -26,9 +26,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     requestAnimationFrame(raf);
 
     // 👇 Theo dõi thay đổi style của <html>
-    const html = document.documentElement;
+    const body = document.documentElement;
     const observer = new MutationObserver(() => {
-      const overflowY = window.getComputedStyle(html).overflowY;
+      const overflowY = window.getComputedStyle(body).overflowY;
       if (overflowY === "hidden") {
         lenis.stop();
       } else {
@@ -36,7 +36,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       }
     });
 
-    observer.observe(html, {
+    observer.observe(body, {
       attributes: true,
       attributeFilter: ["style", "class"], // style hoặc class thay đổi
     });
