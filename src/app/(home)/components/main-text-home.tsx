@@ -57,7 +57,7 @@ export default function MainTextHome() {
 
         <AnimateTextHome
           classNameWord="min-[300px]:inline-block min-[300px]:mr-2"
-          className="w-[300px] text-center text-[2.5rem] leading-[2.6rem] font-bold text-pretty min-[300px]:block xl:hidden"
+          className="w-[300px] text-center text-[2.5rem] leading-[2.8rem] font-bold text-pretty min-[300px]:block xl:hidden"
           words="The Open Source AI Music Studio"
         />
         <h1 className="text-[#a1a1a1] min-[300px]:hidden min-[300px]:w-[301px] min-[300px]:text-center min-[300px]:text-[15px] xl:block xl:w-[522px] xl:text-center xl:text-[1rem] xl:leading-[1.5rem]">
