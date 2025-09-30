@@ -50,15 +50,16 @@ export function SearchUi() {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <div
+          //   style={{
+          //     backgroundColor:
+          //       "color-mix(in oklab,var(--color-fd-secondary)50%,transparent)",
+          //   }}
           style={{
-            backgroundColor:
-              "color-mix(in oklab,var(--color-fd-secondary)50%,transparent)",
+            backgroundColor: "black",
           }}
-        
-          className="flex h-[32px] w-fit cursor-pointer items-center justify-center gap-2 rounded-full border border-(--input) p-3 select-none"
+          className="flex h-[32px] w-fit cursor-pointer items-center justify-center gap-2 rounded-[8px] border border-(--input) p-3 select-none"
         >
           <svg
-           
             className="size-4.5 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -80,7 +81,7 @@ export function SearchUi() {
           </div>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="border-input w-[400px] p-0">
         <Command>
           <CommandInput placeholder="Search framework..." className="h-9" />
           <CommandList>
