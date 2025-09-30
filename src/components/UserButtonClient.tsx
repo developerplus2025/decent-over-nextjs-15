@@ -30,6 +30,7 @@ import { Loader } from "./ui/loader";
 import { useSearchContext } from "fumadocs-ui/provider";
 import Image from "next/image";
 import ThemeToggleButton from "./ui/theme-toggle-button";
+import { SearchUi } from "./search-ui";
 function removeVietnameseTones(str?: string): string {
   if (!str) return "";
   return str
@@ -122,7 +123,7 @@ export default function UserButtonClient() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`${!isPending ? "" : "pointer-events-none"} flex items-center gap-2`}
       >
-        <div
+        {/* <div
           style={{
             backgroundColor:
               "color-mix(in oklab,var(--color-fd-secondary)50%,transparent)",
@@ -155,8 +156,8 @@ export default function UserButtonClient() {
               <span className="text-xs">K</span>
             </kbd>
           </div>
-        </div>
-
+        </div> */}
+        <SearchUi />
         <div className="hover:bg-muted flex h-[30px] w-[37px] cursor-pointer items-center justify-center rounded-md border transition-all duration-200 ease-out dark:hover:bg-[#101010]">
           <Link
             href={"https://github.com/developerplus2025/decent-over-nextjs-15/"}
