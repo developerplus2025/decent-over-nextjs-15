@@ -190,13 +190,13 @@ export default function MobilePage() {
         {tabs.map((item) => (
           <div key={item.id} onClick={() => setActiveTab(item.id)}>
             <div
-              className={`${activeTab == item.id ? "[&>svg]:fill-white" : "[&>svg]:fill-[#a1a1a1]"} [&>svg]:size-[25px]`}
+              className={`flex items-center gap-0.5 ${activeTab == item.id ? "[&>svg]:fill-white" : "[&>svg]:fill-[#a1a1a1]"} [&>svg]:size-[25px]`}
             >
               {item.icon}
               <p
-                className={`${activeTab == item.id ? "text-white" : "text-[#a1a1a1]"} text-xs`}
+                className={`${activeTab == item.id ? "text-white" : "text-[#a1a1a1]"} text-center text-xs`}
               >
-                {item.label}
+                {item.title}
               </p>
             </div>
           </div>
