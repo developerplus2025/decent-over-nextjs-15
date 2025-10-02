@@ -78,6 +78,7 @@ type TabKey =
   | "historyMusic";
 
 type Tab = {
+  title: String;
   id: TabKey;
   label: string;
   icon: JSX.Element;
@@ -86,6 +87,7 @@ type Tab = {
 const tabs: Tab[] = [
   {
     id: "listeningMusic",
+    title: "Home",
     label: "ListeningMusic",
     icon: (
       <svg
@@ -101,6 +103,7 @@ const tabs: Tab[] = [
   },
   {
     id: "libraryMusic",
+    title: "Library",
     label: " Library Music",
     icon: (
       <svg
@@ -117,6 +120,7 @@ const tabs: Tab[] = [
   {
     id: "artistMusic",
     label: "Artist Music",
+    title: "Artist",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +135,7 @@ const tabs: Tab[] = [
   },
   {
     id: "historyMusic",
+    title: "History",
     label: " History Music",
     icon: (
       <svg
@@ -146,7 +151,8 @@ const tabs: Tab[] = [
   },
   {
     id: "accountSetting",
-    label: " Account Setting",
+    label: "Account Setting",
+    title: "Account",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -187,6 +193,11 @@ export default function MobilePage() {
               className={`${activeTab == item.id ? "[&>svg]:fill-white" : "[&>svg]:fill-[#a1a1a1]"} [&>svg]:size-[25px]`}
             >
               {item.icon}
+              <p
+                className={`${activeTab == item.id ? "text-white" : "text-[#a1a1a1]"} text-xs`}
+              >
+                {item.label}
+              </p>
             </div>
           </div>
         ))}
