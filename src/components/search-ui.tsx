@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Command,
+  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -45,7 +46,7 @@ const frameworks = [
 export function SearchUi() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-
+  const [search, setSearch] = React.useState("");
   return (
     <div>
       {/* <PopoverTrigger asChild>
@@ -83,30 +84,37 @@ export function SearchUi() {
         </PopoverTrigger> */}
 
       <Command>
-        <CommandInput placeholder="Search framework..." className="h-9" />
-        <CommandList>
-          <CommandEmpty>No framework found.</CommandEmpty>
-          <CommandGroup>
-            {frameworks.map((framework) => (
-              <CommandItem
-                key={framework.value}
-                value={framework.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue);
-                  setOpen(false);
-                }}
-              >
-                {framework.label}
-                <Check
-                  className={cn(
-                    "ml-auto",
-                    value === framework.value ? "opacity-100" : "opacity-0",
-                  )}
-                />
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </CommandList>
+        <CommandInput
+          value={search}
+          onValueChange={setSearch}
+          placeholder="Search framework..."
+          className="h-9"
+        />
+        {search && (
+          <CommandList>
+            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandGroup>
+              {frameworks.map((framework) => (
+                <CommandItem
+                  key={framework.value}
+                  value={framework.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
+                  }}
+                >
+                  {framework.label}
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      value === framework.value ? "opacity-100" : "opacity-0",
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        )}
       </Command>
     </div>
   );
