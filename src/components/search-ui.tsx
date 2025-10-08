@@ -48,7 +48,7 @@ export function SearchUi() {
   const [value, setValue] = React.useState("");
   const [search, setSearch] = React.useState("");
   return (
-    <div className="fixed z-30">
+    <div className="">
       {/* <PopoverTrigger asChild>
           <div
             //   style={{
@@ -91,7 +91,7 @@ export function SearchUi() {
           className="h-9"
         />
         {search && (
-          <CommandList>
+          <CommandList className="z-40">
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((framework) => (
