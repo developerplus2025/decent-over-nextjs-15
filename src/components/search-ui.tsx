@@ -48,7 +48,7 @@ export function SearchUi() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
+      {/* <PopoverTrigger asChild>
         <div
           //   style={{
           //     backgroundColor:
@@ -80,7 +80,8 @@ export function SearchUi() {
             </kbd>
           </div>
         </div>
-      </PopoverTrigger>
+      </PopoverTrigger> */}
+      <CommandInput placeholder="Search framework..." className="h-9" />
       <PopoverContent className="border-input w-[400px] p-0">
         <Command>
           <CommandInput placeholder="Search framework..." className="h-9" />
