@@ -48,7 +48,7 @@ export function SearchUi() {
   const [value, setValue] = React.useState("");
   const [search, setSearch] = React.useState("");
   return (
-    <div>
+    <div className="fixed z-30">
       {/* <PopoverTrigger asChild>
           <div
             //   style={{
