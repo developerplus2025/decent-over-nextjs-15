@@ -48,7 +48,7 @@ export function SearchUi() {
   const [value, setValue] = React.useState("");
   const [search, setSearch] = React.useState("");
   return (
-    <div className="">
+    <div className="relative">
       {/* <PopoverTrigger asChild>
           <div
             //   style={{
@@ -93,7 +93,7 @@ export function SearchUi() {
         {search && (
           <CommandList className="z-40">
             <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
+            <CommandGroup className="!absolute left-1/2 h-auto w-[20rem] -translate-x-1/2 rounded-md bg-black">
               {frameworks.map((framework) => (
                 <CommandItem
                   key={framework.value}
