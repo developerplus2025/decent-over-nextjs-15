@@ -91,7 +91,7 @@ export function SearchUi() {
           className="h-9"
         />
         {search && (
-          <CommandList className="!absolute left-1/2 z-40 h-auto w-[20rem] -translate-x-1/2 rounded-md bg-black">
+          <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((framework) => (

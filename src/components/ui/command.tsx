@@ -88,16 +88,15 @@ function CommandList({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.List>) {
   return (
-    <ScrollArea className="h-[100px]">  <CommandPrimitive.List
-      data-slot="command-list"
-      className={cn(
-        "max-h-[300px] scroll-py-1 overflow-x-hidden ",
-        className
-      )}
-      {...props}
-    />
-    </ScrollArea> 
-  )
+    <ScrollArea className="!absolute left-1/2 z-40 h-[100px] w-[20rem] -translate-x-1/2 rounded-md bg-black">
+      {" "}
+      <CommandPrimitive.List
+        data-slot="command-list"
+        className={cn("max-h-[300px] scroll-py-1 overflow-x-hidden", className)}
+        {...props}
+      />
+    </ScrollArea>
+  );
 }
 
 function CommandEmpty({
