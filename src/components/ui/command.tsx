@@ -88,7 +88,7 @@ function CommandList({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.List>) {
   return (
-    <ScrollArea className="!absolute left-1/2 z-40 h-[100px] w-[20rem] -translate-x-1/2 rounded-md bg-black">
+    <ScrollArea className="border-input !absolute top-[3rem] left-1/2 z-40 h-[100px] w-[20rem] -translate-x-1/2 rounded-md border bg-black">
       {" "}
       <CommandPrimitive.List
         data-slot="command-list"
