@@ -88,7 +88,7 @@ export function SearchUi() {
           value={search}
           onValueChange={setSearch}
           placeholder="Search framework..."
-          className="border-input h-9 border-x border-t"
+          className="h-9"
         />
         {search && (
           <CommandList>
