@@ -65,7 +65,7 @@ function CommandInput({
   className,
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
-  const [search, setSearch] = React.useState(true);
+  const [search, setSearch] = React.useState("");
   return (
     <div
       data-slot="command-input-wrapper"
@@ -73,6 +73,7 @@ function CommandInput({
     >
       <SearchIcon className="size-4 shrink-0 opacity-50" />
       <CommandPrimitive.Input
+        value={search}
         onValueChange={() => setSearch}
         data-slot="command-input"
         className={cn(
