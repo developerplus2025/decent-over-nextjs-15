@@ -67,43 +67,29 @@ function CommandDialog({
    className,
    ...props
  }: {
-   value: string;
-   onValueChange: (v: string) => void;
+   value?: string;
+   onValueChange?: (v: string) => void;
  } & React.ComponentProps<typeof CommandPrimitive.Input>) {
+   const [internalValue, setInternalValue] = React.useState("");
+
+   const val = value ?? internalValue;
+   const setVal = onValueChange ?? setInternalValue;
+
    return (
-     <div
-       data-slot="command-input-wrapper"
-       className={cn(
-         "border-input bg-background flex h-9 items-center gap-2 rounded-md border px-3",
-         className,
-       )}
-     >
-       {/* Icon tìm kiếm */}
+     <div className="border-input flex h-9 items-center gap-2 rounded-md border px-3">
        <SearchIcon className="size-4 shrink-0 opacity-50" />
-
-       {/* Ô nhập chính */}
-       <CommandPrimitive.Input
-         value={value}
-         onValueChange={onValueChange}
-         data-slot="command-input"
-         className={cn(
-           "placeholder:text-muted-foreground flex-1 bg-transparent text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50",
-         )}
-         {...props}
-       />
-
-       {/* Icon clear */}
-       {value && (
+       <CommandPrimitive.Input value={val} onValueChange={setVal} {...props} />
+       {val && (
          <svg
-           onClick={() => onValueChange("")}
+           onClick={() => setVal("")}
            xmlns="http://www.w3.org/2000/svg"
            width="16"
            height="16"
            fill="currentColor"
            viewBox="0 0 256 256"
-           className="size-4 cursor-pointer opacity-70 transition-opacity hover:opacity-100"
+           className="size-4 cursor-pointer opacity-70 hover:opacity-100"
          >
-           <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"></path>
+           <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z" />
          </svg>
        )}
      </div>
