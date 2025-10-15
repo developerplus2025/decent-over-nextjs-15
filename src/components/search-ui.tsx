@@ -53,9 +53,10 @@ export function SearchUi() {
         <CommandInput
           value={search}
           onValueChange={setSearch}
-          placeholder="Search framework..."
+          placeholder="Search documention..."
           className="h-9 placeholder:text-[#a1a1a1]"
         />
+
         {search && (
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>

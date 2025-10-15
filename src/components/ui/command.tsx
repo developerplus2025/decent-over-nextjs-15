@@ -65,6 +65,7 @@ function CommandInput({
   className,
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
+  const [search, setSearch] = React.useState(true);
   return (
     <div
       data-slot="command-input-wrapper"
@@ -72,6 +73,7 @@ function CommandInput({
     >
       <SearchIcon className="size-4 shrink-0 opacity-50" />
       <CommandPrimitive.Input
+        onValueChange={() => setSearch}
         data-slot="command-input"
         className={cn(
           "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
@@ -79,6 +81,17 @@ function CommandInput({
         )}
         {...props}
       />
+      {search && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#ffffff"
+          viewBox="0 0 256 256"
+        >
+          <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"></path>
+        </svg>
+      )}
     </div>
   );
 }
