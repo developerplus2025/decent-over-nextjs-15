@@ -89,6 +89,14 @@ const data: Data[] = [
     description: "Fanny Tran",
     duration: "3:24",
   },
+  {
+    id: 7,
+    src: "Pickleball",
+    img: "05b73eff55f3d133942abf6ea29bc41b",
+    name: "Tát nhật lãng rực rỡ ",
+    description: "Fanny Tran",
+    duration: "3:24",
+  },
 ];
 export default function ListeningMusic() {
   const [isPlaying, setIsPlaying] = useState(false);
