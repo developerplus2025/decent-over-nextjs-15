@@ -54,7 +54,7 @@ export function SearchUi() {
           value={search}
           onValueChange={setSearch}
           placeholder="Search documention..."
-          className="h-9 placeholder:text-[#a1a1a1]"
+          className={`[>Svg] h-9 placeholder:text-[#a1a1a1]`}
         />
 
         {search && (
