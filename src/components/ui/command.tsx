@@ -76,22 +76,33 @@ function CommandDialog({
    const setVal = onValueChange ?? setInternalValue;
 
    return (
-     <div className="border-input flex h-9 items-center gap-2 rounded-md border px-3">
-       <SearchIcon className="size-4 shrink-0 opacity-50" />
-       <CommandPrimitive.Input value={val} onValueChange={setVal} {...props} />
-       {val && (
-         <svg
-           onClick={() => setVal("")}
-           xmlns="http://www.w3.org/2000/svg"
-           width="16"
-           height="16"
-           fill="currentColor"
-           viewBox="0 0 256 256"
-           className="size-4 cursor-pointer opacity-70 hover:opacity-100"
-         >
-           <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z" />
-         </svg>
-       )}
+     <div
+       data-slot="command-input-wrapper"
+       className="border-input flex h-9 items-center gap-2 rounded-md border-x border-t border-b px-3"
+     >
+       {" "}
+       <SearchIcon className="size-4 shrink-0 opacity-50" />{" "}
+       <CommandPrimitive.Input
+         value={val}
+         onValueChange={setVal}
+         data-slot="command-input"
+         className={cn(
+           "placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+           className,
+         )}
+         {...props}
+       />{" "}
+       <svg
+         onClick={() => setVal("")}
+         xmlns="http://www.w3.org/2000/svg"
+         width="16"
+         height="16"
+         fill="currentColor"
+         viewBox="0 0 256 256"
+         className={`${val ? "" : "hidden"} size-4 cursor-pointer opacity-70 hover:opacity-100`}
+       >
+         <path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z" />
+       </svg>
      </div>
    );
  }
