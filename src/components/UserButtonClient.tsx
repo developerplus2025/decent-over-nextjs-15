@@ -319,7 +319,7 @@ export default function UserButtonClient() {
                     </div>
                     <div className="border-b border-b-[#302f2f]"></div>
                     <div className="flex w-full flex-col gap-2 px-4 py-2 [&_svg]:size-4">
-                      {itemsPartTwo.map((itemsPartOne) => (
+                      {itemsPartOne.map((itemsPartOne) => (
                         <Button
                           key={itemsPartOne.name}
                           onMouseEnter={() => {
@@ -330,7 +330,7 @@ export default function UserButtonClient() {
                             setIsHovered(false); // Khi kết thúc hover
                             console.log("Unhovered");
                           }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
+                          className={`w-full border-none ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
                           variant="outline"
                           onClick={handleLogout}
                         >
@@ -352,7 +352,7 @@ export default function UserButtonClient() {
                             setIsHovered(false); // Khi kết thúc hover
                             console.log("Unhovered");
                           }}
-                          className={`w-full ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
+                          className={`w-full border-none ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
                           variant="outline"
                           onClick={handleLogout}
                         >
@@ -370,7 +370,7 @@ export default function UserButtonClient() {
                           setIsHovered(false); // Khi kết thúc hover
                           console.log("Unhovered");
                         }}
-                        className={`w-full ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
+                        className={`w-full border-none ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
                         variant="outline"
                         onClick={handleLogout}
                       >
