@@ -332,7 +332,7 @@ export default function UserButtonClient() {
                           }}
                           className={`w-full border-none ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
                           variant="outline"
-                          onClick={handleLogout}
+                          onClick={() => router.push(itemsPartOne.directLink)}
                         >
                           {itemsPartOne.name}
                           {itemsPartOne.icon}
@@ -354,7 +354,7 @@ export default function UserButtonClient() {
                           }}
                           className={`w-full border-none ${isHovered ? "bg-primary/90" : "bg-black"} justify-between`}
                           variant="outline"
-                          onClick={handleLogout}
+                          onClick={() => router.push(itemsPartTwo.directLink)}
                         >
                           {itemsPartTwo.name}
                           {itemsPartTwo.icon}
