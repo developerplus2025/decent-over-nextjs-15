@@ -1,9 +1,10 @@
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import { getDb } from "./db";
-import type { BetterAuthPlugin } from "better-auth";
 import { betterAuth, type Middleware } from "better-auth";
+import Database from "better-sqlite3";
 
-const db = await getDb();
+/**
+ * Kết nối SQLite
+ */
+const db = new Database("./sqlite.db");
 type SignInContext = {
   type: "auth:signin";
   provider: string;
@@ -25,7 +26,9 @@ type SignInContext = {
     };
   };
 };
-
+/**
+ * Middleware cập nhật avatar Google
+ */
 const githubAvatarMiddleware: Middleware = async (ctx: SignInContext) => {
   if (ctx.provider === "github") {
     const avatar = ctx.account?.profile?.avatar_url;
@@ -49,31 +52,33 @@ const googleAvatarMiddleware: Middleware = async (ctx: SignInContext) => {
   }
 };
 
+/**
+ * Cấu hình Better Auth
+ */
 export const auth = betterAuth({
-  database: mongodbAdapter(db),
+  database: db,
+
   emailAndPassword: { enabled: true },
+
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-      mapProfileToUser: (profile) => {
-        return {
-          firstName: profile.given_name,
-          lastName: profile.family_name,
-          image: profile.picture,
-        };
-      },
+      mapProfileToUser: (profile) => ({
+        firstName: profile.given_name,
+        lastName: profile.family_name,
+        image: profile.picture,
+      }),
     },
     github: {
-      mapProfileToUser: (profile) => {
-        return {
-          firstName: profile.name,
-          image: profile.avatar_url,
-        };
-      },
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+      mapProfileToUser: (profile) => ({
+        firstName: profile.name,
+        image: profile.avatar_url,
+      }),
     },
   },
-  middleware: [githubAvatarMiddleware, googleAvatarMiddleware],
+
+  middleware: [googleAvatarMiddleware, githubAvatarMiddleware],
 });

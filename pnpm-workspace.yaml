@@ -12,6 +12,7 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - bcrypt
+  - better-sqlite3
 
 patchedDependencies:
   shaka-player: patches/shaka-player.patch
