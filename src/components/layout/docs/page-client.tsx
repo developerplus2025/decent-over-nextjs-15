@@ -13,7 +13,7 @@ import Link from 'fumadocs-core/link';
 import { cn } from '../../../src/lib/cn';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 import { useTreeContext, useTreePath } from 'fumadocs-ui/contexts/tree';
-import type { PageTree } from 'fumadocs-core/server';
+import type { PageTree } from "fumadocs-core/page-tree";
 import { createContext, usePathname } from 'fumadocs-core/framework';
 import {
   type BreadcrumbOptions,

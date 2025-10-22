@@ -1,5 +1,5 @@
 'use client';
-import type { TOCItemType } from 'fumadocs-core/server';
+import type { TOCItemType } from "fumadocs-core/page-tree";
 import * as Primitive from 'fumadocs-core/toc';
 import { type ComponentProps, useEffect, useRef, useState } from 'react';
 import { cn } from '../../lib/cn';

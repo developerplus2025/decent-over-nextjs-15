@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useBreadcrumb } from "fumadocs-core/breadcrumb";
-import type { PageTree } from "fumadocs-core/server";
+import type { PageTree } from "fumadocs-core/page-tree";
 import { Fragment, useEffect, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";

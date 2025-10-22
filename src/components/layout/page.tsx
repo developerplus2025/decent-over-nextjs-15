@@ -20,7 +20,7 @@ import {
   PageTOCTitle,
 } from './docs/page';
 import type { AnchorProviderProps } from 'fumadocs-core/toc';
-import type { TOCItemType } from 'fumadocs-core/server';
+import type { TOCItemType } from "fumadocs-core/page-tree";
 
 interface EditOnGitHubOptions
   extends Omit<ComponentProps<'a'>, 'href' | 'children'> {
