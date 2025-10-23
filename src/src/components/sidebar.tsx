@@ -29,7 +29,7 @@ import type {
   CollapsibleContentProps,
   CollapsibleTriggerProps,
 } from '@radix-ui/react-collapsible';
-import type { PageTree } from "fumadocs-core/page-tree";
+import type * as PageTree from 'fumadocs-core/page-tree';
 import { useTreeContext, useTreePath } from 'fumadocs-ui/contexts/tree';
 import { useMediaQuery } from 'fumadocs-core/utils/use-media-query';
 import { Presence } from '@radix-ui/react-presence';
@@ -68,13 +68,13 @@ interface InternalContext {
 }
 
 const itemVariants = cva(
-  "relative flex flex-row items-center gap-2 rounded-xl p-2 ps-(--sidebar-item-offset) text-start text-fd-muted-foreground [overflow-wrap:anywhere] [&_svg]:size-4 [&_svg]:shrink-0",
+  'relative flex flex-row items-center gap-2 rounded-lg p-2 ps-(--sidebar-item-offset) text-start text-fd-muted-foreground [overflow-wrap:anywhere] [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       active: {
-        true: "bg-black text-fd-primary",
+        true: 'bg-fd-primary/10 text-fd-primary',
         false:
-          "transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none",
+          'transition-colors hover:bg-fd-accent/50 hover:text-fd-accent-foreground/80 hover:transition-none',
       },
     },
   },
@@ -113,7 +113,7 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
   const [hover, setHover] = useState(false);
   const timerRef = useRef(0);
   const closeTimeRef = useRef(0);
-  const [pathname] = usePathname();
+
   useOnChange(collapsed, () => {
     setHover(false);
     closeTimeRef.current = Date.now() + 150;
@@ -125,34 +125,30 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
       {...props}
       data-collapsed={collapsed}
       className={cn(
-        "bg-fd-card fixed start-0 top-[58.8px] bottom-(--fd-sidebar-margin) z-20 flex flex-col items-end text-sm *:w-(--fd-sidebar-width) max-md:hidden",
-        pathname.startsWith("/docs") ? "border-none" : "border-none",
+        'fixed left-0 rtl:left-auto rtl:right-(--removed-body-scroll-bar-size,0) flex flex-col items-end top-(--fd-sidebar-top) bottom-(--fd-sidebar-margin) z-20 bg-fd-card text-sm border-e transition-[top,opacity,translate,width] duration-200 max-md:hidden *:w-(--fd-sidebar-width)',
         collapsed && [
-          "translate-x-(--fd-sidebar-offset) rounded-xl border rtl:-translate-x-(--fd-sidebar-offset)",
-          hover ? "z-50 shadow-lg" : "opacity-0",
+          'rounded-xl border translate-x-(--fd-sidebar-offset) rtl:-translate-x-(--fd-sidebar-offset)',
+          hover ? 'z-50 shadow-lg' : 'opacity-0',
         ],
         props.className,
       )}
       style={
         {
-          transition: ["top", "opacity", "translate", "width"]
-            .map((v) => `${v} ease 250ms`)
-            .join(", "),
           ...props.style,
-          ["--fd-sidebar-offset" as any]: hover
-            ? "calc(var(--spacing) * 2)"
-            : "calc(16px - 100%)",
-          ["--fd-sidebar-margin" as any]: collapsed ? "0.5rem" : "0px",
-          ["--fd-sidebar-top" as any]: `calc(var(--fd-banner-height) + var(--fd-nav-height) + var(--fd-sidebar-margin))`,
+          '--fd-sidebar-offset': hover
+            ? 'calc(var(--spacing) * 2)'
+            : 'calc(16px - 100%)',
+          '--fd-sidebar-margin': collapsed ? '0.5rem' : '0px',
+          '--fd-sidebar-top': `calc(var(--fd-banner-height) + var(--fd-nav-height) + var(--fd-sidebar-margin))`,
           width: collapsed
-            ? "var(--fd-sidebar-width)"
-            : "calc(var(--spacing) + var(--fd-sidebar-width) + var(--fd-layout-offset))",
-        } as React.CSSProperties
+            ? 'var(--fd-sidebar-width)'
+            : 'calc(var(--spacing) + var(--fd-sidebar-width) + var(--fd-layout-offset))',
+        } as object
       }
       onPointerEnter={(e) => {
         if (
           !collapsed ||
-          e.pointerType === "touch" ||
+          e.pointerType === 'touch' ||
           closeTimeRef.current > Date.now()
         )
           return;
@@ -160,7 +156,7 @@ export function SidebarContent(props: ComponentProps<'aside'>) {
         setHover(true);
       }}
       onPointerLeave={(e) => {
-        if (!collapsed || e.pointerType === "touch") return;
+        if (!collapsed || e.pointerType === 'touch') return;
         window.clearTimeout(timerRef.current);
 
         timerRef.current = window.setTimeout(
@@ -231,7 +227,7 @@ export function SidebarFooter(props: ComponentProps<'div'>) {
   return (
     <div
       {...props}
-      className={cn('flex flex-col border-t px-4 py-3', props.className)}
+      className={cn('flex flex-col border-t p-4 pt-2', props.className)}
     >
       {props.children}
     </div>
@@ -242,13 +238,13 @@ export function SidebarViewport(props: ScrollAreaProps) {
   return (
     <ScrollArea {...props} className={cn('h-full', props.className)}>
       <ScrollViewport
-        className="p-4"
+        className="p-4 overscroll-contain"
         style={
           {
             '--sidebar-item-offset': 'calc(var(--spacing) * 2)',
             maskImage:
               'linear-gradient(to bottom, transparent, white 12px, white calc(100% - 12px), transparent)',
-          } as React.CSSProperties
+          } as object
         }
       >
         {props.children}
@@ -389,9 +385,9 @@ export function SidebarFolderContent(props: CollapsibleContentProps) {
       )}
       style={
         {
+          '--sidebar-item-offset': `calc(var(--spacing) * ${(level + 1) * 3})`,
           ...props.style,
-          ['--sidebar-item-offset' as any]: `calc(var(--spacing) * ${(level + 1) * 3})`,
-        } as React.CSSProperties
+        } as object
       }
     >
       <Context.Provider

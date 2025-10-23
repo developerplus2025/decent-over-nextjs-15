@@ -13,7 +13,7 @@ import Link from 'fumadocs-core/link';
 import { cn } from '../../../src/lib/cn';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 import { useTreeContext, useTreePath } from 'fumadocs-ui/contexts/tree';
-import type { PageTree } from "fumadocs-core/page-tree";
+import type * as PageTree from 'fumadocs-core/page-tree';
 import { createContext, usePathname } from 'fumadocs-core/framework';
 import {
   type BreadcrumbOptions,
@@ -29,7 +29,7 @@ import {
 } from '../../../src/components/ui/collapsible';
 import { useSidebar } from 'fumadocs-ui/contexts/sidebar';
 import { useTOCItems } from '../../../src/components/ui/toc';
-import { type AnchorProviderProps, useActiveAnchor } from 'fumadocs-core/toc';
+import { useActiveAnchor } from 'fumadocs-core/toc';
 
 const TocPopoverContext = createContext<{
   open: boolean;
@@ -179,7 +179,7 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
     return () => {
       window.removeEventListener('click', onClick);
     };
-  }, [onClick]);
+  }, []);
 
   return (
     <TocPopoverContext.Provider
@@ -197,17 +197,18 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
           id="nd-tocnav"
           {...props}
           className={cn(
-            "fixed inset-x-0 z-10 border-b backdrop-blur-sm transition-colors xl:hidden",
-            (!isTransparent || open) && "bg-fd-background/80",
-            open && "shadow-lg",
+            'fixed pr-(--removed-body-scroll-bar-size,0) z-10 border-b backdrop-blur-sm transition-colors xl:hidden max-xl:on-root:[--fd-tocnav-height:40px]',
+            (!isTransparent || open) && 'bg-fd-background/80',
+            open && 'shadow-lg',
             props.className,
           )}
           style={{
             ...props.style,
-            top: "calc(var(--fd-banner-height) + var(--fd-nav-height) - 3px)",
+            top: 'calc(var(--fd-banner-height) + var(--fd-nav-height))',
             insetInlineStart: collapsed
-              ? "0px"
-              : "calc(var(--fd-sidebar-width) + var(--fd-layout-offset))",
+              ? '0px'
+              : 'calc(var(--fd-sidebar-width) + var(--fd-layout-offset))',
+            insetInlineEnd: 0,
           }}
         >
           {props.children}
@@ -215,10 +216,6 @@ export function PageTOCPopover(props: ComponentProps<'div'>) {
       </Collapsible>
     </TocPopoverContext.Provider>
   );
-}
-
-export interface RootProps extends ComponentProps<'div'> {
-  toc: Omit<AnchorProviderProps, 'children'>;
 }
 
 export function PageLastUpdate({
@@ -343,9 +340,9 @@ function FooterItem({ item, index }: { item: Item; index: 0 | 1 }) {
 export type BreadcrumbProps = BreadcrumbOptions & ComponentProps<'div'>;
 
 export function PageBreadcrumb({
-  includeRoot = false,
+  includeRoot,
   includeSeparator,
-  includePage = false,
+  includePage,
   ...props
 }: BreadcrumbProps) {
   const path = useTreePath();
@@ -395,15 +392,21 @@ export function PageBreadcrumb({
 }
 
 export function PageTOC(props: ComponentProps<'div'>) {
+  const { collapsed } = useSidebar();
+  const offset = collapsed ? '0px' : 'var(--fd-layout-offset)';
+
   return (
     <div
       id="nd-toc"
       {...props}
-      className={cn('sticky pb-2 pt-12 max-xl:hidden', props.className)}
+      className={cn(
+        'fixed bottom-0 pt-12 pb-2 pr-(--removed-body-scroll-bar-size,0) xl:on-root:[--fd-toc-width:286px] max-xl:hidden',
+        props.className,
+      )}
       style={{
         ...props.style,
         top: 'calc(var(--fd-banner-height) + var(--fd-nav-height))',
-        height: 'calc(100dvh - var(--fd-banner-height) - var(--fd-nav-height))',
+        insetInlineEnd: `max(${offset}, calc(50vw - var(--fd-sidebar-width)/2 - var(--fd-page-width)/2))`,
       }}
     >
       <div className="flex h-full w-(--fd-toc-width) max-w-full flex-col pe-4">

@@ -19,8 +19,7 @@ import {
   PageTOCPopoverTrigger,
   PageTOCTitle,
 } from './docs/page';
-import type { AnchorProviderProps } from 'fumadocs-core/toc';
-import type { TOCItemType } from "fumadocs-core/page-tree";
+import type { AnchorProviderProps, TOCItemType } from 'fumadocs-core/toc';
 
 interface EditOnGitHubOptions
   extends Omit<ComponentProps<'a'>, 'href' | 'children'> {
@@ -43,14 +42,6 @@ interface EditOnGitHubOptions
 interface BreadcrumbOptions extends BreadcrumbProps {
   enabled: boolean;
   component: ReactNode;
-
-  /**
-   * Show the full path to the current page
-   *
-   * @defaultValue false
-   * @deprecated use `includePage` instead
-   */
-  full?: boolean;
 }
 
 interface FooterOptions extends FooterProps {
@@ -135,13 +126,12 @@ export function DocsPage({
   article,
   children,
 }: DocsPageProps) {
-  const isTocRequired =
-    toc.length > 0 ||
-    tocOptions.footer !== undefined ||
-    tocOptions.header !== undefined;
-
   // disable TOC on full mode, you can still enable it with `enabled` option.
-  tocEnabled ??= !full && isTocRequired;
+  tocEnabled ??=
+    !full &&
+    (toc.length > 0 ||
+      tocOptions.footer !== undefined ||
+      tocOptions.header !== undefined);
 
   tocPopoverEnabled ??=
     toc.length > 0 ||
@@ -150,10 +140,14 @@ export function DocsPage({
 
   return (
     <PageRoot
-      toc={{
-        toc,
-        single: tocOptions.single,
-      }}
+      toc={
+        tocEnabled || tocPopoverEnabled
+          ? {
+              toc,
+              single: tocOptions.single,
+            }
+          : false
+      }
       {...container}
     >
       {tocPopoverEnabled &&
@@ -171,7 +165,6 @@ export function DocsPage({
         {breadcrumbEnabled &&
           (breadcrumb ?? <PageBreadcrumb {...breadcrumbProps} />)}
         {children}
-        <div role="none" className="flex-1" />
         <div className="flex flex-row flex-wrap items-center justify-between gap-4 empty:hidden">
           {editOnGithub && (
             <EditOnGitHub
@@ -226,7 +219,7 @@ export function EditOnGitHub(props: ComponentProps<'a'>) {
  */
 export const DocsBody = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
   (props, ref) => (
-    <div ref={ref} {...props} className={cn('prose', props.className)}>
+    <div ref={ref} {...props} className={cn('prose flex-1', props.className)}>
       {props.children}
     </div>
   ),
@@ -260,7 +253,7 @@ export const DocsTitle = forwardRef<HTMLHeadingElement, ComponentProps<'h1'>>(
       <h1
         ref={ref}
         {...props}
-        className={cn('text-3xl font-semibold', props.className)}
+        className={cn('text-[1.75em] font-semibold', props.className)}
       >
         {props.children}
       </h1>

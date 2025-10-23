@@ -1,13 +1,13 @@
-import type { PageTree } from "fumadocs-core/page-tree";
+import type * as PageTree from 'fumadocs-core/page-tree';
 import {
   type ComponentProps,
   type HTMLAttributes,
   type ReactNode,
   useMemo,
-} from "react";
-import { Languages, Sidebar as SidebarIcon } from "lucide-react";
-import { cn } from "../../../src/lib/cn";
-import { buttonVariants } from "../../../src/components/ui/button";
+} from 'react';
+import { Languages, Sidebar as SidebarIcon } from 'lucide-react';
+import { cn } from '../../../src/lib/cn';
+import { buttonVariants } from '../../../src/components/ui/button';
 import {
   Sidebar,
   SidebarCollapseTrigger,
@@ -25,38 +25,43 @@ import {
   type SidebarProps,
   SidebarTrigger,
   SidebarViewport,
-} from "../../../src/components/sidebar";
-import { type Option, RootToggle } from "../../../src/components/root-toggle";
+} from '../../../src/components/sidebar';
+import { type Option, RootToggle } from '../../../src/components/root-toggle';
 import {
   type BaseLayoutProps,
   BaseLinkItem,
   getLinks,
-  type IconItemType,
   type LinkItemType,
-} from "../shared/index";
+} from '../shared/index';
 import {
   LanguageToggle,
   LanguageToggleText,
-} from "../../../src/components/language-toggle";
-import { CollapsibleControl, LayoutBody, Navbar } from "./client";
-import { TreeContextProvider } from "fumadocs-ui/contexts/tree";
-import { ThemeToggle } from "../../../src/components/theme-toggle";
-import { NavProvider } from "fumadocs-ui/contexts/layout";
-import Link from "fumadocs-core/link";
+} from '../../../src/components/language-toggle';
+import {
+  CollapsibleControl,
+  LayoutBody,
+  LayoutTabs,
+  Navbar,
+} from './client';
+import { TreeContextProvider } from 'fumadocs-ui/contexts/tree';
+import { ThemeToggle } from '../../../src/components/theme-toggle';
+import { NavProvider } from 'fumadocs-ui/contexts/layout';
+import Link from 'fumadocs-core/link';
 import {
   LargeSearchToggle,
   SearchToggle,
-} from "../../../src/components/search-toggle";
-import { HideIfEmpty } from "fumadocs-core/hide-if-empty";
+} from '../../../src/components/search-toggle';
 import {
   getSidebarTabs,
   type GetSidebarTabsOptions,
-} from "fumadocs-ui/utils/get-sidebar-tabs";
+} from 'fumadocs-ui/utils/get-sidebar-tabs';
 
 export interface DocsLayoutProps extends BaseLayoutProps {
   tree: PageTree.Root;
 
   sidebar?: SidebarOptions;
+
+  tabMode?: 'top' | 'auto';
 
   /**
    * Props for the `div` container
@@ -65,8 +70,8 @@ export interface DocsLayoutProps extends BaseLayoutProps {
 }
 
 interface SidebarOptions
-  extends ComponentProps<"aside">,
-    Pick<SidebarProps, "defaultOpenLevel" | "prefetch"> {
+  extends ComponentProps<'aside'>,
+    Pick<SidebarProps, 'defaultOpenLevel' | 'prefetch'> {
   enabled?: boolean;
   component?: ReactNode;
   components?: Partial<SidebarComponents>;
@@ -95,27 +100,28 @@ export function DocsLayout({
     ...sidebarProps
   } = {},
   searchToggle = {},
-  disableThemeSwitch = false,
-  themeSwitch = { enabled: !disableThemeSwitch },
+  themeSwitch = {},
+  tabMode = 'auto',
   i18n = false,
   children,
+  tree,
   ...props
 }: DocsLayoutProps) {
   const tabs = useMemo(() => {
     if (Array.isArray(sidebarTabs)) {
       return sidebarTabs;
     }
-    if (typeof sidebarTabs === "object") {
-      return getSidebarTabs(props.tree, sidebarTabs);
+    if (typeof sidebarTabs === 'object') {
+      return getSidebarTabs(tree, sidebarTabs);
     }
     if (sidebarTabs !== false) {
-      return getSidebarTabs(props.tree);
+      return getSidebarTabs(tree);
     }
     return [];
-  }, [sidebarTabs, props.tree]);
+  }, [tree, sidebarTabs]);
   const links = getLinks(props.links ?? [], props.githubUrl);
   const sidebarVariables = cn(
-    "md:[--fd-sidebar-width:268px] lg:[--fd-sidebar-width:286px]",
+    'md:[--fd-sidebar-width:268px] lg:[--fd-sidebar-width:286px]',
   );
 
   function sidebar() {
@@ -131,19 +137,17 @@ export function DocsLayout({
     } = sidebarProps;
     if (component) return component;
 
-    const iconLinks = links.filter(
-      (item): item is IconItemType => item.type === "icon",
-    );
+    const iconLinks = links.filter((item) => item.type === 'icon');
 
     const viewport = (
       <SidebarViewport>
         {links
-          .filter((v) => v.type !== "icon")
+          .filter((v) => v.type !== 'icon')
           .map((item, i, list) => (
             <SidebarLinkItem
               key={i}
               item={item}
-              className={cn(i === list.length - 1 && "mb-4")}
+              className={cn(i === list.length - 1 && 'mb-4')}
             />
           ))}
         <SidebarPageTree components={components} />
@@ -153,7 +157,7 @@ export function DocsLayout({
     const mobile = (
       <SidebarContentMobile {...rest}>
         <SidebarHeader>
-          <div className="text-fd-muted-foreground flex items-center gap-1.5">
+          <div className="flex text-fd-muted-foreground items-center gap-1.5">
             <div className="flex flex-1">
               {iconLinks.map((item, i) => (
                 <BaseLinkItem
@@ -161,9 +165,9 @@ export function DocsLayout({
                   item={item}
                   className={cn(
                     buttonVariants({
-                      size: "icon-sm",
-                      color: "ghost",
-                      className: "p-2",
+                      size: 'icon-sm',
+                      color: 'ghost',
+                      className: 'p-2',
                     }),
                   )}
                   aria-label={item.label}
@@ -185,9 +189,9 @@ export function DocsLayout({
             <SidebarTrigger
               className={cn(
                 buttonVariants({
-                  color: "ghost",
-                  size: "icon-sm",
-                  className: "p-2",
+                  color: 'ghost',
+                  size: 'icon-sm',
+                  className: 'p-2',
                 }),
               )}
             >
@@ -207,8 +211,8 @@ export function DocsLayout({
         <SidebarHeader>
           <div className="flex">
             <Link
-              href={nav.url ?? "/"}
-              className="me-auto inline-flex items-center gap-2.5 text-[15px] font-medium"
+              href={nav.url ?? '/'}
+              className="inline-flex text-[15px] items-center gap-2.5 font-medium me-auto"
             >
               {nav.title}
             </Link>
@@ -217,9 +221,9 @@ export function DocsLayout({
               <SidebarCollapseTrigger
                 className={cn(
                   buttonVariants({
-                    color: "ghost",
-                    size: "icon-sm",
-                    className: "text-fd-muted-foreground mb-auto",
+                    color: 'ghost',
+                    size: 'icon-sm',
+                    className: 'mb-auto text-fd-muted-foreground',
                   }),
                 )}
               >
@@ -231,25 +235,29 @@ export function DocsLayout({
             (searchToggle.components?.lg ?? (
               <LargeSearchToggle hideIfDisabled />
             ))}
-          {tabs.length > 0 && <RootToggle options={tabs} />}
-
+          {tabs.length > 0 && tabMode === 'auto' && (
+            <RootToggle options={tabs} />
+          )}
           {banner}
         </SidebarHeader>
         {viewport}
-        <HideIfEmpty>
+        {(i18n ||
+          iconLinks.length > 0 ||
+          themeSwitch?.enabled !== false ||
+          footer) && (
           <SidebarFooter>
-            <div className="text-fd-muted-foreground flex items-center empty:hidden">
-              {i18n ? (
+            <div className="flex text-fd-muted-foreground items-center empty:hidden">
+              {i18n && (
                 <LanguageToggle>
                   <Languages className="size-4.5" />
                 </LanguageToggle>
-              ) : null}
+              )}
               {iconLinks.map((item, i) => (
                 <BaseLinkItem
                   key={i}
                   item={item}
                   className={cn(
-                    buttonVariants({ size: "icon-sm", color: "ghost" }),
+                    buttonVariants({ size: 'icon-sm', color: 'ghost' }),
                   )}
                   aria-label={item.label}
                 >
@@ -266,7 +274,7 @@ export function DocsLayout({
             </div>
             {footer}
           </SidebarFooter>
-        </HideIfEmpty>
+        )}
       </SidebarContent>
     );
 
@@ -286,13 +294,13 @@ export function DocsLayout({
   }
 
   return (
-    <TreeContextProvider tree={props.tree}>
+    <TreeContextProvider tree={tree}>
       <NavProvider transparentMode={transparentMode}>
         {nav.enabled !== false &&
           (nav.component ?? (
-            <Navbar className="h-14 md:hidden">
+            <Navbar className="h-(--fd-nav-height) on-root:[--fd-nav-height:56px] md:on-root:[--fd-nav-height:0px] md:hidden">
               <Link
-                href={nav.url ?? "/"}
+                href={nav.url ?? '/'}
                 className="inline-flex items-center gap-2.5 font-semibold"
               >
                 {nav.title}
@@ -306,9 +314,9 @@ export function DocsLayout({
                 <SidebarTrigger
                   className={cn(
                     buttonVariants({
-                      color: "ghost",
-                      size: "icon-sm",
-                      className: "p-2",
+                      color: 'ghost',
+                      size: 'icon-sm',
+                      className: 'p-2',
                     }),
                   )}
                 >
@@ -320,15 +328,18 @@ export function DocsLayout({
         <LayoutBody
           {...props.containerProps}
           className={cn(
-            "xl:[--fd-toc-width:286px] md:[&_#nd-page_article]:pt-12 xl:[&_#nd-page_article]:px-8",
+            'md:[&_#nd-page_article]:pt-12 xl:[&_#nd-page_article]:px-8',
             sidebarEnabled && sidebarVariables,
-            !nav.component &&
-              nav.enabled !== false &&
-              "min-[300px]:[--fd-nav-height:58.8px] sm:[--fd-nav-height:58.8px] md:[--fd-nav-height:58.8px] xl:[--fd-nav-height:0px]",
             props.containerProps?.className,
           )}
         >
           {sidebarEnabled && sidebar()}
+          {tabMode === 'top' && tabs.length > 0 && (
+            <LayoutTabs
+              options={tabs}
+              className="sticky top-[calc(var(--fd-nav-height)+var(--fd-tocnav-height))] z-10 bg-fd-background border-b px-6 pt-3 xl:px-8 max-md:hidden"
+            />
+          )}
           {children}
         </LayoutBody>
       </NavProvider>
@@ -340,14 +351,14 @@ function SidebarLinkItem({
   item,
   ...props
 }: {
-  item: Exclude<LinkItemType, { type: "icon" }>;
+  item: Exclude<LinkItemType, { type: 'icon' }>;
   className?: string;
 }) {
-  if (item.type === "menu")
+  if (item.type === 'menu')
     return (
       <SidebarFolder {...props}>
         {item.url ? (
-          <SidebarFolderLink href={item.url}>
+          <SidebarFolderLink href={item.url} external={item.external}>
             {item.icon}
             {item.text}
           </SidebarFolderLink>
@@ -365,7 +376,7 @@ function SidebarLinkItem({
       </SidebarFolder>
     );
 
-  if (item.type === "custom") return <div {...props}>{item.children}</div>;
+  if (item.type === 'custom') return <div {...props}>{item.children}</div>;
 
   return (
     <SidebarItem

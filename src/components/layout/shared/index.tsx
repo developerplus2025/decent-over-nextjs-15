@@ -33,13 +33,6 @@ export interface BaseLayoutProps {
   }>;
 
   /**
-   * Remove theme switcher component
-   *
-   * @deprecated Use `themeSwitch.enabled` instead.
-   */
-  disableThemeSwitch?: boolean;
-
-  /**
    * I18n options
    *
    * @defaultValue false
@@ -111,12 +104,11 @@ export interface ButtonItemType extends BaseLinkType {
   secondary?: boolean;
 }
 
-export interface MenuItemType extends BaseItem {
+export interface MenuItemType extends Partial<BaseLinkType> {
   type: 'menu';
   icon?: ReactNode;
   text: ReactNode;
 
-  url?: string;
   items: (
     | (MainItemType & {
         /**

@@ -1,5 +1,4 @@
 'use client';
-import type { TOCItemType } from "fumadocs-core/page-tree";
 import * as Primitive from 'fumadocs-core/toc';
 import { type ComponentProps, createContext, useContext, useRef } from 'react';
 import { cn } from '../../lib/cn';
@@ -7,9 +6,9 @@ import { useI18n } from 'fumadocs-ui/contexts/i18n';
 import { TocThumb } from './toc-thumb';
 import { mergeRefs } from '../../lib/merge-refs';
 
-const TOCContext = createContext<TOCItemType[]>([]);
+const TOCContext = createContext<Primitive.TOCItemType[]>([]);
 
-export function useTOCItems(): TOCItemType[] {
+export function useTOCItems(): Primitive.TOCItemType[] {
   return useContext(TOCContext);
 }
 
@@ -84,7 +83,7 @@ export function TOCItems({ ref, className, ...props }: ComponentProps<'div'>) {
   );
 }
 
-function TOCItem({ item }: { item: TOCItemType }) {
+function TOCItem({ item }: { item: Primitive.TOCItemType }) {
   return (
     <Primitive.TOCItem
       href={item.url}

@@ -10,27 +10,17 @@ import {
   PageTOCPopover,
   PageTOCPopoverContent,
   PageTOCPopoverTrigger,
-  type RootProps,
 } from './page-client';
 import { TOCItems, TOCProvider, TOCScrollArea } from '../../../src/components/ui/toc';
 import { Text } from 'lucide-react';
 import { I18nLabel } from 'fumadocs-ui/contexts/i18n';
 import ClerkTOCItems from '../../../src/components/ui/toc-clerk';
-
-/**
- * Apply `prose` on div
- */
-export function PageProse(props: ComponentProps<'div'>) {
-  return (
-    <div {...props} className={cn('prose', props.className)}>
-      {props.children}
-    </div>
-  );
-}
+import type { AnchorProviderProps } from 'fumadocs-core/toc';
 
 export function PageTOCTitle(props: ComponentProps<'h2'>) {
   return (
     <h3
+      id="toc-title"
       {...props}
       className={cn(
         'inline-flex items-center gap-1.5 text-sm text-fd-muted-foreground',
@@ -70,7 +60,7 @@ export function PageArticle(props: ComponentProps<'article'>) {
     <article
       {...props}
       className={cn(
-        "flex w-full max-w-2xl min-w-0 flex-col gap-4 px-4 min-[300px]:pt-[4.1rem] md:mx-auto md:px-6 xl:pt-8",
+        'flex min-w-0 w-full flex-col gap-4 pt-8 px-4 md:px-6 md:mx-auto',
         props.className,
       )}
     >
@@ -79,21 +69,26 @@ export function PageArticle(props: ComponentProps<'article'>) {
   );
 }
 
-export function PageRoot({ toc, children, ...props }: RootProps) {
-  return (
-    <TOCProvider {...toc}>
-      <div
-        id="nd-page"
-        {...props}
-        className={cn(
-          "mx-auto flex w-full max-w-(--fd-page-width) flex-1",
-          props.className,
-        )}
-      >
-        {children}
-      </div>
-    </TOCProvider>
+export interface RootProps extends ComponentProps<'div'> {
+  toc?: Omit<AnchorProviderProps, 'children'> | false;
+}
+
+export function PageRoot({ toc = false, children, ...props }: RootProps) {
+  const content = (
+    <div
+      id="nd-page"
+      {...props}
+      className={cn(
+        'flex flex-1 w-full mx-auto max-w-(--fd-page-width) pt-(--fd-tocnav-height) pe-(--fd-toc-width)',
+        props.className,
+      )}
+    >
+      {children}
+    </div>
   );
+
+  if (toc) return <TOCProvider {...toc}>{content}</TOCProvider>;
+  return content;
 }
 
 export {
@@ -106,5 +101,4 @@ export {
   PageTOCPopoverContent,
   type FooterProps,
   type BreadcrumbProps,
-  type RootProps,
 };
