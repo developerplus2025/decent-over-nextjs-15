@@ -14,16 +14,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout
       {...docsOptions}
       
-        // component: (
-        //   <div
-        //     className={cn(
-        //       "container-wrapper xl:border-input flex flex-col [--fd-sidebar-width:0px] xl:!w-[20rem] xl:border-r",
-        //     )}
-        //   >
-        //     <SidebarContent />
-        //   </div>
-        // ),
-      }}
+      
     >
       {children}
     </DocsLayout>
